@@ -66,7 +66,8 @@ try {
     return length;
   }, n => n < .4, 'walk to fiber');
   await peer.connection.invoke('Move', { x: 0, z: 0, sequence: ++sequence });
-  assert.equal((await peer.connection.invoke('Interact', 'fiber-1', 'proof-gather')).success, true);
+  assert.equal((await peer.connection.invoke('StartGather', 'node', 'fiber-1', 'fiber', 'proof-gather')).success, true);
+  await until(() => peer.read().inventory.find(i => i.itemId === 'fiber')?.quantity, n => n === 3, 'timed gather completed');
   const crafted = await peer.connection.invoke('Craft', 'cord_hand', 'proof-craft');
   assert.equal(crafted.success, true);
   const job = await until(() => peer.read().jobs[0], j => j?.state === 'running', 'running job');
@@ -78,6 +79,7 @@ try {
   peer = await connect(session);
   await until(() => peer.read().inventory.find(i => i.itemId === 'cord')?.quantity, n => n === 1, 'offline job restored once');
   assert.equal(peer.read().inventory.find(i => i.itemId === 'fiber')?.quantity, 1);
+  assert.equal(peer.read().skills.find(s => s.id === 'foraging')?.experience, 2);
   assert.equal((await peer.connection.invoke('Craft', 'cord_hand', 'proof-craft')).success, true);
   const restoredAt = Date.now();
   await until(async () => (await fetch(`${url}/health`)).json(), h => Date.parse(h.lastSavedAtUtc) >= restoredAt, 'completed delivery persisted');

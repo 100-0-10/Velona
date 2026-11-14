@@ -16,8 +16,8 @@ describe('screen-relative movement intents', () => {
   });
 });
 describe('nearby interaction targeting', () => {
-  it('ignores exhausted or out-of-range nodes', () => {
-    const s = snapshot(); s.nodes[0].available = false; expect(nearbyTarget(s)).toBeNull();
+  it('keeps exhausted nodes inspectable but rejects out-of-range nodes', () => {
+    const s = snapshot(); s.nodes[0].available = false; expect(nearbyTarget(s)?.kind).toBe('node');
     s.nodes[0].available = true; s.nodes[0].x = 10; expect(nearbyTarget(s)).toBeNull();
   });
   it('prioritizes a personal corpse claim and excludes other players claims', () => {

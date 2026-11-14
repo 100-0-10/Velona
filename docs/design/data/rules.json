@@ -80,9 +80,8 @@
       "cold_frost_duration_rule": "추위 저항은 환경 노출과 냉각 감속 지속시간을 줄임; 별도 냉기 직접피해는 첫 버전에 없음"
     },
     "harvest": {
-      "rights": "참여 조건을 충족한 플레이어마다 기본 해체 + 집중 부위 1개; 막타 독점 없음",
+      "rights": "유효 참여자별 재료 목록; 각 부위를 개별 선택하고 시간 작업 완료 후 해당 재료만 지급; 기본 묶음 자동 지급 없음",
       "eligibility": "전투 체류 10초 이상 + 유효 행동 3회 또는 기초 기여 5% 이상; 튜토리얼은 단독 처치 즉시 인정; 지원·방어도 행동에 포함",
-      "focus_choices_per_corpse": 1,
       "corpse_claim_expiry_seconds": 300,
       "disconnect_grace_seconds": 120,
       "random_quantity": "min~max 정수 균등 추첨; 확률 1 보장과 수량 랜덤을 구분",
@@ -92,7 +91,6 @@
         "excellent": 0.05
       },
       "tutorial_quality": "normal 고정",
-      "focus_guaranteed": true,
       "raid_scaling": {
         "reference_players": 4,
         "hp_factor_by_start_players": {
@@ -108,7 +106,11 @@
         "attack_damage_factor": 1,
         "snapshot": "입장 인원이 아닌 전투 시작 시 인원으로 고정; 탈주·중도합류로 축소 금지; 1~2명은 완화 패턴 사용"
       },
-      "rare_policy": "온전한 표식은 외형·전시 전용; 기본 성능 재료는 확정 집중 해체"
+      "rare_policy": "온전한 표식은 외형·전시 전용; 기본 성능 재료는 확정 집중 해체",
+      "selections_per_material": 1,
+      "concurrent_gather_actions": 1,
+      "timed_selection_source": "gathering.json; focus_options는 이전 기획으로 실행하지 않음",
+      "gathering_cancellation": "이동·공격·피격·취소·단절·대상 소멸 시 중단; 재료·경험치 미지급"
     },
     "durability": {
       "normal_hit_cost": 0.04,

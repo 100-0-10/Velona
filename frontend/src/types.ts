@@ -1,10 +1,13 @@
 export interface GuestSession { playerId: string; sessionToken: string; name: string }
-export interface PlayerState { id: string; name: string; x: number; z: number; hp: number; maxHp: number; stamina: number; maxStamina: number; isDowned: boolean; color: string }
-export interface ResourceNode { id: string; itemId: string; name: string; x: number; z: number; available: boolean; respawnAtUtc: string | null }
-export interface MonsterState { id: string; name: string; x: number; z: number; hp: number; maxHp: number; state: 'idle' | 'chasing' | 'telegraph' | 'recovering' | 'dead'; targetPlayerId: string | null; telegraphEndsAtUtc: string | null; canHarvest: boolean; telegraphX?: number; telegraphZ?: number }
+export interface PlayerState { id: string; name: string; x: number; z: number; hp: number; maxHp: number; stamina: number; maxStamina: number; isDowned: boolean; color: string; gatheringItemId?: string | null }
+export interface ResourceNode { id: string; itemId: string; name: string; x: number; z: number; available: boolean; respawnAtUtc: string | null; options?: GatherOption[] }
+export interface MonsterState { id: string; name: string; x: number; z: number; hp: number; maxHp: number; state: 'idle' | 'chasing' | 'telegraph' | 'recovering' | 'dead'; targetPlayerId: string | null; telegraphEndsAtUtc: string | null; canHarvest: boolean; telegraphX?: number; telegraphZ?: number; options?: GatherOption[] }
 export interface InventoryStack { itemId: string; name: string; quantity: number }
 export interface ProductionJob { id: string; recipeId: string; name: string; startedAtUtc: string; completesAtUtc: string; state: 'running' | 'completed' }
-export interface WorldSnapshot { channelId: string; selfPlayerId: string; serverTimeUtc: string; capacity: number; players: PlayerState[]; nodes: ResourceNode[]; monsters: MonsterState[]; inventory: InventoryStack[]; jobs: ProductionJob[] }
+export interface WorldSnapshot { channelId: string; selfPlayerId: string; serverTimeUtc: string; capacity: number; players: PlayerState[]; nodes: ResourceNode[]; monsters: MonsterState[]; inventory: InventoryStack[]; jobs: ProductionJob[]; gathering?: GatheringJob | null; skills?: SkillProgress[] }
+export interface GatherOption { id: string; itemId: string; name: string; quantity: number; rarity: string; skillId: string; skillName: string; requiredLevel: number; skillLevel: number; baseDurationSeconds: number; durationSeconds: number; experience: number; available: boolean; unavailableReason: string | null; availableAtUtc: string | null }
+export interface GatheringJob { id: string; sourceKind: 'node' | 'corpse'; sourceId: string; optionId: string; itemId: string; name: string; quantity: number; skillId: string; baseDurationSeconds: number; startedAtUtc: string; completesAtUtc: string; state: 'running' | 'completed' | 'cancelled'; message: string | null }
+export interface SkillProgress { id: string; name: string; level: number; experience: number; nextLevelExperience: number | null; speedReductionPercent: number }
 export interface RecipeDefinition { id: string; name: string; stationName: string; inputs: InventoryStack[]; outputs: InventoryStack[]; durationSeconds: number }
 export interface Catalog { items: { id: string; name: string }[]; recipes: RecipeDefinition[] }
 export interface ActionResult { success: boolean; message: string }

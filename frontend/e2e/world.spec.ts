@@ -60,6 +60,13 @@ async function craft(page: Page, recipeId: string, outputId: string, maxSeconds 
   await expect.poll(() => inventory(page, outputId), { timeout: maxSeconds * 1000 }).toBeGreaterThan(before);
 }
 
+async function gatherOption(page: Page, optionId: string) {
+  const previous = (await state(page)).snapshot?.gathering?.id;
+  await page.getByTestId('gather-option-' + optionId).click();
+  await expect.poll(async () => (await state(page)).snapshot?.gathering?.id).not.toBe(previous);
+  await expect.poll(async () => (await state(page)).snapshot?.gathering?.state, { timeout: 12000 }).toBe('completed');
+}
+
 async function screenshotAndPixels(page: Page, info: TestInfo, name: string) {
   const path = info.outputPath(`${name}.png`);
   await page.screenshot({ path, fullPage: true });
@@ -123,24 +130,32 @@ test('real UI hunt, harvest, tanning, drying and binding produces the first bag'
   const corpse = (await state(page)).snapshot!.monsters[0];
   await walkTo(page, corpse, 2.1);
   await page.keyboard.press('e');
-  await page.getByTestId('harvest-material').click();
+  await expect(page.getByTestId('gather-panel')).toBeVisible();
+  await page.screenshot({ path: info.outputPath('gathering-material-list.png') });
+  await expect(page.getByTestId('gather-option-signature')).toBeDisabled();
+  await page.getByTestId('gather-option-hide').click();
+  await expect(page.getByTestId('gathering-progress')).toBeVisible();
+  expect(await inventory(page, 'raw_hide')).toBe(0);
   await expect.poll(() => inventory(page, 'raw_hide')).toBeGreaterThanOrEqual(3);
 
   // Visit each resource explicitly; an arrival tolerance must not put bark out of range.
   await walkTo(page, { x: 4.5, z: 4.5 });
   await walkTo(page, { x: 4.4, z: -2 }, .25);
+  await page.keyboard.press('e');
   const fiberDeadline = Date.now() + 30_000;
   while (Date.now() < fiberDeadline && (await inventory(page, 'fiber')) < 8) {
-    await page.keyboard.press('e'); await page.waitForTimeout(800);
+    await gatherOption(page, 'fiber');
   }
-  await walkTo(page, { x: 7, z: 0 }, .25);
+  await walkTo(page, { x: 4.5, z: 2 }, .15);
+  await page.keyboard.press('e');
   const barkDeadline = Date.now() + 22_000;
   while (Date.now() < barkDeadline && (await inventory(page, 'bark')) < 6) {
-    await page.keyboard.press('e'); await page.waitForTimeout(800);
+    await gatherOption(page, 'bark');
   }
   expect(await inventory(page, 'fiber')).toBeGreaterThanOrEqual(8);
   expect(await inventory(page, 'bark')).toBeGreaterThanOrEqual(6);
   await walkTo(page, { x: 0, z: 0 });
+  await page.getByTestId('open-craft').click();
   for (let i = 0; i < 4; i++) await craft(page, 'cord_hand', 'cord');
   for (let i = 0; i < 3; i++) await craft(page, 'bark_powder', 'bark_powder');
   for (let i = 0; i < 3; i++) await craft(page, 'trim_hide', 'trim_hide');
@@ -157,10 +172,36 @@ test('real UI hunt, harvest, tanning, drying and binding produces the first bag'
   expect(errors).toEqual([]);
 });
 
+test('selection waits for work and movement or cancel never grants materials', async ({ page }, info) => {
+  await joined(page, '채집 확인 개척자');
+  await walkTo(page, { x: 4.4, z: -2 }, .25);
+  await page.keyboard.press('e');
+  await expect(page.getByTestId('gather-panel')).toBeVisible();
+  expect(await inventory(page, 'fiber')).toBe(0);
+  await expect(page.getByTestId('gather-option-herb')).toBeDisabled();
+  await page.getByTestId('gather-option-fiber').click();
+  await expect(page.getByTestId('gathering-progress')).toBeVisible();
+  expect(await inventory(page, 'fiber')).toBe(0);
+  await page.keyboard.down('a'); await page.waitForTimeout(180); await page.keyboard.up('a');
+  await expect.poll(async () => (await state(page)).snapshot?.gathering?.state).toBe('cancelled');
+  expect(await inventory(page, 'fiber')).toBe(0);
+  await page.getByTestId('gather-option-fiber').click();
+  await page.getByTestId('cancel-gather').click();
+  await expect.poll(async () => (await state(page)).snapshot?.gathering?.state).toBe('cancelled');
+  expect(await inventory(page, 'fiber')).toBe(0);
+  await screenshotAndPixels(page, info, 'gathering-selection');
+});
+
 test('narrow screen keeps a visible nonblank world and usable entry', async ({ page }, info) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await joined(page, '작은 화면 개척자');
   const bounds = await page.evaluate(() => ({ viewport: innerWidth, scroll: document.documentElement.scrollWidth }));
   expect(bounds.scroll).toBeLessThanOrEqual(bounds.viewport + 1);
   await screenshotAndPixels(page, info, 'mobile-layout');
+  await walkTo(page, { x: 4.4, z: -2 }, .25);
+  await page.keyboard.press('e');
+  await expect(page.getByTestId('gather-panel')).toBeVisible();
+  await page.getByTestId('gather-option-fiber').click();
+  await expect(page.getByTestId('gathering-progress')).toBeVisible();
+  await screenshotAndPixels(page, info, 'mobile-gathering');
 });

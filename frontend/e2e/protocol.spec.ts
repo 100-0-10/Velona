@@ -2,7 +2,7 @@ import { expect, test } from '@playwright/test';
 import { HubConnectionBuilder, LogLevel, type HubConnection } from '@microsoft/signalr';
 import type { ActionResult, GuestSession, WorldSnapshot } from '../src/types';
 
-const backend = process.env.VELONA_BACKEND_URL ?? 'http://127.0.0.1:5080';
+const backend = process.env.VELONA_BACKEND_URL ?? 'http://127.0.0.1:5082';
 type Peer = { connection: HubConnection; latest: WorldSnapshot; sequence: number };
 
 async function peer(name: string): Promise<Peer> {
@@ -73,13 +73,18 @@ test('server owns identity, clamps movement, enforces range and prevents duplica
     await expect.poll(() => a.latest.nodes.find(n => n.id === node.id)?.available, { timeout: 12_000 }).toBeTruthy();
     const requestId = crypto.randomUUID();
     const before = a.latest.inventory.find(i => i.itemId === 'fiber')?.quantity ?? 0;
-    const gathered = await a.connection.invoke<ActionResult>('Interact', node.id, requestId);
+    const inspected = await a.connection.invoke<ActionResult>('Interact', node.id, crypto.randomUUID());
+    expect(inspected.success).toBe(true);
+    expect(a.latest.inventory.find(i => i.itemId === 'fiber')?.quantity ?? 0).toBe(before);
+    const gathered = await a.connection.invoke<ActionResult>('StartGather', 'node', node.id, 'fiber', requestId);
     expect(gathered.success).toBe(true);
+    await new Promise(resolve => setTimeout(resolve, 250));
+    expect(a.latest.inventory.find(i => i.itemId === 'fiber')?.quantity ?? 0).toBe(before);
     await expect.poll(() => a.latest.inventory.find(i => i.itemId === 'fiber')?.quantity ?? 0).toBe(before + 3);
-    const repeated = await a.connection.invoke<ActionResult>('Interact', node.id, requestId);
+    const repeated = await a.connection.invoke<ActionResult>('StartGather', 'node', node.id, 'fiber', requestId);
     expect(repeated).toEqual(gathered);
     expect(a.latest.inventory.find(i => i.itemId === 'fiber')?.quantity).toBe(before + 3);
-    const badReuse = await a.connection.invoke<ActionResult>('Interact', 'bark-1', requestId);
+    const badReuse = await a.connection.invoke<ActionResult>('StartGather', 'node', 'bark-1', 'bark', requestId);
     expect(badReuse.success).toBe(false);
 
     // A single movement intent expires automatically without client keep-alive input.

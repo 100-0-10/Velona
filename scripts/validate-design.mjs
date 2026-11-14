@@ -94,4 +94,17 @@ while (previous !== `${available.size}:${stations.size}:${unlocks.size}`) {
 }
 for (const station of catalog.stations) verify(stations.has(station.id), `${station.id}: unreachable station`);
 for (const equipment of catalog.equipment) verify(available.has(equipment.id), `${equipment.id}: unreachable equipment`);
+const gathering = catalog.gathering;
+verify(gathering.max_level > 0 && gathering.experience_factor > 0 && gathering.maximum_reduction >= 0 && gathering.maximum_reduction < 1, 'gathering progression bounds');
+const skills = new Set(gathering.skills.map(s => s.id));
+verify(skills.size === gathering.skills.length, 'gathering skill ids');
+for (const name of ['plant','tree','rock','boar']) verify(Array.isArray(gathering.profiles[name]), `missing gathering profile ${name}`);
+for (const [profile, options] of Object.entries(gathering.profiles)) {
+  verify(new Set(options.map(o => o.id)).size === options.length, `${profile}: duplicate gather option`);
+  for (const option of options) {
+    verify(byId.items.has(option.item_id) && skills.has(option.skill_id), `${profile}/${option.id}: gather material/skill`);
+    verify(Number.isInteger(option.quantity) && option.quantity > 0 && option.quantity <= 99 && Number.isFinite(option.base_seconds) && option.base_seconds > 0, `${profile}/${option.id}: gather quantity/time`);
+    verify(Number.isInteger(option.required_level) && option.required_level >= 1 && option.required_level <= gathering.max_level && option.experience > 0, `${profile}/${option.id}: gather progression`);
+  }
+}
 console.log(`Design data passed ${checks} checks: ${catalog.regions.length} regions, ${catalog.monsters.length} monsters, ${catalog.items.length} items, ${catalog.recipes.length} recipes.`);

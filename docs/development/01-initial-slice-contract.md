@@ -16,9 +16,11 @@ Map is a fixed 48×48 meadow, player starts near (0,0), camp occupies (-5..5,-5.
 - SignalR endpoint `/hubs/world`, Bearer session token using accessTokenFactory. Only this endpoint may accept query access_token. Guest sessions are development-only, not production identity.
 - Hub `JoinChannel(channelId: string)` => `WorldSnapshot`; accepts `meadow-1` initially. Snapshot carries selfPlayerId, and also arrives in `WorldSnapshot` event to channel members at10Hz.
 - Hub `Move({ x:number,z:number,sequence:number })` => void. x/z are intent axes, not positions. Finite values, normalized magnitude, increasing sequence. Zero movement on release/blur and stale-input timeout.
-- Hub `Interact(nodeId:string, requestId:string)` => `ActionResult`.
+- Hub `Interact(nodeId:string, requestId:string)` => `ActionResult`; inspect only, never awards items.
+- Hub `StartGather(sourceKind:string, sourceId:string, optionId:string, requestId:string)` starts an authoritative timed material selection.
+- Hub `CancelGather(requestId:string)` stops it without reward.
 - Hub `Attack(monsterId:string, requestId:string)` => `ActionResult`.
-- Hub `Harvest(monsterId:string, focus:string, requestId:string)` => `ActionResult`; focus enum `food|material|signature`; harvest rights remain per player for one corpse generation; material gives common raw_hide in this slice.
+- Hub `Harvest(monsterId:string, focus:string, requestId:string)` => `ActionResult`; legacy compatibility only: maps food/material/signature to a timed single meat/hide/signature operation. No automatic bundle. New UI uses StartGather with per-material rights.
 - Hub `Craft(recipeId:string, requestId:string)` => `ActionResult`. Enforce available recipe subset, camp proximity, materials, one active job/player. Queue and result are personal. Request id retries do not spend twice.
 - Hub `Respawn()` => ActionResult, only when downed.
 - Hub `Chat(message:string)` => ActionResult. bounded length/rate; display plain text only. Server assigns player name/id.
@@ -55,3 +57,7 @@ Craft subset from design recipes: `cord_hand`,`bark_powder`,`trim_hide`,`tan`,`d
 Meaningful tests: two different identities see each other's authoritative movement; forged/out-of-range/malformed actions fail; same action request id cannot duplicate reward; two eligible players each harvest once; production survives reconnect while process lives; craft spends correct quantities and delivers once; second browser can join; reconnect doesn't create ghost players. New tabs may use different local identity (sessionStorage) for testing. Handle strict React mount/unmount cleanup and hidden-tab input release.
 
 PostgreSQL is now the default persistence. Guest tokens are stored as hashes; sessions last30days. Inventory, jobs, request replay history and corpse claims are atomically checkpointed once/second and restored at startup. Crash may lose the last~1second. Production identity/item ledgers are not implemented. Isolated E2E may explicitly disable persistence; CI and the restart proof use PostgreSQL. Not a 30-player validated service;30 is admission cap only until load test. No PvP/market/guild/asset-generation/full crafting implementation in initial delivery. Mobile layout smoke check, PC controls and optional basic touch controls; no mobile performance claim.
+
+## Timed gathering revision
+
+See 05-timed-gathering.md. ResourceNode and MonsterState now have personalized options. WorldSnapshot adds gathering and skills, PlayerState adds gatheringItemId. SavedExplorer adds optional skillExperience, SavedNode adds optional per-option cooldowns and SavedBoar adds generation, all backward compatible. Active gathering is cancelled on disconnect and is not restored as offline production. Test servers use5082/5174 to avoid the live local game5080/5173.

@@ -12,7 +12,7 @@ export function nearbyTarget(snapshot: WorldSnapshot | null): NearbyTarget | nul
   const self = snapshot?.players.find(p => p.id === snapshot.selfPlayerId); if (!snapshot || !self || self.isDowned) return null;
   const corpses = snapshot.monsters.filter(m => m.state === 'dead' && m.canHarvest && distance(self, m) <= 3);
   if (corpses.length) return { kind: 'corpse', value: corpses.sort((a, b) => distance(self, a) - distance(self, b))[0] };
-  const nodes = snapshot.nodes.filter(n => n.available && distance(self, n) <= 2.8);
+  const nodes = snapshot.nodes.filter(n => distance(self, n) <= 2.8);
   return nodes.length ? { kind: 'node', value: nodes.sort((a, b) => distance(self, a) - distance(self, b))[0] } : null;
 }
 export function nearestMonster(snapshot: WorldSnapshot | null) {

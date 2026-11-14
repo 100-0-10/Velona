@@ -15,6 +15,8 @@ public sealed class WorldHub(GameWorld world) : Hub
     }
     public void Move(MoveInput? input) { if (input is not null) world.Move(Context.ConnectionId, input); }
     public ActionResult Interact(string nodeId, string requestId) => world.Interact(Context.ConnectionId, nodeId, requestId);
+    public ActionResult StartGather(string sourceKind, string sourceId, string optionId, string requestId) => world.StartGather(Context.ConnectionId, sourceKind, sourceId, optionId, requestId);
+    public ActionResult CancelGather(string requestId) => world.CancelGather(Context.ConnectionId, requestId);
     public ActionResult Attack(string monsterId, string requestId) => world.Attack(Context.ConnectionId, monsterId, requestId);
     public ActionResult Harvest(string monsterId, string focus, string requestId) => world.Harvest(Context.ConnectionId, monsterId, focus, requestId);
     public ActionResult Craft(string recipeId, string requestId) => world.Craft(Context.ConnectionId, recipeId, requestId);

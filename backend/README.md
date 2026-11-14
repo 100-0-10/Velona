@@ -43,3 +43,7 @@ dotnet publish backend/Velona.Server -c Release -o artifacts/backend
 운영용 인증·아이템별 거래 장부·수평 확장·30명 부하 검증은 아직 없다. 로컬 PostgreSQL 접속과 설정은 docs/development/04-local-postgresql.md에 있다. 건강 응답과 통신 계약은 `docs/development/01-initial-slice-contract.md`를 따른다.
 
 PostgreSQL 접속은 .NET User Secrets의 ConnectionStrings:Velona 또는 환경 변수 ConnectionStrings__Velona를 사용한다. 초기 계정·DB 생성 스크립트는 scripts/setup-local-db.ps1이다. Persistence__Enabled=false는 격리 테스트에만 사용한다. /health는 저장 상태와 마지막 저장 시각을 표시한다. 저장소·로그에 비밀번호를 적지 않는다.
+
+## 선택형 시간 채집
+
+E 조사만으로 물건을 지급하지 않는다. 목록의 재료를 StartGather로 선택하고 실제 시간이 지나야 그 재료와 분야별 경험치를 얻는다. 기본 시간·최소 숙련·수량은 gathering.json에서 읽는다. 이동·공격·피격·취소·단절·대상 소멸 시 중단한다. 숙련은 PostgreSQL에 저장하며 직접 채집은 오프라인 진행하지 않는다. 기존 Harvest 호출도 단일 재료 시간 작업으로 연결한다. 자세한 규칙은 docs/development/05-timed-gathering.md를 따른다.

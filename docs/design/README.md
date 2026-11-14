@@ -16,3 +16,5 @@
 현재 수정된 데이터의 검사 명령은 저장소 루트의 `node scripts/validate-design.mjs`다. 과거 `validation_report.json`은 기획 당시 결과이며 현재 검사 결과를 대신하지 않는다.
 
 `planning-index-original.md`는 이전 전달 색인을 보존한 자료이며 문서 링크만 현재 폴더에 맞춰 조정했다. 문서의 예전 단계·검사 결과와 현재 구현은 구분한다.
+
+현재 채집은 [시간 채집·숙련도 규칙](../development/05-timed-gathering.md)과 data/gathering.json을 따른다. 기존 몬스터 focus_options는 과거 계획이며 실행하지 않는다. 대상 조사→재료 선택→시간 작업→해당 재료 지급으로 변경했다.

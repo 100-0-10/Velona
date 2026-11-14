@@ -166,6 +166,18 @@
         "quality": "점수·슬롯·고정 특성",
         "versions": "콘텐츠/저장 버전"
       }
+    },
+    {
+      "dataset": "gathering",
+      "primary_key": "profile/option_id",
+      "fields": {
+        "records": "숙련도 설정·skills·profiles 객체",
+        "profiles": "plant/tree/rock/boar의 재료별 선택지",
+        "base_seconds": "숙련 보정 전 실제 채집 시간 초; 생산 시간 배율 미적용",
+        "required_level": "해당 분야 최소 숙련 레벨",
+        "experience": "작업 완료 시에만 지급하는 경험치",
+        "maximum_reduction": "숙련도 시간 감소 상한; 0~1"
+      }
     }
   ]
 }

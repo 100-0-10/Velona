@@ -174,8 +174,8 @@ public sealed class CheckpointWriter(GameWorld world, PostgresStore store, ILogg
 public sealed record WorldCheckpoint(int SchemaVersion, DateTimeOffset SavedAtUtc, SavedExplorer[] Players, SavedNode[] Nodes, SavedBoar Boar);
 public sealed record SavedExplorer(string Id, string Name, string Color, double X, double Z, double Hp, double Stamina,
     Dictionary<string, int> Inventory, SavedJob? Job, SavedRequest[] Requests, Guid[] SeenRequests,
-    DateTimeOffset LastAttack, DateTimeOffset LastGather, DateTimeOffset LastDamage);
+    DateTimeOffset LastAttack, DateTimeOffset LastGather, DateTimeOffset LastDamage, Dictionary<string, int>? SkillExperience = null);
 public sealed record SavedJob(string Id, RecipeDefinition Recipe, DateTimeOffset StartedAtUtc, DateTimeOffset CompletesAtUtc, bool Completed);
 public sealed record SavedRequest(string Id, string Fingerprint, ActionResult Result);
-public sealed record SavedNode(string Id, DateTimeOffset RespawnAtUtc);
-public sealed record SavedBoar(double X, double Z, double Hp, string State, DateTimeOffset RespawnAtUtc, string[] Participants, string[] Harvested);
+public sealed record SavedNode(string Id, DateTimeOffset RespawnAtUtc, Dictionary<string, DateTimeOffset>? OptionRespawnAtUtc = null);
+public sealed record SavedBoar(double X, double Z, double Hp, string State, DateTimeOffset RespawnAtUtc, string[] Participants, string[] Harvested, int Generation = 1);

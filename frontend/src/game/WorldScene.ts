@@ -76,7 +76,7 @@ export class WorldScene {
       for (const p of s.players) {
         const g = this.players.get(p.id)!; const dx = p.x - g.position.x, dz = p.z - g.position.z; const moving = Math.hypot(dx, dz) > .02;
         g.position.x += dx * alpha; g.position.z += dz * alpha;
-        const body = g.getObjectByName('body')!; if (moving) body.rotation.y = Math.atan2(dx, dz); body.rotation.z = p.isDowned ? Math.PI / 2 : 0;
+        const body = g.getObjectByName('body')!; if (moving) body.rotation.y = Math.atan2(dx, dz); body.rotation.z = p.isDowned ? Math.PI / 2 : 0; body.rotation.x = p.gatheringItemId && !moving ? .12 + Math.sin(this.elapsed * 7) * .06 : 0;
         const left = g.getObjectByName('leftLeg')!, right = g.getObjectByName('rightLeg')!; left.rotation.x = moving ? Math.sin(this.elapsed * 12) * .45 : 0; right.rotation.x = -left.rotation.x;
         if (p.id === s.selfPlayerId) { const weapon = g.getObjectByName('weapon')!; const age = this.elapsed - this.attackAt; weapon.rotation.x = age < .35 ? -Math.sin(age / .35 * Math.PI) * 1.1 : 0; }
       }

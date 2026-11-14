@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "content_version": "0.4.0-draft",
+  "status": "design_draft",
+  "records": {
+    "max_level": 30,
+    "experience_factor": 10,
+    "reduction_per_level": 0.02,
+    "maximum_reduction": 0.4,
+    "skills": [
+      {"id":"foraging","name":"식물 채집"},
+      {"id":"logging","name":"벌목·수피 채집"},
+      {"id":"mining","name":"채광"},
+      {"id":"butchery","name":"사냥·해체"}
+    ],
+    "profiles": {
+      "plant": [
+        {"id":"fiber","item_id":"fiber","quantity":3,"base_seconds":2,"skill_id":"foraging","required_level":1,"rarity":"common","experience":2},
+        {"id":"herb","item_id":"herb","quantity":1,"base_seconds":4,"skill_id":"foraging","required_level":2,"rarity":"uncommon","experience":4}
+      ],
+      "tree": [
+        {"id":"bark","item_id":"bark","quantity":3,"base_seconds":3,"skill_id":"logging","required_level":1,"rarity":"common","experience":3},
+        {"id":"log","item_id":"log","quantity":2,"base_seconds":5,"skill_id":"logging","required_level":1,"rarity":"common","experience":4},
+        {"id":"resin","item_id":"resin","quantity":1,"base_seconds":8,"skill_id":"logging","required_level":3,"rarity":"rare","experience":8}
+      ],
+      "rock": [
+        {"id":"stone","item_id":"stone","quantity":2,"base_seconds":3.5,"skill_id":"mining","required_level":1,"rarity":"common","experience":3}
+      ],
+      "boar": [
+        {"id":"hide","item_id":"raw_hide","quantity":3,"base_seconds":3.5,"skill_id":"butchery","required_level":1,"rarity":"common","experience":4},
+        {"id":"meat","item_id":"meat","quantity":2,"base_seconds":2.5,"skill_id":"butchery","required_level":1,"rarity":"common","experience":2},
+        {"id":"bone","item_id":"bone","quantity":1,"base_seconds":4.5,"skill_id":"butchery","required_level":1,"rarity":"uncommon","experience":4},
+        {"id":"signature","item_id":"raw_stonejaw","quantity":1,"base_seconds":8,"skill_id":"butchery","required_level":3,"rarity":"rare","experience":8}
+      ]
+    }
+  }
+}

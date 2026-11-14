@@ -7,14 +7,18 @@ public sealed class ContentCatalog
     public static readonly string[] RuntimeRecipeIds = ["cord_hand", "bark_powder", "trim_hide", "tan", "dry_leather", "bag"];
     private readonly Dictionary<string, string> names;
     private readonly Dictionary<string, RecipeDefinition> recipes;
+    public GatheringCatalog Gathering { get; }
     public ContentCatalog(string directory, double productionTimeScale)
     {
+        Gathering = new(directory);
         if (!double.IsFinite(productionTimeScale) || productionTimeScale is <= 0 or > 10)
             throw new InvalidOperationException("Game:ProductionTimeScale must be finite and between 0 and 10.");
         using var itemDoc = Read(directory, "items.json");
         using var stationDoc = Read(directory, "stations.json");
         using var recipeDoc = Read(directory, "recipes.json");
         names = itemDoc.RootElement.GetProperty("records").EnumerateArray().ToDictionary(x => x.GetProperty("id").GetString()!, x => x.GetProperty("name").GetString()!);
+        if (Gathering.Profiles.Values.SelectMany(p => p).Any(o => !names.ContainsKey(o.ItemId)))
+            throw new InvalidDataException("Gathering material is not in the item catalog.");
         var stationNames = stationDoc.RootElement.GetProperty("records").EnumerateArray().ToDictionary(x => x.GetProperty("id").GetString()!, x => x.GetProperty("name").GetString()!);
         recipes = [];
         foreach (var r in recipeDoc.RootElement.GetProperty("records").EnumerateArray())
