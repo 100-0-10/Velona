@@ -87,6 +87,8 @@ async function screenshotAndPixels(page: Page, info: TestInfo, name: string) {
 }
 
 test('two browser identities share movement and chat without typing moving the explorer', async ({ browser }, info) => {
+  // CI renders both WebGL views in software; include screenshot readback and context shutdown.
+  test.setTimeout(90_000);
   const first = await browser.newContext({ viewport: { width: 1440, height: 900 } });
   const second = await browser.newContext({ viewport: { width: 1280, height: 800 } });
   const a = await first.newPage(); const b = await second.newPage();
