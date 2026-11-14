@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "content_version": "0.3.0-draft",
+  "status": "design_draft",
+  "records": [
+    {
+      "id": "repair_stone",
+      "station_id": "repair",
+      "target_kind": "stone_tool",
+      "max_material_cost": {
+        "stone": 1,
+        "cord": 1
+      },
+      "effect": "원래 최대내구 50%당 1단위; 최소 1단위; 최대내구 하락·횟수 규칙 적용"
+    },
+    {
+      "id": "repair_leather",
+      "station_id": "repair",
+      "target_kind": "leather_armor",
+      "max_material_cost": {
+        "leather": 1,
+        "leather_strap": 1
+      },
+      "effect": "원래 최대내구 50%당 1단위; 기본 소재로 수리, 고유 특성 변경 없음"
+    },
+    {
+      "id": "repair_cloth",
+      "station_id": "repair",
+      "target_kind": "cloth_armor",
+      "max_material_cost": {
+        "cloth": 1,
+        "thread": 1
+      },
+      "effect": "원래 최대내구 50%당 1단위"
+    },
+    {
+      "id": "repair_metal",
+      "station_id": "repair",
+      "target_kind": "metal_tool",
+      "max_material_cost": {
+        "iron": 1,
+        "leather_strap": 1
+      },
+      "effect": "원래 최대내구 50%당 1단위; 상위 강화금속은 별도 단계 비용"
+    },
+    {
+      "id": "repair_shell",
+      "station_id": "repair",
+      "target_kind": "shell_armor",
+      "max_material_cost": {
+        "trim_shell": 1,
+        "leather_strap": 1
+      },
+      "effect": "원래 최대내구 50%당 1단위"
+    },
+    {
+      "id": "early_repair",
+      "station_id": "bench",
+      "target_kind": "stone_tool_or_basic_leather",
+      "max_material_cost": {
+        "stone": 1,
+        "cord": 1
+      },
+      "effect": "초기 복구 경로; 가죽은 위 가죽 수리 비용 사용; 1회 회복량 25%"
+    },
+    {
+      "id": "dye_equipment",
+      "station_id": "dye_vat",
+      "target_kind": "dyeable_equipment",
+      "max_material_cost": {
+        "dye": 1
+      },
+      "effect": "소유권·품질·내구·특성 보존; 외형 색상 변경"
+    },
+    {
+      "id": "salvage_equipment",
+      "station_id": "repair",
+      "target_kind": "equipment",
+      "max_material_cost": {},
+      "effect": "비금속 원재료 투입 정수량의 floor(0.2*N), 금속은 별도 고철 규칙; 고유 부위·기관·결정은 회수 제외"
+    },
+    {
+      "id": "socket_trophy",
+      "station_id": "general",
+      "target_kind": "named_monster_equipment",
+      "max_material_cost": {},
+      "effect": "해당 몬스터 표식 1개 소비; 외형 소켓 활성; 성능 변화 없음"
+    },
+    {
+      "id": "upgrade_water_boots",
+      "station_id": "leatherwork",
+      "target_kind": "leather_boots",
+      "max_material_cost": {
+        "resin": 3,
+        "oil": 3
+      },
+      "effect": "기존 장화 1개를 소비·전환; 내구 비율·수리 이력 유지; water_boots와 동시 생산 아님"
+    },
+    {
+      "id": "install_power_core",
+      "station_id": "power_bench",
+      "target_kind": "advanced_production_station",
+      "max_material_cost": {
+        "power_core": 1
+      },
+      "effect": "永久 부속 장치 설치; 작업시간 -10%, 이미 설치 시 중복 불가; 핵심 제작법 잠금 아님"
+    },
+    {
+      "id": "install_cool_module",
+      "station_id": "power_bench",
+      "target_kind": "cool_chest",
+      "max_material_cost": {
+        "cool_module": 1
+      },
+      "effect": "냉각 보관함 연료 소모 -10%; 동일 장치 중복 불가"
+    },
+    {
+      "id": "install_shock_module",
+      "station_id": "power_bench",
+      "target_kind": "iron_spear",
+      "max_material_cost": {
+        "shock_module": 1
+      },
+      "effect": "장착 창에 shock 효과 1개 추가; 기존 공격·품질·내구 비율·수리 이력 보존; 같은 효과 중복 금지"
+    }
+  ]
+}

@@ -1,0 +1,7692 @@
+{
+  "schema_version": 1,
+  "content_version": "0.3.0-draft",
+  "status": "design_draft",
+  "records": {
+    "created_on": "2026-11-15",
+    "content_version": "0.3.0-draft",
+    "passed": true,
+    "checks_count": 1532,
+    "failed_count": 0,
+    "counts": {
+      "regions": 10,
+      "monsters": 30,
+      "items": 357,
+      "stations": 31,
+      "recipes": 277,
+      "equipment": 93,
+      "traits": 20,
+      "sources": 280,
+      "upgrades": 6,
+      "unlocks": 13,
+      "life_facilities": 4,
+      "operations": 13,
+      "rules": 11,
+      "data_dictionary": 13
+    },
+    "reachability_scope": "전체 지역 원재료 공급을 허용한 정성적 도달성; 소요 수량·전투·경제 수익·런타임 검증 아님",
+    "checks": [
+      {
+        "name": "regions id 중복",
+        "passed": true,
+        "detail": "10개"
+      },
+      {
+        "name": "monsters id 중복",
+        "passed": true,
+        "detail": "30개"
+      },
+      {
+        "name": "items id 중복",
+        "passed": true,
+        "detail": "357개"
+      },
+      {
+        "name": "stations id 중복",
+        "passed": true,
+        "detail": "31개"
+      },
+      {
+        "name": "recipes id 중복",
+        "passed": true,
+        "detail": "277개"
+      },
+      {
+        "name": "equipment id 중복",
+        "passed": true,
+        "detail": "93개"
+      },
+      {
+        "name": "traits id 중복",
+        "passed": true,
+        "detail": "20개"
+      },
+      {
+        "name": "sources id 중복",
+        "passed": true,
+        "detail": "280개"
+      },
+      {
+        "name": "upgrades id 중복",
+        "passed": true,
+        "detail": "6개"
+      },
+      {
+        "name": "unlocks id 중복",
+        "passed": true,
+        "detail": "13개"
+      },
+      {
+        "name": "life_facilities id 중복",
+        "passed": true,
+        "detail": "4개"
+      },
+      {
+        "name": "operations id 중복",
+        "passed": true,
+        "detail": "13개"
+      },
+      {
+        "name": "레시피 참조 cord_hand",
+        "passed": true,
+        "detail": "hand"
+      },
+      {
+        "name": "레시피 양수 cord_hand",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 knife_hand",
+        "passed": true,
+        "detail": "hand"
+      },
+      {
+        "name": "레시피 양수 knife_hand",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 hammer_hand",
+        "passed": true,
+        "detail": "hand"
+      },
+      {
+        "name": "레시피 양수 hammer_hand",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 bandage_hand",
+        "passed": true,
+        "detail": "hand"
+      },
+      {
+        "name": "레시피 양수 bandage_hand",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 board_rough",
+        "passed": true,
+        "detail": "bench"
+      },
+      {
+        "name": "레시피 양수 board_rough",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 handle_rough",
+        "passed": true,
+        "detail": "bench"
+      },
+      {
+        "name": "레시피 양수 handle_rough",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 bark_powder",
+        "passed": true,
+        "detail": "bench"
+      },
+      {
+        "name": "레시피 양수 bark_powder",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 bone_powder",
+        "passed": true,
+        "detail": "bench"
+      },
+      {
+        "name": "레시피 양수 bone_powder",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 stone_axe",
+        "passed": true,
+        "detail": "bench"
+      },
+      {
+        "name": "레시피 양수 stone_axe",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 stone_pick",
+        "passed": true,
+        "detail": "bench"
+      },
+      {
+        "name": "레시피 양수 stone_pick",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 stone_spear",
+        "passed": true,
+        "detail": "bench"
+      },
+      {
+        "name": "레시피 양수 stone_spear",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 chest",
+        "passed": true,
+        "detail": "bench"
+      },
+      {
+        "name": "레시피 양수 chest",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 board",
+        "passed": true,
+        "detail": "wood"
+      },
+      {
+        "name": "레시피 양수 board",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 handle",
+        "passed": true,
+        "detail": "wood"
+      },
+      {
+        "name": "레시피 양수 handle",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 hard_board",
+        "passed": true,
+        "detail": "wood"
+      },
+      {
+        "name": "레시피 양수 hard_board",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 hard_handle",
+        "passed": true,
+        "detail": "wood"
+      },
+      {
+        "name": "레시피 양수 hard_handle",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 wood_part",
+        "passed": true,
+        "detail": "wood"
+      },
+      {
+        "name": "레시피 양수 wood_part",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 adhesive",
+        "passed": true,
+        "detail": "wood"
+      },
+      {
+        "name": "레시피 양수 adhesive",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 bowl_wood",
+        "passed": true,
+        "detail": "wood"
+      },
+      {
+        "name": "레시피 양수 bowl_wood",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 chair",
+        "passed": true,
+        "detail": "wood"
+      },
+      {
+        "name": "레시피 양수 chair",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 table",
+        "passed": true,
+        "detail": "wood"
+      },
+      {
+        "name": "레시피 양수 table",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 wood_shield",
+        "passed": true,
+        "detail": "wood"
+      },
+      {
+        "name": "레시피 양수 wood_shield",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 shelf",
+        "passed": true,
+        "detail": "wood"
+      },
+      {
+        "name": "레시피 양수 shelf",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 large_chest",
+        "passed": true,
+        "detail": "wood"
+      },
+      {
+        "name": "레시피 양수 large_chest",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 wall_horn",
+        "passed": true,
+        "detail": "wood"
+      },
+      {
+        "name": "레시피 양수 wall_horn",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 trim_hide",
+        "passed": true,
+        "detail": "prep"
+      },
+      {
+        "name": "레시피 양수 trim_hide",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 trim_fur",
+        "passed": true,
+        "detail": "prep"
+      },
+      {
+        "name": "레시피 양수 trim_fur",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 sinew_cord",
+        "passed": true,
+        "detail": "prep"
+      },
+      {
+        "name": "레시피 양수 sinew_cord",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 trim_shell",
+        "passed": true,
+        "detail": "prep"
+      },
+      {
+        "name": "레시피 양수 trim_shell",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 trim_horn",
+        "passed": true,
+        "detail": "prep"
+      },
+      {
+        "name": "레시피 양수 trim_horn",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 meat_bait",
+        "passed": true,
+        "detail": "prep"
+      },
+      {
+        "name": "레시피 양수 meat_bait",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 tan",
+        "passed": true,
+        "detail": "tan"
+      },
+      {
+        "name": "레시피 양수 tan",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 tan_fur",
+        "passed": true,
+        "detail": "tan"
+      },
+      {
+        "name": "레시피 양수 tan_fur",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 dry_leather",
+        "passed": true,
+        "detail": "dry"
+      },
+      {
+        "name": "레시피 양수 dry_leather",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 dry_fur",
+        "passed": true,
+        "detail": "dry"
+      },
+      {
+        "name": "레시피 양수 dry_fur",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 dry_herb",
+        "passed": true,
+        "detail": "dry"
+      },
+      {
+        "name": "레시피 양수 dry_herb",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 dry_berry",
+        "passed": true,
+        "detail": "dry"
+      },
+      {
+        "name": "레시피 양수 dry_berry",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 strap",
+        "passed": true,
+        "detail": "leatherwork"
+      },
+      {
+        "name": "레시피 양수 strap",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 waterproof_leather",
+        "passed": true,
+        "detail": "leatherwork"
+      },
+      {
+        "name": "레시피 양수 waterproof_leather",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 bag",
+        "passed": true,
+        "detail": "leatherwork"
+      },
+      {
+        "name": "레시피 양수 bag",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 gloves",
+        "passed": true,
+        "detail": "leatherwork"
+      },
+      {
+        "name": "레시피 양수 gloves",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 boots",
+        "passed": true,
+        "detail": "leatherwork"
+      },
+      {
+        "name": "레시피 양수 boots",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 leather_chest",
+        "passed": true,
+        "detail": "leatherwork"
+      },
+      {
+        "name": "레시피 양수 leather_chest",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 leather_legs",
+        "passed": true,
+        "detail": "leatherwork"
+      },
+      {
+        "name": "레시피 양수 leather_legs",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 water_boots",
+        "passed": true,
+        "detail": "leatherwork"
+      },
+      {
+        "name": "레시피 양수 water_boots",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 shell_shield",
+        "passed": true,
+        "detail": "leatherwork"
+      },
+      {
+        "name": "레시피 양수 shell_shield",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 waterskin",
+        "passed": true,
+        "detail": "leatherwork"
+      },
+      {
+        "name": "레시피 양수 waterskin",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 leather_bedding",
+        "passed": true,
+        "detail": "leatherwork"
+      },
+      {
+        "name": "레시피 양수 leather_bedding",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 leather_rug",
+        "passed": true,
+        "detail": "leatherwork"
+      },
+      {
+        "name": "레시피 양수 leather_rug",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 thread",
+        "passed": true,
+        "detail": "spin"
+      },
+      {
+        "name": "레시피 양수 thread",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 wool_thread",
+        "passed": true,
+        "detail": "spin"
+      },
+      {
+        "name": "레시피 양수 wool_thread",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 tough_thread",
+        "passed": true,
+        "detail": "spin"
+      },
+      {
+        "name": "레시피 양수 tough_thread",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 cloth",
+        "passed": true,
+        "detail": "loom"
+      },
+      {
+        "name": "레시피 양수 cloth",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 warm_cloth",
+        "passed": true,
+        "detail": "loom"
+      },
+      {
+        "name": "레시피 양수 warm_cloth",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 tough_cloth",
+        "passed": true,
+        "detail": "loom"
+      },
+      {
+        "name": "레시피 양수 tough_cloth",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 waterproof_cloth",
+        "passed": true,
+        "detail": "loom"
+      },
+      {
+        "name": "레시피 양수 waterproof_cloth",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 cloth_chest",
+        "passed": true,
+        "detail": "sew"
+      },
+      {
+        "name": "레시피 양수 cloth_chest",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 cloth_legs",
+        "passed": true,
+        "detail": "sew"
+      },
+      {
+        "name": "레시피 양수 cloth_legs",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 bandage",
+        "passed": true,
+        "detail": "sew"
+      },
+      {
+        "name": "레시피 양수 bandage",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 apron",
+        "passed": true,
+        "detail": "sew"
+      },
+      {
+        "name": "레시피 양수 apron",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 rain_cape",
+        "passed": true,
+        "detail": "sew"
+      },
+      {
+        "name": "레시피 양수 rain_cape",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 fur_chest",
+        "passed": true,
+        "detail": "sew"
+      },
+      {
+        "name": "레시피 양수 fur_chest",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 fur_gloves",
+        "passed": true,
+        "detail": "sew"
+      },
+      {
+        "name": "레시피 양수 fur_gloves",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 fur_boots",
+        "passed": true,
+        "detail": "sew"
+      },
+      {
+        "name": "레시피 양수 fur_boots",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 blanket",
+        "passed": true,
+        "detail": "sew"
+      },
+      {
+        "name": "레시피 양수 blanket",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 warm_blanket",
+        "passed": true,
+        "detail": "sew"
+      },
+      {
+        "name": "레시피 양수 warm_blanket",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 large_bag",
+        "passed": true,
+        "detail": "sew"
+      },
+      {
+        "name": "레시피 양수 large_bag",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 fur_rug",
+        "passed": true,
+        "detail": "sew"
+      },
+      {
+        "name": "레시피 양수 fur_rug",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 curtain",
+        "passed": true,
+        "detail": "sew"
+      },
+      {
+        "name": "레시피 양수 curtain",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 charcoal",
+        "passed": true,
+        "detail": "charcoal_kiln"
+      },
+      {
+        "name": "레시피 양수 charcoal",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 iron",
+        "passed": true,
+        "detail": "furnace"
+      },
+      {
+        "name": "레시피 양수 iron",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 recycle_iron",
+        "passed": true,
+        "detail": "furnace"
+      },
+      {
+        "name": "레시피 양수 recycle_iron",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 nails",
+        "passed": true,
+        "detail": "anvil"
+      },
+      {
+        "name": "레시피 양수 nails",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 metal_part",
+        "passed": true,
+        "detail": "anvil"
+      },
+      {
+        "name": "레시피 양수 metal_part",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 rough_axe",
+        "passed": true,
+        "detail": "anvil"
+      },
+      {
+        "name": "레시피 양수 rough_axe",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 rough_pick",
+        "passed": true,
+        "detail": "anvil"
+      },
+      {
+        "name": "레시피 양수 rough_pick",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 rough_spear",
+        "passed": true,
+        "detail": "anvil"
+      },
+      {
+        "name": "레시피 양수 rough_spear",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 rough_knife",
+        "passed": true,
+        "detail": "anvil"
+      },
+      {
+        "name": "레시피 양수 rough_knife",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 iron_plate",
+        "passed": true,
+        "detail": "anvil"
+      },
+      {
+        "name": "레시피 양수 iron_plate",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 axe_head",
+        "passed": true,
+        "detail": "grind"
+      },
+      {
+        "name": "레시피 양수 axe_head",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 pick_head",
+        "passed": true,
+        "detail": "grind"
+      },
+      {
+        "name": "레시피 양수 pick_head",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 spear_head",
+        "passed": true,
+        "detail": "grind"
+      },
+      {
+        "name": "레시피 양수 spear_head",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 knife_blade",
+        "passed": true,
+        "detail": "grind"
+      },
+      {
+        "name": "레시피 양수 knife_blade",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 horn_blade",
+        "passed": true,
+        "detail": "grind"
+      },
+      {
+        "name": "레시피 양수 horn_blade",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 iron_axe",
+        "passed": true,
+        "detail": "general"
+      },
+      {
+        "name": "레시피 양수 iron_axe",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 iron_pick",
+        "passed": true,
+        "detail": "general"
+      },
+      {
+        "name": "레시피 양수 iron_pick",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 iron_spear",
+        "passed": true,
+        "detail": "general"
+      },
+      {
+        "name": "레시피 양수 iron_spear",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 iron_knife",
+        "passed": true,
+        "detail": "general"
+      },
+      {
+        "name": "레시피 양수 iron_knife",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 horn_spear",
+        "passed": true,
+        "detail": "general"
+      },
+      {
+        "name": "레시피 양수 horn_spear",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 hoe",
+        "passed": true,
+        "detail": "general"
+      },
+      {
+        "name": "레시피 양수 hoe",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 rod",
+        "passed": true,
+        "detail": "general"
+      },
+      {
+        "name": "레시피 양수 rod",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 better_rod",
+        "passed": true,
+        "detail": "general"
+      },
+      {
+        "name": "레시피 양수 better_rod",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 storage_jar",
+        "passed": true,
+        "detail": "general"
+      },
+      {
+        "name": "레시피 양수 storage_jar",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 lamp",
+        "passed": true,
+        "detail": "general"
+      },
+      {
+        "name": "레시피 양수 lamp",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 grain_bait",
+        "passed": true,
+        "detail": "general"
+      },
+      {
+        "name": "레시피 양수 grain_bait",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 shape_jar",
+        "passed": true,
+        "detail": "pottery"
+      },
+      {
+        "name": "레시피 양수 shape_jar",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 shape_pot",
+        "passed": true,
+        "detail": "pottery"
+      },
+      {
+        "name": "레시피 양수 shape_pot",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 shape_bowl",
+        "passed": true,
+        "detail": "pottery"
+      },
+      {
+        "name": "레시피 양수 shape_bowl",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 shape_flowerpot",
+        "passed": true,
+        "detail": "pottery"
+      },
+      {
+        "name": "레시피 양수 shape_flowerpot",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 fire_jar",
+        "passed": true,
+        "detail": "kiln"
+      },
+      {
+        "name": "레시피 양수 fire_jar",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 fire_pot",
+        "passed": true,
+        "detail": "kiln"
+      },
+      {
+        "name": "레시피 양수 fire_pot",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 fire_bowl",
+        "passed": true,
+        "detail": "kiln"
+      },
+      {
+        "name": "레시피 양수 fire_bowl",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 fire_flowerpot",
+        "passed": true,
+        "detail": "kiln"
+      },
+      {
+        "name": "레시피 양수 fire_flowerpot",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 brick",
+        "passed": true,
+        "detail": "kiln"
+      },
+      {
+        "name": "레시피 양수 brick",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 cook_meat",
+        "passed": true,
+        "detail": "fire"
+      },
+      {
+        "name": "레시피 양수 cook_meat",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 cook_fish",
+        "passed": true,
+        "detail": "fire"
+      },
+      {
+        "name": "레시피 양수 cook_fish",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 cook_veg",
+        "passed": true,
+        "detail": "fire"
+      },
+      {
+        "name": "레시피 양수 cook_veg",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 oil",
+        "passed": true,
+        "detail": "fire"
+      },
+      {
+        "name": "레시피 양수 oil",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 flour",
+        "passed": true,
+        "detail": "cook"
+      },
+      {
+        "name": "레시피 양수 flour",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 veg_soup",
+        "passed": true,
+        "detail": "cook"
+      },
+      {
+        "name": "레시피 양수 veg_soup",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 meat_stew",
+        "passed": true,
+        "detail": "cook"
+      },
+      {
+        "name": "레시피 양수 meat_stew",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 porridge",
+        "passed": true,
+        "detail": "cook"
+      },
+      {
+        "name": "레시피 양수 porridge",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 herb_tea",
+        "passed": true,
+        "detail": "cook"
+      },
+      {
+        "name": "레시피 양수 herb_tea",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 bread",
+        "passed": true,
+        "detail": "oven"
+      },
+      {
+        "name": "레시피 양수 bread",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 meat_pie",
+        "passed": true,
+        "detail": "oven"
+      },
+      {
+        "name": "레시피 양수 meat_pie",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 warm_stew",
+        "passed": true,
+        "detail": "oven"
+      },
+      {
+        "name": "레시피 양수 warm_stew",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 gather_lunch",
+        "passed": true,
+        "detail": "oven"
+      },
+      {
+        "name": "레시피 양수 gather_lunch",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 smoked_meat",
+        "passed": true,
+        "detail": "smoke"
+      },
+      {
+        "name": "레시피 양수 smoked_meat",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 smoked_fish",
+        "passed": true,
+        "detail": "smoke"
+      },
+      {
+        "name": "레시피 양수 smoked_fish",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 ration",
+        "passed": true,
+        "detail": "cook"
+      },
+      {
+        "name": "레시피 양수 ration",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 herb_powder",
+        "passed": true,
+        "detail": "herbal"
+      },
+      {
+        "name": "레시피 양수 herb_powder",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 salve",
+        "passed": true,
+        "detail": "herbal"
+      },
+      {
+        "name": "레시피 양수 salve",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 herb_bandage",
+        "passed": true,
+        "detail": "herbal"
+      },
+      {
+        "name": "레시피 양수 herb_bandage",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 antidote",
+        "passed": true,
+        "detail": "herbal"
+      },
+      {
+        "name": "레시피 양수 antidote",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 repellent",
+        "passed": true,
+        "detail": "herbal"
+      },
+      {
+        "name": "레시피 양수 repellent",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 heat_powder",
+        "passed": true,
+        "detail": "herbal"
+      },
+      {
+        "name": "레시피 양수 heat_powder",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 dye",
+        "passed": true,
+        "detail": "dye_vat"
+      },
+      {
+        "name": "레시피 양수 dye",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 berry_dye",
+        "passed": true,
+        "detail": "dye_vat"
+      },
+      {
+        "name": "레시피 양수 berry_dye",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 pigment",
+        "passed": true,
+        "detail": "dye_vat"
+      },
+      {
+        "name": "레시피 양수 pigment",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 dyed_cloth",
+        "passed": true,
+        "detail": "dye_vat"
+      },
+      {
+        "name": "레시피 양수 dyed_cloth",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 building_part",
+        "passed": true,
+        "detail": "construction"
+      },
+      {
+        "name": "레시피 양수 building_part",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 reinforced_building",
+        "passed": true,
+        "detail": "construction"
+      },
+      {
+        "name": "레시피 양수 reinforced_building",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 window",
+        "passed": true,
+        "detail": "construction"
+      },
+      {
+        "name": "레시피 양수 window",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 door",
+        "passed": true,
+        "detail": "construction"
+      },
+      {
+        "name": "레시피 양수 door",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 shade",
+        "passed": true,
+        "detail": "construction"
+      },
+      {
+        "name": "레시피 양수 shade",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 fence",
+        "passed": true,
+        "detail": "construction"
+      },
+      {
+        "name": "레시피 양수 fence",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 wood_channel",
+        "passed": true,
+        "detail": "construction"
+      },
+      {
+        "name": "레시피 양수 wood_channel",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 compost",
+        "passed": true,
+        "detail": "composter"
+      },
+      {
+        "name": "레시피 양수 compost",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 fertilizer",
+        "passed": true,
+        "detail": "composter"
+      },
+      {
+        "name": "레시피 양수 fertilizer",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 feed",
+        "passed": true,
+        "detail": "cook"
+      },
+      {
+        "name": "레시피 양수 feed",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 straw_bed",
+        "passed": true,
+        "detail": "build"
+      },
+      {
+        "name": "레시피 양수 straw_bed",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 wood_bed",
+        "passed": true,
+        "detail": "build"
+      },
+      {
+        "name": "레시피 양수 wood_bed",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 leather_bed",
+        "passed": true,
+        "detail": "build"
+      },
+      {
+        "name": "레시피 양수 leather_bed",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 rain_collector",
+        "passed": true,
+        "detail": "build"
+      },
+      {
+        "name": "레시피 양수 rain_collector",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 reservoir",
+        "passed": true,
+        "detail": "build"
+      },
+      {
+        "name": "레시피 양수 reservoir",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 preserve_chest",
+        "passed": true,
+        "detail": "build"
+      },
+      {
+        "name": "레시피 양수 preserve_chest",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 strong_metal",
+        "passed": true,
+        "detail": "hot_furnace"
+      },
+      {
+        "name": "레시피 양수 strong_metal",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 heat_plate",
+        "passed": true,
+        "detail": "hot_furnace"
+      },
+      {
+        "name": "레시피 양수 heat_plate",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 heat_outer",
+        "passed": true,
+        "detail": "leatherwork"
+      },
+      {
+        "name": "레시피 양수 heat_outer",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 heat_cape",
+        "passed": true,
+        "detail": "sew"
+      },
+      {
+        "name": "레시피 양수 heat_cape",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 shell_chest",
+        "passed": true,
+        "detail": "leatherwork"
+      },
+      {
+        "name": "레시피 양수 shell_chest",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 cool_chest",
+        "passed": true,
+        "detail": "build"
+      },
+      {
+        "name": "레시피 양수 cool_chest",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 stable_organ",
+        "passed": true,
+        "detail": "stabilizer"
+      },
+      {
+        "name": "레시피 양수 stable_organ",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 stable_energy",
+        "passed": true,
+        "detail": "stabilizer"
+      },
+      {
+        "name": "레시피 양수 stable_energy",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 refined_cool",
+        "passed": true,
+        "detail": "stabilizer"
+      },
+      {
+        "name": "레시피 양수 refined_cool",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 power_core",
+        "passed": true,
+        "detail": "power_bench"
+      },
+      {
+        "name": "레시피 양수 power_core",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 conductor",
+        "passed": true,
+        "detail": "power_bench"
+      },
+      {
+        "name": "레시피 양수 conductor",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 cool_module",
+        "passed": true,
+        "detail": "power_bench"
+      },
+      {
+        "name": "레시피 양수 cool_module",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 shock_module",
+        "passed": true,
+        "detail": "power_bench"
+      },
+      {
+        "name": "레시피 양수 shock_module",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 trim_shore_grazer",
+        "passed": true,
+        "detail": "prep"
+      },
+      {
+        "name": "레시피 양수 trim_shore_grazer",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 wet_shore_grazer",
+        "passed": true,
+        "detail": "tan"
+      },
+      {
+        "name": "레시피 양수 wet_shore_grazer",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 mat_shore_grazer",
+        "passed": true,
+        "detail": "dry"
+      },
+      {
+        "name": "레시피 양수 mat_shore_grazer",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 mat_shell_crab",
+        "passed": true,
+        "detail": "prep"
+      },
+      {
+        "name": "레시피 양수 mat_shell_crab",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 mat_tide_boar",
+        "passed": true,
+        "detail": "grind"
+      },
+      {
+        "name": "레시피 양수 mat_tide_boar",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 trim_grass_grazer",
+        "passed": true,
+        "detail": "prep"
+      },
+      {
+        "name": "레시피 양수 trim_grass_grazer",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 wet_grass_grazer",
+        "passed": true,
+        "detail": "tan"
+      },
+      {
+        "name": "레시피 양수 wet_grass_grazer",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 mat_grass_grazer",
+        "passed": true,
+        "detail": "dry"
+      },
+      {
+        "name": "레시피 양수 mat_grass_grazer",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 mat_reed_raptor",
+        "passed": true,
+        "detail": "prep"
+      },
+      {
+        "name": "레시피 양수 mat_reed_raptor",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 mat_meadow_horn",
+        "passed": true,
+        "detail": "grind"
+      },
+      {
+        "name": "레시피 양수 mat_meadow_horn",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 trim_stonejaw",
+        "passed": true,
+        "detail": "prep"
+      },
+      {
+        "name": "레시피 양수 trim_stonejaw",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 wet_stonejaw",
+        "passed": true,
+        "detail": "tan"
+      },
+      {
+        "name": "레시피 양수 wet_stonejaw",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 mat_stonejaw",
+        "passed": true,
+        "detail": "dry"
+      },
+      {
+        "name": "레시피 양수 mat_stonejaw",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 mat_moss_turtle",
+        "passed": true,
+        "detail": "prep"
+      },
+      {
+        "name": "레시피 양수 mat_moss_turtle",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 mat_forest_fang",
+        "passed": true,
+        "detail": "grind"
+      },
+      {
+        "name": "레시피 양수 mat_forest_fang",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 mat_poison_sac",
+        "passed": true,
+        "detail": "herbal"
+      },
+      {
+        "name": "레시피 양수 mat_poison_sac",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 trim_mudscale",
+        "passed": true,
+        "detail": "prep"
+      },
+      {
+        "name": "레시피 양수 trim_mudscale",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 wet_mudscale",
+        "passed": true,
+        "detail": "tan"
+      },
+      {
+        "name": "레시피 양수 wet_mudscale",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 mat_mudscale",
+        "passed": true,
+        "detail": "dry"
+      },
+      {
+        "name": "레시피 양수 mat_mudscale",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 mat_marsh_carapace",
+        "passed": true,
+        "detail": "prep"
+      },
+      {
+        "name": "레시피 양수 mat_marsh_carapace",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 mat_sand_jaw",
+        "passed": true,
+        "detail": "grind"
+      },
+      {
+        "name": "레시피 양수 mat_sand_jaw",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 trim_cliff_runner",
+        "passed": true,
+        "detail": "prep"
+      },
+      {
+        "name": "레시피 양수 trim_cliff_runner",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 wet_cliff_runner",
+        "passed": true,
+        "detail": "tan"
+      },
+      {
+        "name": "레시피 양수 wet_cliff_runner",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 mat_cliff_runner",
+        "passed": true,
+        "detail": "dry"
+      },
+      {
+        "name": "레시피 양수 mat_cliff_runner",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 mat_ironhorn",
+        "passed": true,
+        "detail": "prep"
+      },
+      {
+        "name": "레시피 양수 mat_ironhorn",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 trim_snow_deer",
+        "passed": true,
+        "detail": "prep"
+      },
+      {
+        "name": "레시피 양수 trim_snow_deer",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 wet_snow_deer",
+        "passed": true,
+        "detail": "tan"
+      },
+      {
+        "name": "레시피 양수 wet_snow_deer",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 mat_snow_deer",
+        "passed": true,
+        "detail": "dry"
+      },
+      {
+        "name": "레시피 양수 mat_snow_deer",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 mat_white_wolf",
+        "passed": true,
+        "detail": "prep"
+      },
+      {
+        "name": "레시피 양수 mat_white_wolf",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 trim_frost_bear",
+        "passed": true,
+        "detail": "prep"
+      },
+      {
+        "name": "레시피 양수 trim_frost_bear",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 wet_frost_bear",
+        "passed": true,
+        "detail": "tan"
+      },
+      {
+        "name": "레시피 양수 wet_frost_bear",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 mat_frost_bear",
+        "passed": true,
+        "detail": "dry"
+      },
+      {
+        "name": "레시피 양수 mat_frost_bear",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 mat_vine_leaper",
+        "passed": true,
+        "detail": "prep"
+      },
+      {
+        "name": "레시피 양수 mat_vine_leaper",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 mat_jade_scale",
+        "passed": true,
+        "detail": "prep"
+      },
+      {
+        "name": "레시피 양수 mat_jade_scale",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 trim_green_colossus",
+        "passed": true,
+        "detail": "prep"
+      },
+      {
+        "name": "레시피 양수 trim_green_colossus",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 wet_green_colossus",
+        "passed": true,
+        "detail": "tan"
+      },
+      {
+        "name": "레시피 양수 wet_green_colossus",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 mat_green_colossus",
+        "passed": true,
+        "detail": "dry"
+      },
+      {
+        "name": "레시피 양수 mat_green_colossus",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 mat_ice_shell",
+        "passed": true,
+        "detail": "prep"
+      },
+      {
+        "name": "레시피 양수 mat_ice_shell",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 mat_crystal_antler",
+        "passed": true,
+        "detail": "grind"
+      },
+      {
+        "name": "레시피 양수 mat_crystal_antler",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 trim_glacial_giant",
+        "passed": true,
+        "detail": "prep"
+      },
+      {
+        "name": "레시피 양수 trim_glacial_giant",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 wet_glacial_giant",
+        "passed": true,
+        "detail": "tan"
+      },
+      {
+        "name": "레시피 양수 wet_glacial_giant",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 mat_glacial_giant",
+        "passed": true,
+        "detail": "dry"
+      },
+      {
+        "name": "레시피 양수 mat_glacial_giant",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 trim_ember_hide",
+        "passed": true,
+        "detail": "prep"
+      },
+      {
+        "name": "레시피 양수 trim_ember_hide",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 wet_ember_hide",
+        "passed": true,
+        "detail": "tan"
+      },
+      {
+        "name": "레시피 양수 wet_ember_hide",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 mat_ember_hide",
+        "passed": true,
+        "detail": "dry"
+      },
+      {
+        "name": "레시피 양수 mat_ember_hide",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 mat_lava_shell",
+        "passed": true,
+        "detail": "prep"
+      },
+      {
+        "name": "레시피 양수 mat_lava_shell",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 mat_volcanic_predator",
+        "passed": true,
+        "detail": "stabilizer"
+      },
+      {
+        "name": "레시피 양수 mat_volcanic_predator",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 mat_thunderwolf",
+        "passed": true,
+        "detail": "stabilizer"
+      },
+      {
+        "name": "레시피 양수 mat_thunderwolf",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 mat_ruin_shell",
+        "passed": true,
+        "detail": "prep"
+      },
+      {
+        "name": "레시피 양수 mat_ruin_shell",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 mat_boundary_warden",
+        "passed": true,
+        "detail": "stabilizer"
+      },
+      {
+        "name": "레시피 양수 mat_boundary_warden",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 trim_heat_shell",
+        "passed": true,
+        "detail": "prep"
+      },
+      {
+        "name": "레시피 양수 trim_heat_shell",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 trim_alpine",
+        "passed": true,
+        "detail": "prep"
+      },
+      {
+        "name": "레시피 양수 trim_alpine",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 tan_alpine",
+        "passed": true,
+        "detail": "tan"
+      },
+      {
+        "name": "레시피 양수 tan_alpine",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 dry_alpine",
+        "passed": true,
+        "detail": "dry"
+      },
+      {
+        "name": "레시피 양수 dry_alpine",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 alpine_chest",
+        "passed": true,
+        "detail": "sew"
+      },
+      {
+        "name": "레시피 양수 alpine_chest",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_shore_grazer_spear",
+        "passed": true,
+        "detail": "bench"
+      },
+      {
+        "name": "레시피 양수 make_gear_shore_grazer_spear",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_shore_grazer_chest",
+        "passed": true,
+        "detail": "leatherwork"
+      },
+      {
+        "name": "레시피 양수 make_gear_shore_grazer_chest",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_shell_crab_shield",
+        "passed": true,
+        "detail": "bench"
+      },
+      {
+        "name": "레시피 양수 make_gear_shell_crab_shield",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_shell_crab_gloves",
+        "passed": true,
+        "detail": "leatherwork"
+      },
+      {
+        "name": "레시피 양수 make_gear_shell_crab_gloves",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_tide_boar_spear",
+        "passed": true,
+        "detail": "bench"
+      },
+      {
+        "name": "레시피 양수 make_gear_tide_boar_spear",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_tide_boar_boots",
+        "passed": true,
+        "detail": "leatherwork"
+      },
+      {
+        "name": "레시피 양수 make_gear_tide_boar_boots",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_grass_grazer_bow",
+        "passed": true,
+        "detail": "general"
+      },
+      {
+        "name": "레시피 양수 make_gear_grass_grazer_bow",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_grass_grazer_chest",
+        "passed": true,
+        "detail": "leatherwork"
+      },
+      {
+        "name": "레시피 양수 make_gear_grass_grazer_chest",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_reed_raptor_sword",
+        "passed": true,
+        "detail": "general"
+      },
+      {
+        "name": "레시피 양수 make_gear_reed_raptor_sword",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_reed_raptor_boots",
+        "passed": true,
+        "detail": "leatherwork"
+      },
+      {
+        "name": "레시피 양수 make_gear_reed_raptor_boots",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_meadow_horn_spear",
+        "passed": true,
+        "detail": "general"
+      },
+      {
+        "name": "레시피 양수 make_gear_meadow_horn_spear",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_meadow_horn_chest",
+        "passed": true,
+        "detail": "leatherwork"
+      },
+      {
+        "name": "레시피 양수 make_gear_meadow_horn_chest",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_stonejaw_spear",
+        "passed": true,
+        "detail": "general"
+      },
+      {
+        "name": "레시피 양수 make_gear_stonejaw_spear",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_stonejaw_chest",
+        "passed": true,
+        "detail": "leatherwork"
+      },
+      {
+        "name": "레시피 양수 make_gear_stonejaw_chest",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_moss_turtle_shield",
+        "passed": true,
+        "detail": "leatherwork"
+      },
+      {
+        "name": "레시피 양수 make_gear_moss_turtle_shield",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_moss_turtle_gloves",
+        "passed": true,
+        "detail": "leatherwork"
+      },
+      {
+        "name": "레시피 양수 make_gear_moss_turtle_gloves",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_forest_fang_sword",
+        "passed": true,
+        "detail": "general"
+      },
+      {
+        "name": "레시피 양수 make_gear_forest_fang_sword",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_forest_fang_boots",
+        "passed": true,
+        "detail": "leatherwork"
+      },
+      {
+        "name": "레시피 양수 make_gear_forest_fang_boots",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_poison_sac_spear",
+        "passed": true,
+        "detail": "general"
+      },
+      {
+        "name": "레시피 양수 make_gear_poison_sac_spear",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_poison_sac_gloves",
+        "passed": true,
+        "detail": "leatherwork"
+      },
+      {
+        "name": "레시피 양수 make_gear_poison_sac_gloves",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_mudscale_bow",
+        "passed": true,
+        "detail": "general"
+      },
+      {
+        "name": "레시피 양수 make_gear_mudscale_bow",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_mudscale_boots",
+        "passed": true,
+        "detail": "sew"
+      },
+      {
+        "name": "레시피 양수 make_gear_mudscale_boots",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_marsh_carapace_shield",
+        "passed": true,
+        "detail": "leatherwork"
+      },
+      {
+        "name": "레시피 양수 make_gear_marsh_carapace_shield",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_marsh_carapace_chest",
+        "passed": true,
+        "detail": "leatherwork"
+      },
+      {
+        "name": "레시피 양수 make_gear_marsh_carapace_chest",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_sand_jaw_sword",
+        "passed": true,
+        "detail": "general"
+      },
+      {
+        "name": "레시피 양수 make_gear_sand_jaw_sword",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_sand_jaw_boots",
+        "passed": true,
+        "detail": "sew"
+      },
+      {
+        "name": "레시피 양수 make_gear_sand_jaw_boots",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_cliff_runner_bow",
+        "passed": true,
+        "detail": "general"
+      },
+      {
+        "name": "레시피 양수 make_gear_cliff_runner_bow",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_cliff_runner_gloves",
+        "passed": true,
+        "detail": "leatherwork"
+      },
+      {
+        "name": "레시피 양수 make_gear_cliff_runner_gloves",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_ironhorn_spear",
+        "passed": true,
+        "detail": "general"
+      },
+      {
+        "name": "레시피 양수 make_gear_ironhorn_spear",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_ironhorn_chest",
+        "passed": true,
+        "detail": "leatherwork"
+      },
+      {
+        "name": "레시피 양수 make_gear_ironhorn_chest",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_snow_deer_bow",
+        "passed": true,
+        "detail": "general"
+      },
+      {
+        "name": "레시피 양수 make_gear_snow_deer_bow",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_snow_deer_chest",
+        "passed": true,
+        "detail": "sew"
+      },
+      {
+        "name": "레시피 양수 make_gear_snow_deer_chest",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_white_wolf_sword",
+        "passed": true,
+        "detail": "general"
+      },
+      {
+        "name": "레시피 양수 make_gear_white_wolf_sword",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_white_wolf_gloves",
+        "passed": true,
+        "detail": "sew"
+      },
+      {
+        "name": "레시피 양수 make_gear_white_wolf_gloves",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_frost_bear_shield",
+        "passed": true,
+        "detail": "leatherwork"
+      },
+      {
+        "name": "레시피 양수 make_gear_frost_bear_shield",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_frost_bear_boots",
+        "passed": true,
+        "detail": "sew"
+      },
+      {
+        "name": "레시피 양수 make_gear_frost_bear_boots",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_vine_leaper_bow",
+        "passed": true,
+        "detail": "general"
+      },
+      {
+        "name": "레시피 양수 make_gear_vine_leaper_bow",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_vine_leaper_boots",
+        "passed": true,
+        "detail": "sew"
+      },
+      {
+        "name": "레시피 양수 make_gear_vine_leaper_boots",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_jade_scale_sword",
+        "passed": true,
+        "detail": "general"
+      },
+      {
+        "name": "레시피 양수 make_gear_jade_scale_sword",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_jade_scale_chest",
+        "passed": true,
+        "detail": "leatherwork"
+      },
+      {
+        "name": "레시피 양수 make_gear_jade_scale_chest",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_green_colossus_shield",
+        "passed": true,
+        "detail": "leatherwork"
+      },
+      {
+        "name": "레시피 양수 make_gear_green_colossus_shield",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_green_colossus_chest",
+        "passed": true,
+        "detail": "leatherwork"
+      },
+      {
+        "name": "레시피 양수 make_gear_green_colossus_chest",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_ice_shell_shield",
+        "passed": true,
+        "detail": "leatherwork"
+      },
+      {
+        "name": "레시피 양수 make_gear_ice_shell_shield",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_ice_shell_chest",
+        "passed": true,
+        "detail": "sew"
+      },
+      {
+        "name": "레시피 양수 make_gear_ice_shell_chest",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_crystal_antler_spear",
+        "passed": true,
+        "detail": "general"
+      },
+      {
+        "name": "레시피 양수 make_gear_crystal_antler_spear",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_crystal_antler_gloves",
+        "passed": true,
+        "detail": "sew"
+      },
+      {
+        "name": "레시피 양수 make_gear_crystal_antler_gloves",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_glacial_giant_spear",
+        "passed": true,
+        "detail": "general"
+      },
+      {
+        "name": "레시피 양수 make_gear_glacial_giant_spear",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_glacial_giant_chest",
+        "passed": true,
+        "detail": "sew"
+      },
+      {
+        "name": "레시피 양수 make_gear_glacial_giant_chest",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_ember_hide_sword",
+        "passed": true,
+        "detail": "general"
+      },
+      {
+        "name": "레시피 양수 make_gear_ember_hide_sword",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_ember_hide_boots",
+        "passed": true,
+        "detail": "sew"
+      },
+      {
+        "name": "레시피 양수 make_gear_ember_hide_boots",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_lava_shell_shield",
+        "passed": true,
+        "detail": "leatherwork"
+      },
+      {
+        "name": "레시피 양수 make_gear_lava_shell_shield",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_lava_shell_chest",
+        "passed": true,
+        "detail": "sew"
+      },
+      {
+        "name": "레시피 양수 make_gear_lava_shell_chest",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_volcanic_predator_spear",
+        "passed": true,
+        "detail": "general"
+      },
+      {
+        "name": "레시피 양수 make_gear_volcanic_predator_spear",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_volcanic_predator_gloves",
+        "passed": true,
+        "detail": "sew"
+      },
+      {
+        "name": "레시피 양수 make_gear_volcanic_predator_gloves",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_thunderwolf_sword",
+        "passed": true,
+        "detail": "general"
+      },
+      {
+        "name": "레시피 양수 make_gear_thunderwolf_sword",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_thunderwolf_boots",
+        "passed": true,
+        "detail": "sew"
+      },
+      {
+        "name": "레시피 양수 make_gear_thunderwolf_boots",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_ruin_shell_shield",
+        "passed": true,
+        "detail": "leatherwork"
+      },
+      {
+        "name": "레시피 양수 make_gear_ruin_shell_shield",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_ruin_shell_chest",
+        "passed": true,
+        "detail": "sew"
+      },
+      {
+        "name": "레시피 양수 make_gear_ruin_shell_chest",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_boundary_warden_spear",
+        "passed": true,
+        "detail": "general"
+      },
+      {
+        "name": "레시피 양수 make_gear_boundary_warden_spear",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 make_gear_boundary_warden_chest",
+        "passed": true,
+        "detail": "sew"
+      },
+      {
+        "name": "레시피 양수 make_gear_boundary_warden_chest",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 bone_arrow",
+        "passed": true,
+        "detail": "bench"
+      },
+      {
+        "name": "레시피 양수 bone_arrow",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 egg_meal",
+        "passed": true,
+        "detail": "cook"
+      },
+      {
+        "name": "레시피 양수 egg_meal",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "레시피 참조 milk_porridge",
+        "passed": true,
+        "detail": "cook"
+      },
+      {
+        "name": "레시피 양수 milk_porridge",
+        "passed": true,
+        "detail": "입출력·시간·연료·물"
+      },
+      {
+        "name": "설비 참조 hand",
+        "passed": true,
+        "detail": "손 제작"
+      },
+      {
+        "name": "설비 참조 build",
+        "passed": true,
+        "detail": "건축 메뉴"
+      },
+      {
+        "name": "설비 참조 bench",
+        "passed": true,
+        "detail": "간이 작업대"
+      },
+      {
+        "name": "설비 참조 general",
+        "passed": true,
+        "detail": "범용 작업대"
+      },
+      {
+        "name": "설비 참조 wood",
+        "passed": true,
+        "detail": "목공대"
+      },
+      {
+        "name": "설비 참조 prep",
+        "passed": true,
+        "detail": "가죽 전처리대"
+      },
+      {
+        "name": "설비 참조 tan",
+        "passed": true,
+        "detail": "무두질 통"
+      },
+      {
+        "name": "설비 참조 dry",
+        "passed": true,
+        "detail": "건조대"
+      },
+      {
+        "name": "설비 참조 leatherwork",
+        "passed": true,
+        "detail": "가죽 작업대"
+      },
+      {
+        "name": "설비 참조 spin",
+        "passed": true,
+        "detail": "물레"
+      },
+      {
+        "name": "설비 참조 loom",
+        "passed": true,
+        "detail": "직조기"
+      },
+      {
+        "name": "설비 참조 sew",
+        "passed": true,
+        "detail": "재봉 작업대"
+      },
+      {
+        "name": "설비 참조 charcoal_kiln",
+        "passed": true,
+        "detail": "숯가마"
+      },
+      {
+        "name": "설비 참조 furnace",
+        "passed": true,
+        "detail": "제련로"
+      },
+      {
+        "name": "설비 참조 anvil",
+        "passed": true,
+        "detail": "모루 작업대"
+      },
+      {
+        "name": "설비 참조 grind",
+        "passed": true,
+        "detail": "연마대"
+      },
+      {
+        "name": "설비 참조 pottery",
+        "passed": true,
+        "detail": "도기 성형대"
+      },
+      {
+        "name": "설비 참조 kiln",
+        "passed": true,
+        "detail": "도기 가마"
+      },
+      {
+        "name": "설비 참조 fire",
+        "passed": true,
+        "detail": "모닥불"
+      },
+      {
+        "name": "설비 참조 cook",
+        "passed": true,
+        "detail": "조리대"
+      },
+      {
+        "name": "설비 참조 oven",
+        "passed": true,
+        "detail": "조리 화덕"
+      },
+      {
+        "name": "설비 참조 smoke",
+        "passed": true,
+        "detail": "훈연장"
+      },
+      {
+        "name": "설비 참조 herbal",
+        "passed": true,
+        "detail": "약재 작업대"
+      },
+      {
+        "name": "설비 참조 dye_vat",
+        "passed": true,
+        "detail": "염색 통"
+      },
+      {
+        "name": "설비 참조 construction",
+        "passed": true,
+        "detail": "건설 작업대"
+      },
+      {
+        "name": "설비 참조 repair",
+        "passed": true,
+        "detail": "정비대"
+      },
+      {
+        "name": "설비 참조 composter",
+        "passed": true,
+        "detail": "퇴비함"
+      },
+      {
+        "name": "설비 참조 hot_furnace",
+        "passed": true,
+        "detail": "고온로"
+      },
+      {
+        "name": "설비 참조 research",
+        "passed": true,
+        "detail": "연구대"
+      },
+      {
+        "name": "설비 참조 stabilizer",
+        "passed": true,
+        "detail": "기관 안정화 장치"
+      },
+      {
+        "name": "설비 참조 power_bench",
+        "passed": true,
+        "detail": "동력 작업대"
+      },
+      {
+        "name": "제작 해금 cord_hand",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 knife_hand",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 hammer_hand",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 bandage_hand",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 board_rough",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 handle_rough",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 bark_powder",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 bone_powder",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 stone_axe",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 stone_pick",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 stone_spear",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 chest",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 board",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 handle",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 hard_board",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 hard_handle",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 wood_part",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 adhesive",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 bowl_wood",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 chair",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 table",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 wood_shield",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 shelf",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 large_chest",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 wall_horn",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 trim_hide",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 trim_fur",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 sinew_cord",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 trim_shell",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 trim_horn",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 meat_bait",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 tan",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 tan_fur",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 dry_leather",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 dry_fur",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 dry_herb",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 dry_berry",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 strap",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 waterproof_leather",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 bag",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 gloves",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 boots",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 leather_chest",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 leather_legs",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 water_boots",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 shell_shield",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 waterskin",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 leather_bedding",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 leather_rug",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 thread",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 wool_thread",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 tough_thread",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 cloth",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 warm_cloth",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 tough_cloth",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 waterproof_cloth",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 cloth_chest",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 cloth_legs",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 bandage",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 apron",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 rain_cape",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 fur_chest",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 fur_gloves",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 fur_boots",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 blanket",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 warm_blanket",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 large_bag",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 fur_rug",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 curtain",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 charcoal",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 iron",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 recycle_iron",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 nails",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 metal_part",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 rough_axe",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 rough_pick",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 rough_spear",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 rough_knife",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 iron_plate",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 axe_head",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 pick_head",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 spear_head",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 knife_blade",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 horn_blade",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 iron_axe",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 iron_pick",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 iron_spear",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 iron_knife",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 horn_spear",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 hoe",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 rod",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 better_rod",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 storage_jar",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 lamp",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 grain_bait",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 shape_jar",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 shape_pot",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 shape_bowl",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 shape_flowerpot",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 fire_jar",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 fire_pot",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 fire_bowl",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 fire_flowerpot",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 brick",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 cook_meat",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 cook_fish",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 cook_veg",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 oil",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 flour",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 veg_soup",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 meat_stew",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 porridge",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 herb_tea",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 bread",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 meat_pie",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 warm_stew",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 gather_lunch",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 smoked_meat",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 smoked_fish",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 ration",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 herb_powder",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 salve",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 herb_bandage",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 antidote",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 repellent",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 heat_powder",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 dye",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 berry_dye",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 pigment",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 dyed_cloth",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 building_part",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 reinforced_building",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 window",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 door",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 shade",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 fence",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 wood_channel",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 compost",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 fertilizer",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 feed",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 straw_bed",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 wood_bed",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 leather_bed",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 rain_collector",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 reservoir",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 preserve_chest",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 strong_metal",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 heat_plate",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 heat_outer",
+        "passed": true,
+        "detail": "expert_workshop"
+      },
+      {
+        "name": "제작 해금 heat_cape",
+        "passed": true,
+        "detail": "expert_workshop"
+      },
+      {
+        "name": "제작 해금 shell_chest",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 cool_chest",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 stable_organ",
+        "passed": true,
+        "detail": "ancient_basics"
+      },
+      {
+        "name": "제작 해금 stable_energy",
+        "passed": true,
+        "detail": "ancient_basics"
+      },
+      {
+        "name": "제작 해금 refined_cool",
+        "passed": true,
+        "detail": "ancient_basics"
+      },
+      {
+        "name": "제작 해금 power_core",
+        "passed": true,
+        "detail": "ancient_basics"
+      },
+      {
+        "name": "제작 해금 conductor",
+        "passed": true,
+        "detail": "ancient_basics"
+      },
+      {
+        "name": "제작 해금 cool_module",
+        "passed": true,
+        "detail": "ancient_basics"
+      },
+      {
+        "name": "제작 해금 shock_module",
+        "passed": true,
+        "detail": "ancient_basics"
+      },
+      {
+        "name": "제작 해금 trim_shore_grazer",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 wet_shore_grazer",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 mat_shore_grazer",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 mat_shell_crab",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 mat_tide_boar",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 trim_grass_grazer",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 wet_grass_grazer",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 mat_grass_grazer",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 mat_reed_raptor",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 mat_meadow_horn",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 trim_stonejaw",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 wet_stonejaw",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 mat_stonejaw",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 mat_moss_turtle",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 mat_forest_fang",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 mat_poison_sac",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 trim_mudscale",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 wet_mudscale",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 mat_mudscale",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 mat_marsh_carapace",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 mat_sand_jaw",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 trim_cliff_runner",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 wet_cliff_runner",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 mat_cliff_runner",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 mat_ironhorn",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 trim_snow_deer",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 wet_snow_deer",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 mat_snow_deer",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 mat_white_wolf",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 trim_frost_bear",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 wet_frost_bear",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 mat_frost_bear",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 mat_vine_leaper",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 mat_jade_scale",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 trim_green_colossus",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 wet_green_colossus",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 mat_green_colossus",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 mat_ice_shell",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 mat_crystal_antler",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 trim_glacial_giant",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 wet_glacial_giant",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 mat_glacial_giant",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 trim_ember_hide",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 wet_ember_hide",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 mat_ember_hide",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 mat_lava_shell",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 mat_volcanic_predator",
+        "passed": true,
+        "detail": "ancient_basics"
+      },
+      {
+        "name": "제작 해금 mat_thunderwolf",
+        "passed": true,
+        "detail": "ancient_basics"
+      },
+      {
+        "name": "제작 해금 mat_ruin_shell",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 mat_boundary_warden",
+        "passed": true,
+        "detail": "ancient_basics"
+      },
+      {
+        "name": "제작 해금 trim_heat_shell",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 trim_alpine",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 tan_alpine",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 dry_alpine",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 alpine_chest",
+        "passed": true,
+        "detail": "expert_workshop"
+      },
+      {
+        "name": "제작 해금 make_gear_shore_grazer_spear",
+        "passed": true,
+        "detail": "regional_T0"
+      },
+      {
+        "name": "제작 해금 make_gear_shore_grazer_chest",
+        "passed": true,
+        "detail": "regional_T0"
+      },
+      {
+        "name": "제작 해금 make_gear_shell_crab_shield",
+        "passed": true,
+        "detail": "regional_T0"
+      },
+      {
+        "name": "제작 해금 make_gear_shell_crab_gloves",
+        "passed": true,
+        "detail": "regional_T0"
+      },
+      {
+        "name": "제작 해금 make_gear_tide_boar_spear",
+        "passed": true,
+        "detail": "regional_T0"
+      },
+      {
+        "name": "제작 해금 make_gear_tide_boar_boots",
+        "passed": true,
+        "detail": "regional_T0"
+      },
+      {
+        "name": "제작 해금 make_gear_grass_grazer_bow",
+        "passed": true,
+        "detail": "regional_B1"
+      },
+      {
+        "name": "제작 해금 make_gear_grass_grazer_chest",
+        "passed": true,
+        "detail": "regional_B1"
+      },
+      {
+        "name": "제작 해금 make_gear_reed_raptor_sword",
+        "passed": true,
+        "detail": "regional_B1"
+      },
+      {
+        "name": "제작 해금 make_gear_reed_raptor_boots",
+        "passed": true,
+        "detail": "regional_B1"
+      },
+      {
+        "name": "제작 해금 make_gear_meadow_horn_spear",
+        "passed": true,
+        "detail": "regional_B1"
+      },
+      {
+        "name": "제작 해금 make_gear_meadow_horn_chest",
+        "passed": true,
+        "detail": "regional_B1"
+      },
+      {
+        "name": "제작 해금 make_gear_stonejaw_spear",
+        "passed": true,
+        "detail": "regional_B2"
+      },
+      {
+        "name": "제작 해금 make_gear_stonejaw_chest",
+        "passed": true,
+        "detail": "regional_B2"
+      },
+      {
+        "name": "제작 해금 make_gear_moss_turtle_shield",
+        "passed": true,
+        "detail": "regional_B2"
+      },
+      {
+        "name": "제작 해금 make_gear_moss_turtle_gloves",
+        "passed": true,
+        "detail": "regional_B2"
+      },
+      {
+        "name": "제작 해금 make_gear_forest_fang_sword",
+        "passed": true,
+        "detail": "regional_B2"
+      },
+      {
+        "name": "제작 해금 make_gear_forest_fang_boots",
+        "passed": true,
+        "detail": "regional_B2"
+      },
+      {
+        "name": "제작 해금 make_gear_poison_sac_spear",
+        "passed": true,
+        "detail": "regional_M1"
+      },
+      {
+        "name": "제작 해금 make_gear_poison_sac_gloves",
+        "passed": true,
+        "detail": "regional_M1"
+      },
+      {
+        "name": "제작 해금 make_gear_mudscale_bow",
+        "passed": true,
+        "detail": "regional_M1"
+      },
+      {
+        "name": "제작 해금 make_gear_mudscale_boots",
+        "passed": true,
+        "detail": "regional_M1"
+      },
+      {
+        "name": "제작 해금 make_gear_marsh_carapace_shield",
+        "passed": true,
+        "detail": "regional_M1"
+      },
+      {
+        "name": "제작 해금 make_gear_marsh_carapace_chest",
+        "passed": true,
+        "detail": "regional_M1"
+      },
+      {
+        "name": "제작 해금 make_gear_sand_jaw_sword",
+        "passed": true,
+        "detail": "regional_M2"
+      },
+      {
+        "name": "제작 해금 make_gear_sand_jaw_boots",
+        "passed": true,
+        "detail": "regional_M2"
+      },
+      {
+        "name": "제작 해금 make_gear_cliff_runner_bow",
+        "passed": true,
+        "detail": "regional_M2"
+      },
+      {
+        "name": "제작 해금 make_gear_cliff_runner_gloves",
+        "passed": true,
+        "detail": "regional_M2"
+      },
+      {
+        "name": "제작 해금 make_gear_ironhorn_spear",
+        "passed": true,
+        "detail": "regional_M2"
+      },
+      {
+        "name": "제작 해금 make_gear_ironhorn_chest",
+        "passed": true,
+        "detail": "regional_M2"
+      },
+      {
+        "name": "제작 해금 make_gear_snow_deer_bow",
+        "passed": true,
+        "detail": "regional_M3"
+      },
+      {
+        "name": "제작 해금 make_gear_snow_deer_chest",
+        "passed": true,
+        "detail": "regional_M3"
+      },
+      {
+        "name": "제작 해금 make_gear_white_wolf_sword",
+        "passed": true,
+        "detail": "regional_M3"
+      },
+      {
+        "name": "제작 해금 make_gear_white_wolf_gloves",
+        "passed": true,
+        "detail": "regional_M3"
+      },
+      {
+        "name": "제작 해금 make_gear_frost_bear_shield",
+        "passed": true,
+        "detail": "regional_M3"
+      },
+      {
+        "name": "제작 해금 make_gear_frost_bear_boots",
+        "passed": true,
+        "detail": "regional_M3"
+      },
+      {
+        "name": "제작 해금 make_gear_vine_leaper_bow",
+        "passed": true,
+        "detail": "regional_M4"
+      },
+      {
+        "name": "제작 해금 make_gear_vine_leaper_boots",
+        "passed": true,
+        "detail": "regional_M4"
+      },
+      {
+        "name": "제작 해금 make_gear_jade_scale_sword",
+        "passed": true,
+        "detail": "regional_M4"
+      },
+      {
+        "name": "제작 해금 make_gear_jade_scale_chest",
+        "passed": true,
+        "detail": "regional_M4"
+      },
+      {
+        "name": "제작 해금 make_gear_green_colossus_shield",
+        "passed": true,
+        "detail": "regional_M4"
+      },
+      {
+        "name": "제작 해금 make_gear_green_colossus_chest",
+        "passed": true,
+        "detail": "regional_M4"
+      },
+      {
+        "name": "제작 해금 make_gear_ice_shell_shield",
+        "passed": true,
+        "detail": "regional_H1"
+      },
+      {
+        "name": "제작 해금 make_gear_ice_shell_chest",
+        "passed": true,
+        "detail": "regional_H1"
+      },
+      {
+        "name": "제작 해금 make_gear_crystal_antler_spear",
+        "passed": true,
+        "detail": "regional_H1"
+      },
+      {
+        "name": "제작 해금 make_gear_crystal_antler_gloves",
+        "passed": true,
+        "detail": "regional_H1"
+      },
+      {
+        "name": "제작 해금 make_gear_glacial_giant_spear",
+        "passed": true,
+        "detail": "regional_H1"
+      },
+      {
+        "name": "제작 해금 make_gear_glacial_giant_chest",
+        "passed": true,
+        "detail": "regional_H1"
+      },
+      {
+        "name": "제작 해금 make_gear_ember_hide_sword",
+        "passed": true,
+        "detail": "regional_H2"
+      },
+      {
+        "name": "제작 해금 make_gear_ember_hide_boots",
+        "passed": true,
+        "detail": "regional_H2"
+      },
+      {
+        "name": "제작 해금 make_gear_lava_shell_shield",
+        "passed": true,
+        "detail": "regional_H2"
+      },
+      {
+        "name": "제작 해금 make_gear_lava_shell_chest",
+        "passed": true,
+        "detail": "regional_H2"
+      },
+      {
+        "name": "제작 해금 make_gear_volcanic_predator_spear",
+        "passed": true,
+        "detail": "regional_H2"
+      },
+      {
+        "name": "제작 해금 make_gear_volcanic_predator_gloves",
+        "passed": true,
+        "detail": "regional_H2"
+      },
+      {
+        "name": "제작 해금 make_gear_thunderwolf_sword",
+        "passed": true,
+        "detail": "regional_H3"
+      },
+      {
+        "name": "제작 해금 make_gear_thunderwolf_boots",
+        "passed": true,
+        "detail": "regional_H3"
+      },
+      {
+        "name": "제작 해금 make_gear_ruin_shell_shield",
+        "passed": true,
+        "detail": "regional_H3"
+      },
+      {
+        "name": "제작 해금 make_gear_ruin_shell_chest",
+        "passed": true,
+        "detail": "regional_H3"
+      },
+      {
+        "name": "제작 해금 make_gear_boundary_warden_spear",
+        "passed": true,
+        "detail": "regional_H3"
+      },
+      {
+        "name": "제작 해금 make_gear_boundary_warden_chest",
+        "passed": true,
+        "detail": "regional_H3"
+      },
+      {
+        "name": "제작 해금 bone_arrow",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 egg_meal",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "제작 해금 milk_porridge",
+        "passed": true,
+        "detail": "known"
+      },
+      {
+        "name": "품질 슬롯 knife_hand",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "선택 결합재 knife_hand",
+        "passed": true,
+        "detail": "기본 조합과 대안을 이중 소비하지 않음"
+      },
+      {
+        "name": "품질 슬롯 hammer_hand",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "선택 결합재 hammer_hand",
+        "passed": true,
+        "detail": "기본 조합과 대안을 이중 소비하지 않음"
+      },
+      {
+        "name": "품질 슬롯 stone_axe",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "선택 결합재 stone_axe",
+        "passed": true,
+        "detail": "기본 조합과 대안을 이중 소비하지 않음"
+      },
+      {
+        "name": "품질 슬롯 stone_pick",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "선택 결합재 stone_pick",
+        "passed": true,
+        "detail": "기본 조합과 대안을 이중 소비하지 않음"
+      },
+      {
+        "name": "품질 슬롯 stone_spear",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "선택 결합재 stone_spear",
+        "passed": true,
+        "detail": "기본 조합과 대안을 이중 소비하지 않음"
+      },
+      {
+        "name": "품질 슬롯 wood_shield",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "선택 결합재 wood_shield",
+        "passed": true,
+        "detail": "기본 조합과 대안을 이중 소비하지 않음"
+      },
+      {
+        "name": "품질 슬롯 bag",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "선택 결합재 bag",
+        "passed": true,
+        "detail": "기본 조합과 대안을 이중 소비하지 않음"
+      },
+      {
+        "name": "품질 슬롯 gloves",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "선택 결합재 gloves",
+        "passed": true,
+        "detail": "기본 조합과 대안을 이중 소비하지 않음"
+      },
+      {
+        "name": "품질 슬롯 boots",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "품질 슬롯 leather_chest",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "선택 결합재 leather_chest",
+        "passed": true,
+        "detail": "기본 조합과 대안을 이중 소비하지 않음"
+      },
+      {
+        "name": "품질 슬롯 leather_legs",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "선택 결합재 leather_legs",
+        "passed": true,
+        "detail": "기본 조합과 대안을 이중 소비하지 않음"
+      },
+      {
+        "name": "품질 슬롯 water_boots",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "품질 슬롯 shell_shield",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "선택 결합재 shell_shield",
+        "passed": true,
+        "detail": "기본 조합과 대안을 이중 소비하지 않음"
+      },
+      {
+        "name": "품질 슬롯 waterskin",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "선택 결합재 waterskin",
+        "passed": true,
+        "detail": "기본 조합과 대안을 이중 소비하지 않음"
+      },
+      {
+        "name": "품질 슬롯 cloth_chest",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "품질 슬롯 cloth_legs",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "품질 슬롯 apron",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "품질 슬롯 rain_cape",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "선택 결합재 rain_cape",
+        "passed": true,
+        "detail": "기본 조합과 대안을 이중 소비하지 않음"
+      },
+      {
+        "name": "품질 슬롯 fur_chest",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "품질 슬롯 fur_gloves",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "품질 슬롯 fur_boots",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "품질 슬롯 large_bag",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "선택 결합재 large_bag",
+        "passed": true,
+        "detail": "기본 조합과 대안을 이중 소비하지 않음"
+      },
+      {
+        "name": "품질 슬롯 iron_axe",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "선택 결합재 iron_axe",
+        "passed": true,
+        "detail": "기본 조합과 대안을 이중 소비하지 않음"
+      },
+      {
+        "name": "품질 슬롯 iron_pick",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "선택 결합재 iron_pick",
+        "passed": true,
+        "detail": "기본 조합과 대안을 이중 소비하지 않음"
+      },
+      {
+        "name": "품질 슬롯 iron_spear",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "품질 슬롯 iron_knife",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "선택 결합재 iron_knife",
+        "passed": true,
+        "detail": "기본 조합과 대안을 이중 소비하지 않음"
+      },
+      {
+        "name": "품질 슬롯 horn_spear",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "품질 슬롯 hoe",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "선택 결합재 hoe",
+        "passed": true,
+        "detail": "기본 조합과 대안을 이중 소비하지 않음"
+      },
+      {
+        "name": "품질 슬롯 rod",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "품질 슬롯 better_rod",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "품질 슬롯 heat_cape",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "선택 결합재 heat_cape",
+        "passed": true,
+        "detail": "기본 조합과 대안을 이중 소비하지 않음"
+      },
+      {
+        "name": "품질 슬롯 shell_chest",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "선택 결합재 shell_chest",
+        "passed": true,
+        "detail": "기본 조합과 대안을 이중 소비하지 않음"
+      },
+      {
+        "name": "품질 슬롯 alpine_chest",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "품질 슬롯 make_gear_shore_grazer_spear",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "선택 결합재 make_gear_shore_grazer_spear",
+        "passed": true,
+        "detail": "기본 조합과 대안을 이중 소비하지 않음"
+      },
+      {
+        "name": "품질 슬롯 make_gear_shore_grazer_chest",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "선택 결합재 make_gear_shore_grazer_chest",
+        "passed": true,
+        "detail": "기본 조합과 대안을 이중 소비하지 않음"
+      },
+      {
+        "name": "품질 슬롯 make_gear_shell_crab_shield",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "선택 결합재 make_gear_shell_crab_shield",
+        "passed": true,
+        "detail": "기본 조합과 대안을 이중 소비하지 않음"
+      },
+      {
+        "name": "품질 슬롯 make_gear_shell_crab_gloves",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "선택 결합재 make_gear_shell_crab_gloves",
+        "passed": true,
+        "detail": "기본 조합과 대안을 이중 소비하지 않음"
+      },
+      {
+        "name": "품질 슬롯 make_gear_tide_boar_spear",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "선택 결합재 make_gear_tide_boar_spear",
+        "passed": true,
+        "detail": "기본 조합과 대안을 이중 소비하지 않음"
+      },
+      {
+        "name": "품질 슬롯 make_gear_tide_boar_boots",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "선택 결합재 make_gear_tide_boar_boots",
+        "passed": true,
+        "detail": "기본 조합과 대안을 이중 소비하지 않음"
+      },
+      {
+        "name": "품질 슬롯 make_gear_grass_grazer_bow",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "선택 결합재 make_gear_grass_grazer_bow",
+        "passed": true,
+        "detail": "기본 조합과 대안을 이중 소비하지 않음"
+      },
+      {
+        "name": "품질 슬롯 make_gear_grass_grazer_chest",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "선택 결합재 make_gear_grass_grazer_chest",
+        "passed": true,
+        "detail": "기본 조합과 대안을 이중 소비하지 않음"
+      },
+      {
+        "name": "품질 슬롯 make_gear_reed_raptor_sword",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "선택 결합재 make_gear_reed_raptor_sword",
+        "passed": true,
+        "detail": "기본 조합과 대안을 이중 소비하지 않음"
+      },
+      {
+        "name": "품질 슬롯 make_gear_reed_raptor_boots",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "선택 결합재 make_gear_reed_raptor_boots",
+        "passed": true,
+        "detail": "기본 조합과 대안을 이중 소비하지 않음"
+      },
+      {
+        "name": "품질 슬롯 make_gear_meadow_horn_spear",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "선택 결합재 make_gear_meadow_horn_spear",
+        "passed": true,
+        "detail": "기본 조합과 대안을 이중 소비하지 않음"
+      },
+      {
+        "name": "품질 슬롯 make_gear_meadow_horn_chest",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "선택 결합재 make_gear_meadow_horn_chest",
+        "passed": true,
+        "detail": "기본 조합과 대안을 이중 소비하지 않음"
+      },
+      {
+        "name": "품질 슬롯 make_gear_stonejaw_spear",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "선택 결합재 make_gear_stonejaw_spear",
+        "passed": true,
+        "detail": "기본 조합과 대안을 이중 소비하지 않음"
+      },
+      {
+        "name": "품질 슬롯 make_gear_stonejaw_chest",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "선택 결합재 make_gear_stonejaw_chest",
+        "passed": true,
+        "detail": "기본 조합과 대안을 이중 소비하지 않음"
+      },
+      {
+        "name": "품질 슬롯 make_gear_moss_turtle_shield",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "선택 결합재 make_gear_moss_turtle_shield",
+        "passed": true,
+        "detail": "기본 조합과 대안을 이중 소비하지 않음"
+      },
+      {
+        "name": "품질 슬롯 make_gear_moss_turtle_gloves",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "선택 결합재 make_gear_moss_turtle_gloves",
+        "passed": true,
+        "detail": "기본 조합과 대안을 이중 소비하지 않음"
+      },
+      {
+        "name": "품질 슬롯 make_gear_forest_fang_sword",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "선택 결합재 make_gear_forest_fang_sword",
+        "passed": true,
+        "detail": "기본 조합과 대안을 이중 소비하지 않음"
+      },
+      {
+        "name": "품질 슬롯 make_gear_forest_fang_boots",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "선택 결합재 make_gear_forest_fang_boots",
+        "passed": true,
+        "detail": "기본 조합과 대안을 이중 소비하지 않음"
+      },
+      {
+        "name": "품질 슬롯 make_gear_poison_sac_spear",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "품질 슬롯 make_gear_poison_sac_gloves",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "품질 슬롯 make_gear_mudscale_bow",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "품질 슬롯 make_gear_mudscale_boots",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "품질 슬롯 make_gear_marsh_carapace_shield",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "선택 결합재 make_gear_marsh_carapace_shield",
+        "passed": true,
+        "detail": "기본 조합과 대안을 이중 소비하지 않음"
+      },
+      {
+        "name": "품질 슬롯 make_gear_marsh_carapace_chest",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "품질 슬롯 make_gear_sand_jaw_sword",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "품질 슬롯 make_gear_sand_jaw_boots",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "품질 슬롯 make_gear_cliff_runner_bow",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "품질 슬롯 make_gear_cliff_runner_gloves",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "품질 슬롯 make_gear_ironhorn_spear",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "품질 슬롯 make_gear_ironhorn_chest",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "품질 슬롯 make_gear_snow_deer_bow",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "품질 슬롯 make_gear_snow_deer_chest",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "품질 슬롯 make_gear_white_wolf_sword",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "품질 슬롯 make_gear_white_wolf_gloves",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "품질 슬롯 make_gear_frost_bear_shield",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "선택 결합재 make_gear_frost_bear_shield",
+        "passed": true,
+        "detail": "기본 조합과 대안을 이중 소비하지 않음"
+      },
+      {
+        "name": "품질 슬롯 make_gear_frost_bear_boots",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "품질 슬롯 make_gear_vine_leaper_bow",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "품질 슬롯 make_gear_vine_leaper_boots",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "품질 슬롯 make_gear_jade_scale_sword",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "품질 슬롯 make_gear_jade_scale_chest",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "품질 슬롯 make_gear_green_colossus_shield",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "선택 결합재 make_gear_green_colossus_shield",
+        "passed": true,
+        "detail": "기본 조합과 대안을 이중 소비하지 않음"
+      },
+      {
+        "name": "품질 슬롯 make_gear_green_colossus_chest",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "품질 슬롯 make_gear_ice_shell_shield",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "선택 결합재 make_gear_ice_shell_shield",
+        "passed": true,
+        "detail": "기본 조합과 대안을 이중 소비하지 않음"
+      },
+      {
+        "name": "품질 슬롯 make_gear_ice_shell_chest",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "품질 슬롯 make_gear_crystal_antler_spear",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "품질 슬롯 make_gear_crystal_antler_gloves",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "품질 슬롯 make_gear_glacial_giant_spear",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "품질 슬롯 make_gear_glacial_giant_chest",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "품질 슬롯 make_gear_ember_hide_sword",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "품질 슬롯 make_gear_ember_hide_boots",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "품질 슬롯 make_gear_lava_shell_shield",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "선택 결합재 make_gear_lava_shell_shield",
+        "passed": true,
+        "detail": "기본 조합과 대안을 이중 소비하지 않음"
+      },
+      {
+        "name": "품질 슬롯 make_gear_lava_shell_chest",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "품질 슬롯 make_gear_volcanic_predator_spear",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "품질 슬롯 make_gear_volcanic_predator_gloves",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "품질 슬롯 make_gear_thunderwolf_sword",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "품질 슬롯 make_gear_thunderwolf_boots",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "품질 슬롯 make_gear_ruin_shell_shield",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "선택 결합재 make_gear_ruin_shell_shield",
+        "passed": true,
+        "detail": "기본 조합과 대안을 이중 소비하지 않음"
+      },
+      {
+        "name": "품질 슬롯 make_gear_ruin_shell_chest",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "품질 슬롯 make_gear_boundary_warden_spear",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "품질 슬롯 make_gear_boundary_warden_chest",
+        "passed": true,
+        "detail": "모든 입력 1회 배정·가중치 합 1"
+      },
+      {
+        "name": "해금 참조 known",
+        "passed": true,
+        "detail": "기초 제작법"
+      },
+      {
+        "name": "해금 참조 ancient_basics",
+        "passed": true,
+        "detail": "기초 고대 기술"
+      },
+      {
+        "name": "해금 참조 expert_workshop",
+        "passed": true,
+        "detail": "전문 봉제·가죽 공정"
+      },
+      {
+        "name": "해금 참조 regional_T0",
+        "passed": true,
+        "detail": "표류자의 만 재료 활용법"
+      },
+      {
+        "name": "해금 참조 regional_B1",
+        "passed": true,
+        "detail": "새벽 초원 재료 활용법"
+      },
+      {
+        "name": "해금 참조 regional_B2",
+        "passed": true,
+        "detail": "푸른그늘 숲 재료 활용법"
+      },
+      {
+        "name": "해금 참조 regional_M1",
+        "passed": true,
+        "detail": "안개갈대 습지 재료 활용법"
+      },
+      {
+        "name": "해금 참조 regional_M2",
+        "passed": true,
+        "detail": "붉은바람 협곡 재료 활용법"
+      },
+      {
+        "name": "해금 참조 regional_M3",
+        "passed": true,
+        "detail": "서리침엽 숲 재료 활용법"
+      },
+      {
+        "name": "해금 참조 regional_M4",
+        "passed": true,
+        "detail": "비취우림 재료 활용법"
+      },
+      {
+        "name": "해금 참조 regional_H1",
+        "passed": true,
+        "detail": "백설 능선 재료 활용법"
+      },
+      {
+        "name": "해금 참조 regional_H2",
+        "passed": true,
+        "detail": "잿불 분지 재료 활용법"
+      },
+      {
+        "name": "해금 참조 regional_H3",
+        "passed": true,
+        "detail": "푸른맥 유적 재료 활용법"
+      },
+      {
+        "name": "장비 연결 stone_spear",
+        "passed": true,
+        "detail": "돌창"
+      },
+      {
+        "name": "장비 연결 horn_spear",
+        "passed": true,
+        "detail": "뿔창"
+      },
+      {
+        "name": "장비 연결 iron_spear",
+        "passed": true,
+        "detail": "철창"
+      },
+      {
+        "name": "장비 연결 stone_knife",
+        "passed": true,
+        "detail": "돌칼"
+      },
+      {
+        "name": "장비 연결 stone_hammer",
+        "passed": true,
+        "detail": "돌망치"
+      },
+      {
+        "name": "장비 연결 stone_axe",
+        "passed": true,
+        "detail": "돌도끼"
+      },
+      {
+        "name": "장비 연결 stone_pick",
+        "passed": true,
+        "detail": "돌곡괭이"
+      },
+      {
+        "name": "장비 연결 iron_axe",
+        "passed": true,
+        "detail": "철도끼"
+      },
+      {
+        "name": "장비 연결 iron_pick",
+        "passed": true,
+        "detail": "철곡괭이"
+      },
+      {
+        "name": "장비 연결 iron_knife",
+        "passed": true,
+        "detail": "철칼"
+      },
+      {
+        "name": "장비 연결 wood_shield",
+        "passed": true,
+        "detail": "목제 방패"
+      },
+      {
+        "name": "장비 연결 shell_shield",
+        "passed": true,
+        "detail": "갑각 방패"
+      },
+      {
+        "name": "장비 연결 leather_chest",
+        "passed": true,
+        "detail": "가죽 상의"
+      },
+      {
+        "name": "장비 연결 leather_legs",
+        "passed": true,
+        "detail": "가죽 하의"
+      },
+      {
+        "name": "장비 연결 leather_gloves",
+        "passed": true,
+        "detail": "가죽 장갑"
+      },
+      {
+        "name": "장비 연결 leather_boots",
+        "passed": true,
+        "detail": "가죽 장화"
+      },
+      {
+        "name": "장비 연결 cloth_chest",
+        "passed": true,
+        "detail": "천 상의"
+      },
+      {
+        "name": "장비 연결 cloth_legs",
+        "passed": true,
+        "detail": "천 하의"
+      },
+      {
+        "name": "장비 연결 apron",
+        "passed": true,
+        "detail": "작업 앞치마"
+      },
+      {
+        "name": "장비 연결 water_boots",
+        "passed": true,
+        "detail": "방수 장화"
+      },
+      {
+        "name": "장비 연결 rain_cape",
+        "passed": true,
+        "detail": "방수 망토"
+      },
+      {
+        "name": "장비 연결 fur_chest",
+        "passed": true,
+        "detail": "방한 상의"
+      },
+      {
+        "name": "장비 연결 fur_gloves",
+        "passed": true,
+        "detail": "방한 장갑"
+      },
+      {
+        "name": "장비 연결 fur_boots",
+        "passed": true,
+        "detail": "방한 장화"
+      },
+      {
+        "name": "장비 연결 shell_chest",
+        "passed": true,
+        "detail": "갑각 보강 상의"
+      },
+      {
+        "name": "장비 연결 heat_cape",
+        "passed": true,
+        "detail": "내열 망토"
+      },
+      {
+        "name": "장비 연결 alpine_chest",
+        "passed": true,
+        "detail": "설산 방한 상의"
+      },
+      {
+        "name": "장비 연결 small_bag",
+        "passed": true,
+        "detail": "작은 가죽 가방"
+      },
+      {
+        "name": "장비 연결 large_bag",
+        "passed": true,
+        "detail": "대형 운반 가방"
+      },
+      {
+        "name": "장비 연결 waterskin",
+        "passed": true,
+        "detail": "가죽 물통"
+      },
+      {
+        "name": "장비 연결 hoe",
+        "passed": true,
+        "detail": "기초 괭이"
+      },
+      {
+        "name": "장비 연결 fishing_rod",
+        "passed": true,
+        "detail": "초급 낚싯대"
+      },
+      {
+        "name": "장비 연결 better_rod",
+        "passed": true,
+        "detail": "고급 낚싯대"
+      },
+      {
+        "name": "장비 연결 gear_shore_grazer_spear",
+        "passed": true,
+        "detail": "해변풀등수 창"
+      },
+      {
+        "name": "장비 연결 gear_shore_grazer_chest",
+        "passed": true,
+        "detail": "해변풀등수 상의"
+      },
+      {
+        "name": "장비 연결 gear_shell_crab_shield",
+        "passed": true,
+        "detail": "조개등게 방패"
+      },
+      {
+        "name": "장비 연결 gear_shell_crab_gloves",
+        "passed": true,
+        "detail": "조개등게 장갑"
+      },
+      {
+        "name": "장비 연결 gear_tide_boar_spear",
+        "passed": true,
+        "detail": "모래엄니수 창"
+      },
+      {
+        "name": "장비 연결 gear_tide_boar_boots",
+        "passed": true,
+        "detail": "모래엄니수 장화"
+      },
+      {
+        "name": "장비 연결 gear_grass_grazer_bow",
+        "passed": true,
+        "detail": "풀등소수 활"
+      },
+      {
+        "name": "장비 연결 gear_grass_grazer_chest",
+        "passed": true,
+        "detail": "풀등소수 상의"
+      },
+      {
+        "name": "장비 연결 gear_reed_raptor_sword",
+        "passed": true,
+        "detail": "갈기추격수 도검"
+      },
+      {
+        "name": "장비 연결 gear_reed_raptor_boots",
+        "passed": true,
+        "detail": "갈기추격수 장화"
+      },
+      {
+        "name": "장비 연결 gear_meadow_horn_spear",
+        "passed": true,
+        "detail": "초원뿔대장 창"
+      },
+      {
+        "name": "장비 연결 gear_meadow_horn_chest",
+        "passed": true,
+        "detail": "초원뿔대장 상의"
+      },
+      {
+        "name": "장비 연결 gear_stonejaw_spear",
+        "passed": true,
+        "detail": "돌턱멧수 창"
+      },
+      {
+        "name": "장비 연결 gear_stonejaw_chest",
+        "passed": true,
+        "detail": "돌턱멧수 상의"
+      },
+      {
+        "name": "장비 연결 gear_moss_turtle_shield",
+        "passed": true,
+        "detail": "이끼등거북 방패"
+      },
+      {
+        "name": "장비 연결 gear_moss_turtle_gloves",
+        "passed": true,
+        "detail": "이끼등거북 장갑"
+      },
+      {
+        "name": "장비 연결 gear_forest_fang_sword",
+        "passed": true,
+        "detail": "숲갈기 도검"
+      },
+      {
+        "name": "장비 연결 gear_forest_fang_boots",
+        "passed": true,
+        "detail": "숲갈기 장화"
+      },
+      {
+        "name": "장비 연결 gear_poison_sac_spear",
+        "passed": true,
+        "detail": "갈대독낭수 창"
+      },
+      {
+        "name": "장비 연결 gear_poison_sac_gloves",
+        "passed": true,
+        "detail": "갈대독낭수 장갑"
+      },
+      {
+        "name": "장비 연결 gear_mudscale_bow",
+        "passed": true,
+        "detail": "진흙비늘수 활"
+      },
+      {
+        "name": "장비 연결 gear_mudscale_boots",
+        "passed": true,
+        "detail": "진흙비늘수 장화"
+      },
+      {
+        "name": "장비 연결 gear_marsh_carapace_shield",
+        "passed": true,
+        "detail": "늪갑각수 방패"
+      },
+      {
+        "name": "장비 연결 gear_marsh_carapace_chest",
+        "passed": true,
+        "detail": "늪갑각수 상의"
+      },
+      {
+        "name": "장비 연결 gear_sand_jaw_sword",
+        "passed": true,
+        "detail": "모래턱수 도검"
+      },
+      {
+        "name": "장비 연결 gear_sand_jaw_boots",
+        "passed": true,
+        "detail": "모래턱수 장화"
+      },
+      {
+        "name": "장비 연결 gear_cliff_runner_bow",
+        "passed": true,
+        "detail": "절벽달림수 활"
+      },
+      {
+        "name": "장비 연결 gear_cliff_runner_gloves",
+        "passed": true,
+        "detail": "절벽달림수 장갑"
+      },
+      {
+        "name": "장비 연결 gear_ironhorn_spear",
+        "passed": true,
+        "detail": "철각수 창"
+      },
+      {
+        "name": "장비 연결 gear_ironhorn_chest",
+        "passed": true,
+        "detail": "철각수 상의"
+      },
+      {
+        "name": "장비 연결 gear_snow_deer_bow",
+        "passed": true,
+        "detail": "서리뿔사슴 활"
+      },
+      {
+        "name": "장비 연결 gear_snow_deer_chest",
+        "passed": true,
+        "detail": "서리뿔사슴 상의"
+      },
+      {
+        "name": "장비 연결 gear_white_wolf_sword",
+        "passed": true,
+        "detail": "흰갈기늑수 도검"
+      },
+      {
+        "name": "장비 연결 gear_white_wolf_gloves",
+        "passed": true,
+        "detail": "흰갈기늑수 장갑"
+      },
+      {
+        "name": "장비 연결 gear_frost_bear_shield",
+        "passed": true,
+        "detail": "서리등곰수 방패"
+      },
+      {
+        "name": "장비 연결 gear_frost_bear_boots",
+        "passed": true,
+        "detail": "서리등곰수 장화"
+      },
+      {
+        "name": "장비 연결 gear_vine_leaper_bow",
+        "passed": true,
+        "detail": "덩굴도약수 활"
+      },
+      {
+        "name": "장비 연결 gear_vine_leaper_boots",
+        "passed": true,
+        "detail": "덩굴도약수 장화"
+      },
+      {
+        "name": "장비 연결 gear_jade_scale_sword",
+        "passed": true,
+        "detail": "비취비늘수 도검"
+      },
+      {
+        "name": "장비 연결 gear_jade_scale_chest",
+        "passed": true,
+        "detail": "비취비늘수 상의"
+      },
+      {
+        "name": "장비 연결 gear_green_colossus_shield",
+        "passed": true,
+        "detail": "녹음거수 방패"
+      },
+      {
+        "name": "장비 연결 gear_green_colossus_chest",
+        "passed": true,
+        "detail": "녹음거수 상의"
+      },
+      {
+        "name": "장비 연결 gear_ice_shell_shield",
+        "passed": true,
+        "detail": "빙갑각수 방패"
+      },
+      {
+        "name": "장비 연결 gear_ice_shell_chest",
+        "passed": true,
+        "detail": "빙갑각수 상의"
+      },
+      {
+        "name": "장비 연결 gear_crystal_antler_spear",
+        "passed": true,
+        "detail": "결정뿔수 창"
+      },
+      {
+        "name": "장비 연결 gear_crystal_antler_gloves",
+        "passed": true,
+        "detail": "결정뿔수 장갑"
+      },
+      {
+        "name": "장비 연결 gear_glacial_giant_spear",
+        "passed": true,
+        "detail": "빙갑거수 창"
+      },
+      {
+        "name": "장비 연결 gear_glacial_giant_chest",
+        "passed": true,
+        "detail": "빙갑거수 상의"
+      },
+      {
+        "name": "장비 연결 gear_ember_hide_sword",
+        "passed": true,
+        "detail": "잿빛내열수 도검"
+      },
+      {
+        "name": "장비 연결 gear_ember_hide_boots",
+        "passed": true,
+        "detail": "잿빛내열수 장화"
+      },
+      {
+        "name": "장비 연결 gear_lava_shell_shield",
+        "passed": true,
+        "detail": "용암갑각수 방패"
+      },
+      {
+        "name": "장비 연결 gear_lava_shell_chest",
+        "passed": true,
+        "detail": "용암갑각수 상의"
+      },
+      {
+        "name": "장비 연결 gear_volcanic_predator_spear",
+        "passed": true,
+        "detail": "화산포식자 창"
+      },
+      {
+        "name": "장비 연결 gear_volcanic_predator_gloves",
+        "passed": true,
+        "detail": "화산포식자 장갑"
+      },
+      {
+        "name": "장비 연결 gear_thunderwolf_sword",
+        "passed": true,
+        "detail": "뇌광늑수 도검"
+      },
+      {
+        "name": "장비 연결 gear_thunderwolf_boots",
+        "passed": true,
+        "detail": "뇌광늑수 장화"
+      },
+      {
+        "name": "장비 연결 gear_ruin_shell_shield",
+        "passed": true,
+        "detail": "유적갑각수 방패"
+      },
+      {
+        "name": "장비 연결 gear_ruin_shell_chest",
+        "passed": true,
+        "detail": "유적갑각수 상의"
+      },
+      {
+        "name": "장비 연결 gear_boundary_warden_spear",
+        "passed": true,
+        "detail": "경계 수호체 창"
+      },
+      {
+        "name": "장비 연결 gear_boundary_warden_chest",
+        "passed": true,
+        "detail": "경계 수호체 상의"
+      },
+      {
+        "name": "몬스터 참조 shore_grazer",
+        "passed": true,
+        "detail": "해변풀등수"
+      },
+      {
+        "name": "고유 장비 연결 shore_grazer",
+        "passed": true,
+        "detail": "해변풀등수"
+      },
+      {
+        "name": "보상 수량 shore_grazer",
+        "passed": true,
+        "detail": "해변풀등수"
+      },
+      {
+        "name": "몬스터 참조 shell_crab",
+        "passed": true,
+        "detail": "조개등게"
+      },
+      {
+        "name": "고유 장비 연결 shell_crab",
+        "passed": true,
+        "detail": "조개등게"
+      },
+      {
+        "name": "보상 수량 shell_crab",
+        "passed": true,
+        "detail": "조개등게"
+      },
+      {
+        "name": "몬스터 참조 tide_boar",
+        "passed": true,
+        "detail": "모래엄니수"
+      },
+      {
+        "name": "고유 장비 연결 tide_boar",
+        "passed": true,
+        "detail": "모래엄니수"
+      },
+      {
+        "name": "보상 수량 tide_boar",
+        "passed": true,
+        "detail": "모래엄니수"
+      },
+      {
+        "name": "몬스터 참조 grass_grazer",
+        "passed": true,
+        "detail": "풀등소수"
+      },
+      {
+        "name": "고유 장비 연결 grass_grazer",
+        "passed": true,
+        "detail": "풀등소수"
+      },
+      {
+        "name": "보상 수량 grass_grazer",
+        "passed": true,
+        "detail": "풀등소수"
+      },
+      {
+        "name": "몬스터 참조 reed_raptor",
+        "passed": true,
+        "detail": "갈기추격수"
+      },
+      {
+        "name": "고유 장비 연결 reed_raptor",
+        "passed": true,
+        "detail": "갈기추격수"
+      },
+      {
+        "name": "보상 수량 reed_raptor",
+        "passed": true,
+        "detail": "갈기추격수"
+      },
+      {
+        "name": "몬스터 참조 meadow_horn",
+        "passed": true,
+        "detail": "초원뿔대장"
+      },
+      {
+        "name": "고유 장비 연결 meadow_horn",
+        "passed": true,
+        "detail": "초원뿔대장"
+      },
+      {
+        "name": "보상 수량 meadow_horn",
+        "passed": true,
+        "detail": "초원뿔대장"
+      },
+      {
+        "name": "몬스터 참조 stonejaw",
+        "passed": true,
+        "detail": "돌턱멧수"
+      },
+      {
+        "name": "고유 장비 연결 stonejaw",
+        "passed": true,
+        "detail": "돌턱멧수"
+      },
+      {
+        "name": "보상 수량 stonejaw",
+        "passed": true,
+        "detail": "돌턱멧수"
+      },
+      {
+        "name": "몬스터 참조 moss_turtle",
+        "passed": true,
+        "detail": "이끼등거북"
+      },
+      {
+        "name": "고유 장비 연결 moss_turtle",
+        "passed": true,
+        "detail": "이끼등거북"
+      },
+      {
+        "name": "보상 수량 moss_turtle",
+        "passed": true,
+        "detail": "이끼등거북"
+      },
+      {
+        "name": "몬스터 참조 forest_fang",
+        "passed": true,
+        "detail": "숲갈기 우두머리"
+      },
+      {
+        "name": "고유 장비 연결 forest_fang",
+        "passed": true,
+        "detail": "숲갈기 우두머리"
+      },
+      {
+        "name": "보상 수량 forest_fang",
+        "passed": true,
+        "detail": "숲갈기 우두머리"
+      },
+      {
+        "name": "몬스터 참조 poison_sac",
+        "passed": true,
+        "detail": "갈대독낭수"
+      },
+      {
+        "name": "고유 장비 연결 poison_sac",
+        "passed": true,
+        "detail": "갈대독낭수"
+      },
+      {
+        "name": "보상 수량 poison_sac",
+        "passed": true,
+        "detail": "갈대독낭수"
+      },
+      {
+        "name": "몬스터 참조 mudscale",
+        "passed": true,
+        "detail": "진흙비늘수"
+      },
+      {
+        "name": "고유 장비 연결 mudscale",
+        "passed": true,
+        "detail": "진흙비늘수"
+      },
+      {
+        "name": "보상 수량 mudscale",
+        "passed": true,
+        "detail": "진흙비늘수"
+      },
+      {
+        "name": "몬스터 참조 marsh_carapace",
+        "passed": true,
+        "detail": "늪갑각수"
+      },
+      {
+        "name": "고유 장비 연결 marsh_carapace",
+        "passed": true,
+        "detail": "늪갑각수"
+      },
+      {
+        "name": "보상 수량 marsh_carapace",
+        "passed": true,
+        "detail": "늪갑각수"
+      },
+      {
+        "name": "몬스터 참조 sand_jaw",
+        "passed": true,
+        "detail": "모래턱수"
+      },
+      {
+        "name": "고유 장비 연결 sand_jaw",
+        "passed": true,
+        "detail": "모래턱수"
+      },
+      {
+        "name": "보상 수량 sand_jaw",
+        "passed": true,
+        "detail": "모래턱수"
+      },
+      {
+        "name": "몬스터 참조 cliff_runner",
+        "passed": true,
+        "detail": "절벽달림수"
+      },
+      {
+        "name": "고유 장비 연결 cliff_runner",
+        "passed": true,
+        "detail": "절벽달림수"
+      },
+      {
+        "name": "보상 수량 cliff_runner",
+        "passed": true,
+        "detail": "절벽달림수"
+      },
+      {
+        "name": "몬스터 참조 ironhorn",
+        "passed": true,
+        "detail": "철각수"
+      },
+      {
+        "name": "고유 장비 연결 ironhorn",
+        "passed": true,
+        "detail": "철각수"
+      },
+      {
+        "name": "보상 수량 ironhorn",
+        "passed": true,
+        "detail": "철각수"
+      },
+      {
+        "name": "몬스터 참조 snow_deer",
+        "passed": true,
+        "detail": "서리뿔사슴"
+      },
+      {
+        "name": "고유 장비 연결 snow_deer",
+        "passed": true,
+        "detail": "서리뿔사슴"
+      },
+      {
+        "name": "보상 수량 snow_deer",
+        "passed": true,
+        "detail": "서리뿔사슴"
+      },
+      {
+        "name": "몬스터 참조 white_wolf",
+        "passed": true,
+        "detail": "흰갈기늑수"
+      },
+      {
+        "name": "고유 장비 연결 white_wolf",
+        "passed": true,
+        "detail": "흰갈기늑수"
+      },
+      {
+        "name": "보상 수량 white_wolf",
+        "passed": true,
+        "detail": "흰갈기늑수"
+      },
+      {
+        "name": "몬스터 참조 frost_bear",
+        "passed": true,
+        "detail": "서리등곰수"
+      },
+      {
+        "name": "고유 장비 연결 frost_bear",
+        "passed": true,
+        "detail": "서리등곰수"
+      },
+      {
+        "name": "보상 수량 frost_bear",
+        "passed": true,
+        "detail": "서리등곰수"
+      },
+      {
+        "name": "몬스터 참조 vine_leaper",
+        "passed": true,
+        "detail": "덩굴도약수"
+      },
+      {
+        "name": "고유 장비 연결 vine_leaper",
+        "passed": true,
+        "detail": "덩굴도약수"
+      },
+      {
+        "name": "보상 수량 vine_leaper",
+        "passed": true,
+        "detail": "덩굴도약수"
+      },
+      {
+        "name": "몬스터 참조 jade_scale",
+        "passed": true,
+        "detail": "비취비늘수"
+      },
+      {
+        "name": "고유 장비 연결 jade_scale",
+        "passed": true,
+        "detail": "비취비늘수"
+      },
+      {
+        "name": "보상 수량 jade_scale",
+        "passed": true,
+        "detail": "비취비늘수"
+      },
+      {
+        "name": "몬스터 참조 green_colossus",
+        "passed": true,
+        "detail": "녹음거수"
+      },
+      {
+        "name": "고유 장비 연결 green_colossus",
+        "passed": true,
+        "detail": "녹음거수"
+      },
+      {
+        "name": "보상 수량 green_colossus",
+        "passed": true,
+        "detail": "녹음거수"
+      },
+      {
+        "name": "몬스터 참조 ice_shell",
+        "passed": true,
+        "detail": "빙갑각수"
+      },
+      {
+        "name": "고유 장비 연결 ice_shell",
+        "passed": true,
+        "detail": "빙갑각수"
+      },
+      {
+        "name": "보상 수량 ice_shell",
+        "passed": true,
+        "detail": "빙갑각수"
+      },
+      {
+        "name": "몬스터 참조 crystal_antler",
+        "passed": true,
+        "detail": "결정뿔수"
+      },
+      {
+        "name": "고유 장비 연결 crystal_antler",
+        "passed": true,
+        "detail": "결정뿔수"
+      },
+      {
+        "name": "보상 수량 crystal_antler",
+        "passed": true,
+        "detail": "결정뿔수"
+      },
+      {
+        "name": "몬스터 참조 glacial_giant",
+        "passed": true,
+        "detail": "빙갑거수"
+      },
+      {
+        "name": "고유 장비 연결 glacial_giant",
+        "passed": true,
+        "detail": "빙갑거수"
+      },
+      {
+        "name": "보상 수량 glacial_giant",
+        "passed": true,
+        "detail": "빙갑거수"
+      },
+      {
+        "name": "몬스터 참조 ember_hide",
+        "passed": true,
+        "detail": "잿빛내열수"
+      },
+      {
+        "name": "고유 장비 연결 ember_hide",
+        "passed": true,
+        "detail": "잿빛내열수"
+      },
+      {
+        "name": "보상 수량 ember_hide",
+        "passed": true,
+        "detail": "잿빛내열수"
+      },
+      {
+        "name": "몬스터 참조 lava_shell",
+        "passed": true,
+        "detail": "용암갑각수"
+      },
+      {
+        "name": "고유 장비 연결 lava_shell",
+        "passed": true,
+        "detail": "용암갑각수"
+      },
+      {
+        "name": "보상 수량 lava_shell",
+        "passed": true,
+        "detail": "용암갑각수"
+      },
+      {
+        "name": "몬스터 참조 volcanic_predator",
+        "passed": true,
+        "detail": "화산의 포식자"
+      },
+      {
+        "name": "고유 장비 연결 volcanic_predator",
+        "passed": true,
+        "detail": "화산의 포식자"
+      },
+      {
+        "name": "보상 수량 volcanic_predator",
+        "passed": true,
+        "detail": "화산의 포식자"
+      },
+      {
+        "name": "몬스터 참조 thunderwolf",
+        "passed": true,
+        "detail": "뇌광늑수"
+      },
+      {
+        "name": "고유 장비 연결 thunderwolf",
+        "passed": true,
+        "detail": "뇌광늑수"
+      },
+      {
+        "name": "보상 수량 thunderwolf",
+        "passed": true,
+        "detail": "뇌광늑수"
+      },
+      {
+        "name": "몬스터 참조 ruin_shell",
+        "passed": true,
+        "detail": "유적갑각수"
+      },
+      {
+        "name": "고유 장비 연결 ruin_shell",
+        "passed": true,
+        "detail": "유적갑각수"
+      },
+      {
+        "name": "보상 수량 ruin_shell",
+        "passed": true,
+        "detail": "유적갑각수"
+      },
+      {
+        "name": "몬스터 참조 boundary_warden",
+        "passed": true,
+        "detail": "경계 수호체"
+      },
+      {
+        "name": "고유 장비 연결 boundary_warden",
+        "passed": true,
+        "detail": "경계 수호체"
+      },
+      {
+        "name": "보상 수량 boundary_warden",
+        "passed": true,
+        "detail": "경계 수호체"
+      },
+      {
+        "name": "공급 참조 gather_branch",
+        "passed": true,
+        "detail": "gathering"
+      },
+      {
+        "name": "공급 참조 gather_stone",
+        "passed": true,
+        "detail": "gathering"
+      },
+      {
+        "name": "공급 참조 gather_fiber",
+        "passed": true,
+        "detail": "gathering"
+      },
+      {
+        "name": "공급 참조 gather_berry",
+        "passed": true,
+        "detail": "gathering"
+      },
+      {
+        "name": "공급 참조 gather_log",
+        "passed": true,
+        "detail": "gathering"
+      },
+      {
+        "name": "공급 참조 gather_grain_seed",
+        "passed": true,
+        "detail": "gathering"
+      },
+      {
+        "name": "공급 참조 gather_hard_log",
+        "passed": true,
+        "detail": "gathering"
+      },
+      {
+        "name": "공급 참조 gather_bark",
+        "passed": true,
+        "detail": "gathering"
+      },
+      {
+        "name": "공급 참조 gather_resin",
+        "passed": true,
+        "detail": "gathering"
+      },
+      {
+        "name": "공급 참조 gather_herb",
+        "passed": true,
+        "detail": "gathering"
+      },
+      {
+        "name": "공급 참조 gather_clay",
+        "passed": true,
+        "detail": "gathering"
+      },
+      {
+        "name": "공급 참조 gather_marsh_herb",
+        "passed": true,
+        "detail": "gathering"
+      },
+      {
+        "name": "공급 참조 gather_dye_plant",
+        "passed": true,
+        "detail": "gathering"
+      },
+      {
+        "name": "공급 참조 gather_fish",
+        "passed": true,
+        "detail": "gathering"
+      },
+      {
+        "name": "공급 참조 gather_iron_ore",
+        "passed": true,
+        "detail": "gathering"
+      },
+      {
+        "name": "공급 참조 gather_salt",
+        "passed": true,
+        "detail": "gathering"
+      },
+      {
+        "name": "공급 참조 gather_wool",
+        "passed": true,
+        "detail": "gathering"
+      },
+      {
+        "name": "공급 참조 gather_jungle_herb",
+        "passed": true,
+        "detail": "gathering"
+      },
+      {
+        "name": "공급 참조 gather_cool_crystal",
+        "passed": true,
+        "detail": "gathering"
+      },
+      {
+        "name": "공급 참조 gather_heat_mineral",
+        "passed": true,
+        "detail": "gathering"
+      },
+      {
+        "name": "공급 참조 gather_energy_crystal",
+        "passed": true,
+        "detail": "gathering"
+      },
+      {
+        "name": "공급 참조 gather_ancient_part",
+        "passed": true,
+        "detail": "guaranteed_exploration"
+      },
+      {
+        "name": "공급 참조 gather_blueprint_fragment",
+        "passed": true,
+        "detail": "guaranteed_exploration"
+      },
+      {
+        "name": "공급 참조 gather_conductive_organ",
+        "passed": true,
+        "detail": "gathering"
+      },
+      {
+        "name": "공급 참조 gather_grain",
+        "passed": true,
+        "detail": "gathering"
+      },
+      {
+        "name": "공급 참조 gather_vegetable",
+        "passed": true,
+        "detail": "gathering"
+      },
+      {
+        "name": "공급 참조 gather_vegetable_seed",
+        "passed": true,
+        "detail": "gathering"
+      },
+      {
+        "name": "공급 참조 gather_fiber_seed",
+        "passed": true,
+        "detail": "gathering"
+      },
+      {
+        "name": "공급 참조 gather_herb_seed",
+        "passed": true,
+        "detail": "gathering"
+      },
+      {
+        "name": "공급 참조 gather_alpine_fur",
+        "passed": true,
+        "detail": "gathering"
+      },
+      {
+        "name": "공급 참조 harvest_shore_grazer_meat",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_shore_grazer_bone",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_shore_grazer_raw_hide",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_shore_grazer_fat",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 focus_shore_grazer_food_meat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_shore_grazer_food_fat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_shore_grazer_material_raw_hide",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_shore_grazer_signature_raw_shore_grazer",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 harvest_shell_crab_meat",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_shell_crab_bone",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_shell_crab_shell",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 focus_shell_crab_food_meat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_shell_crab_food_fat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_shell_crab_material_shell",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_shell_crab_signature_raw_shell_crab",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 harvest_tide_boar_meat",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_tide_boar_bone",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_tide_boar_horn",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 focus_tide_boar_food_meat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_tide_boar_food_fat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_tide_boar_material_bone",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_tide_boar_signature_raw_tide_boar",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 bonus_tide_boar",
+        "passed": true,
+        "detail": "monster_bonus"
+      },
+      {
+        "name": "공급 참조 harvest_grass_grazer_meat",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_grass_grazer_bone",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_grass_grazer_raw_hide",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_grass_grazer_fat",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 focus_grass_grazer_food_meat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_grass_grazer_food_fat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_grass_grazer_material_raw_hide",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_grass_grazer_signature_raw_grass_grazer",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 harvest_reed_raptor_meat",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_reed_raptor_bone",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_reed_raptor_sinew",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_reed_raptor_fat",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 focus_reed_raptor_food_meat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_reed_raptor_food_fat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_reed_raptor_material_bone",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_reed_raptor_signature_raw_reed_raptor",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 harvest_meadow_horn_meat",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_meadow_horn_bone",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_meadow_horn_horn",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 focus_meadow_horn_food_meat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_meadow_horn_food_fat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_meadow_horn_material_bone",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_meadow_horn_signature_raw_meadow_horn",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 bonus_meadow_horn",
+        "passed": true,
+        "detail": "monster_bonus"
+      },
+      {
+        "name": "공급 참조 harvest_stonejaw_meat",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_stonejaw_bone",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_stonejaw_raw_hide",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_stonejaw_fat",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 focus_stonejaw_food_meat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_stonejaw_food_fat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_stonejaw_material_raw_hide",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_stonejaw_signature_raw_stonejaw",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 harvest_moss_turtle_meat",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_moss_turtle_bone",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_moss_turtle_shell",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 focus_moss_turtle_food_meat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_moss_turtle_food_fat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_moss_turtle_material_shell",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_moss_turtle_signature_raw_moss_turtle",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 harvest_forest_fang_meat",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_forest_fang_bone",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_forest_fang_horn",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 focus_forest_fang_food_meat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_forest_fang_food_fat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_forest_fang_material_bone",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_forest_fang_signature_raw_forest_fang",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 bonus_forest_fang",
+        "passed": true,
+        "detail": "monster_bonus"
+      },
+      {
+        "name": "공급 참조 harvest_poison_sac_meat",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_poison_sac_bone",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 focus_poison_sac_food_meat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_poison_sac_food_fat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_poison_sac_material_bone",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_poison_sac_signature_raw_poison_sac",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 harvest_mudscale_meat",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_mudscale_bone",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_mudscale_raw_hide",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_mudscale_fat",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 focus_mudscale_food_meat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_mudscale_food_fat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_mudscale_material_raw_hide",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_mudscale_signature_raw_mudscale",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 harvest_marsh_carapace_meat",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_marsh_carapace_bone",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_marsh_carapace_shell",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 focus_marsh_carapace_food_meat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_marsh_carapace_food_fat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_marsh_carapace_material_shell",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_marsh_carapace_signature_raw_marsh_carapace",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 bonus_marsh_carapace",
+        "passed": true,
+        "detail": "monster_bonus"
+      },
+      {
+        "name": "공급 참조 harvest_sand_jaw_meat",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_sand_jaw_bone",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_sand_jaw_horn",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 focus_sand_jaw_food_meat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_sand_jaw_food_fat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_sand_jaw_material_bone",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_sand_jaw_signature_raw_sand_jaw",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 harvest_cliff_runner_meat",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_cliff_runner_bone",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_cliff_runner_raw_hide",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_cliff_runner_fat",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 focus_cliff_runner_food_meat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_cliff_runner_food_fat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_cliff_runner_material_raw_hide",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_cliff_runner_signature_raw_cliff_runner",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 harvest_ironhorn_meat",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_ironhorn_bone",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_ironhorn_shell",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_ironhorn_iron_ore",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 focus_ironhorn_food_meat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_ironhorn_food_fat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_ironhorn_material_shell",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_ironhorn_signature_raw_ironhorn",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 bonus_ironhorn",
+        "passed": true,
+        "detail": "monster_bonus"
+      },
+      {
+        "name": "공급 참조 harvest_snow_deer_meat",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_snow_deer_bone",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_snow_deer_fur_hide",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_snow_deer_wool",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_snow_deer_fat",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 focus_snow_deer_food_meat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_snow_deer_food_fat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_snow_deer_material_fur_hide",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_snow_deer_signature_raw_snow_deer",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 harvest_white_wolf_meat",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_white_wolf_bone",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_white_wolf_sinew",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_white_wolf_fat",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 focus_white_wolf_food_meat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_white_wolf_food_fat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_white_wolf_material_bone",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_white_wolf_signature_raw_white_wolf",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 harvest_frost_bear_meat",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_frost_bear_bone",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_frost_bear_fur_hide",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_frost_bear_wool",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_frost_bear_fat",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 focus_frost_bear_food_meat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_frost_bear_food_fat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_frost_bear_material_fur_hide",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_frost_bear_signature_raw_frost_bear",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 bonus_frost_bear",
+        "passed": true,
+        "detail": "monster_bonus"
+      },
+      {
+        "name": "공급 참조 harvest_vine_leaper_meat",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_vine_leaper_bone",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_vine_leaper_sinew",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_vine_leaper_fat",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 focus_vine_leaper_food_meat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_vine_leaper_food_fat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_vine_leaper_material_bone",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_vine_leaper_signature_raw_vine_leaper",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 harvest_jade_scale_meat",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_jade_scale_bone",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_jade_scale_shell",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 focus_jade_scale_food_meat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_jade_scale_food_fat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_jade_scale_material_shell",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_jade_scale_signature_raw_jade_scale",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 harvest_green_colossus_meat",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_green_colossus_bone",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_green_colossus_raw_hide",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_green_colossus_fat",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 focus_green_colossus_food_meat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_green_colossus_food_fat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_green_colossus_material_raw_hide",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_green_colossus_signature_raw_green_colossus",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 bonus_green_colossus",
+        "passed": true,
+        "detail": "monster_bonus"
+      },
+      {
+        "name": "공급 참조 harvest_ice_shell_meat",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_ice_shell_bone",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_ice_shell_shell",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_ice_shell_cool_crystal",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 focus_ice_shell_food_meat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_ice_shell_food_fat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_ice_shell_material_shell",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_ice_shell_signature_raw_ice_shell",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 harvest_crystal_antler_meat",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_crystal_antler_bone",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_crystal_antler_horn",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_crystal_antler_cool_crystal",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_crystal_antler_alpine_fur",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 focus_crystal_antler_food_meat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_crystal_antler_food_fat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_crystal_antler_material_bone",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_crystal_antler_signature_raw_crystal_antler",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 harvest_glacial_giant_meat",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_glacial_giant_bone",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_glacial_giant_fur_hide",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_glacial_giant_fat",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_glacial_giant_cool_crystal",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 focus_glacial_giant_food_meat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_glacial_giant_food_fat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_glacial_giant_material_fur_hide",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_glacial_giant_signature_raw_glacial_giant",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 bonus_glacial_giant",
+        "passed": true,
+        "detail": "monster_bonus"
+      },
+      {
+        "name": "공급 참조 harvest_ember_hide_meat",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_ember_hide_bone",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_ember_hide_raw_hide",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_ember_hide_fat",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_ember_hide_heat_mineral",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 focus_ember_hide_food_meat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_ember_hide_food_fat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_ember_hide_material_raw_hide",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_ember_hide_signature_raw_ember_hide",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 harvest_lava_shell_meat",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_lava_shell_bone",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_lava_shell_shell",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_lava_shell_heat_mineral",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_lava_shell_heat_shell_raw",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 focus_lava_shell_food_meat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_lava_shell_food_fat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_lava_shell_material_shell",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_lava_shell_signature_raw_lava_shell",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 harvest_volcanic_predator_meat",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_volcanic_predator_bone",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_volcanic_predator_heat_mineral",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 focus_volcanic_predator_food_meat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_volcanic_predator_food_fat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_volcanic_predator_material_bone",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_volcanic_predator_signature_raw_volcanic_predator",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 bonus_volcanic_predator",
+        "passed": true,
+        "detail": "monster_bonus"
+      },
+      {
+        "name": "공급 참조 harvest_thunderwolf_meat",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_thunderwolf_bone",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_thunderwolf_blueprint_fragment",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_thunderwolf_conductive_organ",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 focus_thunderwolf_food_meat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_thunderwolf_food_fat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_thunderwolf_material_bone",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_thunderwolf_signature_raw_thunderwolf",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 harvest_ruin_shell_meat",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_ruin_shell_bone",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_ruin_shell_shell",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_ruin_shell_blueprint_fragment",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_ruin_shell_ancient_part",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 focus_ruin_shell_food_meat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_ruin_shell_food_fat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_ruin_shell_material_shell",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_ruin_shell_signature_raw_ruin_shell",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 harvest_boundary_warden_meat",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_boundary_warden_bone",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_boundary_warden_blueprint_fragment",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 harvest_boundary_warden_energy_crystal",
+        "passed": true,
+        "detail": "monster_base"
+      },
+      {
+        "name": "공급 참조 focus_boundary_warden_food_meat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_boundary_warden_food_fat",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_boundary_warden_material_bone",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 focus_boundary_warden_signature_raw_boundary_warden",
+        "passed": true,
+        "detail": "monster_focus"
+      },
+      {
+        "name": "공급 참조 bonus_boundary_warden",
+        "passed": true,
+        "detail": "monster_bonus"
+      },
+      {
+        "name": "공급 참조 spoil",
+        "passed": true,
+        "detail": "decay"
+      },
+      {
+        "name": "공급 참조 salvage",
+        "passed": true,
+        "detail": "salvage"
+      },
+      {
+        "name": "공급 참조 egg_livestock",
+        "passed": true,
+        "detail": "livestock"
+      },
+      {
+        "name": "공급 참조 milk_livestock",
+        "passed": true,
+        "detail": "livestock"
+      },
+      {
+        "name": "개선 참조 roofed_dryer",
+        "passed": true,
+        "detail": "건조대 지붕"
+      },
+      {
+        "name": "개선 참조 precision_wood",
+        "passed": true,
+        "detail": "정밀 목공 장치"
+      },
+      {
+        "name": "개선 참조 professional_leather",
+        "passed": true,
+        "detail": "전문 가죽 공방"
+      },
+      {
+        "name": "개선 참조 expert_workshop",
+        "passed": true,
+        "detail": "전문 봉제·가죽 공정 부속 장치"
+      },
+      {
+        "name": "개선 참조 iron_anvil",
+        "passed": true,
+        "detail": "철제 모루"
+      },
+      {
+        "name": "개선 참조 heat_furnace_lining",
+        "passed": true,
+        "detail": "내열 외벽 개선"
+      },
+      {
+        "name": "생활 공간 참조 farm_plot",
+        "passed": true,
+        "detail": "밭"
+      },
+      {
+        "name": "생활 공간 참조 small_barn",
+        "passed": true,
+        "detail": "작은 축사"
+      },
+      {
+        "name": "생활 공간 참조 small_cabin",
+        "passed": true,
+        "detail": "소형 주택"
+      },
+      {
+        "name": "생활 공간 참조 stone_workshop",
+        "passed": true,
+        "detail": "석재 공방"
+      },
+      {
+        "name": "작업 참조 repair_stone",
+        "passed": true,
+        "detail": "원래 최대내구 50%당 1단위; 최소 1단위; 최대내구 하락·횟수 규칙 적용"
+      },
+      {
+        "name": "작업 참조 repair_leather",
+        "passed": true,
+        "detail": "원래 최대내구 50%당 1단위; 기본 소재로 수리, 고유 특성 변경 없음"
+      },
+      {
+        "name": "작업 참조 repair_cloth",
+        "passed": true,
+        "detail": "원래 최대내구 50%당 1단위"
+      },
+      {
+        "name": "작업 참조 repair_metal",
+        "passed": true,
+        "detail": "원래 최대내구 50%당 1단위; 상위 강화금속은 별도 단계 비용"
+      },
+      {
+        "name": "작업 참조 repair_shell",
+        "passed": true,
+        "detail": "원래 최대내구 50%당 1단위"
+      },
+      {
+        "name": "작업 참조 early_repair",
+        "passed": true,
+        "detail": "초기 복구 경로; 가죽은 위 가죽 수리 비용 사용; 1회 회복량 25%"
+      },
+      {
+        "name": "작업 참조 dye_equipment",
+        "passed": true,
+        "detail": "소유권·품질·내구·특성 보존; 외형 색상 변경"
+      },
+      {
+        "name": "작업 참조 salvage_equipment",
+        "passed": true,
+        "detail": "비금속 원재료 투입 정수량의 floor(0.2*N), 금속은 별도 고철 규칙; 고유 부위·기관·결정은 회수 제외"
+      },
+      {
+        "name": "작업 참조 socket_trophy",
+        "passed": true,
+        "detail": "해당 몬스터 표식 1개 소비; 외형 소켓 활성; 성능 변화 없음"
+      },
+      {
+        "name": "작업 참조 upgrade_water_boots",
+        "passed": true,
+        "detail": "기존 장화 1개를 소비·전환; 내구 비율·수리 이력 유지; water_boots와 동시 생산 아님"
+      },
+      {
+        "name": "작업 참조 install_power_core",
+        "passed": true,
+        "detail": "永久 부속 장치 설치; 작업시간 -10%, 이미 설치 시 중복 불가; 핵심 제작법 잠금 아님"
+      },
+      {
+        "name": "작업 참조 install_cool_module",
+        "passed": true,
+        "detail": "냉각 보관함 연료 소모 -10%; 동일 장치 중복 불가"
+      },
+      {
+        "name": "작업 참조 install_shock_module",
+        "passed": true,
+        "detail": "장착 창에 shock 효과 1개 추가; 기존 공격·품질·내구 비율·수리 이력 보존; 같은 효과 중복 금지"
+      },
+      {
+        "name": "전체 설비 설치 도달",
+        "passed": true,
+        "detail": []
+      },
+      {
+        "name": "전체 해금 도달",
+        "passed": true,
+        "detail": []
+      },
+      {
+        "name": "모든 투입 재료 공급",
+        "passed": true,
+        "detail": []
+      },
+      {
+        "name": "전체 장비 제작 도달",
+        "passed": true,
+        "detail": []
+      },
+      {
+        "name": "첫 가방·가죽 장비 도달",
+        "passed": true,
+        "detail": []
+      },
+      {
+        "name": "초급 제작 비금속 경로",
+        "passed": true,
+        "detail": "튜토리얼·초원·숲 공급처만 허용"
+      },
+      {
+        "name": "지역 10종과 지역당 몬스터 3종",
+        "passed": true,
+        "detail": "총 몬스터 30"
+      },
+      {
+        "name": "품질·드롭 확률 합",
+        "passed": true,
+        "detail": "보통·양질·우수 합 1"
+      },
+      {
+        "name": "JSON 재읽기 regions",
+        "passed": true,
+        "detail": "UTF-8·JSON 구문 확인"
+      },
+      {
+        "name": "JSON 재읽기 monsters",
+        "passed": true,
+        "detail": "UTF-8·JSON 구문 확인"
+      },
+      {
+        "name": "JSON 재읽기 items",
+        "passed": true,
+        "detail": "UTF-8·JSON 구문 확인"
+      },
+      {
+        "name": "JSON 재읽기 stations",
+        "passed": true,
+        "detail": "UTF-8·JSON 구문 확인"
+      },
+      {
+        "name": "JSON 재읽기 recipes",
+        "passed": true,
+        "detail": "UTF-8·JSON 구문 확인"
+      },
+      {
+        "name": "JSON 재읽기 equipment",
+        "passed": true,
+        "detail": "UTF-8·JSON 구문 확인"
+      },
+      {
+        "name": "JSON 재읽기 traits",
+        "passed": true,
+        "detail": "UTF-8·JSON 구문 확인"
+      },
+      {
+        "name": "JSON 재읽기 sources",
+        "passed": true,
+        "detail": "UTF-8·JSON 구문 확인"
+      },
+      {
+        "name": "JSON 재읽기 upgrades",
+        "passed": true,
+        "detail": "UTF-8·JSON 구문 확인"
+      },
+      {
+        "name": "JSON 재읽기 unlocks",
+        "passed": true,
+        "detail": "UTF-8·JSON 구문 확인"
+      },
+      {
+        "name": "JSON 재읽기 life_facilities",
+        "passed": true,
+        "detail": "UTF-8·JSON 구문 확인"
+      },
+      {
+        "name": "JSON 재읽기 operations",
+        "passed": true,
+        "detail": "UTF-8·JSON 구문 확인"
+      },
+      {
+        "name": "JSON 재읽기 rules",
+        "passed": true,
+        "detail": "UTF-8·JSON 구문 확인"
+      },
+      {
+        "name": "JSON 재읽기 data_dictionary",
+        "passed": true,
+        "detail": "UTF-8·JSON 구문 확인"
+      }
+    ],
+    "errors": []
+  }
+}

@@ -1,0 +1,348 @@
+{
+  "schema_version": 1,
+  "content_version": "0.3.0-draft",
+  "status": "design_draft",
+  "records": [
+    {
+      "id": "durable",
+      "name": "질긴 결합",
+      "stat": "durability_bonus_pct",
+      "value": 10,
+      "unit": "percent",
+      "description": "최종 최대 내구도 +10%",
+      "stack_group": "durability_bonus_pct",
+      "stack_policy": "sum_across_equipped_items_then_cap",
+      "deduplicate_within_same_item": true,
+      "effect_scope": "장착 중인 유효 장비만; 가방 속 장비·비활성 생활도구에는 미적용",
+      "trigger": {
+        "event": "equipped"
+      }
+    },
+    {
+      "id": "light",
+      "name": "가벼운 결합",
+      "stat": "attack_stamina_reduction_pct",
+      "value": 5,
+      "unit": "percent",
+      "description": "공격 스태미나 소모 -5%; 회피에는 미적용",
+      "stack_group": "attack_stamina_reduction_pct",
+      "stack_policy": "sum_across_equipped_items_then_cap",
+      "deduplicate_within_same_item": true,
+      "effect_scope": "장착 중인 유효 장비만; 가방 속 장비·비활성 생활도구에는 미적용",
+      "trigger": {
+        "event": "equipped"
+      }
+    },
+    {
+      "id": "hard",
+      "name": "단단한 외피",
+      "stat": "defense_flat",
+      "value": 2,
+      "unit": "points",
+      "description": "방어력 +2",
+      "stack_group": "defense_flat",
+      "stack_policy": "sum_across_equipped_items_then_cap",
+      "deduplicate_within_same_item": true,
+      "effect_scope": "장착 중인 유효 장비만; 가방 속 장비·비활성 생활도구에는 미적용",
+      "trigger": {
+        "event": "equipped"
+      }
+    },
+    {
+      "id": "pierce",
+      "name": "날카로운 끝",
+      "stat": "armor_ignore_pct",
+      "value": 5,
+      "unit": "percent",
+      "description": "물리 방어력의 5%만 무시; 최종 피해 배율이 아님",
+      "stack_group": "armor_ignore_pct",
+      "stack_policy": "sum_across_equipped_items_then_cap",
+      "deduplicate_within_same_item": true,
+      "effect_scope": "장착 중인 유효 장비만; 가방 속 장비·비활성 생활도구에는 미적용",
+      "trigger": {
+        "event": "equipped"
+      }
+    },
+    {
+      "id": "wetguard",
+      "name": "방수 처리",
+      "stat": "wet_resistance",
+      "value": 10,
+      "unit": "points",
+      "description": "젖음 저항 +10",
+      "stack_group": "wet_resistance",
+      "stack_policy": "sum_across_equipped_items_then_cap",
+      "deduplicate_within_same_item": true,
+      "effect_scope": "장착 중인 유효 장비만; 가방 속 장비·비활성 생활도구에는 미적용",
+      "trigger": {
+        "event": "equipped"
+      }
+    },
+    {
+      "id": "coldguard",
+      "name": "보온",
+      "stat": "cold_resistance",
+      "value": 10,
+      "unit": "points",
+      "description": "추위 저항 +10",
+      "stack_group": "cold_resistance",
+      "stack_policy": "sum_across_equipped_items_then_cap",
+      "deduplicate_within_same_item": true,
+      "effect_scope": "장착 중인 유효 장비만; 가방 속 장비·비활성 생활도구에는 미적용",
+      "trigger": {
+        "event": "equipped"
+      }
+    },
+    {
+      "id": "heatguard",
+      "name": "내열",
+      "stat": "heat_resistance",
+      "value": 10,
+      "unit": "points",
+      "description": "열기 저항 +10",
+      "stack_group": "heat_resistance",
+      "stack_policy": "sum_across_equipped_items_then_cap",
+      "deduplicate_within_same_item": true,
+      "effect_scope": "장착 중인 유효 장비만; 가방 속 장비·비활성 생활도구에는 미적용",
+      "trigger": {
+        "event": "equipped"
+      }
+    },
+    {
+      "id": "poison_guard",
+      "name": "독성 여과",
+      "stat": "poison_resistance",
+      "value": 10,
+      "unit": "points",
+      "description": "독 피해·축적 저항 +10",
+      "stack_group": "poison_resistance",
+      "stack_policy": "sum_across_equipped_items_then_cap",
+      "deduplicate_within_same_item": true,
+      "effect_scope": "장착 중인 유효 장비만; 가방 속 장비·비활성 생활도구에는 미적용",
+      "trigger": {
+        "event": "equipped"
+      }
+    },
+    {
+      "id": "shock_guard",
+      "name": "절연",
+      "stat": "shock_resistance",
+      "value": 10,
+      "unit": "points",
+      "description": "전격 피해·축적 저항 +10",
+      "stack_group": "shock_resistance",
+      "stack_policy": "sum_across_equipped_items_then_cap",
+      "deduplicate_within_same_item": true,
+      "effect_scope": "장착 중인 유효 장비만; 가방 속 장비·비활성 생활도구에는 미적용",
+      "trigger": {
+        "event": "equipped"
+      }
+    },
+    {
+      "id": "gather",
+      "name": "작업 손놀림",
+      "stat": "gather_duration_reduction_pct",
+      "value": 5,
+      "unit": "percent",
+      "description": "채집 작업시간 -5%; 획득량에는 미적용",
+      "stack_group": "gather_duration_reduction_pct",
+      "stack_policy": "sum_across_equipped_items_then_cap",
+      "deduplicate_within_same_item": true,
+      "effect_scope": "장착 중인 유효 장비만; 가방 속 장비·비활성 생활도구에는 미적용",
+      "trigger": {
+        "event": "equipped"
+      }
+    },
+    {
+      "id": "steady",
+      "name": "안정된 손잡이",
+      "stat": "attack_stamina_reduction_pct",
+      "value": 4,
+      "unit": "percent",
+      "description": "공격 스태미나 소모 -4%",
+      "stack_group": "attack_stamina_reduction_pct",
+      "stack_policy": "sum_across_equipped_items_then_cap",
+      "deduplicate_within_same_item": true,
+      "effect_scope": "장착 중인 유효 장비만; 가방 속 장비·비활성 생활도구에는 미적용",
+      "trigger": {
+        "event": "equipped"
+      }
+    },
+    {
+      "id": "block",
+      "name": "충격 분산",
+      "stat": "block_stamina_reduction_pct",
+      "value": 8,
+      "unit": "percent",
+      "description": "정면 방어 스태미나 소모 -8%",
+      "stack_group": "block_stamina_reduction_pct",
+      "stack_policy": "sum_across_equipped_items_then_cap",
+      "deduplicate_within_same_item": true,
+      "effect_scope": "장착 중인 유효 장비만; 가방 속 장비·비활성 생활도구에는 미적용",
+      "trigger": {
+        "event": "equipped"
+      }
+    },
+    {
+      "id": "bleed",
+      "name": "톱니 끝",
+      "stat": "bleed_damage_per_second",
+      "value": 2,
+      "unit": "hp_per_second",
+      "description": "3회 유효타 적중 시 출혈 2/초·3초; 동일 대상 재발동 대기 8초",
+      "stack_group": "bleed_damage_per_second",
+      "stack_policy": "highest_one_per_type_per_attacker_and_target",
+      "deduplicate_within_same_item": true,
+      "effect_scope": "장착 중인 유효 장비만; 가방 속 장비·비활성 생활도구에는 미적용",
+      "trigger": {
+        "event": "confirmed_direct_hit",
+        "hits_required": 3,
+        "counter_scope": "attacker_target_equipped_effect",
+        "cooldown_seconds": 8,
+        "duration_seconds": 3,
+        "damage_type": "bleed",
+        "recursive_procs_allowed": false,
+        "critical_allowed": false
+      }
+    },
+    {
+      "id": "toxic",
+      "name": "독성 도포",
+      "stat": "poison_damage_per_second",
+      "value": 2,
+      "unit": "hp_per_second",
+      "description": "3회 유효타 적중 시 독 2/초·4초; 동일 대상 재발동 대기 10초",
+      "stack_group": "poison_damage_per_second",
+      "stack_policy": "highest_one_per_type_per_attacker_and_target",
+      "deduplicate_within_same_item": true,
+      "effect_scope": "장착 중인 유효 장비만; 가방 속 장비·비활성 생활도구에는 미적용",
+      "trigger": {
+        "event": "confirmed_direct_hit",
+        "hits_required": 3,
+        "counter_scope": "attacker_target_equipped_effect",
+        "cooldown_seconds": 10,
+        "duration_seconds": 4,
+        "damage_type": "poison",
+        "recursive_procs_allowed": false,
+        "critical_allowed": false
+      }
+    },
+    {
+      "id": "frost",
+      "name": "냉각 타격",
+      "stat": "slow_pct",
+      "value": 8,
+      "unit": "percent",
+      "description": "3회 적중 후 이동속도 -8%·2초; 보스는 지속시간 절반; 재발동 대기 10초",
+      "stack_group": "slow_pct",
+      "stack_policy": "highest_one_per_type_per_attacker_and_target",
+      "deduplicate_within_same_item": true,
+      "effect_scope": "장착 중인 유효 장비만; 가방 속 장비·비활성 생활도구에는 미적용",
+      "trigger": {
+        "event": "confirmed_direct_hit",
+        "hits_required": 3,
+        "counter_scope": "attacker_target_equipped_effect",
+        "cooldown_seconds": 10,
+        "duration_seconds": 2,
+        "damage_type": "slow",
+        "recursive_procs_allowed": false,
+        "critical_allowed": false
+      }
+    },
+    {
+      "id": "shock",
+      "name": "전도 타격",
+      "stat": "shock_bonus_damage",
+      "value": 3,
+      "unit": "damage",
+      "description": "3회 유효타 후 전격 추가피해 3; 대상별 재발동 대기 6초; 치명타 불가",
+      "stack_group": "shock_bonus_damage",
+      "stack_policy": "highest_one_per_type_per_attacker_and_target",
+      "deduplicate_within_same_item": true,
+      "effect_scope": "장착 중인 유효 장비만; 가방 속 장비·비활성 생활도구에는 미적용",
+      "trigger": {
+        "event": "confirmed_direct_hit",
+        "hits_required": 3,
+        "counter_scope": "attacker_target_equipped_effect",
+        "cooldown_seconds": 6,
+        "duration_seconds": 0,
+        "damage_type": "shock",
+        "recursive_procs_allowed": false,
+        "critical_allowed": false
+      }
+    },
+    {
+      "id": "heat_hit",
+      "name": "열기 타격",
+      "stat": "heat_bonus_damage",
+      "value": 3,
+      "unit": "damage",
+      "description": "3회 유효타 후 열기 추가피해 3; 대상별 재발동 대기 6초; 치명타 불가",
+      "stack_group": "heat_bonus_damage",
+      "stack_policy": "highest_one_per_type_per_attacker_and_target",
+      "deduplicate_within_same_item": true,
+      "effect_scope": "장착 중인 유효 장비만; 가방 속 장비·비활성 생활도구에는 미적용",
+      "trigger": {
+        "event": "confirmed_direct_hit",
+        "hits_required": 3,
+        "counter_scope": "attacker_target_equipped_effect",
+        "cooldown_seconds": 6,
+        "duration_seconds": 0,
+        "damage_type": "heat",
+        "recursive_procs_allowed": false,
+        "critical_allowed": false
+      }
+    },
+    {
+      "id": "regen",
+      "name": "야영 회복",
+      "stat": "out_of_combat_heal",
+      "value": 1,
+      "unit": "hp_per_5_seconds",
+      "description": "전투 종료 15초 후 야영지·개인 거점에서만 5초당 체력 1 회복",
+      "stack_group": "out_of_combat_heal",
+      "stack_policy": "highest_one",
+      "deduplicate_within_same_item": true,
+      "effect_scope": "장착 중인 유효 장비만; 가방 속 장비·비활성 생활도구에는 미적용",
+      "trigger": {
+        "event": "tick",
+        "interval_seconds": 5,
+        "out_of_combat_seconds": 15,
+        "allowed_locations": [
+          "safe_camp",
+          "private_base"
+        ]
+      }
+    },
+    {
+      "id": "carry",
+      "name": "운반 편의",
+      "stat": "inventory_slots",
+      "value": 2,
+      "unit": "slots",
+      "description": "가방 전용; 일반 방어구에는 부여하지 않음",
+      "stack_group": "inventory_slots",
+      "stack_policy": "sum_across_equipped_items_then_cap",
+      "deduplicate_within_same_item": true,
+      "effect_scope": "장착 중인 유효 장비만; 가방 속 장비·비활성 생활도구에는 미적용",
+      "trigger": {
+        "event": "equipped"
+      }
+    },
+    {
+      "id": "rare_style",
+      "name": "원정 문양",
+      "stat": "cosmetic_glow",
+      "value": 1,
+      "unit": "flag",
+      "description": "선택 장식 소켓; 전투 능력치 변화 없음",
+      "stack_group": "cosmetic_glow",
+      "stack_policy": "sum_across_equipped_items_then_cap",
+      "deduplicate_within_same_item": true,
+      "effect_scope": "장착 중인 유효 장비만; 가방 속 장비·비활성 생활도구에는 미적용",
+      "trigger": {
+        "event": "equipped"
+      }
+    }
+  ]
+}

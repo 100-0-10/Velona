@@ -1,0 +1,14 @@
+@baseUrl = http://localhost:5080
+
+GET {{baseUrl}}/health
+
+###
+GET {{baseUrl}}/api/catalog
+
+### Development-only guest session. Do not put returned tokens in committed files.
+POST {{baseUrl}}/api/guest
+Content-Type: application/json
+
+{
+  "name": "개척자"
+}

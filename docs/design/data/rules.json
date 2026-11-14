@@ -1,0 +1,182 @@
+{
+  "schema_version": 1,
+  "content_version": "0.3.0-draft",
+  "status": "design_draft",
+  "records": {
+    "channel": {
+      "capacity_target": 30,
+      "expansion_target": 50,
+      "public_regions_share_capacity": true,
+      "private_base_visitors_count_toward_channel": true,
+      "raid_capacity_separate": true,
+      "party_size": 4,
+      "raid_max_players": 8,
+      "first_load_test_players": [
+        2,
+        4,
+        10,
+        20,
+        30
+      ],
+      "channel_switch_cooldown_seconds": 120,
+      "harvest_claims_persist_across_channels": true
+    },
+    "combat": {
+      "player_base_hp": 120,
+      "player_base_stamina": 100,
+      "base_move_speed_mps": 4.2,
+      "physical_damage_formula": "max(1, attack * skill_coefficient * 100/(100 + target_defense * (1-ignore_pct/100)))",
+      "crit_chance_base_pct": 5,
+      "crit_damage_multiplier": 1.5,
+      "weapon_quality_multipliers": {
+        "normal": 1.0,
+        "fine": 1.05,
+        "excellent": 1.1
+      },
+      "quality_affects": [
+        "attack",
+        "defense",
+        "max_durability"
+      ],
+      "quality_does_not_affect": [
+        "resistances",
+        "proc_values",
+        "range",
+        "speed",
+        "inventory_slots"
+      ],
+      "normal_attack_skill_coefficient": 1,
+      "element_formula": "bonus_damage * (1 - min(60,target_element_resistance)/100)",
+      "proc_counter": "서버 확인 유효 적중; 대상별·장착 효과별; 도트·추가타는 재귀 발동 금지",
+      "rounding": "최종 피해 1회 반올림; 중간 계산은 실수 유지",
+      "weapon_swap": "진행 중 공격은 시작 당시 무기·내구도 스냅샷 사용; 교체 후 이전 스택 소멸"
+    },
+    "stack_caps": {
+      "defense_flat": 10,
+      "durability_bonus_pct": 30,
+      "attack_stamina_reduction_pct": 15,
+      "block_stamina_reduction_pct": 20,
+      "armor_ignore_pct": 15,
+      "gather_duration_reduction_pct": 15,
+      "wet_resistance": 60,
+      "cold_resistance": 60,
+      "heat_resistance": 60,
+      "poison_resistance": 60,
+      "shock_resistance": 60,
+      "out_of_combat_heal": 1
+    },
+    "environment": {
+      "exposure_pool_max": 100,
+      "gain_per_second": "max(0, zone_pressure - resistance)/60",
+      "safe_recovery_per_second": 2,
+      "warning_threshold": 40,
+      "stamina_penalty_threshold": 70,
+      "stamina_recovery_penalty_pct": 10,
+      "damage_threshold": 100,
+      "damage_at_max": "최대 체력 1%/5초; 안전지대로 나가면 회복 가능",
+      "food_resistance_bonus": 15,
+      "basic_deep_zone_pressure": 20,
+      "upper_deep_zone_pressure": 45,
+      "cold_frost_duration_rule": "추위 저항은 환경 노출과 냉각 감속 지속시간을 줄임; 별도 냉기 직접피해는 첫 버전에 없음"
+    },
+    "harvest": {
+      "rights": "참여 조건을 충족한 플레이어마다 기본 해체 + 집중 부위 1개; 막타 독점 없음",
+      "eligibility": "전투 체류 10초 이상 + 유효 행동 3회 또는 기초 기여 5% 이상; 튜토리얼은 단독 처치 즉시 인정; 지원·방어도 행동에 포함",
+      "focus_choices_per_corpse": 1,
+      "corpse_claim_expiry_seconds": 300,
+      "disconnect_grace_seconds": 120,
+      "random_quantity": "min~max 정수 균등 추첨; 확률 1 보장과 수량 랜덤을 구분",
+      "quality_rolls": {
+        "normal": 0.75,
+        "fine": 0.2,
+        "excellent": 0.05
+      },
+      "tutorial_quality": "normal 고정",
+      "focus_guaranteed": true,
+      "raid_scaling": {
+        "reference_players": 4,
+        "hp_factor_by_start_players": {
+          "1": 0.35,
+          "2": 0.55,
+          "3": 0.8,
+          "4": 1,
+          "5": 1.18,
+          "6": 1.36,
+          "7": 1.54,
+          "8": 1.72
+        },
+        "attack_damage_factor": 1,
+        "snapshot": "입장 인원이 아닌 전투 시작 시 인원으로 고정; 탈주·중도합류로 축소 금지; 1~2명은 완화 패턴 사용"
+      },
+      "rare_policy": "온전한 표식은 외형·전시 전용; 기본 성능 재료는 확정 집중 해체"
+    },
+    "durability": {
+      "normal_hit_cost": 0.04,
+      "gather_action_cost": 0.15,
+      "armor_valid_hit_cost": 0.08,
+      "no_idle_decay": true,
+      "repair_max_reduction_per_use_pct_of_original": 5,
+      "repair_limit_base": 3,
+      "repair_limit_advanced": 5,
+      "at_zero": "사용 불가 파손품으로 보존; 자동 삭제 없음",
+      "salvage": "비금속 원재료 투입 정수량의 floor(0.2*N), 금속은 별도 고철 규칙; 고유 부위·기관·결정은 회수 제외",
+      "tutorial": "첫 기본 도구 1개 마모 보호; 교체 도구는 일반 규칙"
+    },
+    "perishables": {
+      "raw_food_hours": 8,
+      "basic_preserve_multiplier": 6,
+      "starter_protected_hours": 72,
+      "processed_food_hours": 168,
+      "finished_job_state": "수령 대기 중 부패 없음; 재료는 시작 시 예약·소비 확정",
+      "market_timer": "보관 위치 변경·채널 이동·등록·반환으로 수명 초기화 금지",
+      "merge_rule": "신선도 합치기는 더 낮은 수명; 품질·특성 일치 필요",
+      "spoil_result": "spoiled_food"
+    },
+    "production": {
+      "started_job_materials": "시작 시 소비·잠금; 중복 요청은 같은 job_id로 재사용",
+      "queued_job_materials": "예약 잠금; 시작 전 취소 전액 반환",
+      "started_cancel": "시작 후 취소는 원재료 반환 없음; 시작 전에 안내",
+      "completion": "서버 시각 기준 완료; claim_id 하나당 수령 1회",
+      "offline": "이미 투입된 자원·연료·예약 작업량까지만 진행; 완성 후 재료가 자동 생성되지 않음",
+      "water": "거점 물 저장 서비스; 레시피 water_units 소비; 원정은 물통 capacity 사용",
+      "fuel": "log 1 = 1 unit, charcoal 1 = 2 units; 부족분은 남은 열량으로 저장",
+      "trait_inheritance": "전처리·무두질·건조·재단까지 origin_species 유지; 일반 가죽과 고유 가죽 상호대체는 명시된 레시피에서만 허용",
+      "mixed_quality": "같은 슬롯 안 수량 가중평균 → material_slots 가중합 → 숙련/시설 보정 → 품질 구간 적용; 중간 내림 없음; 혼합 신선도는 최저값"
+    },
+    "quality": {
+      "grades": [
+        "normal",
+        "fine",
+        "excellent"
+      ],
+      "material_grade_scores": {
+        "normal": 0,
+        "fine": 1,
+        "excellent": 2
+      },
+      "recipe_slot_weights": {
+        "primary": 0.6,
+        "reinforcement": 0.2,
+        "binding": 0.2
+      },
+      "skill_bonus_score_max": 0.2,
+      "facility_bonus_score_max": 0.1,
+      "formula": "score = sum(slot_grade * normalized_slot_weight) + skill_bonus + facility_bonus; normal if score<1, fine if 1<=score<2, excellent if score>=2; clamp score 0..2; 없는 슬롯은 남은 가중치 재정규화",
+      "random_great_success": "첫 버전 비활성; 수치형 대성공·유료 확률 상품 없음",
+      "fixed_traits": "장비 내부 같은 특성 id 중복 금지; 다른 장비의 수동 효과는 합산 후 상한; 같은 종류 적중 발동은 가장 높은 하나"
+    },
+    "economy": {
+      "currency": "획득형 화폐 1종; 프리미엄 외형 재화는 출시 후 분리",
+      "market_fee_pct": 5,
+      "market_scope": "서비스 월드 공유",
+      "npc_orders": "수량·보상 상한 있는 납품; 무제한 고정 수익 공정 금지",
+      "baseline_paths": "기본 생활·환경 대비는 솔로 제작 또는 거래 가능; 레이드 전용 필수 재료 없음"
+    },
+    "versions": {
+      "content_version": "0.3.0-draft",
+      "save_schema_version": 1,
+      "client_prediction": "표시·이동 체감용; 서버 결과로 보정",
+      "rollback": "공개 배포는 콘텐츠 버전 고정·백업·마이그레이션; 임의 과거 데이터 덮어쓰기 금지"
+    }
+  }
+}

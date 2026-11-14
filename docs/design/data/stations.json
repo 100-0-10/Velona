@@ -1,0 +1,525 @@
+{
+  "schema_version": 1,
+  "content_version": "0.3.0-draft",
+  "status": "design_draft",
+  "records": [
+    {
+      "id": "hand",
+      "name": "손 제작",
+      "build_cost": {},
+      "unlock": "known",
+      "tier": 0,
+      "prerequisite_stations": [],
+      "upgrade_from": null,
+      "base_queue_slots": 2,
+      "concurrent_jobs": 1
+    },
+    {
+      "id": "build",
+      "name": "건축 메뉴",
+      "build_cost": {},
+      "unlock": "known",
+      "tier": 0,
+      "prerequisite_stations": [],
+      "upgrade_from": null,
+      "base_queue_slots": 2,
+      "concurrent_jobs": 1
+    },
+    {
+      "id": "bench",
+      "name": "간이 작업대",
+      "build_cost": {
+        "log": 4,
+        "stone": 4,
+        "cord": 2
+      },
+      "unlock": "known",
+      "tier": 1,
+      "prerequisite_stations": [],
+      "upgrade_from": null,
+      "base_queue_slots": 2,
+      "concurrent_jobs": 1
+    },
+    {
+      "id": "general",
+      "name": "범용 작업대",
+      "build_cost": {
+        "board": 4,
+        "wood_part": 2
+      },
+      "unlock": "known",
+      "tier": 1,
+      "prerequisite_stations": [
+        "bench",
+        "wood"
+      ],
+      "upgrade_from": "bench",
+      "base_queue_slots": 2,
+      "concurrent_jobs": 1
+    },
+    {
+      "id": "wood",
+      "name": "목공대",
+      "build_cost": {
+        "board": 6,
+        "log": 4,
+        "stone": 4,
+        "cord": 3
+      },
+      "unlock": "known",
+      "tier": 1,
+      "prerequisite_stations": [
+        "bench"
+      ],
+      "upgrade_from": null,
+      "base_queue_slots": 2,
+      "concurrent_jobs": 1
+    },
+    {
+      "id": "prep",
+      "name": "가죽 전처리대",
+      "build_cost": {
+        "log": 3,
+        "board": 2,
+        "stone": 2,
+        "cord": 2
+      },
+      "unlock": "known",
+      "tier": 1,
+      "prerequisite_stations": [
+        "bench"
+      ],
+      "upgrade_from": null,
+      "base_queue_slots": 2,
+      "concurrent_jobs": 1
+    },
+    {
+      "id": "tan",
+      "name": "무두질 통",
+      "build_cost": {
+        "board": 6,
+        "stone": 4,
+        "cord": 3
+      },
+      "unlock": "known",
+      "tier": 1,
+      "prerequisite_stations": [
+        "bench"
+      ],
+      "upgrade_from": null,
+      "base_queue_slots": 2,
+      "concurrent_jobs": 1
+    },
+    {
+      "id": "dry",
+      "name": "건조대",
+      "build_cost": {
+        "log": 4,
+        "cord": 4
+      },
+      "unlock": "known",
+      "tier": 1,
+      "prerequisite_stations": [],
+      "upgrade_from": null,
+      "base_queue_slots": 2,
+      "concurrent_jobs": 1
+    },
+    {
+      "id": "leatherwork",
+      "name": "가죽 작업대",
+      "build_cost": {
+        "board": 6,
+        "wood_part": 2,
+        "stone": 3,
+        "cord": 2
+      },
+      "unlock": "known",
+      "tier": 1,
+      "prerequisite_stations": [
+        "wood"
+      ],
+      "upgrade_from": null,
+      "base_queue_slots": 2,
+      "concurrent_jobs": 1
+    },
+    {
+      "id": "spin",
+      "name": "물레",
+      "build_cost": {
+        "board": 4,
+        "wood_part": 3,
+        "cord": 2
+      },
+      "unlock": "known",
+      "tier": 1,
+      "prerequisite_stations": [
+        "wood"
+      ],
+      "upgrade_from": null,
+      "base_queue_slots": 2,
+      "concurrent_jobs": 1
+    },
+    {
+      "id": "loom",
+      "name": "직조기",
+      "build_cost": {
+        "board": 6,
+        "wood_part": 4,
+        "cord": 4
+      },
+      "unlock": "known",
+      "tier": 1,
+      "prerequisite_stations": [
+        "wood",
+        "spin"
+      ],
+      "upgrade_from": null,
+      "base_queue_slots": 2,
+      "concurrent_jobs": 1
+    },
+    {
+      "id": "sew",
+      "name": "재봉 작업대",
+      "build_cost": {
+        "board": 6,
+        "wood_part": 2,
+        "cord": 2
+      },
+      "unlock": "known",
+      "tier": 1,
+      "prerequisite_stations": [
+        "wood"
+      ],
+      "upgrade_from": null,
+      "base_queue_slots": 2,
+      "concurrent_jobs": 1
+    },
+    {
+      "id": "charcoal_kiln",
+      "name": "숯가마",
+      "build_cost": {
+        "stone": 8,
+        "clay": 4
+      },
+      "unlock": "known",
+      "tier": 1,
+      "prerequisite_stations": [],
+      "upgrade_from": null,
+      "base_queue_slots": 2,
+      "concurrent_jobs": 1
+    },
+    {
+      "id": "furnace",
+      "name": "제련로",
+      "build_cost": {
+        "stone": 12,
+        "brick": 8,
+        "clay": 4
+      },
+      "unlock": "known",
+      "tier": 1,
+      "prerequisite_stations": [
+        "kiln"
+      ],
+      "upgrade_from": null,
+      "base_queue_slots": 2,
+      "concurrent_jobs": 1
+    },
+    {
+      "id": "anvil",
+      "name": "모루 작업대",
+      "build_cost": {
+        "stone": 10,
+        "log": 4,
+        "board": 4,
+        "cord": 2
+      },
+      "unlock": "known",
+      "tier": 1,
+      "prerequisite_stations": [
+        "bench"
+      ],
+      "upgrade_from": null,
+      "base_queue_slots": 2,
+      "concurrent_jobs": 1
+    },
+    {
+      "id": "grind",
+      "name": "연마대",
+      "build_cost": {
+        "stone": 6,
+        "board": 4,
+        "wood_part": 2
+      },
+      "unlock": "known",
+      "tier": 1,
+      "prerequisite_stations": [
+        "wood"
+      ],
+      "upgrade_from": null,
+      "base_queue_slots": 2,
+      "concurrent_jobs": 1
+    },
+    {
+      "id": "pottery",
+      "name": "도기 성형대",
+      "build_cost": {
+        "board": 4,
+        "stone": 4,
+        "clay": 2
+      },
+      "unlock": "known",
+      "tier": 1,
+      "prerequisite_stations": [
+        "bench"
+      ],
+      "upgrade_from": null,
+      "base_queue_slots": 2,
+      "concurrent_jobs": 1
+    },
+    {
+      "id": "kiln",
+      "name": "도기 가마",
+      "build_cost": {
+        "stone": 10,
+        "clay": 6
+      },
+      "unlock": "known",
+      "tier": 1,
+      "prerequisite_stations": [],
+      "upgrade_from": null,
+      "base_queue_slots": 2,
+      "concurrent_jobs": 1
+    },
+    {
+      "id": "fire",
+      "name": "모닥불",
+      "build_cost": {
+        "stone": 6,
+        "branch": 4
+      },
+      "unlock": "known",
+      "tier": 1,
+      "prerequisite_stations": [],
+      "upgrade_from": null,
+      "base_queue_slots": 2,
+      "concurrent_jobs": 1
+    },
+    {
+      "id": "cook",
+      "name": "조리대",
+      "build_cost": {
+        "board": 6,
+        "stone": 4,
+        "pot": 1
+      },
+      "unlock": "known",
+      "tier": 1,
+      "prerequisite_stations": [
+        "pottery",
+        "kiln"
+      ],
+      "upgrade_from": null,
+      "base_queue_slots": 2,
+      "concurrent_jobs": 1
+    },
+    {
+      "id": "oven",
+      "name": "조리 화덕",
+      "build_cost": {
+        "brick": 8,
+        "metal_part": 2,
+        "pot": 1
+      },
+      "unlock": "known",
+      "tier": 2,
+      "prerequisite_stations": [
+        "cook",
+        "anvil"
+      ],
+      "upgrade_from": "cook",
+      "base_queue_slots": 2,
+      "concurrent_jobs": 1
+    },
+    {
+      "id": "smoke",
+      "name": "훈연장",
+      "build_cost": {
+        "log": 6,
+        "board": 4,
+        "stone": 6,
+        "cord": 2
+      },
+      "unlock": "known",
+      "tier": 1,
+      "prerequisite_stations": [
+        "bench"
+      ],
+      "upgrade_from": null,
+      "base_queue_slots": 2,
+      "concurrent_jobs": 1
+    },
+    {
+      "id": "herbal",
+      "name": "약재 작업대",
+      "build_cost": {
+        "board": 4,
+        "stone": 6,
+        "jar": 1
+      },
+      "unlock": "known",
+      "tier": 1,
+      "prerequisite_stations": [
+        "pottery",
+        "kiln"
+      ],
+      "upgrade_from": null,
+      "base_queue_slots": 2,
+      "concurrent_jobs": 1
+    },
+    {
+      "id": "dye_vat",
+      "name": "염색 통",
+      "build_cost": {
+        "board": 6,
+        "jar": 2,
+        "cord": 2
+      },
+      "unlock": "known",
+      "tier": 1,
+      "prerequisite_stations": [
+        "pottery",
+        "kiln"
+      ],
+      "upgrade_from": null,
+      "base_queue_slots": 2,
+      "concurrent_jobs": 1
+    },
+    {
+      "id": "construction",
+      "name": "건설 작업대",
+      "build_cost": {
+        "board": 6,
+        "stone": 6,
+        "wood_part": 2
+      },
+      "unlock": "known",
+      "tier": 1,
+      "prerequisite_stations": [
+        "wood"
+      ],
+      "upgrade_from": null,
+      "base_queue_slots": 2,
+      "concurrent_jobs": 1
+    },
+    {
+      "id": "repair",
+      "name": "정비대",
+      "build_cost": {
+        "board": 6,
+        "stone": 4,
+        "metal_part": 2
+      },
+      "unlock": "known",
+      "tier": 1,
+      "prerequisite_stations": [
+        "anvil"
+      ],
+      "upgrade_from": null,
+      "base_queue_slots": 2,
+      "concurrent_jobs": 1
+    },
+    {
+      "id": "composter",
+      "name": "퇴비함",
+      "build_cost": {
+        "board": 4,
+        "cord": 2
+      },
+      "unlock": "known",
+      "tier": 1,
+      "prerequisite_stations": [
+        "bench"
+      ],
+      "upgrade_from": null,
+      "base_queue_slots": 2,
+      "concurrent_jobs": 1
+    },
+    {
+      "id": "hot_furnace",
+      "name": "고온로",
+      "build_cost": {
+        "brick": 16,
+        "iron_plate": 4,
+        "heat_powder": 6,
+        "metal_part": 4
+      },
+      "unlock": "known",
+      "tier": 3,
+      "prerequisite_stations": [
+        "furnace",
+        "herbal"
+      ],
+      "upgrade_from": null,
+      "base_queue_slots": 2,
+      "concurrent_jobs": 1
+    },
+    {
+      "id": "research",
+      "name": "연구대",
+      "build_cost": {
+        "hard_board": 8,
+        "metal_part": 4,
+        "jar": 2,
+        "cloth": 2
+      },
+      "unlock": "known",
+      "tier": 3,
+      "prerequisite_stations": [
+        "wood",
+        "anvil",
+        "loom"
+      ],
+      "upgrade_from": null,
+      "base_queue_slots": 2,
+      "concurrent_jobs": 1
+    },
+    {
+      "id": "stabilizer",
+      "name": "기관 안정화 장치",
+      "build_cost": {
+        "iron_plate": 4,
+        "strong_metal": 2,
+        "jar": 2,
+        "ancient_part": 1
+      },
+      "unlock": "ancient_basics",
+      "tier": 3,
+      "prerequisite_stations": [
+        "research",
+        "hot_furnace"
+      ],
+      "upgrade_from": null,
+      "base_queue_slots": 2,
+      "concurrent_jobs": 1
+    },
+    {
+      "id": "power_bench",
+      "name": "동력 작업대",
+      "build_cost": {
+        "strong_metal": 4,
+        "metal_part": 6,
+        "hard_board": 6,
+        "stable_organ": 1
+      },
+      "unlock": "ancient_basics",
+      "tier": 3,
+      "prerequisite_stations": [
+        "stabilizer"
+      ],
+      "upgrade_from": null,
+      "base_queue_slots": 2,
+      "concurrent_jobs": 1
+    }
+  ]
+}

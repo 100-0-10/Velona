@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "content_version": "0.3.0-draft",
+  "status": "design_draft",
+  "records": [
+    {
+      "dataset": "regions",
+      "primary_key": "id",
+      "fields": {
+        "tier": "0 튜토리얼 / 1 기본 / 2 중간 / 3 상위",
+        "deep_zone_resistance_target": "환경 저항 점수",
+        "gatherable_item_ids": "items.id 목록",
+        "release_phase": "실제 구현 순서; 현재 미구현"
+      }
+    },
+    {
+      "dataset": "monsters",
+      "primary_key": "id",
+      "fields": {
+        "region_id": "regions.id",
+        "role": "normal / elite / raid",
+        "stats_at_reference_players": "HP·방어·공격 1회 원시값과 기준 인원",
+        "base_harvest": "아이템별 정수 min/max; 획득 여부는 확정",
+        "focus_options": "3가지 중 1개; guaranteed는 확정 수량",
+        "optional_bonus_rolls": "0~1 확률; 외형 전용",
+        "attacks": "공격 계수·예고 초·사거리 m·재사용 초",
+        "equipment_ids": "equipment.id 목록"
+      }
+    },
+    {
+      "dataset": "items",
+      "primary_key": "id",
+      "fields": {
+        "category": "raw / processed / component / consumable / household / equipment / cosmetic",
+        "tier": "아이템 유통 단계 1~3; 튜토리얼 아이템도 1",
+        "stack_limit": "묶음 한도; 장비 1",
+        "perishable_hours": "부패 대상만 시간, null은 기본 부패 없음",
+        "inherent_trait_id": "traits.id; 실제 완성품 적용은 레시피 슬롯 규칙",
+        "monster_origin": "monsters.id 또는 생략",
+        "origin_species_preserved": "가공·저장 시 종 원산지 메타데이터 보존"
+      }
+    },
+    {
+      "dataset": "stations",
+      "primary_key": "id",
+      "fields": {
+        "build_cost": "items.id → 설치 소모 정수",
+        "prerequisite_stations": "stations.id 목록",
+        "upgrade_from": "기존 시설 개선 또는 null",
+        "unlock": "unlocks.id",
+        "base_queue_slots": "초기 대기 슬롯; 동시 작업과 구분",
+        "concurrent_jobs": "실행 작업 수"
+      }
+    },
+    {
+      "dataset": "recipes",
+      "primary_key": "id",
+      "fields": {
+        "station_id": "stations.id",
+        "inputs": "items.id → 작업 1회 소모 정수",
+        "outputs": "items.id → 작업 1회 결과 정수",
+        "duration_seconds": "서버 작업 시간 초",
+        "fuel_units": "추가 열량; 숯 직접 입력과 중복 청구 금지",
+        "water_units": "거점 저장 물 차감 단위",
+        "required_tool_tag": "knife / hammer 또는 null",
+        "unlock": "unlocks.id",
+        "tier": "공정 단계 1~3",
+        "material_slots": "장비만; role·item_ids·normalized_weight; 합계 1",
+        "substitution_groups": "replace 항목을 choices 중 정확히 하나로 교체; 대안 추가 특성 포함"
+      }
+    },
+    {
+      "dataset": "equipment",
+      "primary_key": "id",
+      "fields": {
+        "item_id": "items.id, 같은 문자열 사용",
+        "slot": "weapon / offhand / chest / legs / gloves / boots / cape / bag / tool / utility",
+        "base_stats": "특성·품질 적용 전 수치",
+        "fixed_trait_ids": "traits.id 목록",
+        "hands_required": "양손 무기 2 / 한손 1 / 비무기 0",
+        "inventory_slots_bonus": "가방 전용 고정 보너스",
+        "source_monster_id": "monsters.id 또는 null",
+        "repair_limit": "장비 전체 수리 횟수",
+        "ammo_item_id": "활 사용 소모품 item.id"
+      }
+    },
+    {
+      "dataset": "traits",
+      "primary_key": "id",
+      "fields": {
+        "stat": "수정할 통계 키",
+        "value": "기본 효과 수치",
+        "unit": "percent / points / flag / slots / damage / hp_per_second 등",
+        "description": "조건·지속·쿨다운 포함 설명",
+        "stack_group": "동일 통계 합산 후 rules.stack_caps 적용",
+        "trigger": "발동 이벤트·적중 수·대상별 대기·지속·속성",
+        "stack_policy": "다른 장비 합산/같은 발동 종류 최고값",
+        "deduplicate_within_same_item": "장비 내부 동일 id 중복 금지"
+      }
+    },
+    {
+      "dataset": "sources",
+      "primary_key": "id",
+      "fields": {
+        "item_id": "items.id",
+        "kind": "gathering / guaranteed_exploration / monster_base / monster_focus / monster_bonus / decay / salvage / livestock",
+        "region_ids": "regions.id 목록 또는 생략",
+        "monster_id": "monsters.id 또는 생략",
+        "probability": "0~1, 생략은 별도 kind 규칙",
+        "quantity_min": "최소 정수 수량 또는 생략",
+        "quantity_max": "최대 정수 수량 또는 생략",
+        "records_role": "공급 역색인; 실제 보상 확정은 monsters·life_facilities·production 상태에서 1회만 수행"
+      }
+    },
+    {
+      "dataset": "upgrades",
+      "primary_key": "id",
+      "fields": {
+        "station_id": "stations.id",
+        "cost": "items.id → 소모 정수",
+        "effect": "개선 설계 설명"
+      }
+    },
+    {
+      "dataset": "unlocks",
+      "primary_key": "id",
+      "fields": {
+        "kind": "initial / research / upgrade / discovery",
+        "requires": "unlocks.id 목록",
+        "cost": "연구 소모량 또는 생략",
+        "upgrade_id": "upgrades.id 또는 생략",
+        "source": "선행 지식·재료 확보 방식"
+      }
+    },
+    {
+      "dataset": "life_facilities",
+      "primary_key": "id",
+      "fields": {
+        "build_cost": "items.id → 설치 소모 정수",
+        "inputs": "생산 입력/씨앗 item 목록 또는 생략",
+        "outputs": "생산 item 목록; 건물은 빈 목록",
+        "duration_seconds": "생산 주기 초 또는 생략",
+        "completed_state": "미수령·미접속 처리"
+      }
+    },
+    {
+      "dataset": "operations",
+      "primary_key": "id",
+      "fields": {
+        "station_id": "stations.id",
+        "target_kind": "아이템 상태에 적용할 작업 조건",
+        "max_material_cost": "작업 단위 비용; 소비는 대상 손상량에 따라 계산",
+        "effect": "수리·개조·염색·해체 상태 전이 설명"
+      }
+    },
+    {
+      "dataset": "rules",
+      "primary_key": "section_name",
+      "fields": {
+        "records": "이 파일만 배열 대신 섹션별 객체",
+        "combat": "피해·품질·반올림",
+        "stack_caps": "효과별 상한",
+        "environment": "노출·저항",
+        "harvest": "권리·확률·레이드 인원 배율",
+        "production": "시간·물·연료·취소",
+        "quality": "점수·슬롯·고정 특성",
+        "versions": "콘텐츠/저장 버전"
+      }
+    }
+  ]
+}

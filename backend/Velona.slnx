@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Velona.Server.Tests/Velona.Server.Tests.csproj" />
+  <Project Path="Velona.Server/Velona.Server.csproj" />
+</Solution>

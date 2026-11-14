@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "content_version": "0.3.0-draft",
+  "status": "design_draft",
+  "records": [
+    {
+      "id": "roofed_dryer",
+      "station_id": "dry",
+      "name": "건조대 지붕",
+      "cost": {
+        "board": 4,
+        "fiber": 6,
+        "cord": 2
+      },
+      "effect": "비로 인한 건조 지연 제거"
+    },
+    {
+      "id": "precision_wood",
+      "station_id": "wood",
+      "name": "정밀 목공 장치",
+      "cost": {
+        "metal_part": 4,
+        "nail": 8,
+        "hard_board": 6
+      },
+      "effect": "정밀 목재·복합 자루 공정 해금"
+    },
+    {
+      "id": "professional_leather",
+      "station_id": "leatherwork",
+      "name": "전문 가죽 공방",
+      "cost": {
+        "metal_part": 4,
+        "hard_board": 6,
+        "jar": 2
+      },
+      "effect": "무두질 연속 예약·특수 외피 선택"
+    },
+    {
+      "id": "expert_workshop",
+      "station_id": "sew",
+      "name": "전문 봉제·가죽 공정 부속 장치",
+      "cost": {
+        "strong_metal": 2,
+        "metal_part": 4,
+        "hard_board": 4
+      },
+      "effect": "expert_workshop 해금; 연결된 개인 가죽 작업대도 사용"
+    },
+    {
+      "id": "iron_anvil",
+      "station_id": "anvil",
+      "name": "철제 모루",
+      "cost": {
+        "iron": 6,
+        "metal_part": 2
+      },
+      "effect": "금속 가공시간 -10%; 장비 품질 배율 추가 없음"
+    },
+    {
+      "id": "heat_furnace_lining",
+      "station_id": "hot_furnace",
+      "name": "내열 외벽 개선",
+      "cost": {
+        "heat_plate": 3,
+        "brick": 8
+      },
+      "effect": "고온로 작업 슬롯 +1; 기본 성능 제작 잠금 없음"
+    }
+  ]
+}

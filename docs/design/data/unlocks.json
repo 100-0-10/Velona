@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "content_version": "0.3.0-draft",
+  "status": "design_draft",
+  "records": [
+    {
+      "id": "known",
+      "name": "기초 제작법",
+      "kind": "initial",
+      "requires": []
+    },
+    {
+      "id": "ancient_basics",
+      "name": "기초 고대 기술",
+      "kind": "research",
+      "station_id": "research",
+      "cost": {
+        "blueprint_fragment": 3,
+        "ancient_part": 1
+      },
+      "requires": [
+        "known"
+      ],
+      "source": "H3 입구의 비전투 탐사·복구 의뢰로 확정 확보; 동력 장치 불필요"
+    },
+    {
+      "id": "expert_workshop",
+      "name": "전문 봉제·가죽 공정",
+      "kind": "upgrade",
+      "upgrade_id": "expert_workshop",
+      "requires": [
+        "known"
+      ]
+    },
+    {
+      "id": "regional_T0",
+      "name": "표류자의 만 재료 활용법",
+      "kind": "discovery",
+      "requires": [
+        "known"
+      ],
+      "source": "지역 입구 안내 또는 해당 고유 재료 첫 획득; 레이드 첫 클리어 요구 없음"
+    },
+    {
+      "id": "regional_B1",
+      "name": "새벽 초원 재료 활용법",
+      "kind": "discovery",
+      "requires": [
+        "known"
+      ],
+      "source": "지역 입구 안내 또는 해당 고유 재료 첫 획득; 레이드 첫 클리어 요구 없음"
+    },
+    {
+      "id": "regional_B2",
+      "name": "푸른그늘 숲 재료 활용법",
+      "kind": "discovery",
+      "requires": [
+        "known"
+      ],
+      "source": "지역 입구 안내 또는 해당 고유 재료 첫 획득; 레이드 첫 클리어 요구 없음"
+    },
+    {
+      "id": "regional_M1",
+      "name": "안개갈대 습지 재료 활용법",
+      "kind": "discovery",
+      "requires": [
+        "known"
+      ],
+      "source": "지역 입구 안내 또는 해당 고유 재료 첫 획득; 레이드 첫 클리어 요구 없음"
+    },
+    {
+      "id": "regional_M2",
+      "name": "붉은바람 협곡 재료 활용법",
+      "kind": "discovery",
+      "requires": [
+        "known"
+      ],
+      "source": "지역 입구 안내 또는 해당 고유 재료 첫 획득; 레이드 첫 클리어 요구 없음"
+    },
+    {
+      "id": "regional_M3",
+      "name": "서리침엽 숲 재료 활용법",
+      "kind": "discovery",
+      "requires": [
+        "known"
+      ],
+      "source": "지역 입구 안내 또는 해당 고유 재료 첫 획득; 레이드 첫 클리어 요구 없음"
+    },
+    {
+      "id": "regional_M4",
+      "name": "비취우림 재료 활용법",
+      "kind": "discovery",
+      "requires": [
+        "known"
+      ],
+      "source": "지역 입구 안내 또는 해당 고유 재료 첫 획득; 레이드 첫 클리어 요구 없음"
+    },
+    {
+      "id": "regional_H1",
+      "name": "백설 능선 재료 활용법",
+      "kind": "discovery",
+      "requires": [
+        "known"
+      ],
+      "source": "지역 입구 안내 또는 해당 고유 재료 첫 획득; 레이드 첫 클리어 요구 없음"
+    },
+    {
+      "id": "regional_H2",
+      "name": "잿불 분지 재료 활용법",
+      "kind": "discovery",
+      "requires": [
+        "known"
+      ],
+      "source": "지역 입구 안내 또는 해당 고유 재료 첫 획득; 레이드 첫 클리어 요구 없음"
+    },
+    {
+      "id": "regional_H3",
+      "name": "푸른맥 유적 재료 활용법",
+      "kind": "discovery",
+      "requires": [
+        "known"
+      ],
+      "source": "지역 입구 안내 또는 해당 고유 재료 첫 획득; 레이드 첫 클리어 요구 없음"
+    }
+  ]
+}

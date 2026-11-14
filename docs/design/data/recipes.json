@@ -1,0 +1,8106 @@
+{
+  "schema_version": 1,
+  "content_version": "0.3.0-draft",
+  "status": "design_draft",
+  "records": [
+    {
+      "id": "cord_hand",
+      "station_id": "hand",
+      "inputs": {
+        "fiber": 2
+      },
+      "outputs": {
+        "cord": 1
+      },
+      "duration_seconds": 2,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "knife_hand",
+      "station_id": "hand",
+      "inputs": {
+        "stone": 2,
+        "branch": 1,
+        "cord": 1
+      },
+      "outputs": {
+        "stone_knife": 1
+      },
+      "duration_seconds": 5,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "stone"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "branch"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "cord"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [
+        {
+          "replace_item_id": "cord",
+          "replace_quantity": 1,
+          "choices": [
+            {
+              "inputs": {
+                "cord": 1
+              },
+              "extra_trait_id": null
+            },
+            {
+              "inputs": {
+                "sinew_cord": 1
+              },
+              "extra_trait_id": "light"
+            }
+          ],
+          "choose_exactly_one": true
+        }
+      ],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "hammer_hand",
+      "station_id": "hand",
+      "inputs": {
+        "stone": 3,
+        "branch": 2,
+        "cord": 1
+      },
+      "outputs": {
+        "stone_hammer": 1
+      },
+      "duration_seconds": 5,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "stone"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "branch"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "cord"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [
+        {
+          "replace_item_id": "cord",
+          "replace_quantity": 1,
+          "choices": [
+            {
+              "inputs": {
+                "cord": 1
+              },
+              "extra_trait_id": null
+            },
+            {
+              "inputs": {
+                "sinew_cord": 1
+              },
+              "extra_trait_id": "light"
+            }
+          ],
+          "choose_exactly_one": true
+        }
+      ],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "bandage_hand",
+      "station_id": "hand",
+      "inputs": {
+        "fiber": 3
+      },
+      "outputs": {
+        "crude_bandage": 1
+      },
+      "duration_seconds": 5,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "board_rough",
+      "station_id": "bench",
+      "inputs": {
+        "log": 1
+      },
+      "outputs": {
+        "board": 1
+      },
+      "duration_seconds": 10,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "handle_rough",
+      "station_id": "bench",
+      "inputs": {
+        "log": 1
+      },
+      "outputs": {
+        "handle": 1
+      },
+      "duration_seconds": 10,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "bark_powder",
+      "station_id": "bench",
+      "inputs": {
+        "bark": 2
+      },
+      "outputs": {
+        "bark_powder": 2
+      },
+      "duration_seconds": 10,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "bone_powder",
+      "station_id": "bench",
+      "inputs": {
+        "bone": 2
+      },
+      "outputs": {
+        "bone_powder": 2
+      },
+      "duration_seconds": 10,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "stone_axe",
+      "station_id": "bench",
+      "inputs": {
+        "stone": 3,
+        "handle": 1,
+        "cord": 2
+      },
+      "outputs": {
+        "stone_axe": 1
+      },
+      "duration_seconds": 10,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "stone"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "handle"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "cord"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [
+        {
+          "replace_item_id": "cord",
+          "replace_quantity": 2,
+          "choices": [
+            {
+              "inputs": {
+                "cord": 2
+              },
+              "extra_trait_id": null
+            },
+            {
+              "inputs": {
+                "sinew_cord": 1
+              },
+              "extra_trait_id": "light"
+            }
+          ],
+          "choose_exactly_one": true
+        }
+      ],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "stone_pick",
+      "station_id": "bench",
+      "inputs": {
+        "stone": 4,
+        "handle": 1,
+        "cord": 2
+      },
+      "outputs": {
+        "stone_pick": 1
+      },
+      "duration_seconds": 10,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "stone"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "handle"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "cord"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [
+        {
+          "replace_item_id": "cord",
+          "replace_quantity": 2,
+          "choices": [
+            {
+              "inputs": {
+                "cord": 2
+              },
+              "extra_trait_id": null
+            },
+            {
+              "inputs": {
+                "sinew_cord": 1
+              },
+              "extra_trait_id": "light"
+            }
+          ],
+          "choose_exactly_one": true
+        }
+      ],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "stone_spear",
+      "station_id": "bench",
+      "inputs": {
+        "stone": 2,
+        "handle": 2,
+        "cord": 2
+      },
+      "outputs": {
+        "stone_spear": 1
+      },
+      "duration_seconds": 10,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "stone"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "handle"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "cord"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [
+        {
+          "replace_item_id": "cord",
+          "replace_quantity": 2,
+          "choices": [
+            {
+              "inputs": {
+                "cord": 2
+              },
+              "extra_trait_id": null
+            },
+            {
+              "inputs": {
+                "sinew_cord": 1
+              },
+              "extra_trait_id": "light"
+            }
+          ],
+          "choose_exactly_one": true
+        }
+      ],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "chest",
+      "station_id": "bench",
+      "inputs": {
+        "board": 4,
+        "cord": 2
+      },
+      "outputs": {
+        "small_chest": 1
+      },
+      "duration_seconds": 10,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "board",
+      "station_id": "wood",
+      "inputs": {
+        "log": 1
+      },
+      "outputs": {
+        "board": 2
+      },
+      "duration_seconds": 30,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "handle",
+      "station_id": "wood",
+      "inputs": {
+        "log": 1
+      },
+      "outputs": {
+        "handle": 2
+      },
+      "duration_seconds": 30,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "hard_board",
+      "station_id": "wood",
+      "inputs": {
+        "hard_log": 1
+      },
+      "outputs": {
+        "hard_board": 2
+      },
+      "duration_seconds": 30,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "hard_handle",
+      "station_id": "wood",
+      "inputs": {
+        "hard_log": 1
+      },
+      "outputs": {
+        "hard_handle": 2
+      },
+      "duration_seconds": 30,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "wood_part",
+      "station_id": "wood",
+      "inputs": {
+        "board": 2,
+        "cord": 1
+      },
+      "outputs": {
+        "wood_part": 2
+      },
+      "duration_seconds": 30,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "adhesive",
+      "station_id": "wood",
+      "inputs": {
+        "resin": 2,
+        "oil": 1
+      },
+      "outputs": {
+        "adhesive": 2
+      },
+      "duration_seconds": 30,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "bowl_wood",
+      "station_id": "wood",
+      "inputs": {
+        "board": 1
+      },
+      "outputs": {
+        "wood_bowl": 2
+      },
+      "duration_seconds": 30,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "chair",
+      "station_id": "wood",
+      "inputs": {
+        "board": 3,
+        "wood_part": 1
+      },
+      "outputs": {
+        "chair": 1
+      },
+      "duration_seconds": 30,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "table",
+      "station_id": "wood",
+      "inputs": {
+        "board": 5,
+        "wood_part": 2
+      },
+      "outputs": {
+        "table": 1
+      },
+      "duration_seconds": 30,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "wood_shield",
+      "station_id": "wood",
+      "inputs": {
+        "board": 4,
+        "cord": 2
+      },
+      "outputs": {
+        "wood_shield": 1
+      },
+      "duration_seconds": 30,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "board"
+          ],
+          "normalized_weight": 0.75
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "cord"
+          ],
+          "normalized_weight": 0.25
+        }
+      ],
+      "substitution_groups": [
+        {
+          "replace_item_id": "cord",
+          "replace_quantity": 2,
+          "choices": [
+            {
+              "inputs": {
+                "cord": 2
+              },
+              "extra_trait_id": null
+            },
+            {
+              "inputs": {
+                "sinew_cord": 1
+              },
+              "extra_trait_id": "light"
+            }
+          ],
+          "choose_exactly_one": true
+        }
+      ],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "shelf",
+      "station_id": "wood",
+      "inputs": {
+        "board": 4,
+        "wood_part": 2
+      },
+      "outputs": {
+        "shelf": 1
+      },
+      "duration_seconds": 30,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "large_chest",
+      "station_id": "wood",
+      "inputs": {
+        "board": 8,
+        "nail": 4,
+        "metal_part": 2
+      },
+      "outputs": {
+        "large_chest": 1
+      },
+      "duration_seconds": 30,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "wall_horn",
+      "station_id": "wood",
+      "inputs": {
+        "trim_horn": 1,
+        "board": 2,
+        "leather_strap": 1
+      },
+      "outputs": {
+        "wall_horn": 1
+      },
+      "duration_seconds": 30,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "trim_hide",
+      "station_id": "prep",
+      "inputs": {
+        "raw_hide": 1
+      },
+      "outputs": {
+        "trim_hide": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": "knife",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "trim_fur",
+      "station_id": "prep",
+      "inputs": {
+        "fur_hide": 1
+      },
+      "outputs": {
+        "trim_fur": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": "knife",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "sinew_cord",
+      "station_id": "prep",
+      "inputs": {
+        "sinew": 2
+      },
+      "outputs": {
+        "sinew_cord": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": "knife",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "trim_shell",
+      "station_id": "prep",
+      "inputs": {
+        "shell": 1
+      },
+      "outputs": {
+        "trim_shell": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": "knife",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "trim_horn",
+      "station_id": "prep",
+      "inputs": {
+        "horn": 1
+      },
+      "outputs": {
+        "trim_horn": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": "knife",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "meat_bait",
+      "station_id": "prep",
+      "inputs": {
+        "meat": 1
+      },
+      "outputs": {
+        "meat_bait": 3
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": "knife",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "tan",
+      "station_id": "tan",
+      "inputs": {
+        "trim_hide": 1,
+        "bark_powder": 2
+      },
+      "outputs": {
+        "wet_leather": 1
+      },
+      "duration_seconds": 240,
+      "fuel_units": 0,
+      "water_units": 2,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "tan_fur",
+      "station_id": "tan",
+      "inputs": {
+        "trim_fur": 1,
+        "bark_powder": 2
+      },
+      "outputs": {
+        "wet_fur": 1
+      },
+      "duration_seconds": 300,
+      "fuel_units": 0,
+      "water_units": 2,
+      "tier": 2,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "dry_leather",
+      "station_id": "dry",
+      "inputs": {
+        "wet_leather": 1
+      },
+      "outputs": {
+        "leather": 1
+      },
+      "duration_seconds": 180,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "dry_fur",
+      "station_id": "dry",
+      "inputs": {
+        "wet_fur": 1
+      },
+      "outputs": {
+        "warm_leather": 1
+      },
+      "duration_seconds": 240,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "dry_herb",
+      "station_id": "dry",
+      "inputs": {
+        "herb": 2
+      },
+      "outputs": {
+        "dry_herb": 1
+      },
+      "duration_seconds": 120,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "dry_berry",
+      "station_id": "dry",
+      "inputs": {
+        "berry": 3
+      },
+      "outputs": {
+        "dry_berry": 1
+      },
+      "duration_seconds": 180,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "strap",
+      "station_id": "leatherwork",
+      "inputs": {
+        "leather": 1
+      },
+      "outputs": {
+        "leather_strap": 3
+      },
+      "duration_seconds": 15,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "waterproof_leather",
+      "station_id": "leatherwork",
+      "inputs": {
+        "leather": 1,
+        "resin": 1,
+        "oil": 1
+      },
+      "outputs": {
+        "waterproof_leather": 1
+      },
+      "duration_seconds": 15,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "bag",
+      "station_id": "leatherwork",
+      "inputs": {
+        "leather": 3,
+        "cord": 4
+      },
+      "outputs": {
+        "small_bag": 1
+      },
+      "duration_seconds": 15,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "leather"
+          ],
+          "normalized_weight": 0.75
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "cord"
+          ],
+          "normalized_weight": 0.25
+        }
+      ],
+      "substitution_groups": [
+        {
+          "replace_item_id": "cord",
+          "replace_quantity": 4,
+          "choices": [
+            {
+              "inputs": {
+                "cord": 4
+              },
+              "extra_trait_id": null
+            },
+            {
+              "inputs": {
+                "sinew_cord": 2
+              },
+              "extra_trait_id": "light"
+            }
+          ],
+          "choose_exactly_one": true
+        }
+      ],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gloves",
+      "station_id": "leatherwork",
+      "inputs": {
+        "leather": 2,
+        "cord": 2
+      },
+      "outputs": {
+        "leather_gloves": 1
+      },
+      "duration_seconds": 15,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "leather"
+          ],
+          "normalized_weight": 0.75
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "cord"
+          ],
+          "normalized_weight": 0.25
+        }
+      ],
+      "substitution_groups": [
+        {
+          "replace_item_id": "cord",
+          "replace_quantity": 2,
+          "choices": [
+            {
+              "inputs": {
+                "cord": 2
+              },
+              "extra_trait_id": null
+            },
+            {
+              "inputs": {
+                "sinew_cord": 1
+              },
+              "extra_trait_id": "light"
+            }
+          ],
+          "choose_exactly_one": true
+        }
+      ],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "boots",
+      "station_id": "leatherwork",
+      "inputs": {
+        "leather": 3,
+        "sinew_cord": 1
+      },
+      "outputs": {
+        "leather_boots": 1
+      },
+      "duration_seconds": 15,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "leather"
+          ],
+          "normalized_weight": 0.75
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "sinew_cord"
+          ],
+          "normalized_weight": 0.25
+        }
+      ],
+      "substitution_groups": [],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "leather_chest",
+      "station_id": "leatherwork",
+      "inputs": {
+        "leather": 5,
+        "leather_strap": 2
+      },
+      "outputs": {
+        "leather_chest": 1
+      },
+      "duration_seconds": 15,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "leather"
+          ],
+          "normalized_weight": 0.75
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "leather_strap"
+          ],
+          "normalized_weight": 0.25
+        }
+      ],
+      "substitution_groups": [
+        {
+          "replace_item_id": "leather_strap",
+          "replace_quantity": 2,
+          "choices": [
+            {
+              "inputs": {
+                "leather_strap": 2
+              },
+              "extra_trait_id": null
+            },
+            {
+              "inputs": {
+                "sinew_cord": 1
+              },
+              "extra_trait_id": "light"
+            }
+          ],
+          "choose_exactly_one": true
+        }
+      ],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "leather_legs",
+      "station_id": "leatherwork",
+      "inputs": {
+        "leather": 4,
+        "leather_strap": 2
+      },
+      "outputs": {
+        "leather_legs": 1
+      },
+      "duration_seconds": 15,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "leather"
+          ],
+          "normalized_weight": 0.75
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "leather_strap"
+          ],
+          "normalized_weight": 0.25
+        }
+      ],
+      "substitution_groups": [
+        {
+          "replace_item_id": "leather_strap",
+          "replace_quantity": 2,
+          "choices": [
+            {
+              "inputs": {
+                "leather_strap": 2
+              },
+              "extra_trait_id": null
+            },
+            {
+              "inputs": {
+                "sinew_cord": 1
+              },
+              "extra_trait_id": "light"
+            }
+          ],
+          "choose_exactly_one": true
+        }
+      ],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "water_boots",
+      "station_id": "leatherwork",
+      "inputs": {
+        "waterproof_leather": 3,
+        "sinew_cord": 1
+      },
+      "outputs": {
+        "water_boots": 1
+      },
+      "duration_seconds": 15,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "waterproof_leather"
+          ],
+          "normalized_weight": 0.75
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "sinew_cord"
+          ],
+          "normalized_weight": 0.25
+        }
+      ],
+      "substitution_groups": [],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "shell_shield",
+      "station_id": "leatherwork",
+      "inputs": {
+        "trim_shell": 3,
+        "board": 2,
+        "leather_strap": 2
+      },
+      "outputs": {
+        "shell_shield": 1
+      },
+      "duration_seconds": 15,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "trim_shell"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "board"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "leather_strap"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [
+        {
+          "replace_item_id": "leather_strap",
+          "replace_quantity": 2,
+          "choices": [
+            {
+              "inputs": {
+                "leather_strap": 2
+              },
+              "extra_trait_id": null
+            },
+            {
+              "inputs": {
+                "sinew_cord": 1
+              },
+              "extra_trait_id": "light"
+            }
+          ],
+          "choose_exactly_one": true
+        }
+      ],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "waterskin",
+      "station_id": "leatherwork",
+      "inputs": {
+        "waterproof_leather": 2,
+        "leather_strap": 1
+      },
+      "outputs": {
+        "waterskin": 1
+      },
+      "duration_seconds": 15,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "waterproof_leather"
+          ],
+          "normalized_weight": 0.75
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "leather_strap"
+          ],
+          "normalized_weight": 0.25
+        }
+      ],
+      "substitution_groups": [
+        {
+          "replace_item_id": "leather_strap",
+          "replace_quantity": 1,
+          "choices": [
+            {
+              "inputs": {
+                "leather_strap": 1
+              },
+              "extra_trait_id": null
+            },
+            {
+              "inputs": {
+                "sinew_cord": 1
+              },
+              "extra_trait_id": "light"
+            }
+          ],
+          "choose_exactly_one": true
+        }
+      ],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "leather_bedding",
+      "station_id": "leatherwork",
+      "inputs": {
+        "leather": 3,
+        "fiber": 6
+      },
+      "outputs": {
+        "leather_bedding": 1
+      },
+      "duration_seconds": 15,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "leather_rug",
+      "station_id": "leatherwork",
+      "inputs": {
+        "leather": 4,
+        "leather_strap": 2
+      },
+      "outputs": {
+        "leather_rug": 1
+      },
+      "duration_seconds": 15,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "thread",
+      "station_id": "spin",
+      "inputs": {
+        "fiber": 3
+      },
+      "outputs": {
+        "thread": 2
+      },
+      "duration_seconds": 40,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "wool_thread",
+      "station_id": "spin",
+      "inputs": {
+        "wool": 3
+      },
+      "outputs": {
+        "wool_thread": 2
+      },
+      "duration_seconds": 50,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "tough_thread",
+      "station_id": "spin",
+      "inputs": {
+        "thread": 2,
+        "sinew": 1
+      },
+      "outputs": {
+        "tough_thread": 1
+      },
+      "duration_seconds": 40,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "cloth",
+      "station_id": "loom",
+      "inputs": {
+        "thread": 3
+      },
+      "outputs": {
+        "cloth": 1
+      },
+      "duration_seconds": 60,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "warm_cloth",
+      "station_id": "loom",
+      "inputs": {
+        "wool_thread": 3
+      },
+      "outputs": {
+        "warm_cloth": 1
+      },
+      "duration_seconds": 60,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "tough_cloth",
+      "station_id": "loom",
+      "inputs": {
+        "thread": 2,
+        "tough_thread": 1
+      },
+      "outputs": {
+        "tough_cloth": 1
+      },
+      "duration_seconds": 60,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "waterproof_cloth",
+      "station_id": "loom",
+      "inputs": {
+        "cloth": 1,
+        "resin": 1,
+        "oil": 1
+      },
+      "outputs": {
+        "waterproof_cloth": 1
+      },
+      "duration_seconds": 60,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "cloth_chest",
+      "station_id": "sew",
+      "inputs": {
+        "cloth": 3,
+        "thread": 2
+      },
+      "outputs": {
+        "cloth_chest": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "cloth"
+          ],
+          "normalized_weight": 0.75
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "thread"
+          ],
+          "normalized_weight": 0.25
+        }
+      ],
+      "substitution_groups": [],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "cloth_legs",
+      "station_id": "sew",
+      "inputs": {
+        "cloth": 2,
+        "thread": 2
+      },
+      "outputs": {
+        "cloth_legs": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "cloth"
+          ],
+          "normalized_weight": 0.75
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "thread"
+          ],
+          "normalized_weight": 0.25
+        }
+      ],
+      "substitution_groups": [],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "bandage",
+      "station_id": "sew",
+      "inputs": {
+        "cloth": 1
+      },
+      "outputs": {
+        "bandage": 3
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "apron",
+      "station_id": "sew",
+      "inputs": {
+        "cloth": 2,
+        "leather": 1,
+        "thread": 2
+      },
+      "outputs": {
+        "apron": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "cloth"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "leather"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "thread"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "rain_cape",
+      "station_id": "sew",
+      "inputs": {
+        "waterproof_cloth": 3,
+        "leather_strap": 2
+      },
+      "outputs": {
+        "rain_cape": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "waterproof_cloth"
+          ],
+          "normalized_weight": 0.75
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "leather_strap"
+          ],
+          "normalized_weight": 0.25
+        }
+      ],
+      "substitution_groups": [
+        {
+          "replace_item_id": "leather_strap",
+          "replace_quantity": 2,
+          "choices": [
+            {
+              "inputs": {
+                "leather_strap": 2
+              },
+              "extra_trait_id": null
+            },
+            {
+              "inputs": {
+                "sinew_cord": 1
+              },
+              "extra_trait_id": "light"
+            }
+          ],
+          "choose_exactly_one": true
+        }
+      ],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "fur_chest",
+      "station_id": "sew",
+      "inputs": {
+        "warm_leather": 4,
+        "warm_cloth": 2,
+        "thread": 3
+      },
+      "outputs": {
+        "fur_chest": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "warm_leather"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "warm_cloth"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "thread"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "fur_gloves",
+      "station_id": "sew",
+      "inputs": {
+        "warm_leather": 2,
+        "warm_cloth": 1,
+        "thread": 2
+      },
+      "outputs": {
+        "fur_gloves": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "warm_leather"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "warm_cloth"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "thread"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "fur_boots",
+      "station_id": "sew",
+      "inputs": {
+        "warm_leather": 3,
+        "warm_cloth": 1,
+        "sinew_cord": 1
+      },
+      "outputs": {
+        "fur_boots": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "warm_leather"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "warm_cloth"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "sinew_cord"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "blanket",
+      "station_id": "sew",
+      "inputs": {
+        "cloth": 3,
+        "fiber": 4,
+        "thread": 2
+      },
+      "outputs": {
+        "blanket": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "warm_blanket",
+      "station_id": "sew",
+      "inputs": {
+        "warm_cloth": 3,
+        "warm_leather": 2,
+        "thread": 2
+      },
+      "outputs": {
+        "warm_blanket": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "large_bag",
+      "station_id": "sew",
+      "inputs": {
+        "tough_cloth": 4,
+        "leather": 3,
+        "leather_strap": 3
+      },
+      "outputs": {
+        "large_bag": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "tough_cloth"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "leather"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "leather_strap"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [
+        {
+          "replace_item_id": "leather_strap",
+          "replace_quantity": 3,
+          "choices": [
+            {
+              "inputs": {
+                "leather_strap": 3
+              },
+              "extra_trait_id": null
+            },
+            {
+              "inputs": {
+                "sinew_cord": 2
+              },
+              "extra_trait_id": "light"
+            }
+          ],
+          "choose_exactly_one": true
+        }
+      ],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "fur_rug",
+      "station_id": "sew",
+      "inputs": {
+        "warm_leather": 4,
+        "thread": 2
+      },
+      "outputs": {
+        "fur_rug": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "curtain",
+      "station_id": "sew",
+      "inputs": {
+        "cloth": 3,
+        "handle": 1,
+        "thread": 2
+      },
+      "outputs": {
+        "curtain": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "charcoal",
+      "station_id": "charcoal_kiln",
+      "inputs": {
+        "log": 2
+      },
+      "outputs": {
+        "charcoal": 4
+      },
+      "duration_seconds": 240,
+      "fuel_units": 1,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "iron",
+      "station_id": "furnace",
+      "inputs": {
+        "iron_ore": 4,
+        "charcoal": 2
+      },
+      "outputs": {
+        "iron": 2
+      },
+      "duration_seconds": 300,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "recycle_iron",
+      "station_id": "furnace",
+      "inputs": {
+        "scrap_iron": 3,
+        "charcoal": 1
+      },
+      "outputs": {
+        "iron": 1
+      },
+      "duration_seconds": 240,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "nails",
+      "station_id": "anvil",
+      "inputs": {
+        "iron": 1
+      },
+      "outputs": {
+        "nail": 8
+      },
+      "duration_seconds": 40,
+      "fuel_units": 1,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "known",
+      "required_tool_tag": "hammer",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "metal_part",
+      "station_id": "anvil",
+      "inputs": {
+        "iron": 1
+      },
+      "outputs": {
+        "metal_part": 2
+      },
+      "duration_seconds": 40,
+      "fuel_units": 1,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "known",
+      "required_tool_tag": "hammer",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "rough_axe",
+      "station_id": "anvil",
+      "inputs": {
+        "iron": 2
+      },
+      "outputs": {
+        "rough_axe": 1
+      },
+      "duration_seconds": 40,
+      "fuel_units": 1,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "known",
+      "required_tool_tag": "hammer",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "rough_pick",
+      "station_id": "anvil",
+      "inputs": {
+        "iron": 3
+      },
+      "outputs": {
+        "rough_pick": 1
+      },
+      "duration_seconds": 40,
+      "fuel_units": 1,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "known",
+      "required_tool_tag": "hammer",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "rough_spear",
+      "station_id": "anvil",
+      "inputs": {
+        "iron": 2
+      },
+      "outputs": {
+        "rough_spear": 1
+      },
+      "duration_seconds": 40,
+      "fuel_units": 1,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "known",
+      "required_tool_tag": "hammer",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "rough_knife",
+      "station_id": "anvil",
+      "inputs": {
+        "iron": 1
+      },
+      "outputs": {
+        "rough_knife": 1
+      },
+      "duration_seconds": 40,
+      "fuel_units": 1,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "known",
+      "required_tool_tag": "hammer",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "iron_plate",
+      "station_id": "anvil",
+      "inputs": {
+        "iron": 2
+      },
+      "outputs": {
+        "iron_plate": 1
+      },
+      "duration_seconds": 40,
+      "fuel_units": 1,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "known",
+      "required_tool_tag": "hammer",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "axe_head",
+      "station_id": "grind",
+      "inputs": {
+        "rough_axe": 1
+      },
+      "outputs": {
+        "axe_head": 1
+      },
+      "duration_seconds": 30,
+      "fuel_units": 0,
+      "water_units": 1,
+      "tier": 2,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "pick_head",
+      "station_id": "grind",
+      "inputs": {
+        "rough_pick": 1
+      },
+      "outputs": {
+        "pick_head": 1
+      },
+      "duration_seconds": 30,
+      "fuel_units": 0,
+      "water_units": 1,
+      "tier": 2,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "spear_head",
+      "station_id": "grind",
+      "inputs": {
+        "rough_spear": 1
+      },
+      "outputs": {
+        "spear_head": 1
+      },
+      "duration_seconds": 30,
+      "fuel_units": 0,
+      "water_units": 1,
+      "tier": 2,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "knife_blade",
+      "station_id": "grind",
+      "inputs": {
+        "rough_knife": 1
+      },
+      "outputs": {
+        "knife_blade": 1
+      },
+      "duration_seconds": 30,
+      "fuel_units": 0,
+      "water_units": 1,
+      "tier": 2,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "horn_blade",
+      "station_id": "grind",
+      "inputs": {
+        "trim_horn": 1
+      },
+      "outputs": {
+        "horn_blade": 1
+      },
+      "duration_seconds": 30,
+      "fuel_units": 0,
+      "water_units": 1,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "iron_axe",
+      "station_id": "general",
+      "inputs": {
+        "axe_head": 1,
+        "handle": 1,
+        "leather_strap": 2
+      },
+      "outputs": {
+        "iron_axe": 1
+      },
+      "duration_seconds": 15,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "axe_head"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "handle"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "leather_strap"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [
+        {
+          "replace_item_id": "leather_strap",
+          "replace_quantity": 2,
+          "choices": [
+            {
+              "inputs": {
+                "leather_strap": 2
+              },
+              "extra_trait_id": null
+            },
+            {
+              "inputs": {
+                "sinew_cord": 1
+              },
+              "extra_trait_id": "light"
+            }
+          ],
+          "choose_exactly_one": true
+        }
+      ],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "iron_pick",
+      "station_id": "general",
+      "inputs": {
+        "pick_head": 1,
+        "handle": 1,
+        "leather_strap": 2
+      },
+      "outputs": {
+        "iron_pick": 1
+      },
+      "duration_seconds": 15,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "pick_head"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "handle"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "leather_strap"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [
+        {
+          "replace_item_id": "leather_strap",
+          "replace_quantity": 2,
+          "choices": [
+            {
+              "inputs": {
+                "leather_strap": 2
+              },
+              "extra_trait_id": null
+            },
+            {
+              "inputs": {
+                "sinew_cord": 1
+              },
+              "extra_trait_id": "light"
+            }
+          ],
+          "choose_exactly_one": true
+        }
+      ],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "iron_spear",
+      "station_id": "general",
+      "inputs": {
+        "spear_head": 1,
+        "hard_handle": 1,
+        "sinew_cord": 1
+      },
+      "outputs": {
+        "iron_spear": 1
+      },
+      "duration_seconds": 15,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "spear_head"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "hard_handle"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "sinew_cord"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "iron_knife",
+      "station_id": "general",
+      "inputs": {
+        "knife_blade": 1,
+        "handle": 1,
+        "leather_strap": 1
+      },
+      "outputs": {
+        "iron_knife": 1
+      },
+      "duration_seconds": 15,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "knife_blade"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "handle"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "leather_strap"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [
+        {
+          "replace_item_id": "leather_strap",
+          "replace_quantity": 1,
+          "choices": [
+            {
+              "inputs": {
+                "leather_strap": 1
+              },
+              "extra_trait_id": null
+            },
+            {
+              "inputs": {
+                "sinew_cord": 1
+              },
+              "extra_trait_id": "light"
+            }
+          ],
+          "choose_exactly_one": true
+        }
+      ],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "horn_spear",
+      "station_id": "general",
+      "inputs": {
+        "horn_blade": 1,
+        "hard_handle": 1,
+        "sinew_cord": 1
+      },
+      "outputs": {
+        "horn_spear": 1
+      },
+      "duration_seconds": 15,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "horn_blade"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "hard_handle"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "sinew_cord"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "hoe",
+      "station_id": "general",
+      "inputs": {
+        "stone": 2,
+        "handle": 1,
+        "cord": 1
+      },
+      "outputs": {
+        "hoe": 1
+      },
+      "duration_seconds": 15,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "stone"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "handle"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "cord"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [
+        {
+          "replace_item_id": "cord",
+          "replace_quantity": 1,
+          "choices": [
+            {
+              "inputs": {
+                "cord": 1
+              },
+              "extra_trait_id": null
+            },
+            {
+              "inputs": {
+                "sinew_cord": 1
+              },
+              "extra_trait_id": "light"
+            }
+          ],
+          "choose_exactly_one": true
+        }
+      ],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "rod",
+      "station_id": "general",
+      "inputs": {
+        "handle": 2,
+        "thread": 2,
+        "bone": 1
+      },
+      "outputs": {
+        "fishing_rod": 1
+      },
+      "duration_seconds": 15,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "handle"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "bone"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "thread"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "better_rod",
+      "station_id": "general",
+      "inputs": {
+        "hard_handle": 2,
+        "tough_thread": 2,
+        "metal_part": 1
+      },
+      "outputs": {
+        "better_rod": 1
+      },
+      "duration_seconds": 15,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "hard_handle"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "metal_part"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "tough_thread"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "storage_jar",
+      "station_id": "general",
+      "inputs": {
+        "jar": 1,
+        "board": 1,
+        "cord": 1
+      },
+      "outputs": {
+        "storage_jar": 1
+      },
+      "duration_seconds": 15,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "lamp",
+      "station_id": "general",
+      "inputs": {
+        "bowl": 1,
+        "oil": 1,
+        "thread": 1
+      },
+      "outputs": {
+        "lamp": 1
+      },
+      "duration_seconds": 15,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "grain_bait",
+      "station_id": "general",
+      "inputs": {
+        "flour": 1
+      },
+      "outputs": {
+        "grain_bait": 3
+      },
+      "duration_seconds": 10,
+      "fuel_units": 0,
+      "water_units": 1,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "shape_jar",
+      "station_id": "pottery",
+      "inputs": {
+        "clay": 2
+      },
+      "outputs": {
+        "wet_jar": 1
+      },
+      "duration_seconds": 30,
+      "fuel_units": 0,
+      "water_units": 1,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "shape_pot",
+      "station_id": "pottery",
+      "inputs": {
+        "clay": 3
+      },
+      "outputs": {
+        "wet_pot": 1
+      },
+      "duration_seconds": 30,
+      "fuel_units": 0,
+      "water_units": 1,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "shape_bowl",
+      "station_id": "pottery",
+      "inputs": {
+        "clay": 2
+      },
+      "outputs": {
+        "wet_bowl": 2
+      },
+      "duration_seconds": 30,
+      "fuel_units": 0,
+      "water_units": 1,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "shape_flowerpot",
+      "station_id": "pottery",
+      "inputs": {
+        "clay": 2
+      },
+      "outputs": {
+        "wet_flowerpot": 1
+      },
+      "duration_seconds": 30,
+      "fuel_units": 0,
+      "water_units": 1,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "fire_jar",
+      "station_id": "kiln",
+      "inputs": {
+        "wet_jar": 1
+      },
+      "outputs": {
+        "jar": 1
+      },
+      "duration_seconds": 180,
+      "fuel_units": 1,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "fire_pot",
+      "station_id": "kiln",
+      "inputs": {
+        "wet_pot": 1
+      },
+      "outputs": {
+        "pot": 1
+      },
+      "duration_seconds": 180,
+      "fuel_units": 1,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "fire_bowl",
+      "station_id": "kiln",
+      "inputs": {
+        "wet_bowl": 2
+      },
+      "outputs": {
+        "bowl": 2
+      },
+      "duration_seconds": 180,
+      "fuel_units": 1,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "fire_flowerpot",
+      "station_id": "kiln",
+      "inputs": {
+        "wet_flowerpot": 1
+      },
+      "outputs": {
+        "flowerpot": 1
+      },
+      "duration_seconds": 180,
+      "fuel_units": 1,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "brick",
+      "station_id": "kiln",
+      "inputs": {
+        "clay": 4
+      },
+      "outputs": {
+        "brick": 4
+      },
+      "duration_seconds": 240,
+      "fuel_units": 1,
+      "water_units": 1,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "cook_meat",
+      "station_id": "fire",
+      "inputs": {
+        "meat": 1
+      },
+      "outputs": {
+        "cooked_meat": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 1,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "cook_fish",
+      "station_id": "fire",
+      "inputs": {
+        "fish": 1
+      },
+      "outputs": {
+        "cooked_fish": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 1,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "cook_veg",
+      "station_id": "fire",
+      "inputs": {
+        "vegetable": 2
+      },
+      "outputs": {
+        "cooked_veg": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 1,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "oil",
+      "station_id": "fire",
+      "inputs": {
+        "fat": 2
+      },
+      "outputs": {
+        "oil": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 1,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "flour",
+      "station_id": "cook",
+      "inputs": {
+        "grain": 3
+      },
+      "outputs": {
+        "flour": 2
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "veg_soup",
+      "station_id": "cook",
+      "inputs": {
+        "vegetable": 3
+      },
+      "outputs": {
+        "veg_soup": 2
+      },
+      "duration_seconds": 30,
+      "fuel_units": 1,
+      "water_units": 2,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "meat_stew",
+      "station_id": "cook",
+      "inputs": {
+        "meat": 2,
+        "vegetable": 2
+      },
+      "outputs": {
+        "meat_stew": 2
+      },
+      "duration_seconds": 30,
+      "fuel_units": 1,
+      "water_units": 2,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "porridge",
+      "station_id": "cook",
+      "inputs": {
+        "grain": 2
+      },
+      "outputs": {
+        "porridge": 2
+      },
+      "duration_seconds": 30,
+      "fuel_units": 1,
+      "water_units": 2,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "herb_tea",
+      "station_id": "cook",
+      "inputs": {
+        "dry_herb": 1
+      },
+      "outputs": {
+        "herb_tea": 2
+      },
+      "duration_seconds": 30,
+      "fuel_units": 1,
+      "water_units": 2,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "bread",
+      "station_id": "oven",
+      "inputs": {
+        "flour": 2
+      },
+      "outputs": {
+        "bread": 3
+      },
+      "duration_seconds": 45,
+      "fuel_units": 1,
+      "water_units": 1,
+      "tier": 2,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "meat_pie",
+      "station_id": "oven",
+      "inputs": {
+        "flour": 2,
+        "meat": 2,
+        "oil": 1
+      },
+      "outputs": {
+        "meat_pie": 2
+      },
+      "duration_seconds": 45,
+      "fuel_units": 1,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "warm_stew",
+      "station_id": "oven",
+      "inputs": {
+        "meat": 2,
+        "vegetable": 2,
+        "dry_herb": 1
+      },
+      "outputs": {
+        "warm_stew": 2
+      },
+      "duration_seconds": 45,
+      "fuel_units": 1,
+      "water_units": 2,
+      "tier": 2,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gather_lunch",
+      "station_id": "oven",
+      "inputs": {
+        "bread": 2,
+        "cooked_veg": 2,
+        "dry_berry": 1
+      },
+      "outputs": {
+        "gather_lunch": 2
+      },
+      "duration_seconds": 45,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "smoked_meat",
+      "station_id": "smoke",
+      "inputs": {
+        "meat": 2,
+        "salt": 1
+      },
+      "outputs": {
+        "smoked_meat": 2
+      },
+      "duration_seconds": 420,
+      "fuel_units": 1,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "smoked_fish",
+      "station_id": "smoke",
+      "inputs": {
+        "fish": 2,
+        "salt": 1
+      },
+      "outputs": {
+        "smoked_fish": 2
+      },
+      "duration_seconds": 420,
+      "fuel_units": 1,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "ration",
+      "station_id": "cook",
+      "inputs": {
+        "smoked_meat": 1,
+        "bread": 2,
+        "dry_berry": 1
+      },
+      "outputs": {
+        "ration": 2
+      },
+      "duration_seconds": 15,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "herb_powder",
+      "station_id": "herbal",
+      "inputs": {
+        "dry_herb": 2
+      },
+      "outputs": {
+        "herb_powder": 2
+      },
+      "duration_seconds": 30,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "salve",
+      "station_id": "herbal",
+      "inputs": {
+        "herb_powder": 2,
+        "oil": 1
+      },
+      "outputs": {
+        "salve": 2
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "herb_bandage",
+      "station_id": "herbal",
+      "inputs": {
+        "bandage": 2,
+        "herb_powder": 1
+      },
+      "outputs": {
+        "herb_bandage": 2
+      },
+      "duration_seconds": 15,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "antidote",
+      "station_id": "herbal",
+      "inputs": {
+        "marsh_herb": 2,
+        "herb_powder": 1
+      },
+      "outputs": {
+        "antidote": 2
+      },
+      "duration_seconds": 30,
+      "fuel_units": 0,
+      "water_units": 2,
+      "tier": 2,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "repellent",
+      "station_id": "herbal",
+      "inputs": {
+        "jungle_herb": 2,
+        "oil": 1
+      },
+      "outputs": {
+        "repellent": 2
+      },
+      "duration_seconds": 30,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "heat_powder",
+      "station_id": "herbal",
+      "inputs": {
+        "heat_mineral": 2
+      },
+      "outputs": {
+        "heat_powder": 2
+      },
+      "duration_seconds": 45,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 3,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "dye",
+      "station_id": "dye_vat",
+      "inputs": {
+        "dye_plant": 3
+      },
+      "outputs": {
+        "dye": 2
+      },
+      "duration_seconds": 120,
+      "fuel_units": 0,
+      "water_units": 2,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "berry_dye",
+      "station_id": "dye_vat",
+      "inputs": {
+        "berry": 3
+      },
+      "outputs": {
+        "berry_dye": 2
+      },
+      "duration_seconds": 120,
+      "fuel_units": 0,
+      "water_units": 2,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "pigment",
+      "station_id": "dye_vat",
+      "inputs": {
+        "stone": 2,
+        "oil": 1
+      },
+      "outputs": {
+        "pigment": 2
+      },
+      "duration_seconds": 120,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "dyed_cloth",
+      "station_id": "dye_vat",
+      "inputs": {
+        "cloth": 1,
+        "dye": 1
+      },
+      "outputs": {
+        "dyed_cloth": 1
+      },
+      "duration_seconds": 60,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "building_part",
+      "station_id": "construction",
+      "inputs": {
+        "board": 4,
+        "wood_part": 1
+      },
+      "outputs": {
+        "building_part": 2
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "reinforced_building",
+      "station_id": "construction",
+      "inputs": {
+        "hard_board": 4,
+        "nail": 4
+      },
+      "outputs": {
+        "reinforced_building": 2
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "window",
+      "station_id": "construction",
+      "inputs": {
+        "board": 2,
+        "wood_part": 1
+      },
+      "outputs": {
+        "window_part": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "door",
+      "station_id": "construction",
+      "inputs": {
+        "board": 4,
+        "wood_part": 2
+      },
+      "outputs": {
+        "wood_door": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "shade",
+      "station_id": "construction",
+      "inputs": {
+        "tough_cloth": 3,
+        "handle": 2,
+        "cord": 3
+      },
+      "outputs": {
+        "shade": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "fence",
+      "station_id": "construction",
+      "inputs": {
+        "board": 4,
+        "handle": 2
+      },
+      "outputs": {
+        "fence": 4
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "wood_channel",
+      "station_id": "construction",
+      "inputs": {
+        "board": 4,
+        "resin": 1
+      },
+      "outputs": {
+        "wood_channel": 2
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "compost",
+      "station_id": "composter",
+      "inputs": {
+        "spoiled_food": 4,
+        "fiber": 2
+      },
+      "outputs": {
+        "compost": 2
+      },
+      "duration_seconds": 900,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "fertilizer",
+      "station_id": "composter",
+      "inputs": {
+        "compost": 2,
+        "bone_powder": 1
+      },
+      "outputs": {
+        "fertilizer": 2
+      },
+      "duration_seconds": 60,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "feed",
+      "station_id": "cook",
+      "inputs": {
+        "grain": 2,
+        "fiber": 2
+      },
+      "outputs": {
+        "feed": 3
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "straw_bed",
+      "station_id": "build",
+      "inputs": {
+        "log": 2,
+        "fiber": 8,
+        "cord": 2
+      },
+      "outputs": {
+        "straw_bed": 1
+      },
+      "duration_seconds": 30,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "wood_bed",
+      "station_id": "build",
+      "inputs": {
+        "board": 6,
+        "wood_part": 2,
+        "blanket": 1
+      },
+      "outputs": {
+        "wood_bed": 1
+      },
+      "duration_seconds": 30,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "leather_bed",
+      "station_id": "build",
+      "inputs": {
+        "wood_bed": 1,
+        "leather_bedding": 1
+      },
+      "outputs": {
+        "leather_bed": 1
+      },
+      "duration_seconds": 30,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "rain_collector",
+      "station_id": "build",
+      "inputs": {
+        "jar": 2,
+        "waterproof_cloth": 2,
+        "handle": 4,
+        "cord": 2
+      },
+      "outputs": {
+        "rain_collector": 1
+      },
+      "duration_seconds": 30,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "reservoir",
+      "station_id": "build",
+      "inputs": {
+        "brick": 12,
+        "clay": 6,
+        "jar": 2
+      },
+      "outputs": {
+        "reservoir": 1
+      },
+      "duration_seconds": 30,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "preserve_chest",
+      "station_id": "build",
+      "inputs": {
+        "board": 6,
+        "jar": 2,
+        "fiber": 6
+      },
+      "outputs": {
+        "preserve_chest": 1
+      },
+      "duration_seconds": 30,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "strong_metal",
+      "station_id": "hot_furnace",
+      "inputs": {
+        "iron": 2,
+        "charcoal": 2,
+        "heat_powder": 1
+      },
+      "outputs": {
+        "strong_metal": 1
+      },
+      "duration_seconds": 600,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 3,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "heat_plate",
+      "station_id": "hot_furnace",
+      "inputs": {
+        "iron_plate": 1,
+        "trim_heat_shell": 1
+      },
+      "outputs": {
+        "heat_plate": 1
+      },
+      "duration_seconds": 240,
+      "fuel_units": 2,
+      "water_units": 0,
+      "tier": 3,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "heat_outer",
+      "station_id": "leatherwork",
+      "inputs": {
+        "waterproof_leather": 1,
+        "heat_powder": 2,
+        "oil": 1
+      },
+      "outputs": {
+        "heat_outer": 1
+      },
+      "duration_seconds": 180,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 3,
+      "unlock": "expert_workshop",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "heat_cape",
+      "station_id": "sew",
+      "inputs": {
+        "heat_outer": 3,
+        "tough_cloth": 2,
+        "leather_strap": 2
+      },
+      "outputs": {
+        "heat_cape": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 3,
+      "unlock": "expert_workshop",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "heat_outer"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "tough_cloth"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "leather_strap"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [
+        {
+          "replace_item_id": "leather_strap",
+          "replace_quantity": 2,
+          "choices": [
+            {
+              "inputs": {
+                "leather_strap": 2
+              },
+              "extra_trait_id": null
+            },
+            {
+              "inputs": {
+                "sinew_cord": 1
+              },
+              "extra_trait_id": "light"
+            }
+          ],
+          "choose_exactly_one": true
+        }
+      ],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "shell_chest",
+      "station_id": "leatherwork",
+      "inputs": {
+        "leather": 4,
+        "trim_shell": 3,
+        "metal_part": 2,
+        "leather_strap": 2
+      },
+      "outputs": {
+        "shell_chest": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "leather"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "trim_shell",
+            "metal_part"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "leather_strap"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [
+        {
+          "replace_item_id": "leather_strap",
+          "replace_quantity": 2,
+          "choices": [
+            {
+              "inputs": {
+                "leather_strap": 2
+              },
+              "extra_trait_id": null
+            },
+            {
+              "inputs": {
+                "sinew_cord": 1
+              },
+              "extra_trait_id": "light"
+            }
+          ],
+          "choose_exactly_one": true
+        }
+      ],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "cool_chest",
+      "station_id": "build",
+      "inputs": {
+        "hard_board": 8,
+        "iron_plate": 3,
+        "warm_cloth": 3,
+        "cool_crystal": 2
+      },
+      "outputs": {
+        "cool_chest": 1
+      },
+      "duration_seconds": 60,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 3,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "stable_organ",
+      "station_id": "stabilizer",
+      "inputs": {
+        "conductive_organ": 1,
+        "resin": 2,
+        "metal_part": 1
+      },
+      "outputs": {
+        "stable_organ": 1
+      },
+      "duration_seconds": 600,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 3,
+      "unlock": "ancient_basics",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "stable_energy",
+      "station_id": "stabilizer",
+      "inputs": {
+        "energy_crystal": 1,
+        "heat_powder": 1
+      },
+      "outputs": {
+        "stable_energy": 1
+      },
+      "duration_seconds": 600,
+      "fuel_units": 0,
+      "water_units": 2,
+      "tier": 3,
+      "unlock": "ancient_basics",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "refined_cool",
+      "station_id": "stabilizer",
+      "inputs": {
+        "cool_crystal": 1,
+        "metal_part": 1
+      },
+      "outputs": {
+        "refined_cool": 1
+      },
+      "duration_seconds": 600,
+      "fuel_units": 0,
+      "water_units": 2,
+      "tier": 3,
+      "unlock": "ancient_basics",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "power_core",
+      "station_id": "power_bench",
+      "inputs": {
+        "stable_energy": 1,
+        "metal_part": 2,
+        "ancient_part": 1
+      },
+      "outputs": {
+        "power_core": 1
+      },
+      "duration_seconds": 600,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 3,
+      "unlock": "ancient_basics",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "conductor",
+      "station_id": "power_bench",
+      "inputs": {
+        "stable_organ": 1,
+        "metal_part": 2
+      },
+      "outputs": {
+        "conductor": 2
+      },
+      "duration_seconds": 300,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 3,
+      "unlock": "ancient_basics",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "cool_module",
+      "station_id": "power_bench",
+      "inputs": {
+        "refined_cool": 1,
+        "iron_plate": 2
+      },
+      "outputs": {
+        "cool_module": 1
+      },
+      "duration_seconds": 300,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 3,
+      "unlock": "ancient_basics",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "shock_module",
+      "station_id": "power_bench",
+      "inputs": {
+        "conductor": 2,
+        "stable_energy": 1,
+        "strong_metal": 1
+      },
+      "outputs": {
+        "shock_module": 1
+      },
+      "duration_seconds": 300,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 3,
+      "unlock": "ancient_basics",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "trim_shore_grazer",
+      "station_id": "prep",
+      "inputs": {
+        "raw_shore_grazer": 1
+      },
+      "outputs": {
+        "trim_shore_grazer": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": "knife",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "wet_shore_grazer",
+      "station_id": "tan",
+      "inputs": {
+        "trim_shore_grazer": 1,
+        "bark_powder": 2
+      },
+      "outputs": {
+        "wet_shore_grazer": 1
+      },
+      "duration_seconds": 240,
+      "fuel_units": 0,
+      "water_units": 2,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "mat_shore_grazer",
+      "station_id": "dry",
+      "inputs": {
+        "wet_shore_grazer": 1
+      },
+      "outputs": {
+        "mat_shore_grazer": 1
+      },
+      "duration_seconds": 180,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "mat_shell_crab",
+      "station_id": "prep",
+      "inputs": {
+        "raw_shell_crab": 1
+      },
+      "outputs": {
+        "mat_shell_crab": 1
+      },
+      "duration_seconds": 30,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": "knife",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "mat_tide_boar",
+      "station_id": "grind",
+      "inputs": {
+        "raw_tide_boar": 1
+      },
+      "outputs": {
+        "mat_tide_boar": 1
+      },
+      "duration_seconds": 30,
+      "fuel_units": 0,
+      "water_units": 1,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "trim_grass_grazer",
+      "station_id": "prep",
+      "inputs": {
+        "raw_grass_grazer": 1
+      },
+      "outputs": {
+        "trim_grass_grazer": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": "knife",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "wet_grass_grazer",
+      "station_id": "tan",
+      "inputs": {
+        "trim_grass_grazer": 1,
+        "bark_powder": 2
+      },
+      "outputs": {
+        "wet_grass_grazer": 1
+      },
+      "duration_seconds": 240,
+      "fuel_units": 0,
+      "water_units": 2,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "mat_grass_grazer",
+      "station_id": "dry",
+      "inputs": {
+        "wet_grass_grazer": 1
+      },
+      "outputs": {
+        "mat_grass_grazer": 1
+      },
+      "duration_seconds": 180,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "mat_reed_raptor",
+      "station_id": "prep",
+      "inputs": {
+        "raw_reed_raptor": 1
+      },
+      "outputs": {
+        "mat_reed_raptor": 1
+      },
+      "duration_seconds": 30,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": "knife",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "mat_meadow_horn",
+      "station_id": "grind",
+      "inputs": {
+        "raw_meadow_horn": 1
+      },
+      "outputs": {
+        "mat_meadow_horn": 1
+      },
+      "duration_seconds": 30,
+      "fuel_units": 0,
+      "water_units": 1,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "trim_stonejaw",
+      "station_id": "prep",
+      "inputs": {
+        "raw_stonejaw": 1
+      },
+      "outputs": {
+        "trim_stonejaw": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": "knife",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "wet_stonejaw",
+      "station_id": "tan",
+      "inputs": {
+        "trim_stonejaw": 1,
+        "bark_powder": 2
+      },
+      "outputs": {
+        "wet_stonejaw": 1
+      },
+      "duration_seconds": 240,
+      "fuel_units": 0,
+      "water_units": 2,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "mat_stonejaw",
+      "station_id": "dry",
+      "inputs": {
+        "wet_stonejaw": 1
+      },
+      "outputs": {
+        "mat_stonejaw": 1
+      },
+      "duration_seconds": 180,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "mat_moss_turtle",
+      "station_id": "prep",
+      "inputs": {
+        "raw_moss_turtle": 1
+      },
+      "outputs": {
+        "mat_moss_turtle": 1
+      },
+      "duration_seconds": 30,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": "knife",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "mat_forest_fang",
+      "station_id": "grind",
+      "inputs": {
+        "raw_forest_fang": 1
+      },
+      "outputs": {
+        "mat_forest_fang": 1
+      },
+      "duration_seconds": 30,
+      "fuel_units": 0,
+      "water_units": 1,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "mat_poison_sac",
+      "station_id": "herbal",
+      "inputs": {
+        "raw_poison_sac": 1,
+        "resin": 1,
+        "herb_powder": 1
+      },
+      "outputs": {
+        "mat_poison_sac": 1
+      },
+      "duration_seconds": 300,
+      "fuel_units": 0,
+      "water_units": 1,
+      "tier": 2,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "trim_mudscale",
+      "station_id": "prep",
+      "inputs": {
+        "raw_mudscale": 1
+      },
+      "outputs": {
+        "trim_mudscale": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "known",
+      "required_tool_tag": "knife",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "wet_mudscale",
+      "station_id": "tan",
+      "inputs": {
+        "trim_mudscale": 1,
+        "bark_powder": 2
+      },
+      "outputs": {
+        "wet_mudscale": 1
+      },
+      "duration_seconds": 240,
+      "fuel_units": 0,
+      "water_units": 2,
+      "tier": 2,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "mat_mudscale",
+      "station_id": "dry",
+      "inputs": {
+        "wet_mudscale": 1
+      },
+      "outputs": {
+        "mat_mudscale": 1
+      },
+      "duration_seconds": 180,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "mat_marsh_carapace",
+      "station_id": "prep",
+      "inputs": {
+        "raw_marsh_carapace": 1
+      },
+      "outputs": {
+        "mat_marsh_carapace": 1
+      },
+      "duration_seconds": 30,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "known",
+      "required_tool_tag": "knife",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "mat_sand_jaw",
+      "station_id": "grind",
+      "inputs": {
+        "raw_sand_jaw": 1
+      },
+      "outputs": {
+        "mat_sand_jaw": 1
+      },
+      "duration_seconds": 30,
+      "fuel_units": 0,
+      "water_units": 1,
+      "tier": 2,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "trim_cliff_runner",
+      "station_id": "prep",
+      "inputs": {
+        "raw_cliff_runner": 1
+      },
+      "outputs": {
+        "trim_cliff_runner": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "known",
+      "required_tool_tag": "knife",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "wet_cliff_runner",
+      "station_id": "tan",
+      "inputs": {
+        "trim_cliff_runner": 1,
+        "bark_powder": 2
+      },
+      "outputs": {
+        "wet_cliff_runner": 1
+      },
+      "duration_seconds": 240,
+      "fuel_units": 0,
+      "water_units": 2,
+      "tier": 2,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "mat_cliff_runner",
+      "station_id": "dry",
+      "inputs": {
+        "wet_cliff_runner": 1
+      },
+      "outputs": {
+        "mat_cliff_runner": 1
+      },
+      "duration_seconds": 180,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "mat_ironhorn",
+      "station_id": "prep",
+      "inputs": {
+        "raw_ironhorn": 1
+      },
+      "outputs": {
+        "mat_ironhorn": 1
+      },
+      "duration_seconds": 30,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "known",
+      "required_tool_tag": "knife",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "trim_snow_deer",
+      "station_id": "prep",
+      "inputs": {
+        "raw_snow_deer": 1
+      },
+      "outputs": {
+        "trim_snow_deer": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "known",
+      "required_tool_tag": "knife",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "wet_snow_deer",
+      "station_id": "tan",
+      "inputs": {
+        "trim_snow_deer": 1,
+        "bark_powder": 2
+      },
+      "outputs": {
+        "wet_snow_deer": 1
+      },
+      "duration_seconds": 240,
+      "fuel_units": 0,
+      "water_units": 2,
+      "tier": 2,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "mat_snow_deer",
+      "station_id": "dry",
+      "inputs": {
+        "wet_snow_deer": 1
+      },
+      "outputs": {
+        "mat_snow_deer": 1
+      },
+      "duration_seconds": 180,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "mat_white_wolf",
+      "station_id": "prep",
+      "inputs": {
+        "raw_white_wolf": 1
+      },
+      "outputs": {
+        "mat_white_wolf": 1
+      },
+      "duration_seconds": 30,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "known",
+      "required_tool_tag": "knife",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "trim_frost_bear",
+      "station_id": "prep",
+      "inputs": {
+        "raw_frost_bear": 1
+      },
+      "outputs": {
+        "trim_frost_bear": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "known",
+      "required_tool_tag": "knife",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "wet_frost_bear",
+      "station_id": "tan",
+      "inputs": {
+        "trim_frost_bear": 1,
+        "bark_powder": 2
+      },
+      "outputs": {
+        "wet_frost_bear": 1
+      },
+      "duration_seconds": 240,
+      "fuel_units": 0,
+      "water_units": 2,
+      "tier": 2,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "mat_frost_bear",
+      "station_id": "dry",
+      "inputs": {
+        "wet_frost_bear": 1
+      },
+      "outputs": {
+        "mat_frost_bear": 1
+      },
+      "duration_seconds": 180,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "mat_vine_leaper",
+      "station_id": "prep",
+      "inputs": {
+        "raw_vine_leaper": 1
+      },
+      "outputs": {
+        "mat_vine_leaper": 1
+      },
+      "duration_seconds": 30,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "known",
+      "required_tool_tag": "knife",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "mat_jade_scale",
+      "station_id": "prep",
+      "inputs": {
+        "raw_jade_scale": 1
+      },
+      "outputs": {
+        "mat_jade_scale": 1
+      },
+      "duration_seconds": 30,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "known",
+      "required_tool_tag": "knife",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "trim_green_colossus",
+      "station_id": "prep",
+      "inputs": {
+        "raw_green_colossus": 1
+      },
+      "outputs": {
+        "trim_green_colossus": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "known",
+      "required_tool_tag": "knife",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "wet_green_colossus",
+      "station_id": "tan",
+      "inputs": {
+        "trim_green_colossus": 1,
+        "bark_powder": 2
+      },
+      "outputs": {
+        "wet_green_colossus": 1
+      },
+      "duration_seconds": 240,
+      "fuel_units": 0,
+      "water_units": 2,
+      "tier": 2,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "mat_green_colossus",
+      "station_id": "dry",
+      "inputs": {
+        "wet_green_colossus": 1
+      },
+      "outputs": {
+        "mat_green_colossus": 1
+      },
+      "duration_seconds": 180,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "mat_ice_shell",
+      "station_id": "prep",
+      "inputs": {
+        "raw_ice_shell": 1
+      },
+      "outputs": {
+        "mat_ice_shell": 1
+      },
+      "duration_seconds": 30,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 3,
+      "unlock": "known",
+      "required_tool_tag": "knife",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "mat_crystal_antler",
+      "station_id": "grind",
+      "inputs": {
+        "raw_crystal_antler": 1
+      },
+      "outputs": {
+        "mat_crystal_antler": 1
+      },
+      "duration_seconds": 30,
+      "fuel_units": 0,
+      "water_units": 1,
+      "tier": 3,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "trim_glacial_giant",
+      "station_id": "prep",
+      "inputs": {
+        "raw_glacial_giant": 1
+      },
+      "outputs": {
+        "trim_glacial_giant": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 3,
+      "unlock": "known",
+      "required_tool_tag": "knife",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "wet_glacial_giant",
+      "station_id": "tan",
+      "inputs": {
+        "trim_glacial_giant": 1,
+        "bark_powder": 2
+      },
+      "outputs": {
+        "wet_glacial_giant": 1
+      },
+      "duration_seconds": 480,
+      "fuel_units": 0,
+      "water_units": 2,
+      "tier": 3,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "mat_glacial_giant",
+      "station_id": "dry",
+      "inputs": {
+        "wet_glacial_giant": 1
+      },
+      "outputs": {
+        "mat_glacial_giant": 1
+      },
+      "duration_seconds": 180,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 3,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "trim_ember_hide",
+      "station_id": "prep",
+      "inputs": {
+        "raw_ember_hide": 1
+      },
+      "outputs": {
+        "trim_ember_hide": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 3,
+      "unlock": "known",
+      "required_tool_tag": "knife",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "wet_ember_hide",
+      "station_id": "tan",
+      "inputs": {
+        "trim_ember_hide": 1,
+        "bark_powder": 2
+      },
+      "outputs": {
+        "wet_ember_hide": 1
+      },
+      "duration_seconds": 480,
+      "fuel_units": 0,
+      "water_units": 2,
+      "tier": 3,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "mat_ember_hide",
+      "station_id": "dry",
+      "inputs": {
+        "wet_ember_hide": 1
+      },
+      "outputs": {
+        "mat_ember_hide": 1
+      },
+      "duration_seconds": 180,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 3,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "mat_lava_shell",
+      "station_id": "prep",
+      "inputs": {
+        "raw_lava_shell": 1
+      },
+      "outputs": {
+        "mat_lava_shell": 1
+      },
+      "duration_seconds": 30,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 3,
+      "unlock": "known",
+      "required_tool_tag": "knife",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "mat_volcanic_predator",
+      "station_id": "stabilizer",
+      "inputs": {
+        "raw_volcanic_predator": 1,
+        "resin": 1,
+        "herb_powder": 1
+      },
+      "outputs": {
+        "mat_volcanic_predator": 1
+      },
+      "duration_seconds": 300,
+      "fuel_units": 0,
+      "water_units": 1,
+      "tier": 3,
+      "unlock": "ancient_basics",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "mat_thunderwolf",
+      "station_id": "stabilizer",
+      "inputs": {
+        "raw_thunderwolf": 1,
+        "resin": 1,
+        "herb_powder": 1
+      },
+      "outputs": {
+        "mat_thunderwolf": 1
+      },
+      "duration_seconds": 300,
+      "fuel_units": 0,
+      "water_units": 1,
+      "tier": 3,
+      "unlock": "ancient_basics",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "mat_ruin_shell",
+      "station_id": "prep",
+      "inputs": {
+        "raw_ruin_shell": 1
+      },
+      "outputs": {
+        "mat_ruin_shell": 1
+      },
+      "duration_seconds": 30,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 3,
+      "unlock": "known",
+      "required_tool_tag": "knife",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "mat_boundary_warden",
+      "station_id": "stabilizer",
+      "inputs": {
+        "raw_boundary_warden": 1,
+        "resin": 1,
+        "herb_powder": 1
+      },
+      "outputs": {
+        "mat_boundary_warden": 1
+      },
+      "duration_seconds": 300,
+      "fuel_units": 0,
+      "water_units": 1,
+      "tier": 3,
+      "unlock": "ancient_basics",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "trim_heat_shell",
+      "station_id": "prep",
+      "inputs": {
+        "heat_shell_raw": 1
+      },
+      "outputs": {
+        "trim_heat_shell": 1
+      },
+      "duration_seconds": 30,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 3,
+      "unlock": "known",
+      "required_tool_tag": "knife",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "trim_alpine",
+      "station_id": "prep",
+      "inputs": {
+        "alpine_fur": 1
+      },
+      "outputs": {
+        "trim_alpine": 1
+      },
+      "duration_seconds": 30,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 3,
+      "unlock": "known",
+      "required_tool_tag": "knife",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "tan_alpine",
+      "station_id": "tan",
+      "inputs": {
+        "trim_alpine": 1,
+        "bark_powder": 2
+      },
+      "outputs": {
+        "wet_alpine": 1
+      },
+      "duration_seconds": 480,
+      "fuel_units": 0,
+      "water_units": 2,
+      "tier": 3,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "dry_alpine",
+      "station_id": "dry",
+      "inputs": {
+        "wet_alpine": 1
+      },
+      "outputs": {
+        "alpine_leather": 1
+      },
+      "duration_seconds": 300,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 3,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "alpine_chest",
+      "station_id": "sew",
+      "inputs": {
+        "alpine_leather": 4,
+        "warm_cloth": 3,
+        "tough_thread": 2
+      },
+      "outputs": {
+        "alpine_chest": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 3,
+      "unlock": "expert_workshop",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "alpine_leather"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "warm_cloth"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "tough_thread"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_shore_grazer_spear",
+      "station_id": "bench",
+      "inputs": {
+        "mat_shore_grazer": 2,
+        "handle": 1,
+        "cord": 2
+      },
+      "outputs": {
+        "gear_shore_grazer_spear": 1
+      },
+      "duration_seconds": 15,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "regional_T0",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_shore_grazer"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "handle"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "cord"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [
+        {
+          "replace_item_id": "cord",
+          "replace_quantity": 2,
+          "choices": [
+            {
+              "inputs": {
+                "cord": 2
+              },
+              "extra_trait_id": null
+            },
+            {
+              "inputs": {
+                "sinew_cord": 1
+              },
+              "extra_trait_id": "light"
+            }
+          ],
+          "choose_exactly_one": true
+        }
+      ],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_shore_grazer_chest",
+      "station_id": "leatherwork",
+      "inputs": {
+        "mat_shore_grazer": 4,
+        "cord": 2
+      },
+      "outputs": {
+        "gear_shore_grazer_chest": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "regional_T0",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_shore_grazer"
+          ],
+          "normalized_weight": 0.75
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "cord"
+          ],
+          "normalized_weight": 0.25
+        }
+      ],
+      "substitution_groups": [
+        {
+          "replace_item_id": "cord",
+          "replace_quantity": 2,
+          "choices": [
+            {
+              "inputs": {
+                "cord": 2
+              },
+              "extra_trait_id": null
+            },
+            {
+              "inputs": {
+                "sinew_cord": 1
+              },
+              "extra_trait_id": "light"
+            }
+          ],
+          "choose_exactly_one": true
+        }
+      ],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_shell_crab_shield",
+      "station_id": "bench",
+      "inputs": {
+        "mat_shell_crab": 3,
+        "board": 3,
+        "leather_strap": 2
+      },
+      "outputs": {
+        "gear_shell_crab_shield": 1
+      },
+      "duration_seconds": 15,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "regional_T0",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_shell_crab"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "board"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "leather_strap"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [
+        {
+          "replace_item_id": "leather_strap",
+          "replace_quantity": 2,
+          "choices": [
+            {
+              "inputs": {
+                "leather_strap": 2
+              },
+              "extra_trait_id": null
+            },
+            {
+              "inputs": {
+                "sinew_cord": 1
+              },
+              "extra_trait_id": "light"
+            }
+          ],
+          "choose_exactly_one": true
+        }
+      ],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_shell_crab_gloves",
+      "station_id": "leatherwork",
+      "inputs": {
+        "mat_shell_crab": 2,
+        "cord": 2,
+        "leather": 1
+      },
+      "outputs": {
+        "gear_shell_crab_gloves": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "regional_T0",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_shell_crab"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "leather"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "cord"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [
+        {
+          "replace_item_id": "cord",
+          "replace_quantity": 2,
+          "choices": [
+            {
+              "inputs": {
+                "cord": 2
+              },
+              "extra_trait_id": null
+            },
+            {
+              "inputs": {
+                "sinew_cord": 1
+              },
+              "extra_trait_id": "light"
+            }
+          ],
+          "choose_exactly_one": true
+        }
+      ],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_tide_boar_spear",
+      "station_id": "bench",
+      "inputs": {
+        "mat_tide_boar": 2,
+        "handle": 1,
+        "cord": 2
+      },
+      "outputs": {
+        "gear_tide_boar_spear": 1
+      },
+      "duration_seconds": 15,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "regional_T0",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_tide_boar"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "handle"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "cord"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [
+        {
+          "replace_item_id": "cord",
+          "replace_quantity": 2,
+          "choices": [
+            {
+              "inputs": {
+                "cord": 2
+              },
+              "extra_trait_id": null
+            },
+            {
+              "inputs": {
+                "sinew_cord": 1
+              },
+              "extra_trait_id": "light"
+            }
+          ],
+          "choose_exactly_one": true
+        }
+      ],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_tide_boar_boots",
+      "station_id": "leatherwork",
+      "inputs": {
+        "mat_tide_boar": 2,
+        "cord": 2,
+        "leather": 1
+      },
+      "outputs": {
+        "gear_tide_boar_boots": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "regional_T0",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_tide_boar"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "leather"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "cord"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [
+        {
+          "replace_item_id": "cord",
+          "replace_quantity": 2,
+          "choices": [
+            {
+              "inputs": {
+                "cord": 2
+              },
+              "extra_trait_id": null
+            },
+            {
+              "inputs": {
+                "sinew_cord": 1
+              },
+              "extra_trait_id": "light"
+            }
+          ],
+          "choose_exactly_one": true
+        }
+      ],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_grass_grazer_bow",
+      "station_id": "general",
+      "inputs": {
+        "mat_grass_grazer": 2,
+        "handle": 1,
+        "cord": 2
+      },
+      "outputs": {
+        "gear_grass_grazer_bow": 1
+      },
+      "duration_seconds": 15,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "regional_B1",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_grass_grazer"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "handle"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "cord"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [
+        {
+          "replace_item_id": "cord",
+          "replace_quantity": 2,
+          "choices": [
+            {
+              "inputs": {
+                "cord": 2
+              },
+              "extra_trait_id": null
+            },
+            {
+              "inputs": {
+                "sinew_cord": 1
+              },
+              "extra_trait_id": "light"
+            }
+          ],
+          "choose_exactly_one": true
+        }
+      ],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_grass_grazer_chest",
+      "station_id": "leatherwork",
+      "inputs": {
+        "mat_grass_grazer": 4,
+        "cord": 2
+      },
+      "outputs": {
+        "gear_grass_grazer_chest": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "regional_B1",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_grass_grazer"
+          ],
+          "normalized_weight": 0.75
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "cord"
+          ],
+          "normalized_weight": 0.25
+        }
+      ],
+      "substitution_groups": [
+        {
+          "replace_item_id": "cord",
+          "replace_quantity": 2,
+          "choices": [
+            {
+              "inputs": {
+                "cord": 2
+              },
+              "extra_trait_id": null
+            },
+            {
+              "inputs": {
+                "sinew_cord": 1
+              },
+              "extra_trait_id": "light"
+            }
+          ],
+          "choose_exactly_one": true
+        }
+      ],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_reed_raptor_sword",
+      "station_id": "general",
+      "inputs": {
+        "mat_reed_raptor": 2,
+        "handle": 1,
+        "cord": 2,
+        "bone": 2
+      },
+      "outputs": {
+        "gear_reed_raptor_sword": 1
+      },
+      "duration_seconds": 15,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "regional_B1",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_reed_raptor"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "handle",
+            "bone"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "cord"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [
+        {
+          "replace_item_id": "cord",
+          "replace_quantity": 2,
+          "choices": [
+            {
+              "inputs": {
+                "cord": 2
+              },
+              "extra_trait_id": null
+            },
+            {
+              "inputs": {
+                "sinew_cord": 1
+              },
+              "extra_trait_id": "light"
+            }
+          ],
+          "choose_exactly_one": true
+        }
+      ],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_reed_raptor_boots",
+      "station_id": "leatherwork",
+      "inputs": {
+        "mat_reed_raptor": 2,
+        "cord": 2,
+        "leather": 1
+      },
+      "outputs": {
+        "gear_reed_raptor_boots": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "regional_B1",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_reed_raptor"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "leather"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "cord"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [
+        {
+          "replace_item_id": "cord",
+          "replace_quantity": 2,
+          "choices": [
+            {
+              "inputs": {
+                "cord": 2
+              },
+              "extra_trait_id": null
+            },
+            {
+              "inputs": {
+                "sinew_cord": 1
+              },
+              "extra_trait_id": "light"
+            }
+          ],
+          "choose_exactly_one": true
+        }
+      ],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_meadow_horn_spear",
+      "station_id": "general",
+      "inputs": {
+        "mat_meadow_horn": 2,
+        "handle": 1,
+        "cord": 2
+      },
+      "outputs": {
+        "gear_meadow_horn_spear": 1
+      },
+      "duration_seconds": 15,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "regional_B1",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_meadow_horn"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "handle"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "cord"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [
+        {
+          "replace_item_id": "cord",
+          "replace_quantity": 2,
+          "choices": [
+            {
+              "inputs": {
+                "cord": 2
+              },
+              "extra_trait_id": null
+            },
+            {
+              "inputs": {
+                "sinew_cord": 1
+              },
+              "extra_trait_id": "light"
+            }
+          ],
+          "choose_exactly_one": true
+        }
+      ],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_meadow_horn_chest",
+      "station_id": "leatherwork",
+      "inputs": {
+        "mat_meadow_horn": 4,
+        "cord": 2,
+        "leather": 2
+      },
+      "outputs": {
+        "gear_meadow_horn_chest": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "regional_B1",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_meadow_horn"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "leather"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "cord"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [
+        {
+          "replace_item_id": "cord",
+          "replace_quantity": 2,
+          "choices": [
+            {
+              "inputs": {
+                "cord": 2
+              },
+              "extra_trait_id": null
+            },
+            {
+              "inputs": {
+                "sinew_cord": 1
+              },
+              "extra_trait_id": "light"
+            }
+          ],
+          "choose_exactly_one": true
+        }
+      ],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_stonejaw_spear",
+      "station_id": "general",
+      "inputs": {
+        "mat_stonejaw": 2,
+        "handle": 1,
+        "cord": 2
+      },
+      "outputs": {
+        "gear_stonejaw_spear": 1
+      },
+      "duration_seconds": 15,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "regional_B2",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_stonejaw"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "handle"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "cord"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [
+        {
+          "replace_item_id": "cord",
+          "replace_quantity": 2,
+          "choices": [
+            {
+              "inputs": {
+                "cord": 2
+              },
+              "extra_trait_id": null
+            },
+            {
+              "inputs": {
+                "sinew_cord": 1
+              },
+              "extra_trait_id": "light"
+            }
+          ],
+          "choose_exactly_one": true
+        }
+      ],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_stonejaw_chest",
+      "station_id": "leatherwork",
+      "inputs": {
+        "mat_stonejaw": 4,
+        "cord": 2
+      },
+      "outputs": {
+        "gear_stonejaw_chest": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "regional_B2",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_stonejaw"
+          ],
+          "normalized_weight": 0.75
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "cord"
+          ],
+          "normalized_weight": 0.25
+        }
+      ],
+      "substitution_groups": [
+        {
+          "replace_item_id": "cord",
+          "replace_quantity": 2,
+          "choices": [
+            {
+              "inputs": {
+                "cord": 2
+              },
+              "extra_trait_id": null
+            },
+            {
+              "inputs": {
+                "sinew_cord": 1
+              },
+              "extra_trait_id": "light"
+            }
+          ],
+          "choose_exactly_one": true
+        }
+      ],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_moss_turtle_shield",
+      "station_id": "leatherwork",
+      "inputs": {
+        "mat_moss_turtle": 3,
+        "board": 3,
+        "leather_strap": 2
+      },
+      "outputs": {
+        "gear_moss_turtle_shield": 1
+      },
+      "duration_seconds": 15,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "regional_B2",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_moss_turtle"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "board"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "leather_strap"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [
+        {
+          "replace_item_id": "leather_strap",
+          "replace_quantity": 2,
+          "choices": [
+            {
+              "inputs": {
+                "leather_strap": 2
+              },
+              "extra_trait_id": null
+            },
+            {
+              "inputs": {
+                "sinew_cord": 1
+              },
+              "extra_trait_id": "light"
+            }
+          ],
+          "choose_exactly_one": true
+        }
+      ],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_moss_turtle_gloves",
+      "station_id": "leatherwork",
+      "inputs": {
+        "mat_moss_turtle": 2,
+        "cord": 2,
+        "leather": 1
+      },
+      "outputs": {
+        "gear_moss_turtle_gloves": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "regional_B2",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_moss_turtle"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "leather"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "cord"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [
+        {
+          "replace_item_id": "cord",
+          "replace_quantity": 2,
+          "choices": [
+            {
+              "inputs": {
+                "cord": 2
+              },
+              "extra_trait_id": null
+            },
+            {
+              "inputs": {
+                "sinew_cord": 1
+              },
+              "extra_trait_id": "light"
+            }
+          ],
+          "choose_exactly_one": true
+        }
+      ],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_forest_fang_sword",
+      "station_id": "general",
+      "inputs": {
+        "mat_forest_fang": 2,
+        "handle": 1,
+        "cord": 2,
+        "bone": 2
+      },
+      "outputs": {
+        "gear_forest_fang_sword": 1
+      },
+      "duration_seconds": 15,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "regional_B2",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_forest_fang"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "handle",
+            "bone"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "cord"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [
+        {
+          "replace_item_id": "cord",
+          "replace_quantity": 2,
+          "choices": [
+            {
+              "inputs": {
+                "cord": 2
+              },
+              "extra_trait_id": null
+            },
+            {
+              "inputs": {
+                "sinew_cord": 1
+              },
+              "extra_trait_id": "light"
+            }
+          ],
+          "choose_exactly_one": true
+        }
+      ],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_forest_fang_boots",
+      "station_id": "leatherwork",
+      "inputs": {
+        "mat_forest_fang": 2,
+        "cord": 2,
+        "leather": 1
+      },
+      "outputs": {
+        "gear_forest_fang_boots": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "regional_B2",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_forest_fang"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "leather"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "cord"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [
+        {
+          "replace_item_id": "cord",
+          "replace_quantity": 2,
+          "choices": [
+            {
+              "inputs": {
+                "cord": 2
+              },
+              "extra_trait_id": null
+            },
+            {
+              "inputs": {
+                "sinew_cord": 1
+              },
+              "extra_trait_id": "light"
+            }
+          ],
+          "choose_exactly_one": true
+        }
+      ],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_poison_sac_spear",
+      "station_id": "general",
+      "inputs": {
+        "mat_poison_sac": 2,
+        "hard_handle": 1,
+        "sinew_cord": 1,
+        "metal_part": 1
+      },
+      "outputs": {
+        "gear_poison_sac_spear": 1
+      },
+      "duration_seconds": 15,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "regional_M1",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_poison_sac"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "hard_handle",
+            "metal_part"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "sinew_cord"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_poison_sac_gloves",
+      "station_id": "leatherwork",
+      "inputs": {
+        "mat_poison_sac": 2,
+        "thread": 2,
+        "cloth": 1,
+        "leather": 1
+      },
+      "outputs": {
+        "gear_poison_sac_gloves": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "regional_M1",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_poison_sac"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "cloth",
+            "leather"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "thread"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_mudscale_bow",
+      "station_id": "general",
+      "inputs": {
+        "mat_mudscale": 2,
+        "hard_handle": 1,
+        "sinew_cord": 1,
+        "metal_part": 1,
+        "tough_thread": 2
+      },
+      "outputs": {
+        "gear_mudscale_bow": 1
+      },
+      "duration_seconds": 15,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "regional_M1",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_mudscale"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "hard_handle",
+            "metal_part"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "sinew_cord",
+            "tough_thread"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_mudscale_boots",
+      "station_id": "sew",
+      "inputs": {
+        "mat_mudscale": 2,
+        "thread": 2,
+        "cloth": 1
+      },
+      "outputs": {
+        "gear_mudscale_boots": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "regional_M1",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_mudscale"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "cloth"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "thread"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_marsh_carapace_shield",
+      "station_id": "leatherwork",
+      "inputs": {
+        "mat_marsh_carapace": 3,
+        "hard_board": 3,
+        "leather_strap": 2,
+        "metal_part": 1
+      },
+      "outputs": {
+        "gear_marsh_carapace_shield": 1
+      },
+      "duration_seconds": 15,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "regional_M1",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_marsh_carapace"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "hard_board",
+            "metal_part"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "leather_strap"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [
+        {
+          "replace_item_id": "leather_strap",
+          "replace_quantity": 2,
+          "choices": [
+            {
+              "inputs": {
+                "leather_strap": 2
+              },
+              "extra_trait_id": null
+            },
+            {
+              "inputs": {
+                "sinew_cord": 1
+              },
+              "extra_trait_id": "light"
+            }
+          ],
+          "choose_exactly_one": true
+        }
+      ],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_marsh_carapace_chest",
+      "station_id": "leatherwork",
+      "inputs": {
+        "mat_marsh_carapace": 4,
+        "thread": 2,
+        "cloth": 2,
+        "leather": 2
+      },
+      "outputs": {
+        "gear_marsh_carapace_chest": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "regional_M1",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_marsh_carapace"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "cloth",
+            "leather"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "thread"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_sand_jaw_sword",
+      "station_id": "general",
+      "inputs": {
+        "mat_sand_jaw": 2,
+        "hard_handle": 1,
+        "sinew_cord": 1,
+        "metal_part": 1,
+        "iron": 2
+      },
+      "outputs": {
+        "gear_sand_jaw_sword": 1
+      },
+      "duration_seconds": 15,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "regional_M2",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_sand_jaw"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "hard_handle",
+            "metal_part",
+            "iron"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "sinew_cord"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_sand_jaw_boots",
+      "station_id": "sew",
+      "inputs": {
+        "mat_sand_jaw": 2,
+        "thread": 2,
+        "cloth": 1,
+        "leather": 1
+      },
+      "outputs": {
+        "gear_sand_jaw_boots": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "regional_M2",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_sand_jaw"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "cloth",
+            "leather"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "thread"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_cliff_runner_bow",
+      "station_id": "general",
+      "inputs": {
+        "mat_cliff_runner": 2,
+        "hard_handle": 1,
+        "sinew_cord": 1,
+        "metal_part": 1,
+        "tough_thread": 2
+      },
+      "outputs": {
+        "gear_cliff_runner_bow": 1
+      },
+      "duration_seconds": 15,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "regional_M2",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_cliff_runner"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "hard_handle",
+            "metal_part"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "sinew_cord",
+            "tough_thread"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_cliff_runner_gloves",
+      "station_id": "leatherwork",
+      "inputs": {
+        "mat_cliff_runner": 2,
+        "thread": 2,
+        "cloth": 1
+      },
+      "outputs": {
+        "gear_cliff_runner_gloves": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "regional_M2",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_cliff_runner"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "cloth"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "thread"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_ironhorn_spear",
+      "station_id": "general",
+      "inputs": {
+        "mat_ironhorn": 2,
+        "hard_handle": 1,
+        "sinew_cord": 1,
+        "metal_part": 1
+      },
+      "outputs": {
+        "gear_ironhorn_spear": 1
+      },
+      "duration_seconds": 15,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "regional_M2",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_ironhorn"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "hard_handle",
+            "metal_part"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "sinew_cord"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_ironhorn_chest",
+      "station_id": "leatherwork",
+      "inputs": {
+        "mat_ironhorn": 4,
+        "thread": 2,
+        "cloth": 2,
+        "leather": 2
+      },
+      "outputs": {
+        "gear_ironhorn_chest": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "regional_M2",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_ironhorn"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "cloth",
+            "leather"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "thread"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_snow_deer_bow",
+      "station_id": "general",
+      "inputs": {
+        "mat_snow_deer": 2,
+        "hard_handle": 1,
+        "sinew_cord": 1,
+        "metal_part": 1,
+        "tough_thread": 2
+      },
+      "outputs": {
+        "gear_snow_deer_bow": 1
+      },
+      "duration_seconds": 15,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "regional_M3",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_snow_deer"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "hard_handle",
+            "metal_part"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "sinew_cord",
+            "tough_thread"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_snow_deer_chest",
+      "station_id": "sew",
+      "inputs": {
+        "mat_snow_deer": 4,
+        "thread": 2,
+        "warm_cloth": 2
+      },
+      "outputs": {
+        "gear_snow_deer_chest": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "regional_M3",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_snow_deer"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "warm_cloth"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "thread"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_white_wolf_sword",
+      "station_id": "general",
+      "inputs": {
+        "mat_white_wolf": 2,
+        "hard_handle": 1,
+        "sinew_cord": 1,
+        "metal_part": 1,
+        "iron": 2
+      },
+      "outputs": {
+        "gear_white_wolf_sword": 1
+      },
+      "duration_seconds": 15,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "regional_M3",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_white_wolf"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "hard_handle",
+            "metal_part",
+            "iron"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "sinew_cord"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_white_wolf_gloves",
+      "station_id": "sew",
+      "inputs": {
+        "mat_white_wolf": 2,
+        "thread": 2,
+        "warm_cloth": 1,
+        "leather": 1
+      },
+      "outputs": {
+        "gear_white_wolf_gloves": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "regional_M3",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_white_wolf"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "warm_cloth",
+            "leather"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "thread"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_frost_bear_shield",
+      "station_id": "leatherwork",
+      "inputs": {
+        "mat_frost_bear": 3,
+        "hard_board": 3,
+        "leather_strap": 2,
+        "metal_part": 1
+      },
+      "outputs": {
+        "gear_frost_bear_shield": 1
+      },
+      "duration_seconds": 15,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "regional_M3",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_frost_bear"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "hard_board",
+            "metal_part"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "leather_strap"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [
+        {
+          "replace_item_id": "leather_strap",
+          "replace_quantity": 2,
+          "choices": [
+            {
+              "inputs": {
+                "leather_strap": 2
+              },
+              "extra_trait_id": null
+            },
+            {
+              "inputs": {
+                "sinew_cord": 1
+              },
+              "extra_trait_id": "light"
+            }
+          ],
+          "choose_exactly_one": true
+        }
+      ],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_frost_bear_boots",
+      "station_id": "sew",
+      "inputs": {
+        "mat_frost_bear": 2,
+        "thread": 2,
+        "warm_cloth": 1
+      },
+      "outputs": {
+        "gear_frost_bear_boots": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "regional_M3",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_frost_bear"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "warm_cloth"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "thread"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_vine_leaper_bow",
+      "station_id": "general",
+      "inputs": {
+        "mat_vine_leaper": 2,
+        "hard_handle": 1,
+        "sinew_cord": 1,
+        "metal_part": 1,
+        "tough_thread": 2
+      },
+      "outputs": {
+        "gear_vine_leaper_bow": 1
+      },
+      "duration_seconds": 15,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "regional_M4",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_vine_leaper"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "hard_handle",
+            "metal_part"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "sinew_cord",
+            "tough_thread"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_vine_leaper_boots",
+      "station_id": "sew",
+      "inputs": {
+        "mat_vine_leaper": 2,
+        "thread": 2,
+        "cloth": 1,
+        "leather": 1
+      },
+      "outputs": {
+        "gear_vine_leaper_boots": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "regional_M4",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_vine_leaper"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "cloth",
+            "leather"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "thread"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_jade_scale_sword",
+      "station_id": "general",
+      "inputs": {
+        "mat_jade_scale": 2,
+        "hard_handle": 1,
+        "sinew_cord": 1,
+        "metal_part": 1,
+        "iron": 2
+      },
+      "outputs": {
+        "gear_jade_scale_sword": 1
+      },
+      "duration_seconds": 15,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "regional_M4",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_jade_scale"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "hard_handle",
+            "metal_part",
+            "iron"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "sinew_cord"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_jade_scale_chest",
+      "station_id": "leatherwork",
+      "inputs": {
+        "mat_jade_scale": 4,
+        "thread": 2,
+        "cloth": 2,
+        "leather": 2
+      },
+      "outputs": {
+        "gear_jade_scale_chest": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "regional_M4",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_jade_scale"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "cloth",
+            "leather"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "thread"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_green_colossus_shield",
+      "station_id": "leatherwork",
+      "inputs": {
+        "mat_green_colossus": 3,
+        "hard_board": 3,
+        "leather_strap": 2,
+        "metal_part": 1
+      },
+      "outputs": {
+        "gear_green_colossus_shield": 1
+      },
+      "duration_seconds": 15,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "regional_M4",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_green_colossus"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "hard_board",
+            "metal_part"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "leather_strap"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [
+        {
+          "replace_item_id": "leather_strap",
+          "replace_quantity": 2,
+          "choices": [
+            {
+              "inputs": {
+                "leather_strap": 2
+              },
+              "extra_trait_id": null
+            },
+            {
+              "inputs": {
+                "sinew_cord": 1
+              },
+              "extra_trait_id": "light"
+            }
+          ],
+          "choose_exactly_one": true
+        }
+      ],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_green_colossus_chest",
+      "station_id": "leatherwork",
+      "inputs": {
+        "mat_green_colossus": 4,
+        "thread": 2,
+        "cloth": 2
+      },
+      "outputs": {
+        "gear_green_colossus_chest": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "regional_M4",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_green_colossus"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "cloth"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "thread"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_ice_shell_shield",
+      "station_id": "leatherwork",
+      "inputs": {
+        "mat_ice_shell": 3,
+        "hard_board": 3,
+        "leather_strap": 2,
+        "metal_part": 1
+      },
+      "outputs": {
+        "gear_ice_shell_shield": 1
+      },
+      "duration_seconds": 15,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 3,
+      "unlock": "regional_H1",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_ice_shell"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "hard_board",
+            "metal_part"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "leather_strap"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [
+        {
+          "replace_item_id": "leather_strap",
+          "replace_quantity": 2,
+          "choices": [
+            {
+              "inputs": {
+                "leather_strap": 2
+              },
+              "extra_trait_id": null
+            },
+            {
+              "inputs": {
+                "sinew_cord": 1
+              },
+              "extra_trait_id": "light"
+            }
+          ],
+          "choose_exactly_one": true
+        }
+      ],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_ice_shell_chest",
+      "station_id": "sew",
+      "inputs": {
+        "mat_ice_shell": 4,
+        "thread": 2,
+        "warm_cloth": 2,
+        "leather": 2
+      },
+      "outputs": {
+        "gear_ice_shell_chest": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 3,
+      "unlock": "regional_H1",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_ice_shell"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "warm_cloth",
+            "leather"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "thread"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_crystal_antler_spear",
+      "station_id": "general",
+      "inputs": {
+        "mat_crystal_antler": 2,
+        "hard_handle": 1,
+        "sinew_cord": 1,
+        "strong_metal": 1
+      },
+      "outputs": {
+        "gear_crystal_antler_spear": 1
+      },
+      "duration_seconds": 15,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 3,
+      "unlock": "regional_H1",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_crystal_antler"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "hard_handle",
+            "strong_metal"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "sinew_cord"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_crystal_antler_gloves",
+      "station_id": "sew",
+      "inputs": {
+        "mat_crystal_antler": 2,
+        "thread": 2,
+        "warm_cloth": 1,
+        "leather": 1
+      },
+      "outputs": {
+        "gear_crystal_antler_gloves": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 3,
+      "unlock": "regional_H1",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_crystal_antler"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "warm_cloth",
+            "leather"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "thread"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_glacial_giant_spear",
+      "station_id": "general",
+      "inputs": {
+        "mat_glacial_giant": 2,
+        "hard_handle": 1,
+        "sinew_cord": 1,
+        "strong_metal": 1
+      },
+      "outputs": {
+        "gear_glacial_giant_spear": 1
+      },
+      "duration_seconds": 15,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 3,
+      "unlock": "regional_H1",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_glacial_giant"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "hard_handle",
+            "strong_metal"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "sinew_cord"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_glacial_giant_chest",
+      "station_id": "sew",
+      "inputs": {
+        "mat_glacial_giant": 4,
+        "thread": 2,
+        "warm_cloth": 2
+      },
+      "outputs": {
+        "gear_glacial_giant_chest": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 3,
+      "unlock": "regional_H1",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_glacial_giant"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "warm_cloth"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "thread"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_ember_hide_sword",
+      "station_id": "general",
+      "inputs": {
+        "mat_ember_hide": 2,
+        "hard_handle": 1,
+        "sinew_cord": 1,
+        "strong_metal": 2
+      },
+      "outputs": {
+        "gear_ember_hide_sword": 1
+      },
+      "duration_seconds": 15,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 3,
+      "unlock": "regional_H2",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_ember_hide"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "hard_handle",
+            "strong_metal"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "sinew_cord"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_ember_hide_boots",
+      "station_id": "sew",
+      "inputs": {
+        "mat_ember_hide": 2,
+        "thread": 2,
+        "cloth": 1
+      },
+      "outputs": {
+        "gear_ember_hide_boots": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 3,
+      "unlock": "regional_H2",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_ember_hide"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "cloth"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "thread"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_lava_shell_shield",
+      "station_id": "leatherwork",
+      "inputs": {
+        "mat_lava_shell": 3,
+        "hard_board": 3,
+        "leather_strap": 2,
+        "metal_part": 1
+      },
+      "outputs": {
+        "gear_lava_shell_shield": 1
+      },
+      "duration_seconds": 15,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 3,
+      "unlock": "regional_H2",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_lava_shell"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "hard_board",
+            "metal_part"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "leather_strap"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [
+        {
+          "replace_item_id": "leather_strap",
+          "replace_quantity": 2,
+          "choices": [
+            {
+              "inputs": {
+                "leather_strap": 2
+              },
+              "extra_trait_id": null
+            },
+            {
+              "inputs": {
+                "sinew_cord": 1
+              },
+              "extra_trait_id": "light"
+            }
+          ],
+          "choose_exactly_one": true
+        }
+      ],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_lava_shell_chest",
+      "station_id": "sew",
+      "inputs": {
+        "mat_lava_shell": 4,
+        "thread": 2,
+        "cloth": 2,
+        "leather": 2
+      },
+      "outputs": {
+        "gear_lava_shell_chest": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 3,
+      "unlock": "regional_H2",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_lava_shell"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "cloth",
+            "leather"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "thread"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_volcanic_predator_spear",
+      "station_id": "general",
+      "inputs": {
+        "mat_volcanic_predator": 2,
+        "hard_handle": 1,
+        "sinew_cord": 1,
+        "strong_metal": 1
+      },
+      "outputs": {
+        "gear_volcanic_predator_spear": 1
+      },
+      "duration_seconds": 15,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 3,
+      "unlock": "regional_H2",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_volcanic_predator"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "hard_handle",
+            "strong_metal"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "sinew_cord"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_volcanic_predator_gloves",
+      "station_id": "sew",
+      "inputs": {
+        "mat_volcanic_predator": 2,
+        "thread": 2,
+        "cloth": 1,
+        "leather": 1
+      },
+      "outputs": {
+        "gear_volcanic_predator_gloves": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 3,
+      "unlock": "regional_H2",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_volcanic_predator"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "cloth",
+            "leather"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "thread"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_thunderwolf_sword",
+      "station_id": "general",
+      "inputs": {
+        "mat_thunderwolf": 2,
+        "hard_handle": 1,
+        "sinew_cord": 1,
+        "strong_metal": 2
+      },
+      "outputs": {
+        "gear_thunderwolf_sword": 1
+      },
+      "duration_seconds": 15,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 3,
+      "unlock": "regional_H3",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_thunderwolf"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "hard_handle",
+            "strong_metal"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "sinew_cord"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_thunderwolf_boots",
+      "station_id": "sew",
+      "inputs": {
+        "mat_thunderwolf": 2,
+        "thread": 2,
+        "cloth": 1,
+        "leather": 1
+      },
+      "outputs": {
+        "gear_thunderwolf_boots": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 3,
+      "unlock": "regional_H3",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_thunderwolf"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "cloth",
+            "leather"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "thread"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_ruin_shell_shield",
+      "station_id": "leatherwork",
+      "inputs": {
+        "mat_ruin_shell": 3,
+        "hard_board": 3,
+        "leather_strap": 2,
+        "metal_part": 1
+      },
+      "outputs": {
+        "gear_ruin_shell_shield": 1
+      },
+      "duration_seconds": 15,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 3,
+      "unlock": "regional_H3",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_ruin_shell"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "hard_board",
+            "metal_part"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "leather_strap"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [
+        {
+          "replace_item_id": "leather_strap",
+          "replace_quantity": 2,
+          "choices": [
+            {
+              "inputs": {
+                "leather_strap": 2
+              },
+              "extra_trait_id": null
+            },
+            {
+              "inputs": {
+                "sinew_cord": 1
+              },
+              "extra_trait_id": "light"
+            }
+          ],
+          "choose_exactly_one": true
+        }
+      ],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_ruin_shell_chest",
+      "station_id": "sew",
+      "inputs": {
+        "mat_ruin_shell": 4,
+        "thread": 2,
+        "cloth": 2,
+        "leather": 2
+      },
+      "outputs": {
+        "gear_ruin_shell_chest": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 3,
+      "unlock": "regional_H3",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_ruin_shell"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "cloth",
+            "leather"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "thread"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_boundary_warden_spear",
+      "station_id": "general",
+      "inputs": {
+        "mat_boundary_warden": 2,
+        "hard_handle": 1,
+        "sinew_cord": 1,
+        "strong_metal": 1
+      },
+      "outputs": {
+        "gear_boundary_warden_spear": 1
+      },
+      "duration_seconds": 15,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 3,
+      "unlock": "regional_H3",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_boundary_warden"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "hard_handle",
+            "strong_metal"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "sinew_cord"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "make_gear_boundary_warden_chest",
+      "station_id": "sew",
+      "inputs": {
+        "mat_boundary_warden": 4,
+        "thread": 2,
+        "cloth": 2,
+        "leather": 2
+      },
+      "outputs": {
+        "gear_boundary_warden_chest": 1
+      },
+      "duration_seconds": 20,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 3,
+      "unlock": "regional_H3",
+      "required_tool_tag": null,
+      "material_slots": [
+        {
+          "role": "primary",
+          "item_ids": [
+            "mat_boundary_warden"
+          ],
+          "normalized_weight": 0.6
+        },
+        {
+          "role": "reinforcement",
+          "item_ids": [
+            "cloth",
+            "leather"
+          ],
+          "normalized_weight": 0.2
+        },
+        {
+          "role": "binding",
+          "item_ids": [
+            "thread"
+          ],
+          "normalized_weight": 0.2
+        }
+      ],
+      "substitution_groups": [],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "bone_arrow",
+      "station_id": "bench",
+      "inputs": {
+        "bone": 1,
+        "branch": 2,
+        "cord": 1
+      },
+      "outputs": {
+        "bone_arrow": 10
+      },
+      "duration_seconds": 10,
+      "fuel_units": 0,
+      "water_units": 0,
+      "tier": 1,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "egg_meal",
+      "station_id": "cook",
+      "inputs": {
+        "egg": 2,
+        "vegetable": 1
+      },
+      "outputs": {
+        "egg_meal": 2
+      },
+      "duration_seconds": 30,
+      "fuel_units": 1,
+      "water_units": 0,
+      "tier": 2,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "milk_porridge",
+      "station_id": "cook",
+      "inputs": {
+        "grain": 2,
+        "milk": 1
+      },
+      "outputs": {
+        "milk_porridge": 2
+      },
+      "duration_seconds": 30,
+      "fuel_units": 1,
+      "water_units": 1,
+      "tier": 2,
+      "unlock": "known",
+      "required_tool_tag": null,
+      "implementation_status": "not_implemented"
+    }
+  ]
+}

@@ -1,0 +1,3633 @@
+{
+  "schema_version": 1,
+  "content_version": "0.3.0-draft",
+  "status": "design_draft",
+  "records": [
+    {
+      "id": "shore_grazer",
+      "name": "해변풀등수",
+      "region_id": "T0",
+      "tier": 0,
+      "role": "normal",
+      "body_family": "작은 초식수",
+      "recommended_players": [
+        1,
+        1
+      ],
+      "stats_at_reference_players": {
+        "hp": 45,
+        "attack_raw": 6,
+        "defense": 0,
+        "reference_players": 1
+      },
+      "behavior": "경계 후 짧은 들이받기",
+      "telegraph": "고개를 숙이고 1.2초 후 정면 공격",
+      "punish_window": "측면·후방",
+      "damage_types": [
+        "physical"
+      ],
+      "base_harvest": {
+        "meat": {
+          "min": 1,
+          "max": 2
+        },
+        "bone": {
+          "min": 1,
+          "max": 2
+        },
+        "raw_hide": {
+          "min": 1,
+          "max": 2
+        },
+        "fat": {
+          "min": 1,
+          "max": 1
+        }
+      },
+      "focus_options": [
+        {
+          "id": "food",
+          "name": "식량 집중",
+          "guaranteed": {
+            "meat": 2,
+            "fat": 1
+          }
+        },
+        {
+          "id": "material",
+          "name": "외피·골격 집중",
+          "guaranteed": {
+            "raw_hide": 2
+          }
+        },
+        {
+          "id": "signature",
+          "name": "고유 부위 집중",
+          "guaranteed": {
+            "raw_shore_grazer": 1
+          }
+        }
+      ],
+      "optional_bonus_rolls": [],
+      "signature_raw_item_id": "raw_shore_grazer",
+      "signature_processed_item_id": "mat_shore_grazer",
+      "signature_family": "hide",
+      "weapon_trait_id": "steady",
+      "armor_trait_id": "durable",
+      "weapon_kind": "spear",
+      "armor_slot": "chest",
+      "kill_time_target_seconds": [
+        10,
+        25
+      ],
+      "respawn_seconds": 90,
+      "combat_leash_m": 35,
+      "equipment_ids": [
+        "gear_shore_grazer_spear",
+        "gear_shore_grazer_chest"
+      ],
+      "movement_speed_mps": 3.0,
+      "aggro_radius_m": 0,
+      "basic_attack_interval_seconds": 2.4,
+      "attacks": [
+        {
+          "id": "shore_grazer_primary",
+          "name": "경계 후 짧은 들이받기",
+          "damage_coefficient": 1.0,
+          "telegraph_seconds": 1.2,
+          "range_m": 2.2,
+          "cooldown_seconds": 5,
+          "counterplay": "측면·후방",
+          "description": "고개를 숙이고 1.2초 후 정면 공격"
+        },
+        {
+          "id": "shore_grazer_secondary",
+          "name": "측면 견제",
+          "damage_coefficient": 0.65,
+          "telegraph_seconds": 1.2,
+          "range_m": 3,
+          "cooldown_seconds": 8,
+          "counterplay": "표시된 범위 밖으로 이동; 기본 공격에 합산하지 않는 별도 행동",
+          "description": "발동 범위와 예고를 먼저 표시"
+        }
+      ],
+      "elemental_resistance_pct": {
+        "physical": 0,
+        "poison": 0,
+        "heat": 0,
+        "shock": 0
+      },
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "shell_crab",
+      "name": "조개등게",
+      "region_id": "T0",
+      "tier": 0,
+      "role": "normal",
+      "body_family": "소형 갑각수",
+      "recommended_players": [
+        1,
+        1
+      ],
+      "stats_at_reference_players": {
+        "hp": 52,
+        "attack_raw": 6,
+        "defense": 8,
+        "reference_players": 1
+      },
+      "behavior": "집게 공격 후 몸을 웅크림",
+      "telegraph": "집게를 벌리고 1.0초 후 공격",
+      "punish_window": "웅크림이 풀린 뒤 측면",
+      "damage_types": [
+        "physical"
+      ],
+      "base_harvest": {
+        "meat": {
+          "min": 1,
+          "max": 2
+        },
+        "bone": {
+          "min": 1,
+          "max": 2
+        },
+        "shell": {
+          "min": 1,
+          "max": 2
+        }
+      },
+      "focus_options": [
+        {
+          "id": "food",
+          "name": "식량 집중",
+          "guaranteed": {
+            "meat": 2,
+            "fat": 1
+          }
+        },
+        {
+          "id": "material",
+          "name": "외피·골격 집중",
+          "guaranteed": {
+            "shell": 2
+          }
+        },
+        {
+          "id": "signature",
+          "name": "고유 부위 집중",
+          "guaranteed": {
+            "raw_shell_crab": 1
+          }
+        }
+      ],
+      "optional_bonus_rolls": [],
+      "signature_raw_item_id": "raw_shell_crab",
+      "signature_processed_item_id": "mat_shell_crab",
+      "signature_family": "shell",
+      "weapon_trait_id": "block",
+      "armor_trait_id": "hard",
+      "weapon_kind": "shield",
+      "armor_slot": "gloves",
+      "kill_time_target_seconds": [
+        10,
+        25
+      ],
+      "respawn_seconds": 90,
+      "combat_leash_m": 35,
+      "equipment_ids": [
+        "gear_shell_crab_shield",
+        "gear_shell_crab_gloves"
+      ],
+      "movement_speed_mps": 2.2,
+      "aggro_radius_m": 0,
+      "basic_attack_interval_seconds": 2.4,
+      "attacks": [
+        {
+          "id": "shell_crab_primary",
+          "name": "집게 공격 후 몸을 웅크림",
+          "damage_coefficient": 1.0,
+          "telegraph_seconds": 1.0,
+          "range_m": 3,
+          "cooldown_seconds": 5,
+          "counterplay": "웅크림이 풀린 뒤 측면",
+          "description": "집게를 벌리고 1.0초 후 공격"
+        },
+        {
+          "id": "shell_crab_secondary",
+          "name": "측면 견제",
+          "damage_coefficient": 0.65,
+          "telegraph_seconds": 1.2,
+          "range_m": 3,
+          "cooldown_seconds": 8,
+          "counterplay": "표시된 범위 밖으로 이동; 기본 공격에 합산하지 않는 별도 행동",
+          "description": "발동 범위와 예고를 먼저 표시"
+        }
+      ],
+      "elemental_resistance_pct": {
+        "physical": 0,
+        "poison": 0,
+        "heat": 0,
+        "shock": 0
+      },
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "tide_boar",
+      "name": "모래엄니수",
+      "region_id": "T0",
+      "tier": 0,
+      "role": "elite",
+      "body_family": "초급 돌진수",
+      "recommended_players": [
+        1,
+        4
+      ],
+      "stats_at_reference_players": {
+        "hp": 144,
+        "attack_raw": 8,
+        "defense": 5,
+        "reference_players": 1
+      },
+      "behavior": "짧은 직선 돌진",
+      "telegraph": "발을 긁고 1.5초 후 돌진",
+      "punish_window": "돌진 뒤 회복",
+      "damage_types": [
+        "physical"
+      ],
+      "base_harvest": {
+        "meat": {
+          "min": 1,
+          "max": 2
+        },
+        "bone": {
+          "min": 1,
+          "max": 2
+        },
+        "horn": {
+          "min": 1,
+          "max": 2
+        }
+      },
+      "focus_options": [
+        {
+          "id": "food",
+          "name": "식량 집중",
+          "guaranteed": {
+            "meat": 2,
+            "fat": 1
+          }
+        },
+        {
+          "id": "material",
+          "name": "외피·골격 집중",
+          "guaranteed": {
+            "bone": 2
+          }
+        },
+        {
+          "id": "signature",
+          "name": "고유 부위 집중",
+          "guaranteed": {
+            "raw_tide_boar": 2
+          }
+        }
+      ],
+      "optional_bonus_rolls": [
+        {
+          "item_id": "trophy_tide_boar",
+          "quantity": 1,
+          "probability": 0.15,
+          "purpose": "장비 장식 또는 거점 전시; 성능·진행 필수 아님"
+        }
+      ],
+      "signature_raw_item_id": "raw_tide_boar",
+      "signature_processed_item_id": "mat_tide_boar",
+      "signature_family": "horn",
+      "weapon_trait_id": "pierce",
+      "armor_trait_id": "light",
+      "weapon_kind": "spear",
+      "armor_slot": "boots",
+      "kill_time_target_seconds": [
+        10,
+        25
+      ],
+      "respawn_seconds": 300,
+      "combat_leash_m": 35,
+      "equipment_ids": [
+        "gear_tide_boar_spear",
+        "gear_tide_boar_boots"
+      ],
+      "movement_speed_mps": 3.0,
+      "aggro_radius_m": 0,
+      "basic_attack_interval_seconds": 2.4,
+      "attacks": [
+        {
+          "id": "tide_boar_primary",
+          "name": "짧은 직선 돌진",
+          "damage_coefficient": 1.0,
+          "telegraph_seconds": 1.5,
+          "range_m": 2.2,
+          "cooldown_seconds": 5,
+          "counterplay": "돌진 뒤 회복",
+          "description": "발을 긁고 1.5초 후 돌진"
+        },
+        {
+          "id": "tide_boar_secondary",
+          "name": "측면 견제",
+          "damage_coefficient": 0.65,
+          "telegraph_seconds": 1.2,
+          "range_m": 3,
+          "cooldown_seconds": 8,
+          "counterplay": "표시된 범위 밖으로 이동; 기본 공격에 합산하지 않는 별도 행동",
+          "description": "발동 범위와 예고를 먼저 표시"
+        }
+      ],
+      "elemental_resistance_pct": {
+        "physical": 0,
+        "poison": 0,
+        "heat": 0,
+        "shock": 0
+      },
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "grass_grazer",
+      "name": "풀등소수",
+      "region_id": "B1",
+      "tier": 1,
+      "role": "normal",
+      "body_family": "초식수",
+      "recommended_players": [
+        1,
+        1
+      ],
+      "stats_at_reference_players": {
+        "hp": 120,
+        "attack_raw": 12,
+        "defense": 8,
+        "reference_players": 1
+      },
+      "behavior": "회피 이동과 짧은 발차기",
+      "telegraph": "뒷발을 들고 1.0초 후 공격",
+      "punish_window": "정면 측면",
+      "damage_types": [
+        "physical"
+      ],
+      "base_harvest": {
+        "meat": {
+          "min": 1,
+          "max": 2
+        },
+        "bone": {
+          "min": 1,
+          "max": 2
+        },
+        "raw_hide": {
+          "min": 1,
+          "max": 2
+        },
+        "fat": {
+          "min": 1,
+          "max": 1
+        }
+      },
+      "focus_options": [
+        {
+          "id": "food",
+          "name": "식량 집중",
+          "guaranteed": {
+            "meat": 2,
+            "fat": 1
+          }
+        },
+        {
+          "id": "material",
+          "name": "외피·골격 집중",
+          "guaranteed": {
+            "raw_hide": 2
+          }
+        },
+        {
+          "id": "signature",
+          "name": "고유 부위 집중",
+          "guaranteed": {
+            "raw_grass_grazer": 1
+          }
+        }
+      ],
+      "optional_bonus_rolls": [],
+      "signature_raw_item_id": "raw_grass_grazer",
+      "signature_processed_item_id": "mat_grass_grazer",
+      "signature_family": "hide",
+      "weapon_trait_id": "steady",
+      "armor_trait_id": "durable",
+      "weapon_kind": "bow",
+      "armor_slot": "chest",
+      "kill_time_target_seconds": [
+        20,
+        50
+      ],
+      "respawn_seconds": 90,
+      "combat_leash_m": 35,
+      "equipment_ids": [
+        "gear_grass_grazer_bow",
+        "gear_grass_grazer_chest"
+      ],
+      "movement_speed_mps": 3.0,
+      "aggro_radius_m": 8,
+      "basic_attack_interval_seconds": 2.4,
+      "attacks": [
+        {
+          "id": "grass_grazer_primary",
+          "name": "회피 이동과 짧은 발차기",
+          "damage_coefficient": 1.0,
+          "telegraph_seconds": 1.0,
+          "range_m": 2.2,
+          "cooldown_seconds": 5,
+          "counterplay": "정면 측면",
+          "description": "뒷발을 들고 1.0초 후 공격"
+        },
+        {
+          "id": "grass_grazer_secondary",
+          "name": "측면 견제",
+          "damage_coefficient": 0.65,
+          "telegraph_seconds": 1.2,
+          "range_m": 3,
+          "cooldown_seconds": 8,
+          "counterplay": "표시된 범위 밖으로 이동; 기본 공격에 합산하지 않는 별도 행동",
+          "description": "발동 범위와 예고를 먼저 표시"
+        }
+      ],
+      "elemental_resistance_pct": {
+        "physical": 0,
+        "poison": 0,
+        "heat": 0,
+        "shock": 0
+      },
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "reed_raptor",
+      "name": "갈기추격수",
+      "region_id": "B1",
+      "tier": 1,
+      "role": "normal",
+      "body_family": "소형 포식수",
+      "recommended_players": [
+        1,
+        1
+      ],
+      "stats_at_reference_players": {
+        "hp": 102,
+        "attack_raw": 12,
+        "defense": 8,
+        "reference_players": 1
+      },
+      "behavior": "접근 후 물기·짧은 후퇴",
+      "telegraph": "몸을 낮추고 0.9초 후 도약",
+      "punish_window": "도약 착지",
+      "damage_types": [
+        "physical"
+      ],
+      "base_harvest": {
+        "meat": {
+          "min": 1,
+          "max": 2
+        },
+        "bone": {
+          "min": 1,
+          "max": 2
+        },
+        "sinew": {
+          "min": 1,
+          "max": 2
+        },
+        "fat": {
+          "min": 1,
+          "max": 1
+        }
+      },
+      "focus_options": [
+        {
+          "id": "food",
+          "name": "식량 집중",
+          "guaranteed": {
+            "meat": 2,
+            "fat": 1
+          }
+        },
+        {
+          "id": "material",
+          "name": "외피·골격 집중",
+          "guaranteed": {
+            "bone": 2
+          }
+        },
+        {
+          "id": "signature",
+          "name": "고유 부위 집중",
+          "guaranteed": {
+            "raw_reed_raptor": 1
+          }
+        }
+      ],
+      "optional_bonus_rolls": [],
+      "signature_raw_item_id": "raw_reed_raptor",
+      "signature_processed_item_id": "mat_reed_raptor",
+      "signature_family": "sinew",
+      "weapon_trait_id": "light",
+      "armor_trait_id": "light",
+      "weapon_kind": "sword",
+      "armor_slot": "boots",
+      "kill_time_target_seconds": [
+        20,
+        50
+      ],
+      "respawn_seconds": 90,
+      "combat_leash_m": 35,
+      "equipment_ids": [
+        "gear_reed_raptor_sword",
+        "gear_reed_raptor_boots"
+      ],
+      "movement_speed_mps": 4.0,
+      "aggro_radius_m": 8,
+      "basic_attack_interval_seconds": 2.4,
+      "attacks": [
+        {
+          "id": "reed_raptor_primary",
+          "name": "접근 후 물기",
+          "damage_coefficient": 1.0,
+          "telegraph_seconds": 0.9,
+          "range_m": 2.2,
+          "cooldown_seconds": 5,
+          "counterplay": "도약 착지",
+          "description": "몸을 낮추고 0.9초 후 도약"
+        },
+        {
+          "id": "reed_raptor_secondary",
+          "name": "측면 견제",
+          "damage_coefficient": 0.65,
+          "telegraph_seconds": 1.2,
+          "range_m": 3,
+          "cooldown_seconds": 8,
+          "counterplay": "표시된 범위 밖으로 이동; 기본 공격에 합산하지 않는 별도 행동",
+          "description": "발동 범위와 예고를 먼저 표시"
+        }
+      ],
+      "elemental_resistance_pct": {
+        "physical": 0,
+        "poison": 0,
+        "heat": 0,
+        "shock": 0
+      },
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "meadow_horn",
+      "name": "초원뿔대장",
+      "region_id": "B1",
+      "tier": 1,
+      "role": "elite",
+      "body_family": "중형 초식수",
+      "recommended_players": [
+        1,
+        4
+      ],
+      "stats_at_reference_players": {
+        "hp": 384,
+        "attack_raw": 15,
+        "defense": 13,
+        "reference_players": 1
+      },
+      "behavior": "부채꼴 뿔 휘두르기",
+      "telegraph": "몸을 틀고 1.6초 예고",
+      "punish_window": "휘두르기 반대편",
+      "damage_types": [
+        "physical"
+      ],
+      "base_harvest": {
+        "meat": {
+          "min": 1,
+          "max": 2
+        },
+        "bone": {
+          "min": 1,
+          "max": 2
+        },
+        "horn": {
+          "min": 1,
+          "max": 2
+        }
+      },
+      "focus_options": [
+        {
+          "id": "food",
+          "name": "식량 집중",
+          "guaranteed": {
+            "meat": 2,
+            "fat": 1
+          }
+        },
+        {
+          "id": "material",
+          "name": "외피·골격 집중",
+          "guaranteed": {
+            "bone": 2
+          }
+        },
+        {
+          "id": "signature",
+          "name": "고유 부위 집중",
+          "guaranteed": {
+            "raw_meadow_horn": 2
+          }
+        }
+      ],
+      "optional_bonus_rolls": [
+        {
+          "item_id": "trophy_meadow_horn",
+          "quantity": 1,
+          "probability": 0.15,
+          "purpose": "장비 장식 또는 거점 전시; 성능·진행 필수 아님"
+        }
+      ],
+      "signature_raw_item_id": "raw_meadow_horn",
+      "signature_processed_item_id": "mat_meadow_horn",
+      "signature_family": "horn",
+      "weapon_trait_id": "pierce",
+      "armor_trait_id": "hard",
+      "weapon_kind": "spear",
+      "armor_slot": "chest",
+      "kill_time_target_seconds": [
+        60,
+        150
+      ],
+      "respawn_seconds": 300,
+      "combat_leash_m": 35,
+      "equipment_ids": [
+        "gear_meadow_horn_spear",
+        "gear_meadow_horn_chest"
+      ],
+      "movement_speed_mps": 3.0,
+      "aggro_radius_m": 12,
+      "basic_attack_interval_seconds": 2.4,
+      "attacks": [
+        {
+          "id": "meadow_horn_primary",
+          "name": "부채꼴 뿔 휘두르기",
+          "damage_coefficient": 1.0,
+          "telegraph_seconds": 1.6,
+          "range_m": 2.2,
+          "cooldown_seconds": 5,
+          "counterplay": "휘두르기 반대편",
+          "description": "몸을 틀고 1.6초 예고"
+        },
+        {
+          "id": "meadow_horn_secondary",
+          "name": "측면 견제",
+          "damage_coefficient": 0.65,
+          "telegraph_seconds": 1.2,
+          "range_m": 3,
+          "cooldown_seconds": 8,
+          "counterplay": "표시된 범위 밖으로 이동; 기본 공격에 합산하지 않는 별도 행동",
+          "description": "발동 범위와 예고를 먼저 표시"
+        }
+      ],
+      "elemental_resistance_pct": {
+        "physical": 0,
+        "poison": 0,
+        "heat": 0,
+        "shock": 0
+      },
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "stonejaw",
+      "name": "돌턱멧수",
+      "region_id": "B2",
+      "tier": 1,
+      "role": "normal",
+      "body_family": "돌진수",
+      "recommended_players": [
+        1,
+        1
+      ],
+      "stats_at_reference_players": {
+        "hp": 120,
+        "attack_raw": 12,
+        "defense": 8,
+        "reference_players": 1
+      },
+      "behavior": "돌진 후 방향전환",
+      "telegraph": "앞발을 긁고 1.3초 후 돌진",
+      "punish_window": "충돌·돌진 종료",
+      "damage_types": [
+        "physical"
+      ],
+      "base_harvest": {
+        "meat": {
+          "min": 1,
+          "max": 2
+        },
+        "bone": {
+          "min": 1,
+          "max": 2
+        },
+        "raw_hide": {
+          "min": 1,
+          "max": 2
+        },
+        "fat": {
+          "min": 1,
+          "max": 1
+        }
+      },
+      "focus_options": [
+        {
+          "id": "food",
+          "name": "식량 집중",
+          "guaranteed": {
+            "meat": 2,
+            "fat": 1
+          }
+        },
+        {
+          "id": "material",
+          "name": "외피·골격 집중",
+          "guaranteed": {
+            "raw_hide": 2
+          }
+        },
+        {
+          "id": "signature",
+          "name": "고유 부위 집중",
+          "guaranteed": {
+            "raw_stonejaw": 1
+          }
+        }
+      ],
+      "optional_bonus_rolls": [],
+      "signature_raw_item_id": "raw_stonejaw",
+      "signature_processed_item_id": "mat_stonejaw",
+      "signature_family": "hide",
+      "weapon_trait_id": "durable",
+      "armor_trait_id": "durable",
+      "weapon_kind": "spear",
+      "armor_slot": "chest",
+      "kill_time_target_seconds": [
+        20,
+        50
+      ],
+      "respawn_seconds": 90,
+      "combat_leash_m": 35,
+      "equipment_ids": [
+        "gear_stonejaw_spear",
+        "gear_stonejaw_chest"
+      ],
+      "movement_speed_mps": 3.0,
+      "aggro_radius_m": 8,
+      "basic_attack_interval_seconds": 2.4,
+      "attacks": [
+        {
+          "id": "stonejaw_primary",
+          "name": "돌진 후 방향전환",
+          "damage_coefficient": 1.0,
+          "telegraph_seconds": 1.3,
+          "range_m": 2.2,
+          "cooldown_seconds": 5,
+          "counterplay": "충돌·돌진 종료",
+          "description": "앞발을 긁고 1.3초 후 돌진"
+        },
+        {
+          "id": "stonejaw_secondary",
+          "name": "측면 견제",
+          "damage_coefficient": 0.65,
+          "telegraph_seconds": 1.2,
+          "range_m": 3,
+          "cooldown_seconds": 8,
+          "counterplay": "표시된 범위 밖으로 이동; 기본 공격에 합산하지 않는 별도 행동",
+          "description": "발동 범위와 예고를 먼저 표시"
+        }
+      ],
+      "elemental_resistance_pct": {
+        "physical": 0,
+        "poison": 0,
+        "heat": 0,
+        "shock": 0
+      },
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "moss_turtle",
+      "name": "이끼등거북",
+      "region_id": "B2",
+      "tier": 1,
+      "role": "normal",
+      "body_family": "방어형 갑각수",
+      "recommended_players": [
+        1,
+        1
+      ],
+      "stats_at_reference_players": {
+        "hp": 138,
+        "attack_raw": 12,
+        "defense": 16,
+        "reference_players": 1
+      },
+      "behavior": "정면 방어·측면 밀치기",
+      "telegraph": "껍질을 들고 1.4초 후 밀침",
+      "punish_window": "측후방",
+      "damage_types": [
+        "physical"
+      ],
+      "base_harvest": {
+        "meat": {
+          "min": 1,
+          "max": 2
+        },
+        "bone": {
+          "min": 1,
+          "max": 2
+        },
+        "shell": {
+          "min": 1,
+          "max": 2
+        }
+      },
+      "focus_options": [
+        {
+          "id": "food",
+          "name": "식량 집중",
+          "guaranteed": {
+            "meat": 2,
+            "fat": 1
+          }
+        },
+        {
+          "id": "material",
+          "name": "외피·골격 집중",
+          "guaranteed": {
+            "shell": 2
+          }
+        },
+        {
+          "id": "signature",
+          "name": "고유 부위 집중",
+          "guaranteed": {
+            "raw_moss_turtle": 1
+          }
+        }
+      ],
+      "optional_bonus_rolls": [],
+      "signature_raw_item_id": "raw_moss_turtle",
+      "signature_processed_item_id": "mat_moss_turtle",
+      "signature_family": "shell",
+      "weapon_trait_id": "block",
+      "armor_trait_id": "hard",
+      "weapon_kind": "shield",
+      "armor_slot": "gloves",
+      "kill_time_target_seconds": [
+        20,
+        50
+      ],
+      "respawn_seconds": 90,
+      "combat_leash_m": 35,
+      "equipment_ids": [
+        "gear_moss_turtle_shield",
+        "gear_moss_turtle_gloves"
+      ],
+      "movement_speed_mps": 2.2,
+      "aggro_radius_m": 8,
+      "basic_attack_interval_seconds": 2.4,
+      "attacks": [
+        {
+          "id": "moss_turtle_primary",
+          "name": "정면 방어",
+          "damage_coefficient": 1.0,
+          "telegraph_seconds": 1.4,
+          "range_m": 3,
+          "cooldown_seconds": 5,
+          "counterplay": "측후방",
+          "description": "껍질을 들고 1.4초 후 밀침"
+        },
+        {
+          "id": "moss_turtle_secondary",
+          "name": "측면 견제",
+          "damage_coefficient": 0.65,
+          "telegraph_seconds": 1.2,
+          "range_m": 3,
+          "cooldown_seconds": 8,
+          "counterplay": "표시된 범위 밖으로 이동; 기본 공격에 합산하지 않는 별도 행동",
+          "description": "발동 범위와 예고를 먼저 표시"
+        }
+      ],
+      "elemental_resistance_pct": {
+        "physical": 0,
+        "poison": 0,
+        "heat": 0,
+        "shock": 0
+      },
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "forest_fang",
+      "name": "숲갈기 우두머리",
+      "region_id": "B2",
+      "tier": 1,
+      "role": "elite",
+      "body_family": "무리 포식수",
+      "recommended_players": [
+        1,
+        4
+      ],
+      "stats_at_reference_players": {
+        "hp": 384,
+        "attack_raw": 15,
+        "defense": 13,
+        "reference_players": 1
+      },
+      "behavior": "연속 물기와 부하 호출",
+      "telegraph": "울음 2초; 호출 위치 표시",
+      "punish_window": "연속 물기 종료",
+      "damage_types": [
+        "physical"
+      ],
+      "base_harvest": {
+        "meat": {
+          "min": 1,
+          "max": 2
+        },
+        "bone": {
+          "min": 1,
+          "max": 2
+        },
+        "horn": {
+          "min": 1,
+          "max": 2
+        }
+      },
+      "focus_options": [
+        {
+          "id": "food",
+          "name": "식량 집중",
+          "guaranteed": {
+            "meat": 2,
+            "fat": 1
+          }
+        },
+        {
+          "id": "material",
+          "name": "외피·골격 집중",
+          "guaranteed": {
+            "bone": 2
+          }
+        },
+        {
+          "id": "signature",
+          "name": "고유 부위 집중",
+          "guaranteed": {
+            "raw_forest_fang": 2
+          }
+        }
+      ],
+      "optional_bonus_rolls": [
+        {
+          "item_id": "trophy_forest_fang",
+          "quantity": 1,
+          "probability": 0.15,
+          "purpose": "장비 장식 또는 거점 전시; 성능·진행 필수 아님"
+        }
+      ],
+      "signature_raw_item_id": "raw_forest_fang",
+      "signature_processed_item_id": "mat_forest_fang",
+      "signature_family": "horn",
+      "weapon_trait_id": "bleed",
+      "armor_trait_id": "light",
+      "weapon_kind": "sword",
+      "armor_slot": "boots",
+      "kill_time_target_seconds": [
+        60,
+        150
+      ],
+      "respawn_seconds": 300,
+      "combat_leash_m": 35,
+      "equipment_ids": [
+        "gear_forest_fang_sword",
+        "gear_forest_fang_boots"
+      ],
+      "movement_speed_mps": 3.0,
+      "aggro_radius_m": 12,
+      "basic_attack_interval_seconds": 2.4,
+      "attacks": [
+        {
+          "id": "forest_fang_primary",
+          "name": "연속 물기와 부하 호출",
+          "damage_coefficient": 1.0,
+          "telegraph_seconds": 2.0,
+          "range_m": 2.2,
+          "cooldown_seconds": 5,
+          "counterplay": "연속 물기 종료",
+          "description": "울음 2초; 호출 위치 표시"
+        },
+        {
+          "id": "forest_fang_secondary",
+          "name": "측면 견제",
+          "damage_coefficient": 0.65,
+          "telegraph_seconds": 1.2,
+          "range_m": 3,
+          "cooldown_seconds": 8,
+          "counterplay": "표시된 범위 밖으로 이동; 기본 공격에 합산하지 않는 별도 행동",
+          "description": "발동 범위와 예고를 먼저 표시"
+        }
+      ],
+      "elemental_resistance_pct": {
+        "physical": 0,
+        "poison": 0,
+        "heat": 0,
+        "shock": 0
+      },
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "poison_sac",
+      "name": "갈대독낭수",
+      "region_id": "M1",
+      "tier": 2,
+      "role": "normal",
+      "body_family": "독성 생물",
+      "recommended_players": [
+        1,
+        1
+      ],
+      "stats_at_reference_players": {
+        "hp": 320,
+        "attack_raw": 22,
+        "defense": 18,
+        "reference_players": 1
+      },
+      "behavior": "독 웅덩이와 혀 찌르기",
+      "telegraph": "배가 부풀고 1.5초 후 분출",
+      "punish_window": "분출 후 빈틈",
+      "damage_types": [
+        "physical",
+        "poison"
+      ],
+      "base_harvest": {
+        "meat": {
+          "min": 1,
+          "max": 2
+        },
+        "bone": {
+          "min": 1,
+          "max": 2
+        }
+      },
+      "focus_options": [
+        {
+          "id": "food",
+          "name": "식량 집중",
+          "guaranteed": {
+            "meat": 2,
+            "fat": 1
+          }
+        },
+        {
+          "id": "material",
+          "name": "외피·골격 집중",
+          "guaranteed": {
+            "bone": 2
+          }
+        },
+        {
+          "id": "signature",
+          "name": "고유 부위 집중",
+          "guaranteed": {
+            "raw_poison_sac": 1
+          }
+        }
+      ],
+      "optional_bonus_rolls": [],
+      "signature_raw_item_id": "raw_poison_sac",
+      "signature_processed_item_id": "mat_poison_sac",
+      "signature_family": "organ",
+      "weapon_trait_id": "toxic",
+      "armor_trait_id": "poison_guard",
+      "weapon_kind": "spear",
+      "armor_slot": "gloves",
+      "kill_time_target_seconds": [
+        20,
+        50
+      ],
+      "respawn_seconds": 90,
+      "combat_leash_m": 35,
+      "equipment_ids": [
+        "gear_poison_sac_spear",
+        "gear_poison_sac_gloves"
+      ],
+      "movement_speed_mps": 3.0,
+      "aggro_radius_m": 8,
+      "basic_attack_interval_seconds": 2.4,
+      "attacks": [
+        {
+          "id": "poison_sac_primary",
+          "name": "독 웅덩이와 혀 찌르기",
+          "damage_coefficient": 1.0,
+          "telegraph_seconds": 1.5,
+          "range_m": 2.2,
+          "cooldown_seconds": 5,
+          "counterplay": "분출 후 빈틈",
+          "description": "배가 부풀고 1.5초 후 분출",
+          "status_on_hit": {
+            "type": "poison",
+            "damage_per_second": 3,
+            "duration_seconds": 5,
+            "max_stacks": 1,
+            "reapply": "refresh"
+          }
+        },
+        {
+          "id": "poison_sac_secondary",
+          "name": "측면 견제",
+          "damage_coefficient": 0.65,
+          "telegraph_seconds": 1.2,
+          "range_m": 3,
+          "cooldown_seconds": 8,
+          "counterplay": "표시된 범위 밖으로 이동; 기본 공격에 합산하지 않는 별도 행동",
+          "description": "발동 범위와 예고를 먼저 표시"
+        }
+      ],
+      "elemental_resistance_pct": {
+        "physical": 0,
+        "poison": 30,
+        "heat": 0,
+        "shock": 0
+      },
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "mudscale",
+      "name": "진흙비늘수",
+      "region_id": "M1",
+      "tier": 2,
+      "role": "normal",
+      "body_family": "수변 파충수",
+      "recommended_players": [
+        1,
+        1
+      ],
+      "stats_at_reference_players": {
+        "hp": 320,
+        "attack_raw": 22,
+        "defense": 18,
+        "reference_players": 1
+      },
+      "behavior": "잠복 후 옆으로 돌진",
+      "telegraph": "물결·등 비늘이 1.5초 노출",
+      "punish_window": "돌진 끝",
+      "damage_types": [
+        "physical"
+      ],
+      "base_harvest": {
+        "meat": {
+          "min": 1,
+          "max": 2
+        },
+        "bone": {
+          "min": 1,
+          "max": 2
+        },
+        "raw_hide": {
+          "min": 1,
+          "max": 2
+        },
+        "fat": {
+          "min": 1,
+          "max": 1
+        }
+      },
+      "focus_options": [
+        {
+          "id": "food",
+          "name": "식량 집중",
+          "guaranteed": {
+            "meat": 2,
+            "fat": 1
+          }
+        },
+        {
+          "id": "material",
+          "name": "외피·골격 집중",
+          "guaranteed": {
+            "raw_hide": 2
+          }
+        },
+        {
+          "id": "signature",
+          "name": "고유 부위 집중",
+          "guaranteed": {
+            "raw_mudscale": 1
+          }
+        }
+      ],
+      "optional_bonus_rolls": [],
+      "signature_raw_item_id": "raw_mudscale",
+      "signature_processed_item_id": "mat_mudscale",
+      "signature_family": "hide",
+      "weapon_trait_id": "steady",
+      "armor_trait_id": "wetguard",
+      "weapon_kind": "bow",
+      "armor_slot": "boots",
+      "kill_time_target_seconds": [
+        20,
+        50
+      ],
+      "respawn_seconds": 90,
+      "combat_leash_m": 35,
+      "equipment_ids": [
+        "gear_mudscale_bow",
+        "gear_mudscale_boots"
+      ],
+      "movement_speed_mps": 3.0,
+      "aggro_radius_m": 8,
+      "basic_attack_interval_seconds": 2.4,
+      "attacks": [
+        {
+          "id": "mudscale_primary",
+          "name": "잠복 후 옆으로 돌진",
+          "damage_coefficient": 1.0,
+          "telegraph_seconds": 1.5,
+          "range_m": 2.2,
+          "cooldown_seconds": 5,
+          "counterplay": "돌진 끝",
+          "description": "물결·등 비늘이 1.5초 노출"
+        },
+        {
+          "id": "mudscale_secondary",
+          "name": "측면 견제",
+          "damage_coefficient": 0.65,
+          "telegraph_seconds": 1.2,
+          "range_m": 3,
+          "cooldown_seconds": 8,
+          "counterplay": "표시된 범위 밖으로 이동; 기본 공격에 합산하지 않는 별도 행동",
+          "description": "발동 범위와 예고를 먼저 표시"
+        }
+      ],
+      "elemental_resistance_pct": {
+        "physical": 0,
+        "poison": 30,
+        "heat": 0,
+        "shock": 0
+      },
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "marsh_carapace",
+      "name": "늪갑각수",
+      "region_id": "M1",
+      "tier": 2,
+      "role": "elite",
+      "body_family": "대형 갑각수",
+      "recommended_players": [
+        1,
+        4
+      ],
+      "stats_at_reference_players": {
+        "hp": 1178,
+        "attack_raw": 28,
+        "defense": 31,
+        "reference_players": 1
+      },
+      "behavior": "갑각 방어와 독성 구역",
+      "telegraph": "지면 표시 2초 후 독성 분출",
+      "punish_window": "외피가 열린 뒤",
+      "damage_types": [
+        "physical"
+      ],
+      "base_harvest": {
+        "meat": {
+          "min": 1,
+          "max": 2
+        },
+        "bone": {
+          "min": 1,
+          "max": 2
+        },
+        "shell": {
+          "min": 1,
+          "max": 2
+        }
+      },
+      "focus_options": [
+        {
+          "id": "food",
+          "name": "식량 집중",
+          "guaranteed": {
+            "meat": 2,
+            "fat": 1
+          }
+        },
+        {
+          "id": "material",
+          "name": "외피·골격 집중",
+          "guaranteed": {
+            "shell": 2
+          }
+        },
+        {
+          "id": "signature",
+          "name": "고유 부위 집중",
+          "guaranteed": {
+            "raw_marsh_carapace": 2
+          }
+        }
+      ],
+      "optional_bonus_rolls": [
+        {
+          "item_id": "trophy_marsh_carapace",
+          "quantity": 1,
+          "probability": 0.15,
+          "purpose": "장비 장식 또는 거점 전시; 성능·진행 필수 아님"
+        }
+      ],
+      "signature_raw_item_id": "raw_marsh_carapace",
+      "signature_processed_item_id": "mat_marsh_carapace",
+      "signature_family": "shell",
+      "weapon_trait_id": "block",
+      "armor_trait_id": "poison_guard",
+      "weapon_kind": "shield",
+      "armor_slot": "chest",
+      "kill_time_target_seconds": [
+        60,
+        150
+      ],
+      "respawn_seconds": 300,
+      "combat_leash_m": 35,
+      "equipment_ids": [
+        "gear_marsh_carapace_shield",
+        "gear_marsh_carapace_chest"
+      ],
+      "movement_speed_mps": 2.2,
+      "aggro_radius_m": 12,
+      "basic_attack_interval_seconds": 2.4,
+      "attacks": [
+        {
+          "id": "marsh_carapace_primary",
+          "name": "갑각 방어와 독성 구역",
+          "damage_coefficient": 1.0,
+          "telegraph_seconds": 2.0,
+          "range_m": 3,
+          "cooldown_seconds": 5,
+          "counterplay": "외피가 열린 뒤",
+          "description": "지면 표시 2초 후 독성 분출"
+        },
+        {
+          "id": "marsh_carapace_secondary",
+          "name": "측면 견제",
+          "damage_coefficient": 0.65,
+          "telegraph_seconds": 1.2,
+          "range_m": 3,
+          "cooldown_seconds": 8,
+          "counterplay": "표시된 범위 밖으로 이동; 기본 공격에 합산하지 않는 별도 행동",
+          "description": "발동 범위와 예고를 먼저 표시"
+        }
+      ],
+      "elemental_resistance_pct": {
+        "physical": 0,
+        "poison": 30,
+        "heat": 0,
+        "shock": 0
+      },
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "sand_jaw",
+      "name": "모래턱수",
+      "region_id": "M2",
+      "tier": 2,
+      "role": "normal",
+      "body_family": "건조 생물",
+      "recommended_players": [
+        1,
+        1
+      ],
+      "stats_at_reference_players": {
+        "hp": 320,
+        "attack_raw": 22,
+        "defense": 18,
+        "reference_players": 1
+      },
+      "behavior": "모래 덮기·물기",
+      "telegraph": "턱을 들고 1.2초 후 내려침",
+      "punish_window": "모래 공격 반대편",
+      "damage_types": [
+        "physical"
+      ],
+      "base_harvest": {
+        "meat": {
+          "min": 1,
+          "max": 2
+        },
+        "bone": {
+          "min": 1,
+          "max": 2
+        },
+        "horn": {
+          "min": 1,
+          "max": 2
+        }
+      },
+      "focus_options": [
+        {
+          "id": "food",
+          "name": "식량 집중",
+          "guaranteed": {
+            "meat": 2,
+            "fat": 1
+          }
+        },
+        {
+          "id": "material",
+          "name": "외피·골격 집중",
+          "guaranteed": {
+            "bone": 2
+          }
+        },
+        {
+          "id": "signature",
+          "name": "고유 부위 집중",
+          "guaranteed": {
+            "raw_sand_jaw": 1
+          }
+        }
+      ],
+      "optional_bonus_rolls": [],
+      "signature_raw_item_id": "raw_sand_jaw",
+      "signature_processed_item_id": "mat_sand_jaw",
+      "signature_family": "horn",
+      "weapon_trait_id": "pierce",
+      "armor_trait_id": "heatguard",
+      "weapon_kind": "sword",
+      "armor_slot": "boots",
+      "kill_time_target_seconds": [
+        20,
+        50
+      ],
+      "respawn_seconds": 90,
+      "combat_leash_m": 35,
+      "equipment_ids": [
+        "gear_sand_jaw_sword",
+        "gear_sand_jaw_boots"
+      ],
+      "movement_speed_mps": 3.0,
+      "aggro_radius_m": 8,
+      "basic_attack_interval_seconds": 2.4,
+      "attacks": [
+        {
+          "id": "sand_jaw_primary",
+          "name": "모래 덮기",
+          "damage_coefficient": 1.0,
+          "telegraph_seconds": 1.2,
+          "range_m": 2.2,
+          "cooldown_seconds": 5,
+          "counterplay": "모래 공격 반대편",
+          "description": "턱을 들고 1.2초 후 내려침"
+        },
+        {
+          "id": "sand_jaw_secondary",
+          "name": "측면 견제",
+          "damage_coefficient": 0.65,
+          "telegraph_seconds": 1.2,
+          "range_m": 3,
+          "cooldown_seconds": 8,
+          "counterplay": "표시된 범위 밖으로 이동; 기본 공격에 합산하지 않는 별도 행동",
+          "description": "발동 범위와 예고를 먼저 표시"
+        }
+      ],
+      "elemental_resistance_pct": {
+        "physical": 0,
+        "poison": 0,
+        "heat": 0,
+        "shock": 0
+      },
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "cliff_runner",
+      "name": "절벽달림수",
+      "region_id": "M2",
+      "tier": 2,
+      "role": "normal",
+      "body_family": "기민한 초식수",
+      "recommended_players": [
+        1,
+        1
+      ],
+      "stats_at_reference_players": {
+        "hp": 320,
+        "attack_raw": 22,
+        "defense": 18,
+        "reference_players": 1
+      },
+      "behavior": "후퇴 후 돌진",
+      "telegraph": "몸을 낮추고 1.1초 후 돌진",
+      "punish_window": "방향전환 중",
+      "damage_types": [
+        "physical"
+      ],
+      "base_harvest": {
+        "meat": {
+          "min": 1,
+          "max": 2
+        },
+        "bone": {
+          "min": 1,
+          "max": 2
+        },
+        "raw_hide": {
+          "min": 1,
+          "max": 2
+        },
+        "fat": {
+          "min": 1,
+          "max": 1
+        }
+      },
+      "focus_options": [
+        {
+          "id": "food",
+          "name": "식량 집중",
+          "guaranteed": {
+            "meat": 2,
+            "fat": 1
+          }
+        },
+        {
+          "id": "material",
+          "name": "외피·골격 집중",
+          "guaranteed": {
+            "raw_hide": 2
+          }
+        },
+        {
+          "id": "signature",
+          "name": "고유 부위 집중",
+          "guaranteed": {
+            "raw_cliff_runner": 1
+          }
+        }
+      ],
+      "optional_bonus_rolls": [],
+      "signature_raw_item_id": "raw_cliff_runner",
+      "signature_processed_item_id": "mat_cliff_runner",
+      "signature_family": "hide",
+      "weapon_trait_id": "light",
+      "armor_trait_id": "gather",
+      "weapon_kind": "bow",
+      "armor_slot": "gloves",
+      "kill_time_target_seconds": [
+        20,
+        50
+      ],
+      "respawn_seconds": 90,
+      "combat_leash_m": 35,
+      "equipment_ids": [
+        "gear_cliff_runner_bow",
+        "gear_cliff_runner_gloves"
+      ],
+      "movement_speed_mps": 3.0,
+      "aggro_radius_m": 8,
+      "basic_attack_interval_seconds": 2.4,
+      "attacks": [
+        {
+          "id": "cliff_runner_primary",
+          "name": "후퇴 후 돌진",
+          "damage_coefficient": 1.0,
+          "telegraph_seconds": 1.1,
+          "range_m": 2.2,
+          "cooldown_seconds": 5,
+          "counterplay": "방향전환 중",
+          "description": "몸을 낮추고 1.1초 후 돌진"
+        },
+        {
+          "id": "cliff_runner_secondary",
+          "name": "측면 견제",
+          "damage_coefficient": 0.65,
+          "telegraph_seconds": 1.2,
+          "range_m": 3,
+          "cooldown_seconds": 8,
+          "counterplay": "표시된 범위 밖으로 이동; 기본 공격에 합산하지 않는 별도 행동",
+          "description": "발동 범위와 예고를 먼저 표시"
+        }
+      ],
+      "elemental_resistance_pct": {
+        "physical": 0,
+        "poison": 0,
+        "heat": 0,
+        "shock": 0
+      },
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "ironhorn",
+      "name": "철각수",
+      "region_id": "M2",
+      "tier": 2,
+      "role": "elite",
+      "body_family": "중대형 갑각수",
+      "recommended_players": [
+        1,
+        4
+      ],
+      "stats_at_reference_players": {
+        "hp": 1178,
+        "attack_raw": 28,
+        "defense": 31,
+        "reference_players": 1
+      },
+      "behavior": "돌진·넓은 휘두르기",
+      "telegraph": "발광 없는 각질 팽창 1.8초",
+      "punish_window": "돌진 후 후방",
+      "damage_types": [
+        "physical"
+      ],
+      "base_harvest": {
+        "meat": {
+          "min": 1,
+          "max": 2
+        },
+        "bone": {
+          "min": 1,
+          "max": 2
+        },
+        "shell": {
+          "min": 1,
+          "max": 2
+        },
+        "iron_ore": {
+          "min": 1,
+          "max": 2
+        }
+      },
+      "focus_options": [
+        {
+          "id": "food",
+          "name": "식량 집중",
+          "guaranteed": {
+            "meat": 2,
+            "fat": 1
+          }
+        },
+        {
+          "id": "material",
+          "name": "외피·골격 집중",
+          "guaranteed": {
+            "shell": 2
+          }
+        },
+        {
+          "id": "signature",
+          "name": "고유 부위 집중",
+          "guaranteed": {
+            "raw_ironhorn": 2
+          }
+        }
+      ],
+      "optional_bonus_rolls": [
+        {
+          "item_id": "trophy_ironhorn",
+          "quantity": 1,
+          "probability": 0.15,
+          "purpose": "장비 장식 또는 거점 전시; 성능·진행 필수 아님"
+        }
+      ],
+      "signature_raw_item_id": "raw_ironhorn",
+      "signature_processed_item_id": "mat_ironhorn",
+      "signature_family": "shell",
+      "weapon_trait_id": "hard",
+      "armor_trait_id": "hard",
+      "weapon_kind": "spear",
+      "armor_slot": "chest",
+      "kill_time_target_seconds": [
+        60,
+        150
+      ],
+      "respawn_seconds": 300,
+      "combat_leash_m": 35,
+      "equipment_ids": [
+        "gear_ironhorn_spear",
+        "gear_ironhorn_chest"
+      ],
+      "movement_speed_mps": 2.2,
+      "aggro_radius_m": 12,
+      "basic_attack_interval_seconds": 2.4,
+      "attacks": [
+        {
+          "id": "ironhorn_primary",
+          "name": "돌진",
+          "damage_coefficient": 1.0,
+          "telegraph_seconds": 1.8,
+          "range_m": 3,
+          "cooldown_seconds": 5,
+          "counterplay": "돌진 후 후방",
+          "description": "발광 없는 각질 팽창 1.8초"
+        },
+        {
+          "id": "ironhorn_secondary",
+          "name": "측면 견제",
+          "damage_coefficient": 0.65,
+          "telegraph_seconds": 1.2,
+          "range_m": 3,
+          "cooldown_seconds": 8,
+          "counterplay": "표시된 범위 밖으로 이동; 기본 공격에 합산하지 않는 별도 행동",
+          "description": "발동 범위와 예고를 먼저 표시"
+        }
+      ],
+      "elemental_resistance_pct": {
+        "physical": 0,
+        "poison": 0,
+        "heat": 0,
+        "shock": 0
+      },
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "snow_deer",
+      "name": "서리뿔사슴",
+      "region_id": "M3",
+      "tier": 2,
+      "role": "normal",
+      "body_family": "털가죽 초식수",
+      "recommended_players": [
+        1,
+        1
+      ],
+      "stats_at_reference_players": {
+        "hp": 320,
+        "attack_raw": 22,
+        "defense": 18,
+        "reference_players": 1
+      },
+      "behavior": "뿔 돌진·후퇴",
+      "telegraph": "고개를 낮추고 1.4초",
+      "punish_window": "후퇴 종료",
+      "damage_types": [
+        "physical"
+      ],
+      "base_harvest": {
+        "meat": {
+          "min": 1,
+          "max": 2
+        },
+        "bone": {
+          "min": 1,
+          "max": 2
+        },
+        "fur_hide": {
+          "min": 1,
+          "max": 2
+        },
+        "wool": {
+          "min": 1,
+          "max": 2
+        },
+        "fat": {
+          "min": 1,
+          "max": 1
+        }
+      },
+      "focus_options": [
+        {
+          "id": "food",
+          "name": "식량 집중",
+          "guaranteed": {
+            "meat": 2,
+            "fat": 1
+          }
+        },
+        {
+          "id": "material",
+          "name": "외피·골격 집중",
+          "guaranteed": {
+            "fur_hide": 2
+          }
+        },
+        {
+          "id": "signature",
+          "name": "고유 부위 집중",
+          "guaranteed": {
+            "raw_snow_deer": 1
+          }
+        }
+      ],
+      "optional_bonus_rolls": [],
+      "signature_raw_item_id": "raw_snow_deer",
+      "signature_processed_item_id": "mat_snow_deer",
+      "signature_family": "fur",
+      "weapon_trait_id": "steady",
+      "armor_trait_id": "coldguard",
+      "weapon_kind": "bow",
+      "armor_slot": "chest",
+      "kill_time_target_seconds": [
+        20,
+        50
+      ],
+      "respawn_seconds": 90,
+      "combat_leash_m": 35,
+      "equipment_ids": [
+        "gear_snow_deer_bow",
+        "gear_snow_deer_chest"
+      ],
+      "movement_speed_mps": 3.0,
+      "aggro_radius_m": 8,
+      "basic_attack_interval_seconds": 2.4,
+      "attacks": [
+        {
+          "id": "snow_deer_primary",
+          "name": "뿔 돌진",
+          "damage_coefficient": 1.0,
+          "telegraph_seconds": 1.4,
+          "range_m": 2.2,
+          "cooldown_seconds": 5,
+          "counterplay": "후퇴 종료",
+          "description": "고개를 낮추고 1.4초"
+        },
+        {
+          "id": "snow_deer_secondary",
+          "name": "측면 견제",
+          "damage_coefficient": 0.65,
+          "telegraph_seconds": 1.2,
+          "range_m": 3,
+          "cooldown_seconds": 8,
+          "counterplay": "표시된 범위 밖으로 이동; 기본 공격에 합산하지 않는 별도 행동",
+          "description": "발동 범위와 예고를 먼저 표시"
+        }
+      ],
+      "elemental_resistance_pct": {
+        "physical": 0,
+        "poison": 0,
+        "heat": 0,
+        "shock": 0
+      },
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "white_wolf",
+      "name": "흰갈기늑수",
+      "region_id": "M3",
+      "tier": 2,
+      "role": "normal",
+      "body_family": "무리 포식수",
+      "recommended_players": [
+        1,
+        1
+      ],
+      "stats_at_reference_players": {
+        "hp": 272,
+        "attack_raw": 22,
+        "defense": 18,
+        "reference_players": 1
+      },
+      "behavior": "측면 포위와 물기",
+      "telegraph": "짧은 울음 후 1.1초",
+      "punish_window": "물기 실패 후",
+      "damage_types": [
+        "physical"
+      ],
+      "base_harvest": {
+        "meat": {
+          "min": 1,
+          "max": 2
+        },
+        "bone": {
+          "min": 1,
+          "max": 2
+        },
+        "sinew": {
+          "min": 1,
+          "max": 2
+        },
+        "fat": {
+          "min": 1,
+          "max": 1
+        }
+      },
+      "focus_options": [
+        {
+          "id": "food",
+          "name": "식량 집중",
+          "guaranteed": {
+            "meat": 2,
+            "fat": 1
+          }
+        },
+        {
+          "id": "material",
+          "name": "외피·골격 집중",
+          "guaranteed": {
+            "bone": 2
+          }
+        },
+        {
+          "id": "signature",
+          "name": "고유 부위 집중",
+          "guaranteed": {
+            "raw_white_wolf": 1
+          }
+        }
+      ],
+      "optional_bonus_rolls": [],
+      "signature_raw_item_id": "raw_white_wolf",
+      "signature_processed_item_id": "mat_white_wolf",
+      "signature_family": "sinew",
+      "weapon_trait_id": "light",
+      "armor_trait_id": "coldguard",
+      "weapon_kind": "sword",
+      "armor_slot": "gloves",
+      "kill_time_target_seconds": [
+        20,
+        50
+      ],
+      "respawn_seconds": 90,
+      "combat_leash_m": 35,
+      "equipment_ids": [
+        "gear_white_wolf_sword",
+        "gear_white_wolf_gloves"
+      ],
+      "movement_speed_mps": 4.0,
+      "aggro_radius_m": 8,
+      "basic_attack_interval_seconds": 2.4,
+      "attacks": [
+        {
+          "id": "white_wolf_primary",
+          "name": "측면 포위와 물기",
+          "damage_coefficient": 1.0,
+          "telegraph_seconds": 1.1,
+          "range_m": 2.2,
+          "cooldown_seconds": 5,
+          "counterplay": "물기 실패 후",
+          "description": "짧은 울음 후 1.1초"
+        },
+        {
+          "id": "white_wolf_secondary",
+          "name": "측면 견제",
+          "damage_coefficient": 0.65,
+          "telegraph_seconds": 1.2,
+          "range_m": 3,
+          "cooldown_seconds": 8,
+          "counterplay": "표시된 범위 밖으로 이동; 기본 공격에 합산하지 않는 별도 행동",
+          "description": "발동 범위와 예고를 먼저 표시"
+        }
+      ],
+      "elemental_resistance_pct": {
+        "physical": 0,
+        "poison": 0,
+        "heat": 0,
+        "shock": 0
+      },
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "frost_bear",
+      "name": "서리등곰수",
+      "region_id": "M3",
+      "tier": 2,
+      "role": "elite",
+      "body_family": "대형 포식수",
+      "recommended_players": [
+        1,
+        4
+      ],
+      "stats_at_reference_players": {
+        "hp": 1024,
+        "attack_raw": 28,
+        "defense": 23,
+        "reference_players": 1
+      },
+      "behavior": "두 번 휘두르기·내려찍기",
+      "telegraph": "양팔을 들고 2.0초",
+      "punish_window": "내려찍기 후",
+      "damage_types": [
+        "physical"
+      ],
+      "base_harvest": {
+        "meat": {
+          "min": 1,
+          "max": 2
+        },
+        "bone": {
+          "min": 1,
+          "max": 2
+        },
+        "fur_hide": {
+          "min": 1,
+          "max": 2
+        },
+        "wool": {
+          "min": 1,
+          "max": 2
+        },
+        "fat": {
+          "min": 1,
+          "max": 1
+        }
+      },
+      "focus_options": [
+        {
+          "id": "food",
+          "name": "식량 집중",
+          "guaranteed": {
+            "meat": 2,
+            "fat": 1
+          }
+        },
+        {
+          "id": "material",
+          "name": "외피·골격 집중",
+          "guaranteed": {
+            "fur_hide": 2
+          }
+        },
+        {
+          "id": "signature",
+          "name": "고유 부위 집중",
+          "guaranteed": {
+            "raw_frost_bear": 2
+          }
+        }
+      ],
+      "optional_bonus_rolls": [
+        {
+          "item_id": "trophy_frost_bear",
+          "quantity": 1,
+          "probability": 0.15,
+          "purpose": "장비 장식 또는 거점 전시; 성능·진행 필수 아님"
+        }
+      ],
+      "signature_raw_item_id": "raw_frost_bear",
+      "signature_processed_item_id": "mat_frost_bear",
+      "signature_family": "fur",
+      "weapon_trait_id": "block",
+      "armor_trait_id": "coldguard",
+      "weapon_kind": "shield",
+      "armor_slot": "boots",
+      "kill_time_target_seconds": [
+        60,
+        150
+      ],
+      "respawn_seconds": 300,
+      "combat_leash_m": 35,
+      "equipment_ids": [
+        "gear_frost_bear_shield",
+        "gear_frost_bear_boots"
+      ],
+      "movement_speed_mps": 3.0,
+      "aggro_radius_m": 12,
+      "basic_attack_interval_seconds": 2.4,
+      "attacks": [
+        {
+          "id": "frost_bear_primary",
+          "name": "두 번 휘두르기",
+          "damage_coefficient": 1.0,
+          "telegraph_seconds": 2.0,
+          "range_m": 2.2,
+          "cooldown_seconds": 5,
+          "counterplay": "내려찍기 후",
+          "description": "양팔을 들고 2.0초"
+        },
+        {
+          "id": "frost_bear_secondary",
+          "name": "측면 견제",
+          "damage_coefficient": 0.65,
+          "telegraph_seconds": 1.2,
+          "range_m": 3,
+          "cooldown_seconds": 8,
+          "counterplay": "표시된 범위 밖으로 이동; 기본 공격에 합산하지 않는 별도 행동",
+          "description": "발동 범위와 예고를 먼저 표시"
+        }
+      ],
+      "elemental_resistance_pct": {
+        "physical": 0,
+        "poison": 0,
+        "heat": 0,
+        "shock": 0
+      },
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "vine_leaper",
+      "name": "덩굴도약수",
+      "region_id": "M4",
+      "tier": 2,
+      "role": "normal",
+      "body_family": "도약 포식수",
+      "recommended_players": [
+        1,
+        1
+      ],
+      "stats_at_reference_players": {
+        "hp": 272,
+        "attack_raw": 22,
+        "defense": 18,
+        "reference_players": 1
+      },
+      "behavior": "도약 공격·수직 이동",
+      "telegraph": "착지 범위 1.4초 표시",
+      "punish_window": "착지 후",
+      "damage_types": [
+        "physical"
+      ],
+      "base_harvest": {
+        "meat": {
+          "min": 1,
+          "max": 2
+        },
+        "bone": {
+          "min": 1,
+          "max": 2
+        },
+        "sinew": {
+          "min": 1,
+          "max": 2
+        },
+        "fat": {
+          "min": 1,
+          "max": 1
+        }
+      },
+      "focus_options": [
+        {
+          "id": "food",
+          "name": "식량 집중",
+          "guaranteed": {
+            "meat": 2,
+            "fat": 1
+          }
+        },
+        {
+          "id": "material",
+          "name": "외피·골격 집중",
+          "guaranteed": {
+            "bone": 2
+          }
+        },
+        {
+          "id": "signature",
+          "name": "고유 부위 집중",
+          "guaranteed": {
+            "raw_vine_leaper": 1
+          }
+        }
+      ],
+      "optional_bonus_rolls": [],
+      "signature_raw_item_id": "raw_vine_leaper",
+      "signature_processed_item_id": "mat_vine_leaper",
+      "signature_family": "sinew",
+      "weapon_trait_id": "light",
+      "armor_trait_id": "wetguard",
+      "weapon_kind": "bow",
+      "armor_slot": "boots",
+      "kill_time_target_seconds": [
+        20,
+        50
+      ],
+      "respawn_seconds": 90,
+      "combat_leash_m": 35,
+      "equipment_ids": [
+        "gear_vine_leaper_bow",
+        "gear_vine_leaper_boots"
+      ],
+      "movement_speed_mps": 4.0,
+      "aggro_radius_m": 8,
+      "basic_attack_interval_seconds": 2.4,
+      "attacks": [
+        {
+          "id": "vine_leaper_primary",
+          "name": "도약 공격",
+          "damage_coefficient": 1.0,
+          "telegraph_seconds": 1.4,
+          "range_m": 2.2,
+          "cooldown_seconds": 5,
+          "counterplay": "착지 후",
+          "description": "착지 범위 1.4초 표시"
+        },
+        {
+          "id": "vine_leaper_secondary",
+          "name": "측면 견제",
+          "damage_coefficient": 0.65,
+          "telegraph_seconds": 1.2,
+          "range_m": 3,
+          "cooldown_seconds": 8,
+          "counterplay": "표시된 범위 밖으로 이동; 기본 공격에 합산하지 않는 별도 행동",
+          "description": "발동 범위와 예고를 먼저 표시"
+        }
+      ],
+      "elemental_resistance_pct": {
+        "physical": 0,
+        "poison": 0,
+        "heat": 0,
+        "shock": 0
+      },
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "jade_scale",
+      "name": "비취비늘수",
+      "region_id": "M4",
+      "tier": 2,
+      "role": "normal",
+      "body_family": "파충 갑각수",
+      "recommended_players": [
+        1,
+        1
+      ],
+      "stats_at_reference_players": {
+        "hp": 368,
+        "attack_raw": 22,
+        "defense": 26,
+        "reference_players": 1
+      },
+      "behavior": "꼬리 휘두르기·독 물기",
+      "telegraph": "꼬리를 당기고 1.5초",
+      "punish_window": "머리 반대편",
+      "damage_types": [
+        "physical"
+      ],
+      "base_harvest": {
+        "meat": {
+          "min": 1,
+          "max": 2
+        },
+        "bone": {
+          "min": 1,
+          "max": 2
+        },
+        "shell": {
+          "min": 1,
+          "max": 2
+        }
+      },
+      "focus_options": [
+        {
+          "id": "food",
+          "name": "식량 집중",
+          "guaranteed": {
+            "meat": 2,
+            "fat": 1
+          }
+        },
+        {
+          "id": "material",
+          "name": "외피·골격 집중",
+          "guaranteed": {
+            "shell": 2
+          }
+        },
+        {
+          "id": "signature",
+          "name": "고유 부위 집중",
+          "guaranteed": {
+            "raw_jade_scale": 1
+          }
+        }
+      ],
+      "optional_bonus_rolls": [],
+      "signature_raw_item_id": "raw_jade_scale",
+      "signature_processed_item_id": "mat_jade_scale",
+      "signature_family": "shell",
+      "weapon_trait_id": "durable",
+      "armor_trait_id": "poison_guard",
+      "weapon_kind": "sword",
+      "armor_slot": "chest",
+      "kill_time_target_seconds": [
+        20,
+        50
+      ],
+      "respawn_seconds": 90,
+      "combat_leash_m": 35,
+      "equipment_ids": [
+        "gear_jade_scale_sword",
+        "gear_jade_scale_chest"
+      ],
+      "movement_speed_mps": 2.2,
+      "aggro_radius_m": 8,
+      "basic_attack_interval_seconds": 2.4,
+      "attacks": [
+        {
+          "id": "jade_scale_primary",
+          "name": "꼬리 휘두르기",
+          "damage_coefficient": 1.0,
+          "telegraph_seconds": 1.5,
+          "range_m": 3,
+          "cooldown_seconds": 5,
+          "counterplay": "머리 반대편",
+          "description": "꼬리를 당기고 1.5초"
+        },
+        {
+          "id": "jade_scale_secondary",
+          "name": "측면 견제",
+          "damage_coefficient": 0.65,
+          "telegraph_seconds": 1.2,
+          "range_m": 3,
+          "cooldown_seconds": 8,
+          "counterplay": "표시된 범위 밖으로 이동; 기본 공격에 합산하지 않는 별도 행동",
+          "description": "발동 범위와 예고를 먼저 표시"
+        }
+      ],
+      "elemental_resistance_pct": {
+        "physical": 0,
+        "poison": 0,
+        "heat": 0,
+        "shock": 0
+      },
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "green_colossus",
+      "name": "녹음거수",
+      "region_id": "M4",
+      "tier": 2,
+      "role": "elite",
+      "body_family": "거대 초식수",
+      "recommended_players": [
+        1,
+        4
+      ],
+      "stats_at_reference_players": {
+        "hp": 1024,
+        "attack_raw": 28,
+        "defense": 23,
+        "reference_players": 1
+      },
+      "behavior": "발 구르기와 넝쿨 구역",
+      "telegraph": "발을 들고 2.2초; 바닥 표시",
+      "punish_window": "앞발 공격 후 측면",
+      "damage_types": [
+        "physical"
+      ],
+      "base_harvest": {
+        "meat": {
+          "min": 1,
+          "max": 2
+        },
+        "bone": {
+          "min": 1,
+          "max": 2
+        },
+        "raw_hide": {
+          "min": 1,
+          "max": 2
+        },
+        "fat": {
+          "min": 1,
+          "max": 1
+        }
+      },
+      "focus_options": [
+        {
+          "id": "food",
+          "name": "식량 집중",
+          "guaranteed": {
+            "meat": 2,
+            "fat": 1
+          }
+        },
+        {
+          "id": "material",
+          "name": "외피·골격 집중",
+          "guaranteed": {
+            "raw_hide": 2
+          }
+        },
+        {
+          "id": "signature",
+          "name": "고유 부위 집중",
+          "guaranteed": {
+            "raw_green_colossus": 2
+          }
+        }
+      ],
+      "optional_bonus_rolls": [
+        {
+          "item_id": "trophy_green_colossus",
+          "quantity": 1,
+          "probability": 0.15,
+          "purpose": "장비 장식 또는 거점 전시; 성능·진행 필수 아님"
+        }
+      ],
+      "signature_raw_item_id": "raw_green_colossus",
+      "signature_processed_item_id": "mat_green_colossus",
+      "signature_family": "hide",
+      "weapon_trait_id": "block",
+      "armor_trait_id": "regen",
+      "weapon_kind": "shield",
+      "armor_slot": "chest",
+      "kill_time_target_seconds": [
+        60,
+        150
+      ],
+      "respawn_seconds": 300,
+      "combat_leash_m": 35,
+      "equipment_ids": [
+        "gear_green_colossus_shield",
+        "gear_green_colossus_chest"
+      ],
+      "movement_speed_mps": 3.0,
+      "aggro_radius_m": 12,
+      "basic_attack_interval_seconds": 2.4,
+      "attacks": [
+        {
+          "id": "green_colossus_primary",
+          "name": "발 구르기와 넝쿨 구역",
+          "damage_coefficient": 1.0,
+          "telegraph_seconds": 2.2,
+          "range_m": 2.2,
+          "cooldown_seconds": 5,
+          "counterplay": "앞발 공격 후 측면",
+          "description": "발을 들고 2.2초; 바닥 표시"
+        },
+        {
+          "id": "green_colossus_secondary",
+          "name": "측면 견제",
+          "damage_coefficient": 0.65,
+          "telegraph_seconds": 1.2,
+          "range_m": 3,
+          "cooldown_seconds": 8,
+          "counterplay": "표시된 범위 밖으로 이동; 기본 공격에 합산하지 않는 별도 행동",
+          "description": "발동 범위와 예고를 먼저 표시"
+        }
+      ],
+      "elemental_resistance_pct": {
+        "physical": 0,
+        "poison": 0,
+        "heat": 0,
+        "shock": 0
+      },
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "ice_shell",
+      "name": "빙갑각수",
+      "region_id": "H1",
+      "tier": 3,
+      "role": "normal",
+      "body_family": "한랭 갑각수",
+      "recommended_players": [
+        1,
+        1
+      ],
+      "stats_at_reference_players": {
+        "hp": 828,
+        "attack_raw": 34,
+        "defense": 40,
+        "reference_players": 1
+      },
+      "behavior": "서리 분사·밀치기",
+      "telegraph": "분사 방향 1.6초 표시",
+      "punish_window": "분사 중 후방",
+      "damage_types": [
+        "physical"
+      ],
+      "base_harvest": {
+        "meat": {
+          "min": 1,
+          "max": 2
+        },
+        "bone": {
+          "min": 1,
+          "max": 2
+        },
+        "shell": {
+          "min": 1,
+          "max": 2
+        },
+        "cool_crystal": {
+          "min": 1,
+          "max": 1
+        }
+      },
+      "focus_options": [
+        {
+          "id": "food",
+          "name": "식량 집중",
+          "guaranteed": {
+            "meat": 2,
+            "fat": 1
+          }
+        },
+        {
+          "id": "material",
+          "name": "외피·골격 집중",
+          "guaranteed": {
+            "shell": 2
+          }
+        },
+        {
+          "id": "signature",
+          "name": "고유 부위 집중",
+          "guaranteed": {
+            "raw_ice_shell": 1
+          }
+        }
+      ],
+      "optional_bonus_rolls": [],
+      "signature_raw_item_id": "raw_ice_shell",
+      "signature_processed_item_id": "mat_ice_shell",
+      "signature_family": "shell",
+      "weapon_trait_id": "block",
+      "armor_trait_id": "coldguard",
+      "weapon_kind": "shield",
+      "armor_slot": "chest",
+      "kill_time_target_seconds": [
+        20,
+        50
+      ],
+      "respawn_seconds": 90,
+      "combat_leash_m": 35,
+      "equipment_ids": [
+        "gear_ice_shell_shield",
+        "gear_ice_shell_chest"
+      ],
+      "movement_speed_mps": 2.2,
+      "aggro_radius_m": 8,
+      "basic_attack_interval_seconds": 2.4,
+      "attacks": [
+        {
+          "id": "ice_shell_primary",
+          "name": "서리 분사",
+          "damage_coefficient": 1.0,
+          "telegraph_seconds": 1.6,
+          "range_m": 3,
+          "cooldown_seconds": 5,
+          "counterplay": "분사 중 후방",
+          "description": "분사 방향 1.6초 표시"
+        },
+        {
+          "id": "ice_shell_secondary",
+          "name": "측면 견제",
+          "damage_coefficient": 0.65,
+          "telegraph_seconds": 1.2,
+          "range_m": 3,
+          "cooldown_seconds": 8,
+          "counterplay": "표시된 범위 밖으로 이동; 기본 공격에 합산하지 않는 별도 행동",
+          "description": "발동 범위와 예고를 먼저 표시"
+        }
+      ],
+      "elemental_resistance_pct": {
+        "physical": 0,
+        "poison": 0,
+        "heat": 0,
+        "shock": 0
+      },
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "crystal_antler",
+      "name": "결정뿔수",
+      "region_id": "H1",
+      "tier": 3,
+      "role": "normal",
+      "body_family": "고산 초식수",
+      "recommended_players": [
+        1,
+        1
+      ],
+      "stats_at_reference_players": {
+        "hp": 720,
+        "attack_raw": 34,
+        "defense": 32,
+        "reference_players": 1
+      },
+      "behavior": "결정 파동·찌르기",
+      "telegraph": "뿔이 밝아지고 1.7초 후 파동",
+      "punish_window": "파동 후",
+      "damage_types": [
+        "physical"
+      ],
+      "base_harvest": {
+        "meat": {
+          "min": 1,
+          "max": 2
+        },
+        "bone": {
+          "min": 1,
+          "max": 2
+        },
+        "horn": {
+          "min": 1,
+          "max": 2
+        },
+        "cool_crystal": {
+          "min": 1,
+          "max": 1
+        },
+        "alpine_fur": {
+          "min": 1,
+          "max": 2
+        }
+      },
+      "focus_options": [
+        {
+          "id": "food",
+          "name": "식량 집중",
+          "guaranteed": {
+            "meat": 2,
+            "fat": 1
+          }
+        },
+        {
+          "id": "material",
+          "name": "외피·골격 집중",
+          "guaranteed": {
+            "bone": 2
+          }
+        },
+        {
+          "id": "signature",
+          "name": "고유 부위 집중",
+          "guaranteed": {
+            "raw_crystal_antler": 1
+          }
+        }
+      ],
+      "optional_bonus_rolls": [],
+      "signature_raw_item_id": "raw_crystal_antler",
+      "signature_processed_item_id": "mat_crystal_antler",
+      "signature_family": "horn",
+      "weapon_trait_id": "frost",
+      "armor_trait_id": "coldguard",
+      "weapon_kind": "spear",
+      "armor_slot": "gloves",
+      "kill_time_target_seconds": [
+        20,
+        50
+      ],
+      "respawn_seconds": 90,
+      "combat_leash_m": 35,
+      "equipment_ids": [
+        "gear_crystal_antler_spear",
+        "gear_crystal_antler_gloves"
+      ],
+      "movement_speed_mps": 3.0,
+      "aggro_radius_m": 8,
+      "basic_attack_interval_seconds": 2.4,
+      "attacks": [
+        {
+          "id": "crystal_antler_primary",
+          "name": "결정 파동",
+          "damage_coefficient": 1.0,
+          "telegraph_seconds": 1.7,
+          "range_m": 2.2,
+          "cooldown_seconds": 5,
+          "counterplay": "파동 후",
+          "description": "뿔이 밝아지고 1.7초 후 파동"
+        },
+        {
+          "id": "crystal_antler_secondary",
+          "name": "측면 견제",
+          "damage_coefficient": 0.65,
+          "telegraph_seconds": 1.2,
+          "range_m": 3,
+          "cooldown_seconds": 8,
+          "counterplay": "표시된 범위 밖으로 이동; 기본 공격에 합산하지 않는 별도 행동",
+          "description": "발동 범위와 예고를 먼저 표시"
+        }
+      ],
+      "elemental_resistance_pct": {
+        "physical": 0,
+        "poison": 0,
+        "heat": 0,
+        "shock": 0
+      },
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "glacial_giant",
+      "name": "빙갑거수",
+      "region_id": "H1",
+      "tier": 3,
+      "role": "raid",
+      "body_family": "거대 갑각수",
+      "recommended_players": [
+        1,
+        8
+      ],
+      "stats_at_reference_players": {
+        "hp": 3600,
+        "attack_raw": 42,
+        "defense": 40,
+        "reference_players": 4
+      },
+      "behavior": "외피 해빙·노출·재결빙 3단계",
+      "telegraph": "큰 공격 2.2초 이상 예고",
+      "punish_window": "노출 단계",
+      "damage_types": [
+        "physical"
+      ],
+      "base_harvest": {
+        "meat": {
+          "min": 1,
+          "max": 2
+        },
+        "bone": {
+          "min": 1,
+          "max": 2
+        },
+        "fur_hide": {
+          "min": 1,
+          "max": 2
+        },
+        "fat": {
+          "min": 1,
+          "max": 1
+        },
+        "cool_crystal": {
+          "min": 1,
+          "max": 1
+        }
+      },
+      "focus_options": [
+        {
+          "id": "food",
+          "name": "식량 집중",
+          "guaranteed": {
+            "meat": 2,
+            "fat": 1
+          }
+        },
+        {
+          "id": "material",
+          "name": "외피·골격 집중",
+          "guaranteed": {
+            "fur_hide": 2
+          }
+        },
+        {
+          "id": "signature",
+          "name": "고유 부위 집중",
+          "guaranteed": {
+            "raw_glacial_giant": 2
+          }
+        }
+      ],
+      "optional_bonus_rolls": [
+        {
+          "item_id": "trophy_glacial_giant",
+          "quantity": 1,
+          "probability": 0.25,
+          "purpose": "장비 장식 또는 거점 전시; 성능·진행 필수 아님"
+        }
+      ],
+      "signature_raw_item_id": "raw_glacial_giant",
+      "signature_processed_item_id": "mat_glacial_giant",
+      "signature_family": "fur",
+      "weapon_trait_id": "frost",
+      "armor_trait_id": "coldguard",
+      "weapon_kind": "spear",
+      "armor_slot": "chest",
+      "kill_time_target_seconds": [
+        300,
+        600
+      ],
+      "respawn_seconds": null,
+      "combat_leash_m": 90,
+      "equipment_ids": [
+        "gear_glacial_giant_spear",
+        "gear_glacial_giant_chest"
+      ],
+      "movement_speed_mps": 3.0,
+      "aggro_radius_m": 12,
+      "basic_attack_interval_seconds": 3.2,
+      "attacks": [
+        {
+          "id": "glacial_giant_primary",
+          "name": "외피 해빙",
+          "damage_coefficient": 1.0,
+          "telegraph_seconds": 2.2,
+          "range_m": 2.2,
+          "cooldown_seconds": 5,
+          "counterplay": "노출 단계",
+          "description": "큰 공격 2.2초 이상 예고"
+        },
+        {
+          "id": "glacial_giant_secondary",
+          "name": "구역 압박",
+          "damage_coefficient": 0.8,
+          "telegraph_seconds": 2.5,
+          "range_m": 12,
+          "cooldown_seconds": 15,
+          "counterplay": "표시된 범위 밖으로 이동; 기본 공격에 합산하지 않는 별도 행동",
+          "description": "발동 범위와 예고를 먼저 표시"
+        }
+      ],
+      "elemental_resistance_pct": {
+        "physical": 0,
+        "poison": 0,
+        "heat": 0,
+        "shock": 0
+      },
+      "phases": [
+        {
+          "hp_from_pct": 100,
+          "hp_to_pct": 70,
+          "goal": "기본 예고 학습·부위 압박",
+          "extra_rule": "기본 공격 반복 사이 회복 구간 4초"
+        },
+        {
+          "hp_from_pct": 70,
+          "hp_to_pct": 35,
+          "goal": "환경 장치·노출 부위 활용",
+          "extra_rule": "2회 주요 패턴 후 6초 노출; 노출 피해배율 1.15"
+        },
+        {
+          "hp_from_pct": 35,
+          "hp_to_pct": 0,
+          "goal": "기존 패턴 조합",
+          "extra_rule": "새 즉사기 없음; 큰 공격 후 5초 회복"
+        }
+      ],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "ember_hide",
+      "name": "잿빛내열수",
+      "region_id": "H2",
+      "tier": 3,
+      "role": "normal",
+      "body_family": "화산 초식수",
+      "recommended_players": [
+        1,
+        1
+      ],
+      "stats_at_reference_players": {
+        "hp": 720,
+        "attack_raw": 34,
+        "defense": 32,
+        "reference_players": 1
+      },
+      "behavior": "열기 분출·짧은 돌진",
+      "telegraph": "등의 균열 1.6초 발광",
+      "punish_window": "분출 종료",
+      "damage_types": [
+        "physical"
+      ],
+      "base_harvest": {
+        "meat": {
+          "min": 1,
+          "max": 2
+        },
+        "bone": {
+          "min": 1,
+          "max": 2
+        },
+        "raw_hide": {
+          "min": 1,
+          "max": 2
+        },
+        "fat": {
+          "min": 1,
+          "max": 1
+        },
+        "heat_mineral": {
+          "min": 1,
+          "max": 2
+        }
+      },
+      "focus_options": [
+        {
+          "id": "food",
+          "name": "식량 집중",
+          "guaranteed": {
+            "meat": 2,
+            "fat": 1
+          }
+        },
+        {
+          "id": "material",
+          "name": "외피·골격 집중",
+          "guaranteed": {
+            "raw_hide": 2
+          }
+        },
+        {
+          "id": "signature",
+          "name": "고유 부위 집중",
+          "guaranteed": {
+            "raw_ember_hide": 1
+          }
+        }
+      ],
+      "optional_bonus_rolls": [],
+      "signature_raw_item_id": "raw_ember_hide",
+      "signature_processed_item_id": "mat_ember_hide",
+      "signature_family": "hide",
+      "weapon_trait_id": "heatguard",
+      "armor_trait_id": "heatguard",
+      "weapon_kind": "sword",
+      "armor_slot": "boots",
+      "kill_time_target_seconds": [
+        20,
+        50
+      ],
+      "respawn_seconds": 90,
+      "combat_leash_m": 35,
+      "equipment_ids": [
+        "gear_ember_hide_sword",
+        "gear_ember_hide_boots"
+      ],
+      "movement_speed_mps": 3.0,
+      "aggro_radius_m": 8,
+      "basic_attack_interval_seconds": 2.4,
+      "attacks": [
+        {
+          "id": "ember_hide_primary",
+          "name": "열기 분출",
+          "damage_coefficient": 1.0,
+          "telegraph_seconds": 1.6,
+          "range_m": 2.2,
+          "cooldown_seconds": 5,
+          "counterplay": "분출 종료",
+          "description": "등의 균열 1.6초 발광"
+        },
+        {
+          "id": "ember_hide_secondary",
+          "name": "측면 견제",
+          "damage_coefficient": 0.65,
+          "telegraph_seconds": 1.2,
+          "range_m": 3,
+          "cooldown_seconds": 8,
+          "counterplay": "표시된 범위 밖으로 이동; 기본 공격에 합산하지 않는 별도 행동",
+          "description": "발동 범위와 예고를 먼저 표시"
+        }
+      ],
+      "elemental_resistance_pct": {
+        "physical": 0,
+        "poison": 0,
+        "heat": 30,
+        "shock": 0
+      },
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "lava_shell",
+      "name": "용암갑각수",
+      "region_id": "H2",
+      "tier": 3,
+      "role": "normal",
+      "body_family": "내열 갑각수",
+      "recommended_players": [
+        1,
+        1
+      ],
+      "stats_at_reference_players": {
+        "hp": 828,
+        "attack_raw": 34,
+        "defense": 40,
+        "reference_players": 1
+      },
+      "behavior": "열기 축적·갑각 개방",
+      "telegraph": "바닥 균열 1.8초 예고",
+      "punish_window": "냉각 구역 유도 후",
+      "damage_types": [
+        "physical"
+      ],
+      "base_harvest": {
+        "meat": {
+          "min": 1,
+          "max": 2
+        },
+        "bone": {
+          "min": 1,
+          "max": 2
+        },
+        "shell": {
+          "min": 1,
+          "max": 2
+        },
+        "heat_mineral": {
+          "min": 1,
+          "max": 2
+        },
+        "heat_shell_raw": {
+          "min": 1,
+          "max": 1
+        }
+      },
+      "focus_options": [
+        {
+          "id": "food",
+          "name": "식량 집중",
+          "guaranteed": {
+            "meat": 2,
+            "fat": 1
+          }
+        },
+        {
+          "id": "material",
+          "name": "외피·골격 집중",
+          "guaranteed": {
+            "shell": 2
+          }
+        },
+        {
+          "id": "signature",
+          "name": "고유 부위 집중",
+          "guaranteed": {
+            "raw_lava_shell": 1
+          }
+        }
+      ],
+      "optional_bonus_rolls": [],
+      "signature_raw_item_id": "raw_lava_shell",
+      "signature_processed_item_id": "mat_lava_shell",
+      "signature_family": "shell",
+      "weapon_trait_id": "block",
+      "armor_trait_id": "heatguard",
+      "weapon_kind": "shield",
+      "armor_slot": "chest",
+      "kill_time_target_seconds": [
+        20,
+        50
+      ],
+      "respawn_seconds": 90,
+      "combat_leash_m": 35,
+      "equipment_ids": [
+        "gear_lava_shell_shield",
+        "gear_lava_shell_chest"
+      ],
+      "movement_speed_mps": 2.2,
+      "aggro_radius_m": 8,
+      "basic_attack_interval_seconds": 2.4,
+      "attacks": [
+        {
+          "id": "lava_shell_primary",
+          "name": "열기 축적",
+          "damage_coefficient": 1.0,
+          "telegraph_seconds": 1.8,
+          "range_m": 3,
+          "cooldown_seconds": 5,
+          "counterplay": "냉각 구역 유도 후",
+          "description": "바닥 균열 1.8초 예고"
+        },
+        {
+          "id": "lava_shell_secondary",
+          "name": "측면 견제",
+          "damage_coefficient": 0.65,
+          "telegraph_seconds": 1.2,
+          "range_m": 3,
+          "cooldown_seconds": 8,
+          "counterplay": "표시된 범위 밖으로 이동; 기본 공격에 합산하지 않는 별도 행동",
+          "description": "발동 범위와 예고를 먼저 표시"
+        }
+      ],
+      "elemental_resistance_pct": {
+        "physical": 0,
+        "poison": 0,
+        "heat": 30,
+        "shock": 0
+      },
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "volcanic_predator",
+      "name": "화산의 포식자",
+      "region_id": "H2",
+      "tier": 3,
+      "role": "raid",
+      "body_family": "대형 포식수",
+      "recommended_players": [
+        1,
+        8
+      ],
+      "stats_at_reference_players": {
+        "hp": 3600,
+        "attack_raw": 42,
+        "defense": 40,
+        "reference_players": 4
+      },
+      "behavior": "열기 축적·방출·회복 3단계",
+      "telegraph": "방출 범위 2.5초 예고",
+      "punish_window": "냉각 뒤 회복",
+      "damage_types": [
+        "physical",
+        "heat"
+      ],
+      "base_harvest": {
+        "meat": {
+          "min": 1,
+          "max": 2
+        },
+        "bone": {
+          "min": 1,
+          "max": 2
+        },
+        "heat_mineral": {
+          "min": 1,
+          "max": 2
+        }
+      },
+      "focus_options": [
+        {
+          "id": "food",
+          "name": "식량 집중",
+          "guaranteed": {
+            "meat": 2,
+            "fat": 1
+          }
+        },
+        {
+          "id": "material",
+          "name": "외피·골격 집중",
+          "guaranteed": {
+            "bone": 2
+          }
+        },
+        {
+          "id": "signature",
+          "name": "고유 부위 집중",
+          "guaranteed": {
+            "raw_volcanic_predator": 2
+          }
+        }
+      ],
+      "optional_bonus_rolls": [
+        {
+          "item_id": "trophy_volcanic_predator",
+          "quantity": 1,
+          "probability": 0.25,
+          "purpose": "장비 장식 또는 거점 전시; 성능·진행 필수 아님"
+        }
+      ],
+      "signature_raw_item_id": "raw_volcanic_predator",
+      "signature_processed_item_id": "mat_volcanic_predator",
+      "signature_family": "organ",
+      "weapon_trait_id": "heat_hit",
+      "armor_trait_id": "heatguard",
+      "weapon_kind": "spear",
+      "armor_slot": "gloves",
+      "kill_time_target_seconds": [
+        300,
+        600
+      ],
+      "respawn_seconds": null,
+      "combat_leash_m": 90,
+      "equipment_ids": [
+        "gear_volcanic_predator_spear",
+        "gear_volcanic_predator_gloves"
+      ],
+      "movement_speed_mps": 3.0,
+      "aggro_radius_m": 12,
+      "basic_attack_interval_seconds": 3.2,
+      "attacks": [
+        {
+          "id": "volcanic_predator_primary",
+          "name": "열기 축적",
+          "damage_coefficient": 1.0,
+          "telegraph_seconds": 2.5,
+          "range_m": 2.2,
+          "cooldown_seconds": 5,
+          "counterplay": "냉각 뒤 회복",
+          "description": "방출 범위 2.5초 예고",
+          "status_on_hit": {
+            "type": "heat",
+            "damage_per_second": 3,
+            "duration_seconds": 4,
+            "max_stacks": 1,
+            "reapply": "refresh"
+          }
+        },
+        {
+          "id": "volcanic_predator_secondary",
+          "name": "구역 압박",
+          "damage_coefficient": 0.8,
+          "telegraph_seconds": 2.5,
+          "range_m": 12,
+          "cooldown_seconds": 15,
+          "counterplay": "표시된 범위 밖으로 이동; 기본 공격에 합산하지 않는 별도 행동",
+          "description": "발동 범위와 예고를 먼저 표시"
+        }
+      ],
+      "elemental_resistance_pct": {
+        "physical": 0,
+        "poison": 0,
+        "heat": 30,
+        "shock": 0
+      },
+      "phases": [
+        {
+          "hp_from_pct": 100,
+          "hp_to_pct": 70,
+          "goal": "기본 예고 학습·부위 압박",
+          "extra_rule": "기본 공격 반복 사이 회복 구간 4초"
+        },
+        {
+          "hp_from_pct": 70,
+          "hp_to_pct": 35,
+          "goal": "환경 장치·노출 부위 활용",
+          "extra_rule": "2회 주요 패턴 후 6초 노출; 노출 피해배율 1.15"
+        },
+        {
+          "hp_from_pct": 35,
+          "hp_to_pct": 0,
+          "goal": "기존 패턴 조합",
+          "extra_rule": "새 즉사기 없음; 큰 공격 후 5초 회복"
+        }
+      ],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "thunderwolf",
+      "name": "뇌광늑수",
+      "region_id": "H3",
+      "tier": 3,
+      "role": "normal",
+      "body_family": "전격 포식수",
+      "recommended_players": [
+        1,
+        1
+      ],
+      "stats_at_reference_players": {
+        "hp": 720,
+        "attack_raw": 34,
+        "defense": 32,
+        "reference_players": 1
+      },
+      "behavior": "전격 돌진·직선 방출",
+      "telegraph": "등 회로가 1.5초 점등",
+      "punish_window": "방출 후",
+      "damage_types": [
+        "physical",
+        "shock"
+      ],
+      "base_harvest": {
+        "meat": {
+          "min": 1,
+          "max": 2
+        },
+        "bone": {
+          "min": 1,
+          "max": 2
+        },
+        "blueprint_fragment": {
+          "min": 1,
+          "max": 1
+        },
+        "conductive_organ": {
+          "min": 1,
+          "max": 1
+        }
+      },
+      "focus_options": [
+        {
+          "id": "food",
+          "name": "식량 집중",
+          "guaranteed": {
+            "meat": 2,
+            "fat": 1
+          }
+        },
+        {
+          "id": "material",
+          "name": "외피·골격 집중",
+          "guaranteed": {
+            "bone": 2
+          }
+        },
+        {
+          "id": "signature",
+          "name": "고유 부위 집중",
+          "guaranteed": {
+            "raw_thunderwolf": 1
+          }
+        }
+      ],
+      "optional_bonus_rolls": [],
+      "signature_raw_item_id": "raw_thunderwolf",
+      "signature_processed_item_id": "mat_thunderwolf",
+      "signature_family": "organ",
+      "weapon_trait_id": "shock",
+      "armor_trait_id": "shock_guard",
+      "weapon_kind": "sword",
+      "armor_slot": "boots",
+      "kill_time_target_seconds": [
+        20,
+        50
+      ],
+      "respawn_seconds": 90,
+      "combat_leash_m": 35,
+      "equipment_ids": [
+        "gear_thunderwolf_sword",
+        "gear_thunderwolf_boots"
+      ],
+      "movement_speed_mps": 3.0,
+      "aggro_radius_m": 8,
+      "basic_attack_interval_seconds": 2.4,
+      "attacks": [
+        {
+          "id": "thunderwolf_primary",
+          "name": "전격 돌진",
+          "damage_coefficient": 1.0,
+          "telegraph_seconds": 1.5,
+          "range_m": 2.2,
+          "cooldown_seconds": 5,
+          "counterplay": "방출 후",
+          "description": "등 회로가 1.5초 점등",
+          "status_on_hit": {
+            "type": "shock",
+            "bonus_damage": 4,
+            "duration_seconds": 0,
+            "max_stacks": 1,
+            "stun": false
+          }
+        },
+        {
+          "id": "thunderwolf_secondary",
+          "name": "측면 견제",
+          "damage_coefficient": 0.65,
+          "telegraph_seconds": 1.2,
+          "range_m": 3,
+          "cooldown_seconds": 8,
+          "counterplay": "표시된 범위 밖으로 이동; 기본 공격에 합산하지 않는 별도 행동",
+          "description": "발동 범위와 예고를 먼저 표시"
+        }
+      ],
+      "elemental_resistance_pct": {
+        "physical": 0,
+        "poison": 0,
+        "heat": 0,
+        "shock": 30
+      },
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "ruin_shell",
+      "name": "유적갑각수",
+      "region_id": "H3",
+      "tier": 3,
+      "role": "normal",
+      "body_family": "에너지 갑각수",
+      "recommended_players": [
+        1,
+        1
+      ],
+      "stats_at_reference_players": {
+        "hp": 828,
+        "attack_raw": 34,
+        "defense": 40,
+        "reference_players": 1
+      },
+      "behavior": "전방 광선·갑각 방어",
+      "telegraph": "광선 경로 1.8초 표시",
+      "punish_window": "회로 냉각 중",
+      "damage_types": [
+        "physical"
+      ],
+      "base_harvest": {
+        "meat": {
+          "min": 1,
+          "max": 2
+        },
+        "bone": {
+          "min": 1,
+          "max": 2
+        },
+        "shell": {
+          "min": 1,
+          "max": 2
+        },
+        "blueprint_fragment": {
+          "min": 1,
+          "max": 1
+        },
+        "ancient_part": {
+          "min": 1,
+          "max": 1
+        }
+      },
+      "focus_options": [
+        {
+          "id": "food",
+          "name": "식량 집중",
+          "guaranteed": {
+            "meat": 2,
+            "fat": 1
+          }
+        },
+        {
+          "id": "material",
+          "name": "외피·골격 집중",
+          "guaranteed": {
+            "shell": 2
+          }
+        },
+        {
+          "id": "signature",
+          "name": "고유 부위 집중",
+          "guaranteed": {
+            "raw_ruin_shell": 1
+          }
+        }
+      ],
+      "optional_bonus_rolls": [],
+      "signature_raw_item_id": "raw_ruin_shell",
+      "signature_processed_item_id": "mat_ruin_shell",
+      "signature_family": "shell",
+      "weapon_trait_id": "block",
+      "armor_trait_id": "shock_guard",
+      "weapon_kind": "shield",
+      "armor_slot": "chest",
+      "kill_time_target_seconds": [
+        20,
+        50
+      ],
+      "respawn_seconds": 90,
+      "combat_leash_m": 35,
+      "equipment_ids": [
+        "gear_ruin_shell_shield",
+        "gear_ruin_shell_chest"
+      ],
+      "movement_speed_mps": 2.2,
+      "aggro_radius_m": 8,
+      "basic_attack_interval_seconds": 2.4,
+      "attacks": [
+        {
+          "id": "ruin_shell_primary",
+          "name": "전방 광선",
+          "damage_coefficient": 1.0,
+          "telegraph_seconds": 1.8,
+          "range_m": 3,
+          "cooldown_seconds": 5,
+          "counterplay": "회로 냉각 중",
+          "description": "광선 경로 1.8초 표시"
+        },
+        {
+          "id": "ruin_shell_secondary",
+          "name": "측면 견제",
+          "damage_coefficient": 0.65,
+          "telegraph_seconds": 1.2,
+          "range_m": 3,
+          "cooldown_seconds": 8,
+          "counterplay": "표시된 범위 밖으로 이동; 기본 공격에 합산하지 않는 별도 행동",
+          "description": "발동 범위와 예고를 먼저 표시"
+        }
+      ],
+      "elemental_resistance_pct": {
+        "physical": 0,
+        "poison": 0,
+        "heat": 0,
+        "shock": 30
+      },
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "boundary_warden",
+      "name": "경계 수호체",
+      "region_id": "H3",
+      "tier": 3,
+      "role": "raid",
+      "body_family": "고대 생체수호체",
+      "recommended_players": [
+        1,
+        8
+      ],
+      "stats_at_reference_players": {
+        "hp": 3600,
+        "attack_raw": 42,
+        "defense": 40,
+        "reference_players": 4
+      },
+      "behavior": "회로 차단·노출·재기동",
+      "telegraph": "구역 점등 2.5초 전 예고",
+      "punish_window": "회로 노출",
+      "damage_types": [
+        "physical",
+        "shock"
+      ],
+      "base_harvest": {
+        "meat": {
+          "min": 1,
+          "max": 2
+        },
+        "bone": {
+          "min": 1,
+          "max": 2
+        },
+        "blueprint_fragment": {
+          "min": 1,
+          "max": 1
+        },
+        "energy_crystal": {
+          "min": 1,
+          "max": 2
+        }
+      },
+      "focus_options": [
+        {
+          "id": "food",
+          "name": "식량 집중",
+          "guaranteed": {
+            "meat": 2,
+            "fat": 1
+          }
+        },
+        {
+          "id": "material",
+          "name": "외피·골격 집중",
+          "guaranteed": {
+            "bone": 2
+          }
+        },
+        {
+          "id": "signature",
+          "name": "고유 부위 집중",
+          "guaranteed": {
+            "raw_boundary_warden": 2
+          }
+        }
+      ],
+      "optional_bonus_rolls": [
+        {
+          "item_id": "trophy_boundary_warden",
+          "quantity": 1,
+          "probability": 0.25,
+          "purpose": "장비 장식 또는 거점 전시; 성능·진행 필수 아님"
+        }
+      ],
+      "signature_raw_item_id": "raw_boundary_warden",
+      "signature_processed_item_id": "mat_boundary_warden",
+      "signature_family": "organ",
+      "weapon_trait_id": "shock",
+      "armor_trait_id": "shock_guard",
+      "weapon_kind": "spear",
+      "armor_slot": "chest",
+      "kill_time_target_seconds": [
+        300,
+        600
+      ],
+      "respawn_seconds": null,
+      "combat_leash_m": 90,
+      "equipment_ids": [
+        "gear_boundary_warden_spear",
+        "gear_boundary_warden_chest"
+      ],
+      "movement_speed_mps": 3.0,
+      "aggro_radius_m": 12,
+      "basic_attack_interval_seconds": 3.2,
+      "attacks": [
+        {
+          "id": "boundary_warden_primary",
+          "name": "회로 차단",
+          "damage_coefficient": 1.0,
+          "telegraph_seconds": 2.5,
+          "range_m": 2.2,
+          "cooldown_seconds": 5,
+          "counterplay": "회로 노출",
+          "description": "구역 점등 2.5초 전 예고",
+          "status_on_hit": {
+            "type": "shock",
+            "bonus_damage": 4,
+            "duration_seconds": 0,
+            "max_stacks": 1,
+            "stun": false
+          }
+        },
+        {
+          "id": "boundary_warden_secondary",
+          "name": "구역 압박",
+          "damage_coefficient": 0.8,
+          "telegraph_seconds": 2.5,
+          "range_m": 12,
+          "cooldown_seconds": 15,
+          "counterplay": "표시된 범위 밖으로 이동; 기본 공격에 합산하지 않는 별도 행동",
+          "description": "발동 범위와 예고를 먼저 표시"
+        }
+      ],
+      "elemental_resistance_pct": {
+        "physical": 0,
+        "poison": 0,
+        "heat": 0,
+        "shock": 30
+      },
+      "phases": [
+        {
+          "hp_from_pct": 100,
+          "hp_to_pct": 70,
+          "goal": "기본 예고 학습·부위 압박",
+          "extra_rule": "기본 공격 반복 사이 회복 구간 4초"
+        },
+        {
+          "hp_from_pct": 70,
+          "hp_to_pct": 35,
+          "goal": "환경 장치·노출 부위 활용",
+          "extra_rule": "2회 주요 패턴 후 6초 노출; 노출 피해배율 1.15"
+        },
+        {
+          "hp_from_pct": 35,
+          "hp_to_pct": 0,
+          "goal": "기존 패턴 조합",
+          "extra_rule": "새 즉사기 없음; 큰 공격 후 5초 회복"
+        }
+      ],
+      "implementation_status": "not_implemented"
+    }
+  ]
+}

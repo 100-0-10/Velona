@@ -1,0 +1,247 @@
+{
+  "schema_version": 1,
+  "content_version": "0.3.0-draft",
+  "status": "design_draft",
+  "records": [
+    {
+      "id": "T0",
+      "name": "표류자의 만",
+      "tier": 0,
+      "climate": "온화한 해안",
+      "release_phase": "first_slice",
+      "gatherable_item_ids": [
+        "branch",
+        "stone",
+        "fiber",
+        "berry"
+      ],
+      "deep_zone_resistance_target": 0,
+      "life_role": "기초 제작·조리·해체",
+      "next_route": "B1",
+      "landmarks": [
+        "입구 야영지",
+        "자원 밀집 지점",
+        "회복 쉼터",
+        "강한 개체 구역"
+      ],
+      "channel_rule": "공용 지역은 동일 채널의 30명 정원 공유; 레이드 별도 정원",
+      "layout_rule": "고정 지형·안전길·랜드마크 + 후보 위치 내 채집·생물 배치 변동"
+    },
+    {
+      "id": "B1",
+      "name": "새벽 초원",
+      "tier": 1,
+      "climate": "온대 초원",
+      "release_phase": "first_slice",
+      "gatherable_item_ids": [
+        "log",
+        "stone",
+        "fiber",
+        "grain_seed",
+        "berry"
+      ],
+      "deep_zone_resistance_target": 0,
+      "life_role": "정착·농사·건축",
+      "next_route": "B2",
+      "landmarks": [
+        "입구 야영지",
+        "자원 밀집 지점",
+        "회복 쉼터",
+        "강한 개체 구역"
+      ],
+      "channel_rule": "공용 지역은 동일 채널의 30명 정원 공유; 레이드 별도 정원",
+      "layout_rule": "고정 지형·안전길·랜드마크 + 후보 위치 내 채집·생물 배치 변동"
+    },
+    {
+      "id": "B2",
+      "name": "푸른그늘 숲",
+      "tier": 1,
+      "climate": "온대림",
+      "release_phase": "first_slice",
+      "gatherable_item_ids": [
+        "log",
+        "hard_log",
+        "bark",
+        "resin",
+        "herb"
+      ],
+      "deep_zone_resistance_target": 0,
+      "life_role": "무두질·목공·가방",
+      "next_route": "M1/M2/M3",
+      "landmarks": [
+        "입구 야영지",
+        "자원 밀집 지점",
+        "회복 쉼터",
+        "강한 개체 구역"
+      ],
+      "channel_rule": "공용 지역은 동일 채널의 30명 정원 공유; 레이드 별도 정원",
+      "layout_rule": "고정 지형·안전길·랜드마크 + 후보 위치 내 채집·생물 배치 변동"
+    },
+    {
+      "id": "M1",
+      "name": "안개갈대 습지",
+      "tier": 2,
+      "climate": "고습 습지",
+      "release_phase": "living_alpha",
+      "gatherable_item_ids": [
+        "clay",
+        "marsh_herb",
+        "dye_plant",
+        "fish"
+      ],
+      "deep_zone_resistance_target": 20,
+      "life_role": "도기·약재·방수",
+      "next_route": "M4",
+      "landmarks": [
+        "입구 야영지",
+        "자원 밀집 지점",
+        "회복 쉼터",
+        "강한 개체 구역"
+      ],
+      "channel_rule": "공용 지역은 동일 채널의 30명 정원 공유; 레이드 별도 정원",
+      "layout_rule": "고정 지형·안전길·랜드마크 + 후보 위치 내 채집·생물 배치 변동"
+    },
+    {
+      "id": "M2",
+      "name": "붉은바람 협곡",
+      "tier": 2,
+      "climate": "건조 고온",
+      "release_phase": "metal_update",
+      "gatherable_item_ids": [
+        "iron_ore",
+        "salt",
+        "stone",
+        "clay"
+      ],
+      "deep_zone_resistance_target": 20,
+      "life_role": "제련·금속·급수",
+      "next_route": "H2 입구",
+      "landmarks": [
+        "입구 야영지",
+        "자원 밀집 지점",
+        "회복 쉼터",
+        "강한 개체 구역"
+      ],
+      "channel_rule": "공용 지역은 동일 채널의 30명 정원 공유; 레이드 별도 정원",
+      "layout_rule": "고정 지형·안전길·랜드마크 + 후보 위치 내 채집·생물 배치 변동"
+    },
+    {
+      "id": "M3",
+      "name": "서리침엽 숲",
+      "tier": 2,
+      "climate": "냉대림",
+      "release_phase": "cold_update",
+      "gatherable_item_ids": [
+        "log",
+        "resin",
+        "wool",
+        "herb"
+      ],
+      "deep_zone_resistance_target": 20,
+      "life_role": "직조·방한·훈연",
+      "next_route": "H1 입구",
+      "landmarks": [
+        "입구 야영지",
+        "자원 밀집 지점",
+        "회복 쉼터",
+        "강한 개체 구역"
+      ],
+      "channel_rule": "공용 지역은 동일 채널의 30명 정원 공유; 레이드 별도 정원",
+      "layout_rule": "고정 지형·안전길·랜드마크 + 후보 위치 내 채집·생물 배치 변동"
+    },
+    {
+      "id": "M4",
+      "name": "비취우림",
+      "tier": 2,
+      "climate": "고온다습",
+      "release_phase": "jungle_update",
+      "gatherable_item_ids": [
+        "hard_log",
+        "resin",
+        "jungle_herb",
+        "fiber"
+      ],
+      "deep_zone_resistance_target": 30,
+      "life_role": "수지·복합 자루·방수",
+      "next_route": "H3 입구",
+      "landmarks": [
+        "입구 야영지",
+        "자원 밀집 지점",
+        "회복 쉼터",
+        "강한 개체 구역"
+      ],
+      "channel_rule": "공용 지역은 동일 채널의 30명 정원 공유; 레이드 별도 정원",
+      "layout_rule": "고정 지형·안전길·랜드마크 + 후보 위치 내 채집·생물 배치 변동"
+    },
+    {
+      "id": "H1",
+      "name": "백설 능선",
+      "tier": 3,
+      "climate": "고산 혹한",
+      "release_phase": "upper_update",
+      "gatherable_item_ids": [
+        "iron_ore",
+        "cool_crystal",
+        "stone"
+      ],
+      "deep_zone_resistance_target": 45,
+      "life_role": "고급 방한·냉각",
+      "next_route": "H3 심부 보조",
+      "landmarks": [
+        "입구 야영지",
+        "자원 밀집 지점",
+        "회복 쉼터",
+        "강한 개체 구역"
+      ],
+      "channel_rule": "공용 지역은 동일 채널의 30명 정원 공유; 레이드 별도 정원",
+      "layout_rule": "고정 지형·안전길·랜드마크 + 후보 위치 내 채집·생물 배치 변동"
+    },
+    {
+      "id": "H2",
+      "name": "잿불 분지",
+      "tier": 3,
+      "climate": "화산 국지 고열",
+      "release_phase": "upper_update",
+      "gatherable_item_ids": [
+        "heat_mineral",
+        "iron_ore",
+        "stone"
+      ],
+      "deep_zone_resistance_target": 45,
+      "life_role": "내열·고급 제련",
+      "next_route": "H3 심부 보조",
+      "landmarks": [
+        "입구 야영지",
+        "자원 밀집 지점",
+        "회복 쉼터",
+        "강한 개체 구역"
+      ],
+      "channel_rule": "공용 지역은 동일 채널의 30명 정원 공유; 레이드 별도 정원",
+      "layout_rule": "고정 지형·안전길·랜드마크 + 후보 위치 내 채집·생물 배치 변동"
+    },
+    {
+      "id": "H3",
+      "name": "푸른맥 유적",
+      "tier": 3,
+      "climate": "에너지 이상",
+      "release_phase": "ancient_update",
+      "gatherable_item_ids": [
+        "energy_crystal",
+        "ancient_part",
+        "blueprint_fragment",
+        "conductive_organ"
+      ],
+      "deep_zone_resistance_target": 45,
+      "life_role": "연구·동력·복합 제작",
+      "next_route": "후속 확장",
+      "landmarks": [
+        "입구 야영지",
+        "자원 밀집 지점",
+        "회복 쉼터",
+        "강한 개체 구역"
+      ],
+      "channel_rule": "공용 지역은 동일 채널의 30명 정원 공유; 레이드 별도 정원",
+      "layout_rule": "고정 지형·안전길·랜드마크 + 후보 위치 내 채집·생물 배치 변동"
+    }
+  ]
+}

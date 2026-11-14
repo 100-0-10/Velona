@@ -1,0 +1,26 @@
+# Local dependencies and build products
+**/node_modules/
+**/dist/
+**/bin/
+**/obj/
+**/TestResults/
+**/test-results/
+**/playwright-report/
+**/coverage/
+artifacts/
+.artifacts/
+.local/
+.vs/
+*.user
+*.suo
+.DS_Store
+Thumbs.db
+
+# Secrets are local; committed examples contain no credentials.
+.env
+.env.*
+!.env.example
+!**/.env.example
+*.key
+*.pfx
+*.pem

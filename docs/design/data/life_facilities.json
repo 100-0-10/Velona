@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "content_version": "0.3.0-draft",
+  "status": "design_draft",
+  "records": [
+    {
+      "id": "farm_plot",
+      "name": "밭",
+      "build_cost": {
+        "log": 2,
+        "stone": 2
+      },
+      "requires_tool": "hoe",
+      "outputs": [
+        "grain",
+        "vegetable",
+        "fiber",
+        "herb"
+      ],
+      "inputs": [
+        "grain_seed",
+        "vegetable_seed",
+        "fiber_seed",
+        "herb_seed"
+      ],
+      "water_units_per_cycle": 2,
+      "duration_seconds": 1800,
+      "completed_state": "수확 대기; 미접속으로 작물 소멸 없음",
+      "seed_return_rule": "기본 1개 반환 + 20%로 추가 1개; 생산 과잉 지표로 조정"
+    },
+    {
+      "id": "small_barn",
+      "name": "작은 축사",
+      "build_cost": {
+        "board": 8,
+        "wood_part": 4,
+        "cord": 4,
+        "fiber": 8
+      },
+      "inputs": [
+        "feed"
+      ],
+      "outputs": [
+        "egg",
+        "milk",
+        "wool"
+      ],
+      "duration_seconds": 3600,
+      "completed_state": "사료가 없으면 생산 중단; 동물 사망 없음",
+      "animal_source": "후속 생활 의뢰·포획·교역; 이번 단계 세부 동물표는 미정"
+    },
+    {
+      "id": "small_cabin",
+      "name": "소형 주택",
+      "build_cost": {
+        "board": 20,
+        "log": 8,
+        "cord": 8,
+        "fiber": 12
+      },
+      "outputs": [],
+      "effect": "비를 피하는 실내·가구·설비 배치; 공방 효율은 별도 개선"
+    },
+    {
+      "id": "stone_workshop",
+      "name": "석재 공방",
+      "build_cost": {
+        "building_part": 12,
+        "brick": 20,
+        "wood_door": 1,
+        "window_part": 2
+      },
+      "outputs": [],
+      "effect": "넓은 작업 공간·구획; 특정 필수 제작법 독점 없음"
+    }
+  ]
+}

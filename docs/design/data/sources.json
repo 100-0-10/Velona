@@ -1,0 +1,2754 @@
+{
+  "schema_version": 1,
+  "content_version": "0.3.0-draft",
+  "status": "design_draft",
+  "records": [
+    {
+      "id": "gather_branch",
+      "kind": "gathering",
+      "item_id": "branch",
+      "region_ids": [
+        "T0",
+        "B1"
+      ],
+      "quantity_min": 1,
+      "quantity_max": 3,
+      "availability": "입구·일반 구역; 특수 도구는 지역 단계에 맞춰 안내",
+      "guaranteed_progress": true
+    },
+    {
+      "id": "gather_stone",
+      "kind": "gathering",
+      "item_id": "stone",
+      "region_ids": [
+        "T0",
+        "B1",
+        "M2",
+        "H1",
+        "H2"
+      ],
+      "quantity_min": 1,
+      "quantity_max": 3,
+      "availability": "입구·일반 구역; 특수 도구는 지역 단계에 맞춰 안내",
+      "guaranteed_progress": true
+    },
+    {
+      "id": "gather_fiber",
+      "kind": "gathering",
+      "item_id": "fiber",
+      "region_ids": [
+        "T0",
+        "B1",
+        "M4"
+      ],
+      "quantity_min": 1,
+      "quantity_max": 3,
+      "availability": "입구·일반 구역; 특수 도구는 지역 단계에 맞춰 안내",
+      "guaranteed_progress": true
+    },
+    {
+      "id": "gather_berry",
+      "kind": "gathering",
+      "item_id": "berry",
+      "region_ids": [
+        "T0",
+        "B1"
+      ],
+      "quantity_min": 1,
+      "quantity_max": 3,
+      "availability": "입구·일반 구역; 특수 도구는 지역 단계에 맞춰 안내",
+      "guaranteed_progress": true
+    },
+    {
+      "id": "gather_log",
+      "kind": "gathering",
+      "item_id": "log",
+      "region_ids": [
+        "B1",
+        "B2",
+        "M3"
+      ],
+      "quantity_min": 1,
+      "quantity_max": 3,
+      "availability": "입구·일반 구역; 특수 도구는 지역 단계에 맞춰 안내",
+      "guaranteed_progress": true
+    },
+    {
+      "id": "gather_grain_seed",
+      "kind": "gathering",
+      "item_id": "grain_seed",
+      "region_ids": [
+        "B1"
+      ],
+      "quantity_min": 1,
+      "quantity_max": 3,
+      "availability": "입구·일반 구역; 특수 도구는 지역 단계에 맞춰 안내",
+      "guaranteed_progress": true
+    },
+    {
+      "id": "gather_hard_log",
+      "kind": "gathering",
+      "item_id": "hard_log",
+      "region_ids": [
+        "B2",
+        "M4"
+      ],
+      "quantity_min": 1,
+      "quantity_max": 3,
+      "availability": "입구·일반 구역; 특수 도구는 지역 단계에 맞춰 안내",
+      "guaranteed_progress": true
+    },
+    {
+      "id": "gather_bark",
+      "kind": "gathering",
+      "item_id": "bark",
+      "region_ids": [
+        "B2"
+      ],
+      "quantity_min": 1,
+      "quantity_max": 3,
+      "availability": "입구·일반 구역; 특수 도구는 지역 단계에 맞춰 안내",
+      "guaranteed_progress": true
+    },
+    {
+      "id": "gather_resin",
+      "kind": "gathering",
+      "item_id": "resin",
+      "region_ids": [
+        "B2",
+        "M3",
+        "M4"
+      ],
+      "quantity_min": 1,
+      "quantity_max": 3,
+      "availability": "입구·일반 구역; 특수 도구는 지역 단계에 맞춰 안내",
+      "guaranteed_progress": true
+    },
+    {
+      "id": "gather_herb",
+      "kind": "gathering",
+      "item_id": "herb",
+      "region_ids": [
+        "B2",
+        "M3"
+      ],
+      "quantity_min": 1,
+      "quantity_max": 3,
+      "availability": "입구·일반 구역; 특수 도구는 지역 단계에 맞춰 안내",
+      "guaranteed_progress": true
+    },
+    {
+      "id": "gather_clay",
+      "kind": "gathering",
+      "item_id": "clay",
+      "region_ids": [
+        "M1",
+        "M2",
+        "B1"
+      ],
+      "quantity_min": 1,
+      "quantity_max": 3,
+      "availability": "입구·일반 구역; 특수 도구는 지역 단계에 맞춰 안내",
+      "guaranteed_progress": true
+    },
+    {
+      "id": "gather_marsh_herb",
+      "kind": "gathering",
+      "item_id": "marsh_herb",
+      "region_ids": [
+        "M1"
+      ],
+      "quantity_min": 1,
+      "quantity_max": 3,
+      "availability": "입구·일반 구역; 특수 도구는 지역 단계에 맞춰 안내",
+      "guaranteed_progress": true
+    },
+    {
+      "id": "gather_dye_plant",
+      "kind": "gathering",
+      "item_id": "dye_plant",
+      "region_ids": [
+        "M1"
+      ],
+      "quantity_min": 1,
+      "quantity_max": 3,
+      "availability": "입구·일반 구역; 특수 도구는 지역 단계에 맞춰 안내",
+      "guaranteed_progress": true
+    },
+    {
+      "id": "gather_fish",
+      "kind": "gathering",
+      "item_id": "fish",
+      "region_ids": [
+        "M1",
+        "T0",
+        "B1"
+      ],
+      "quantity_min": 1,
+      "quantity_max": 3,
+      "availability": "입구·일반 구역; 특수 도구는 지역 단계에 맞춰 안내",
+      "guaranteed_progress": true
+    },
+    {
+      "id": "gather_iron_ore",
+      "kind": "gathering",
+      "item_id": "iron_ore",
+      "region_ids": [
+        "M2",
+        "H1",
+        "H2"
+      ],
+      "quantity_min": 1,
+      "quantity_max": 3,
+      "availability": "입구·일반 구역; 특수 도구는 지역 단계에 맞춰 안내",
+      "guaranteed_progress": true
+    },
+    {
+      "id": "gather_salt",
+      "kind": "gathering",
+      "item_id": "salt",
+      "region_ids": [
+        "M2"
+      ],
+      "quantity_min": 1,
+      "quantity_max": 3,
+      "availability": "입구·일반 구역; 특수 도구는 지역 단계에 맞춰 안내",
+      "guaranteed_progress": true
+    },
+    {
+      "id": "gather_wool",
+      "kind": "gathering",
+      "item_id": "wool",
+      "region_ids": [
+        "M3"
+      ],
+      "quantity_min": 1,
+      "quantity_max": 3,
+      "availability": "입구·일반 구역; 특수 도구는 지역 단계에 맞춰 안내",
+      "guaranteed_progress": true
+    },
+    {
+      "id": "gather_jungle_herb",
+      "kind": "gathering",
+      "item_id": "jungle_herb",
+      "region_ids": [
+        "M4"
+      ],
+      "quantity_min": 1,
+      "quantity_max": 3,
+      "availability": "입구·일반 구역; 특수 도구는 지역 단계에 맞춰 안내",
+      "guaranteed_progress": true
+    },
+    {
+      "id": "gather_cool_crystal",
+      "kind": "gathering",
+      "item_id": "cool_crystal",
+      "region_ids": [
+        "H1"
+      ],
+      "quantity_min": 1,
+      "quantity_max": 3,
+      "availability": "입구·일반 구역; 특수 도구는 지역 단계에 맞춰 안내",
+      "guaranteed_progress": true
+    },
+    {
+      "id": "gather_heat_mineral",
+      "kind": "gathering",
+      "item_id": "heat_mineral",
+      "region_ids": [
+        "H2"
+      ],
+      "quantity_min": 1,
+      "quantity_max": 3,
+      "availability": "입구·일반 구역; 특수 도구는 지역 단계에 맞춰 안내",
+      "guaranteed_progress": true
+    },
+    {
+      "id": "gather_energy_crystal",
+      "kind": "gathering",
+      "item_id": "energy_crystal",
+      "region_ids": [
+        "H3"
+      ],
+      "quantity_min": 1,
+      "quantity_max": 3,
+      "availability": "입구·일반 구역; 특수 도구는 지역 단계에 맞춰 안내",
+      "guaranteed_progress": true
+    },
+    {
+      "id": "gather_ancient_part",
+      "kind": "guaranteed_exploration",
+      "item_id": "ancient_part",
+      "region_ids": [
+        "H3"
+      ],
+      "quantity_min": 1,
+      "quantity_max": 3,
+      "availability": "입구·일반 구역; 특수 도구는 지역 단계에 맞춰 안내",
+      "guaranteed_progress": true
+    },
+    {
+      "id": "gather_blueprint_fragment",
+      "kind": "guaranteed_exploration",
+      "item_id": "blueprint_fragment",
+      "region_ids": [
+        "H3"
+      ],
+      "quantity_min": 1,
+      "quantity_max": 3,
+      "availability": "입구·일반 구역; 특수 도구는 지역 단계에 맞춰 안내",
+      "guaranteed_progress": true
+    },
+    {
+      "id": "gather_conductive_organ",
+      "kind": "gathering",
+      "item_id": "conductive_organ",
+      "region_ids": [
+        "H3"
+      ],
+      "quantity_min": 1,
+      "quantity_max": 3,
+      "availability": "입구·일반 구역; 특수 도구는 지역 단계에 맞춰 안내",
+      "guaranteed_progress": true
+    },
+    {
+      "id": "gather_grain",
+      "kind": "gathering",
+      "item_id": "grain",
+      "region_ids": [
+        "B1"
+      ],
+      "quantity_min": 1,
+      "quantity_max": 3,
+      "availability": "입구·일반 구역; 특수 도구는 지역 단계에 맞춰 안내",
+      "guaranteed_progress": true
+    },
+    {
+      "id": "gather_vegetable",
+      "kind": "gathering",
+      "item_id": "vegetable",
+      "region_ids": [
+        "B1"
+      ],
+      "quantity_min": 1,
+      "quantity_max": 3,
+      "availability": "입구·일반 구역; 특수 도구는 지역 단계에 맞춰 안내",
+      "guaranteed_progress": true
+    },
+    {
+      "id": "gather_vegetable_seed",
+      "kind": "gathering",
+      "item_id": "vegetable_seed",
+      "region_ids": [
+        "B1"
+      ],
+      "quantity_min": 1,
+      "quantity_max": 3,
+      "availability": "입구·일반 구역; 특수 도구는 지역 단계에 맞춰 안내",
+      "guaranteed_progress": true
+    },
+    {
+      "id": "gather_fiber_seed",
+      "kind": "gathering",
+      "item_id": "fiber_seed",
+      "region_ids": [
+        "B1"
+      ],
+      "quantity_min": 1,
+      "quantity_max": 3,
+      "availability": "입구·일반 구역; 특수 도구는 지역 단계에 맞춰 안내",
+      "guaranteed_progress": true
+    },
+    {
+      "id": "gather_herb_seed",
+      "kind": "gathering",
+      "item_id": "herb_seed",
+      "region_ids": [
+        "B2"
+      ],
+      "quantity_min": 1,
+      "quantity_max": 3,
+      "availability": "입구·일반 구역; 특수 도구는 지역 단계에 맞춰 안내",
+      "guaranteed_progress": true
+    },
+    {
+      "id": "gather_alpine_fur",
+      "kind": "gathering",
+      "item_id": "alpine_fur",
+      "region_ids": [
+        "H1"
+      ],
+      "quantity_min": 1,
+      "quantity_max": 3,
+      "availability": "입구·일반 구역; 특수 도구는 지역 단계에 맞춰 안내",
+      "guaranteed_progress": true
+    },
+    {
+      "id": "harvest_shore_grazer_meat",
+      "kind": "monster_base",
+      "item_id": "meat",
+      "monster_id": "shore_grazer",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_shore_grazer_bone",
+      "kind": "monster_base",
+      "item_id": "bone",
+      "monster_id": "shore_grazer",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_shore_grazer_raw_hide",
+      "kind": "monster_base",
+      "item_id": "raw_hide",
+      "monster_id": "shore_grazer",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_shore_grazer_fat",
+      "kind": "monster_base",
+      "item_id": "fat",
+      "monster_id": "shore_grazer",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "focus_shore_grazer_food_meat",
+      "kind": "monster_focus",
+      "item_id": "meat",
+      "monster_id": "shore_grazer",
+      "focus_id": "food",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_shore_grazer_food_fat",
+      "kind": "monster_focus",
+      "item_id": "fat",
+      "monster_id": "shore_grazer",
+      "focus_id": "food",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "focus_shore_grazer_material_raw_hide",
+      "kind": "monster_focus",
+      "item_id": "raw_hide",
+      "monster_id": "shore_grazer",
+      "focus_id": "material",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_shore_grazer_signature_raw_shore_grazer",
+      "kind": "monster_focus",
+      "item_id": "raw_shore_grazer",
+      "monster_id": "shore_grazer",
+      "focus_id": "signature",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "harvest_shell_crab_meat",
+      "kind": "monster_base",
+      "item_id": "meat",
+      "monster_id": "shell_crab",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_shell_crab_bone",
+      "kind": "monster_base",
+      "item_id": "bone",
+      "monster_id": "shell_crab",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_shell_crab_shell",
+      "kind": "monster_base",
+      "item_id": "shell",
+      "monster_id": "shell_crab",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_shell_crab_food_meat",
+      "kind": "monster_focus",
+      "item_id": "meat",
+      "monster_id": "shell_crab",
+      "focus_id": "food",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_shell_crab_food_fat",
+      "kind": "monster_focus",
+      "item_id": "fat",
+      "monster_id": "shell_crab",
+      "focus_id": "food",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "focus_shell_crab_material_shell",
+      "kind": "monster_focus",
+      "item_id": "shell",
+      "monster_id": "shell_crab",
+      "focus_id": "material",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_shell_crab_signature_raw_shell_crab",
+      "kind": "monster_focus",
+      "item_id": "raw_shell_crab",
+      "monster_id": "shell_crab",
+      "focus_id": "signature",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "harvest_tide_boar_meat",
+      "kind": "monster_base",
+      "item_id": "meat",
+      "monster_id": "tide_boar",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_tide_boar_bone",
+      "kind": "monster_base",
+      "item_id": "bone",
+      "monster_id": "tide_boar",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_tide_boar_horn",
+      "kind": "monster_base",
+      "item_id": "horn",
+      "monster_id": "tide_boar",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_tide_boar_food_meat",
+      "kind": "monster_focus",
+      "item_id": "meat",
+      "monster_id": "tide_boar",
+      "focus_id": "food",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_tide_boar_food_fat",
+      "kind": "monster_focus",
+      "item_id": "fat",
+      "monster_id": "tide_boar",
+      "focus_id": "food",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "focus_tide_boar_material_bone",
+      "kind": "monster_focus",
+      "item_id": "bone",
+      "monster_id": "tide_boar",
+      "focus_id": "material",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_tide_boar_signature_raw_tide_boar",
+      "kind": "monster_focus",
+      "item_id": "raw_tide_boar",
+      "monster_id": "tide_boar",
+      "focus_id": "signature",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "bonus_tide_boar",
+      "kind": "monster_bonus",
+      "item_id": "trophy_tide_boar",
+      "monster_id": "tide_boar",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 0.15
+    },
+    {
+      "id": "harvest_grass_grazer_meat",
+      "kind": "monster_base",
+      "item_id": "meat",
+      "monster_id": "grass_grazer",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_grass_grazer_bone",
+      "kind": "monster_base",
+      "item_id": "bone",
+      "monster_id": "grass_grazer",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_grass_grazer_raw_hide",
+      "kind": "monster_base",
+      "item_id": "raw_hide",
+      "monster_id": "grass_grazer",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_grass_grazer_fat",
+      "kind": "monster_base",
+      "item_id": "fat",
+      "monster_id": "grass_grazer",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "focus_grass_grazer_food_meat",
+      "kind": "monster_focus",
+      "item_id": "meat",
+      "monster_id": "grass_grazer",
+      "focus_id": "food",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_grass_grazer_food_fat",
+      "kind": "monster_focus",
+      "item_id": "fat",
+      "monster_id": "grass_grazer",
+      "focus_id": "food",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "focus_grass_grazer_material_raw_hide",
+      "kind": "monster_focus",
+      "item_id": "raw_hide",
+      "monster_id": "grass_grazer",
+      "focus_id": "material",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_grass_grazer_signature_raw_grass_grazer",
+      "kind": "monster_focus",
+      "item_id": "raw_grass_grazer",
+      "monster_id": "grass_grazer",
+      "focus_id": "signature",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "harvest_reed_raptor_meat",
+      "kind": "monster_base",
+      "item_id": "meat",
+      "monster_id": "reed_raptor",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_reed_raptor_bone",
+      "kind": "monster_base",
+      "item_id": "bone",
+      "monster_id": "reed_raptor",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_reed_raptor_sinew",
+      "kind": "monster_base",
+      "item_id": "sinew",
+      "monster_id": "reed_raptor",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_reed_raptor_fat",
+      "kind": "monster_base",
+      "item_id": "fat",
+      "monster_id": "reed_raptor",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "focus_reed_raptor_food_meat",
+      "kind": "monster_focus",
+      "item_id": "meat",
+      "monster_id": "reed_raptor",
+      "focus_id": "food",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_reed_raptor_food_fat",
+      "kind": "monster_focus",
+      "item_id": "fat",
+      "monster_id": "reed_raptor",
+      "focus_id": "food",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "focus_reed_raptor_material_bone",
+      "kind": "monster_focus",
+      "item_id": "bone",
+      "monster_id": "reed_raptor",
+      "focus_id": "material",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_reed_raptor_signature_raw_reed_raptor",
+      "kind": "monster_focus",
+      "item_id": "raw_reed_raptor",
+      "monster_id": "reed_raptor",
+      "focus_id": "signature",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "harvest_meadow_horn_meat",
+      "kind": "monster_base",
+      "item_id": "meat",
+      "monster_id": "meadow_horn",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_meadow_horn_bone",
+      "kind": "monster_base",
+      "item_id": "bone",
+      "monster_id": "meadow_horn",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_meadow_horn_horn",
+      "kind": "monster_base",
+      "item_id": "horn",
+      "monster_id": "meadow_horn",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_meadow_horn_food_meat",
+      "kind": "monster_focus",
+      "item_id": "meat",
+      "monster_id": "meadow_horn",
+      "focus_id": "food",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_meadow_horn_food_fat",
+      "kind": "monster_focus",
+      "item_id": "fat",
+      "monster_id": "meadow_horn",
+      "focus_id": "food",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "focus_meadow_horn_material_bone",
+      "kind": "monster_focus",
+      "item_id": "bone",
+      "monster_id": "meadow_horn",
+      "focus_id": "material",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_meadow_horn_signature_raw_meadow_horn",
+      "kind": "monster_focus",
+      "item_id": "raw_meadow_horn",
+      "monster_id": "meadow_horn",
+      "focus_id": "signature",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "bonus_meadow_horn",
+      "kind": "monster_bonus",
+      "item_id": "trophy_meadow_horn",
+      "monster_id": "meadow_horn",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 0.15
+    },
+    {
+      "id": "harvest_stonejaw_meat",
+      "kind": "monster_base",
+      "item_id": "meat",
+      "monster_id": "stonejaw",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_stonejaw_bone",
+      "kind": "monster_base",
+      "item_id": "bone",
+      "monster_id": "stonejaw",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_stonejaw_raw_hide",
+      "kind": "monster_base",
+      "item_id": "raw_hide",
+      "monster_id": "stonejaw",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_stonejaw_fat",
+      "kind": "monster_base",
+      "item_id": "fat",
+      "monster_id": "stonejaw",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "focus_stonejaw_food_meat",
+      "kind": "monster_focus",
+      "item_id": "meat",
+      "monster_id": "stonejaw",
+      "focus_id": "food",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_stonejaw_food_fat",
+      "kind": "monster_focus",
+      "item_id": "fat",
+      "monster_id": "stonejaw",
+      "focus_id": "food",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "focus_stonejaw_material_raw_hide",
+      "kind": "monster_focus",
+      "item_id": "raw_hide",
+      "monster_id": "stonejaw",
+      "focus_id": "material",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_stonejaw_signature_raw_stonejaw",
+      "kind": "monster_focus",
+      "item_id": "raw_stonejaw",
+      "monster_id": "stonejaw",
+      "focus_id": "signature",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "harvest_moss_turtle_meat",
+      "kind": "monster_base",
+      "item_id": "meat",
+      "monster_id": "moss_turtle",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_moss_turtle_bone",
+      "kind": "monster_base",
+      "item_id": "bone",
+      "monster_id": "moss_turtle",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_moss_turtle_shell",
+      "kind": "monster_base",
+      "item_id": "shell",
+      "monster_id": "moss_turtle",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_moss_turtle_food_meat",
+      "kind": "monster_focus",
+      "item_id": "meat",
+      "monster_id": "moss_turtle",
+      "focus_id": "food",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_moss_turtle_food_fat",
+      "kind": "monster_focus",
+      "item_id": "fat",
+      "monster_id": "moss_turtle",
+      "focus_id": "food",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "focus_moss_turtle_material_shell",
+      "kind": "monster_focus",
+      "item_id": "shell",
+      "monster_id": "moss_turtle",
+      "focus_id": "material",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_moss_turtle_signature_raw_moss_turtle",
+      "kind": "monster_focus",
+      "item_id": "raw_moss_turtle",
+      "monster_id": "moss_turtle",
+      "focus_id": "signature",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "harvest_forest_fang_meat",
+      "kind": "monster_base",
+      "item_id": "meat",
+      "monster_id": "forest_fang",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_forest_fang_bone",
+      "kind": "monster_base",
+      "item_id": "bone",
+      "monster_id": "forest_fang",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_forest_fang_horn",
+      "kind": "monster_base",
+      "item_id": "horn",
+      "monster_id": "forest_fang",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_forest_fang_food_meat",
+      "kind": "monster_focus",
+      "item_id": "meat",
+      "monster_id": "forest_fang",
+      "focus_id": "food",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_forest_fang_food_fat",
+      "kind": "monster_focus",
+      "item_id": "fat",
+      "monster_id": "forest_fang",
+      "focus_id": "food",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "focus_forest_fang_material_bone",
+      "kind": "monster_focus",
+      "item_id": "bone",
+      "monster_id": "forest_fang",
+      "focus_id": "material",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_forest_fang_signature_raw_forest_fang",
+      "kind": "monster_focus",
+      "item_id": "raw_forest_fang",
+      "monster_id": "forest_fang",
+      "focus_id": "signature",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "bonus_forest_fang",
+      "kind": "monster_bonus",
+      "item_id": "trophy_forest_fang",
+      "monster_id": "forest_fang",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 0.15
+    },
+    {
+      "id": "harvest_poison_sac_meat",
+      "kind": "monster_base",
+      "item_id": "meat",
+      "monster_id": "poison_sac",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_poison_sac_bone",
+      "kind": "monster_base",
+      "item_id": "bone",
+      "monster_id": "poison_sac",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_poison_sac_food_meat",
+      "kind": "monster_focus",
+      "item_id": "meat",
+      "monster_id": "poison_sac",
+      "focus_id": "food",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_poison_sac_food_fat",
+      "kind": "monster_focus",
+      "item_id": "fat",
+      "monster_id": "poison_sac",
+      "focus_id": "food",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "focus_poison_sac_material_bone",
+      "kind": "monster_focus",
+      "item_id": "bone",
+      "monster_id": "poison_sac",
+      "focus_id": "material",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_poison_sac_signature_raw_poison_sac",
+      "kind": "monster_focus",
+      "item_id": "raw_poison_sac",
+      "monster_id": "poison_sac",
+      "focus_id": "signature",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "harvest_mudscale_meat",
+      "kind": "monster_base",
+      "item_id": "meat",
+      "monster_id": "mudscale",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_mudscale_bone",
+      "kind": "monster_base",
+      "item_id": "bone",
+      "monster_id": "mudscale",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_mudscale_raw_hide",
+      "kind": "monster_base",
+      "item_id": "raw_hide",
+      "monster_id": "mudscale",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_mudscale_fat",
+      "kind": "monster_base",
+      "item_id": "fat",
+      "monster_id": "mudscale",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "focus_mudscale_food_meat",
+      "kind": "monster_focus",
+      "item_id": "meat",
+      "monster_id": "mudscale",
+      "focus_id": "food",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_mudscale_food_fat",
+      "kind": "monster_focus",
+      "item_id": "fat",
+      "monster_id": "mudscale",
+      "focus_id": "food",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "focus_mudscale_material_raw_hide",
+      "kind": "monster_focus",
+      "item_id": "raw_hide",
+      "monster_id": "mudscale",
+      "focus_id": "material",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_mudscale_signature_raw_mudscale",
+      "kind": "monster_focus",
+      "item_id": "raw_mudscale",
+      "monster_id": "mudscale",
+      "focus_id": "signature",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "harvest_marsh_carapace_meat",
+      "kind": "monster_base",
+      "item_id": "meat",
+      "monster_id": "marsh_carapace",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_marsh_carapace_bone",
+      "kind": "monster_base",
+      "item_id": "bone",
+      "monster_id": "marsh_carapace",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_marsh_carapace_shell",
+      "kind": "monster_base",
+      "item_id": "shell",
+      "monster_id": "marsh_carapace",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_marsh_carapace_food_meat",
+      "kind": "monster_focus",
+      "item_id": "meat",
+      "monster_id": "marsh_carapace",
+      "focus_id": "food",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_marsh_carapace_food_fat",
+      "kind": "monster_focus",
+      "item_id": "fat",
+      "monster_id": "marsh_carapace",
+      "focus_id": "food",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "focus_marsh_carapace_material_shell",
+      "kind": "monster_focus",
+      "item_id": "shell",
+      "monster_id": "marsh_carapace",
+      "focus_id": "material",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_marsh_carapace_signature_raw_marsh_carapace",
+      "kind": "monster_focus",
+      "item_id": "raw_marsh_carapace",
+      "monster_id": "marsh_carapace",
+      "focus_id": "signature",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "bonus_marsh_carapace",
+      "kind": "monster_bonus",
+      "item_id": "trophy_marsh_carapace",
+      "monster_id": "marsh_carapace",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 0.15
+    },
+    {
+      "id": "harvest_sand_jaw_meat",
+      "kind": "monster_base",
+      "item_id": "meat",
+      "monster_id": "sand_jaw",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_sand_jaw_bone",
+      "kind": "monster_base",
+      "item_id": "bone",
+      "monster_id": "sand_jaw",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_sand_jaw_horn",
+      "kind": "monster_base",
+      "item_id": "horn",
+      "monster_id": "sand_jaw",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_sand_jaw_food_meat",
+      "kind": "monster_focus",
+      "item_id": "meat",
+      "monster_id": "sand_jaw",
+      "focus_id": "food",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_sand_jaw_food_fat",
+      "kind": "monster_focus",
+      "item_id": "fat",
+      "monster_id": "sand_jaw",
+      "focus_id": "food",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "focus_sand_jaw_material_bone",
+      "kind": "monster_focus",
+      "item_id": "bone",
+      "monster_id": "sand_jaw",
+      "focus_id": "material",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_sand_jaw_signature_raw_sand_jaw",
+      "kind": "monster_focus",
+      "item_id": "raw_sand_jaw",
+      "monster_id": "sand_jaw",
+      "focus_id": "signature",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "harvest_cliff_runner_meat",
+      "kind": "monster_base",
+      "item_id": "meat",
+      "monster_id": "cliff_runner",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_cliff_runner_bone",
+      "kind": "monster_base",
+      "item_id": "bone",
+      "monster_id": "cliff_runner",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_cliff_runner_raw_hide",
+      "kind": "monster_base",
+      "item_id": "raw_hide",
+      "monster_id": "cliff_runner",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_cliff_runner_fat",
+      "kind": "monster_base",
+      "item_id": "fat",
+      "monster_id": "cliff_runner",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "focus_cliff_runner_food_meat",
+      "kind": "monster_focus",
+      "item_id": "meat",
+      "monster_id": "cliff_runner",
+      "focus_id": "food",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_cliff_runner_food_fat",
+      "kind": "monster_focus",
+      "item_id": "fat",
+      "monster_id": "cliff_runner",
+      "focus_id": "food",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "focus_cliff_runner_material_raw_hide",
+      "kind": "monster_focus",
+      "item_id": "raw_hide",
+      "monster_id": "cliff_runner",
+      "focus_id": "material",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_cliff_runner_signature_raw_cliff_runner",
+      "kind": "monster_focus",
+      "item_id": "raw_cliff_runner",
+      "monster_id": "cliff_runner",
+      "focus_id": "signature",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "harvest_ironhorn_meat",
+      "kind": "monster_base",
+      "item_id": "meat",
+      "monster_id": "ironhorn",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_ironhorn_bone",
+      "kind": "monster_base",
+      "item_id": "bone",
+      "monster_id": "ironhorn",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_ironhorn_shell",
+      "kind": "monster_base",
+      "item_id": "shell",
+      "monster_id": "ironhorn",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_ironhorn_iron_ore",
+      "kind": "monster_base",
+      "item_id": "iron_ore",
+      "monster_id": "ironhorn",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_ironhorn_food_meat",
+      "kind": "monster_focus",
+      "item_id": "meat",
+      "monster_id": "ironhorn",
+      "focus_id": "food",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_ironhorn_food_fat",
+      "kind": "monster_focus",
+      "item_id": "fat",
+      "monster_id": "ironhorn",
+      "focus_id": "food",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "focus_ironhorn_material_shell",
+      "kind": "monster_focus",
+      "item_id": "shell",
+      "monster_id": "ironhorn",
+      "focus_id": "material",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_ironhorn_signature_raw_ironhorn",
+      "kind": "monster_focus",
+      "item_id": "raw_ironhorn",
+      "monster_id": "ironhorn",
+      "focus_id": "signature",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "bonus_ironhorn",
+      "kind": "monster_bonus",
+      "item_id": "trophy_ironhorn",
+      "monster_id": "ironhorn",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 0.15
+    },
+    {
+      "id": "harvest_snow_deer_meat",
+      "kind": "monster_base",
+      "item_id": "meat",
+      "monster_id": "snow_deer",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_snow_deer_bone",
+      "kind": "monster_base",
+      "item_id": "bone",
+      "monster_id": "snow_deer",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_snow_deer_fur_hide",
+      "kind": "monster_base",
+      "item_id": "fur_hide",
+      "monster_id": "snow_deer",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_snow_deer_wool",
+      "kind": "monster_base",
+      "item_id": "wool",
+      "monster_id": "snow_deer",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_snow_deer_fat",
+      "kind": "monster_base",
+      "item_id": "fat",
+      "monster_id": "snow_deer",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "focus_snow_deer_food_meat",
+      "kind": "monster_focus",
+      "item_id": "meat",
+      "monster_id": "snow_deer",
+      "focus_id": "food",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_snow_deer_food_fat",
+      "kind": "monster_focus",
+      "item_id": "fat",
+      "monster_id": "snow_deer",
+      "focus_id": "food",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "focus_snow_deer_material_fur_hide",
+      "kind": "monster_focus",
+      "item_id": "fur_hide",
+      "monster_id": "snow_deer",
+      "focus_id": "material",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_snow_deer_signature_raw_snow_deer",
+      "kind": "monster_focus",
+      "item_id": "raw_snow_deer",
+      "monster_id": "snow_deer",
+      "focus_id": "signature",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "harvest_white_wolf_meat",
+      "kind": "monster_base",
+      "item_id": "meat",
+      "monster_id": "white_wolf",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_white_wolf_bone",
+      "kind": "monster_base",
+      "item_id": "bone",
+      "monster_id": "white_wolf",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_white_wolf_sinew",
+      "kind": "monster_base",
+      "item_id": "sinew",
+      "monster_id": "white_wolf",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_white_wolf_fat",
+      "kind": "monster_base",
+      "item_id": "fat",
+      "monster_id": "white_wolf",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "focus_white_wolf_food_meat",
+      "kind": "monster_focus",
+      "item_id": "meat",
+      "monster_id": "white_wolf",
+      "focus_id": "food",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_white_wolf_food_fat",
+      "kind": "monster_focus",
+      "item_id": "fat",
+      "monster_id": "white_wolf",
+      "focus_id": "food",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "focus_white_wolf_material_bone",
+      "kind": "monster_focus",
+      "item_id": "bone",
+      "monster_id": "white_wolf",
+      "focus_id": "material",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_white_wolf_signature_raw_white_wolf",
+      "kind": "monster_focus",
+      "item_id": "raw_white_wolf",
+      "monster_id": "white_wolf",
+      "focus_id": "signature",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "harvest_frost_bear_meat",
+      "kind": "monster_base",
+      "item_id": "meat",
+      "monster_id": "frost_bear",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_frost_bear_bone",
+      "kind": "monster_base",
+      "item_id": "bone",
+      "monster_id": "frost_bear",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_frost_bear_fur_hide",
+      "kind": "monster_base",
+      "item_id": "fur_hide",
+      "monster_id": "frost_bear",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_frost_bear_wool",
+      "kind": "monster_base",
+      "item_id": "wool",
+      "monster_id": "frost_bear",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_frost_bear_fat",
+      "kind": "monster_base",
+      "item_id": "fat",
+      "monster_id": "frost_bear",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "focus_frost_bear_food_meat",
+      "kind": "monster_focus",
+      "item_id": "meat",
+      "monster_id": "frost_bear",
+      "focus_id": "food",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_frost_bear_food_fat",
+      "kind": "monster_focus",
+      "item_id": "fat",
+      "monster_id": "frost_bear",
+      "focus_id": "food",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "focus_frost_bear_material_fur_hide",
+      "kind": "monster_focus",
+      "item_id": "fur_hide",
+      "monster_id": "frost_bear",
+      "focus_id": "material",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_frost_bear_signature_raw_frost_bear",
+      "kind": "monster_focus",
+      "item_id": "raw_frost_bear",
+      "monster_id": "frost_bear",
+      "focus_id": "signature",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "bonus_frost_bear",
+      "kind": "monster_bonus",
+      "item_id": "trophy_frost_bear",
+      "monster_id": "frost_bear",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 0.15
+    },
+    {
+      "id": "harvest_vine_leaper_meat",
+      "kind": "monster_base",
+      "item_id": "meat",
+      "monster_id": "vine_leaper",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_vine_leaper_bone",
+      "kind": "monster_base",
+      "item_id": "bone",
+      "monster_id": "vine_leaper",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_vine_leaper_sinew",
+      "kind": "monster_base",
+      "item_id": "sinew",
+      "monster_id": "vine_leaper",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_vine_leaper_fat",
+      "kind": "monster_base",
+      "item_id": "fat",
+      "monster_id": "vine_leaper",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "focus_vine_leaper_food_meat",
+      "kind": "monster_focus",
+      "item_id": "meat",
+      "monster_id": "vine_leaper",
+      "focus_id": "food",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_vine_leaper_food_fat",
+      "kind": "monster_focus",
+      "item_id": "fat",
+      "monster_id": "vine_leaper",
+      "focus_id": "food",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "focus_vine_leaper_material_bone",
+      "kind": "monster_focus",
+      "item_id": "bone",
+      "monster_id": "vine_leaper",
+      "focus_id": "material",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_vine_leaper_signature_raw_vine_leaper",
+      "kind": "monster_focus",
+      "item_id": "raw_vine_leaper",
+      "monster_id": "vine_leaper",
+      "focus_id": "signature",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "harvest_jade_scale_meat",
+      "kind": "monster_base",
+      "item_id": "meat",
+      "monster_id": "jade_scale",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_jade_scale_bone",
+      "kind": "monster_base",
+      "item_id": "bone",
+      "monster_id": "jade_scale",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_jade_scale_shell",
+      "kind": "monster_base",
+      "item_id": "shell",
+      "monster_id": "jade_scale",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_jade_scale_food_meat",
+      "kind": "monster_focus",
+      "item_id": "meat",
+      "monster_id": "jade_scale",
+      "focus_id": "food",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_jade_scale_food_fat",
+      "kind": "monster_focus",
+      "item_id": "fat",
+      "monster_id": "jade_scale",
+      "focus_id": "food",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "focus_jade_scale_material_shell",
+      "kind": "monster_focus",
+      "item_id": "shell",
+      "monster_id": "jade_scale",
+      "focus_id": "material",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_jade_scale_signature_raw_jade_scale",
+      "kind": "monster_focus",
+      "item_id": "raw_jade_scale",
+      "monster_id": "jade_scale",
+      "focus_id": "signature",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "harvest_green_colossus_meat",
+      "kind": "monster_base",
+      "item_id": "meat",
+      "monster_id": "green_colossus",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_green_colossus_bone",
+      "kind": "monster_base",
+      "item_id": "bone",
+      "monster_id": "green_colossus",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_green_colossus_raw_hide",
+      "kind": "monster_base",
+      "item_id": "raw_hide",
+      "monster_id": "green_colossus",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_green_colossus_fat",
+      "kind": "monster_base",
+      "item_id": "fat",
+      "monster_id": "green_colossus",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "focus_green_colossus_food_meat",
+      "kind": "monster_focus",
+      "item_id": "meat",
+      "monster_id": "green_colossus",
+      "focus_id": "food",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_green_colossus_food_fat",
+      "kind": "monster_focus",
+      "item_id": "fat",
+      "monster_id": "green_colossus",
+      "focus_id": "food",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "focus_green_colossus_material_raw_hide",
+      "kind": "monster_focus",
+      "item_id": "raw_hide",
+      "monster_id": "green_colossus",
+      "focus_id": "material",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_green_colossus_signature_raw_green_colossus",
+      "kind": "monster_focus",
+      "item_id": "raw_green_colossus",
+      "monster_id": "green_colossus",
+      "focus_id": "signature",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "bonus_green_colossus",
+      "kind": "monster_bonus",
+      "item_id": "trophy_green_colossus",
+      "monster_id": "green_colossus",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 0.15
+    },
+    {
+      "id": "harvest_ice_shell_meat",
+      "kind": "monster_base",
+      "item_id": "meat",
+      "monster_id": "ice_shell",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_ice_shell_bone",
+      "kind": "monster_base",
+      "item_id": "bone",
+      "monster_id": "ice_shell",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_ice_shell_shell",
+      "kind": "monster_base",
+      "item_id": "shell",
+      "monster_id": "ice_shell",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_ice_shell_cool_crystal",
+      "kind": "monster_base",
+      "item_id": "cool_crystal",
+      "monster_id": "ice_shell",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "focus_ice_shell_food_meat",
+      "kind": "monster_focus",
+      "item_id": "meat",
+      "monster_id": "ice_shell",
+      "focus_id": "food",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_ice_shell_food_fat",
+      "kind": "monster_focus",
+      "item_id": "fat",
+      "monster_id": "ice_shell",
+      "focus_id": "food",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "focus_ice_shell_material_shell",
+      "kind": "monster_focus",
+      "item_id": "shell",
+      "monster_id": "ice_shell",
+      "focus_id": "material",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_ice_shell_signature_raw_ice_shell",
+      "kind": "monster_focus",
+      "item_id": "raw_ice_shell",
+      "monster_id": "ice_shell",
+      "focus_id": "signature",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "harvest_crystal_antler_meat",
+      "kind": "monster_base",
+      "item_id": "meat",
+      "monster_id": "crystal_antler",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_crystal_antler_bone",
+      "kind": "monster_base",
+      "item_id": "bone",
+      "monster_id": "crystal_antler",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_crystal_antler_horn",
+      "kind": "monster_base",
+      "item_id": "horn",
+      "monster_id": "crystal_antler",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_crystal_antler_cool_crystal",
+      "kind": "monster_base",
+      "item_id": "cool_crystal",
+      "monster_id": "crystal_antler",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "harvest_crystal_antler_alpine_fur",
+      "kind": "monster_base",
+      "item_id": "alpine_fur",
+      "monster_id": "crystal_antler",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_crystal_antler_food_meat",
+      "kind": "monster_focus",
+      "item_id": "meat",
+      "monster_id": "crystal_antler",
+      "focus_id": "food",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_crystal_antler_food_fat",
+      "kind": "monster_focus",
+      "item_id": "fat",
+      "monster_id": "crystal_antler",
+      "focus_id": "food",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "focus_crystal_antler_material_bone",
+      "kind": "monster_focus",
+      "item_id": "bone",
+      "monster_id": "crystal_antler",
+      "focus_id": "material",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_crystal_antler_signature_raw_crystal_antler",
+      "kind": "monster_focus",
+      "item_id": "raw_crystal_antler",
+      "monster_id": "crystal_antler",
+      "focus_id": "signature",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "harvest_glacial_giant_meat",
+      "kind": "monster_base",
+      "item_id": "meat",
+      "monster_id": "glacial_giant",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_glacial_giant_bone",
+      "kind": "monster_base",
+      "item_id": "bone",
+      "monster_id": "glacial_giant",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_glacial_giant_fur_hide",
+      "kind": "monster_base",
+      "item_id": "fur_hide",
+      "monster_id": "glacial_giant",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_glacial_giant_fat",
+      "kind": "monster_base",
+      "item_id": "fat",
+      "monster_id": "glacial_giant",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "harvest_glacial_giant_cool_crystal",
+      "kind": "monster_base",
+      "item_id": "cool_crystal",
+      "monster_id": "glacial_giant",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "focus_glacial_giant_food_meat",
+      "kind": "monster_focus",
+      "item_id": "meat",
+      "monster_id": "glacial_giant",
+      "focus_id": "food",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_glacial_giant_food_fat",
+      "kind": "monster_focus",
+      "item_id": "fat",
+      "monster_id": "glacial_giant",
+      "focus_id": "food",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "focus_glacial_giant_material_fur_hide",
+      "kind": "monster_focus",
+      "item_id": "fur_hide",
+      "monster_id": "glacial_giant",
+      "focus_id": "material",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_glacial_giant_signature_raw_glacial_giant",
+      "kind": "monster_focus",
+      "item_id": "raw_glacial_giant",
+      "monster_id": "glacial_giant",
+      "focus_id": "signature",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "bonus_glacial_giant",
+      "kind": "monster_bonus",
+      "item_id": "trophy_glacial_giant",
+      "monster_id": "glacial_giant",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 0.25
+    },
+    {
+      "id": "harvest_ember_hide_meat",
+      "kind": "monster_base",
+      "item_id": "meat",
+      "monster_id": "ember_hide",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_ember_hide_bone",
+      "kind": "monster_base",
+      "item_id": "bone",
+      "monster_id": "ember_hide",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_ember_hide_raw_hide",
+      "kind": "monster_base",
+      "item_id": "raw_hide",
+      "monster_id": "ember_hide",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_ember_hide_fat",
+      "kind": "monster_base",
+      "item_id": "fat",
+      "monster_id": "ember_hide",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "harvest_ember_hide_heat_mineral",
+      "kind": "monster_base",
+      "item_id": "heat_mineral",
+      "monster_id": "ember_hide",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_ember_hide_food_meat",
+      "kind": "monster_focus",
+      "item_id": "meat",
+      "monster_id": "ember_hide",
+      "focus_id": "food",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_ember_hide_food_fat",
+      "kind": "monster_focus",
+      "item_id": "fat",
+      "monster_id": "ember_hide",
+      "focus_id": "food",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "focus_ember_hide_material_raw_hide",
+      "kind": "monster_focus",
+      "item_id": "raw_hide",
+      "monster_id": "ember_hide",
+      "focus_id": "material",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_ember_hide_signature_raw_ember_hide",
+      "kind": "monster_focus",
+      "item_id": "raw_ember_hide",
+      "monster_id": "ember_hide",
+      "focus_id": "signature",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "harvest_lava_shell_meat",
+      "kind": "monster_base",
+      "item_id": "meat",
+      "monster_id": "lava_shell",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_lava_shell_bone",
+      "kind": "monster_base",
+      "item_id": "bone",
+      "monster_id": "lava_shell",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_lava_shell_shell",
+      "kind": "monster_base",
+      "item_id": "shell",
+      "monster_id": "lava_shell",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_lava_shell_heat_mineral",
+      "kind": "monster_base",
+      "item_id": "heat_mineral",
+      "monster_id": "lava_shell",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_lava_shell_heat_shell_raw",
+      "kind": "monster_base",
+      "item_id": "heat_shell_raw",
+      "monster_id": "lava_shell",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "focus_lava_shell_food_meat",
+      "kind": "monster_focus",
+      "item_id": "meat",
+      "monster_id": "lava_shell",
+      "focus_id": "food",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_lava_shell_food_fat",
+      "kind": "monster_focus",
+      "item_id": "fat",
+      "monster_id": "lava_shell",
+      "focus_id": "food",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "focus_lava_shell_material_shell",
+      "kind": "monster_focus",
+      "item_id": "shell",
+      "monster_id": "lava_shell",
+      "focus_id": "material",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_lava_shell_signature_raw_lava_shell",
+      "kind": "monster_focus",
+      "item_id": "raw_lava_shell",
+      "monster_id": "lava_shell",
+      "focus_id": "signature",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "harvest_volcanic_predator_meat",
+      "kind": "monster_base",
+      "item_id": "meat",
+      "monster_id": "volcanic_predator",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_volcanic_predator_bone",
+      "kind": "monster_base",
+      "item_id": "bone",
+      "monster_id": "volcanic_predator",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_volcanic_predator_heat_mineral",
+      "kind": "monster_base",
+      "item_id": "heat_mineral",
+      "monster_id": "volcanic_predator",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_volcanic_predator_food_meat",
+      "kind": "monster_focus",
+      "item_id": "meat",
+      "monster_id": "volcanic_predator",
+      "focus_id": "food",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_volcanic_predator_food_fat",
+      "kind": "monster_focus",
+      "item_id": "fat",
+      "monster_id": "volcanic_predator",
+      "focus_id": "food",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "focus_volcanic_predator_material_bone",
+      "kind": "monster_focus",
+      "item_id": "bone",
+      "monster_id": "volcanic_predator",
+      "focus_id": "material",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_volcanic_predator_signature_raw_volcanic_predator",
+      "kind": "monster_focus",
+      "item_id": "raw_volcanic_predator",
+      "monster_id": "volcanic_predator",
+      "focus_id": "signature",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "bonus_volcanic_predator",
+      "kind": "monster_bonus",
+      "item_id": "trophy_volcanic_predator",
+      "monster_id": "volcanic_predator",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 0.25
+    },
+    {
+      "id": "harvest_thunderwolf_meat",
+      "kind": "monster_base",
+      "item_id": "meat",
+      "monster_id": "thunderwolf",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_thunderwolf_bone",
+      "kind": "monster_base",
+      "item_id": "bone",
+      "monster_id": "thunderwolf",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_thunderwolf_blueprint_fragment",
+      "kind": "monster_base",
+      "item_id": "blueprint_fragment",
+      "monster_id": "thunderwolf",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "harvest_thunderwolf_conductive_organ",
+      "kind": "monster_base",
+      "item_id": "conductive_organ",
+      "monster_id": "thunderwolf",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "focus_thunderwolf_food_meat",
+      "kind": "monster_focus",
+      "item_id": "meat",
+      "monster_id": "thunderwolf",
+      "focus_id": "food",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_thunderwolf_food_fat",
+      "kind": "monster_focus",
+      "item_id": "fat",
+      "monster_id": "thunderwolf",
+      "focus_id": "food",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "focus_thunderwolf_material_bone",
+      "kind": "monster_focus",
+      "item_id": "bone",
+      "monster_id": "thunderwolf",
+      "focus_id": "material",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_thunderwolf_signature_raw_thunderwolf",
+      "kind": "monster_focus",
+      "item_id": "raw_thunderwolf",
+      "monster_id": "thunderwolf",
+      "focus_id": "signature",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "harvest_ruin_shell_meat",
+      "kind": "monster_base",
+      "item_id": "meat",
+      "monster_id": "ruin_shell",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_ruin_shell_bone",
+      "kind": "monster_base",
+      "item_id": "bone",
+      "monster_id": "ruin_shell",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_ruin_shell_shell",
+      "kind": "monster_base",
+      "item_id": "shell",
+      "monster_id": "ruin_shell",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_ruin_shell_blueprint_fragment",
+      "kind": "monster_base",
+      "item_id": "blueprint_fragment",
+      "monster_id": "ruin_shell",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "harvest_ruin_shell_ancient_part",
+      "kind": "monster_base",
+      "item_id": "ancient_part",
+      "monster_id": "ruin_shell",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "focus_ruin_shell_food_meat",
+      "kind": "monster_focus",
+      "item_id": "meat",
+      "monster_id": "ruin_shell",
+      "focus_id": "food",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_ruin_shell_food_fat",
+      "kind": "monster_focus",
+      "item_id": "fat",
+      "monster_id": "ruin_shell",
+      "focus_id": "food",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "focus_ruin_shell_material_shell",
+      "kind": "monster_focus",
+      "item_id": "shell",
+      "monster_id": "ruin_shell",
+      "focus_id": "material",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_ruin_shell_signature_raw_ruin_shell",
+      "kind": "monster_focus",
+      "item_id": "raw_ruin_shell",
+      "monster_id": "ruin_shell",
+      "focus_id": "signature",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "harvest_boundary_warden_meat",
+      "kind": "monster_base",
+      "item_id": "meat",
+      "monster_id": "boundary_warden",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_boundary_warden_bone",
+      "kind": "monster_base",
+      "item_id": "bone",
+      "monster_id": "boundary_warden",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "harvest_boundary_warden_blueprint_fragment",
+      "kind": "monster_base",
+      "item_id": "blueprint_fragment",
+      "monster_id": "boundary_warden",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "harvest_boundary_warden_energy_crystal",
+      "kind": "monster_base",
+      "item_id": "energy_crystal",
+      "monster_id": "boundary_warden",
+      "quantity_min": 1,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_boundary_warden_food_meat",
+      "kind": "monster_focus",
+      "item_id": "meat",
+      "monster_id": "boundary_warden",
+      "focus_id": "food",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_boundary_warden_food_fat",
+      "kind": "monster_focus",
+      "item_id": "fat",
+      "monster_id": "boundary_warden",
+      "focus_id": "food",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 1
+    },
+    {
+      "id": "focus_boundary_warden_material_bone",
+      "kind": "monster_focus",
+      "item_id": "bone",
+      "monster_id": "boundary_warden",
+      "focus_id": "material",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "focus_boundary_warden_signature_raw_boundary_warden",
+      "kind": "monster_focus",
+      "item_id": "raw_boundary_warden",
+      "monster_id": "boundary_warden",
+      "focus_id": "signature",
+      "quantity_min": 2,
+      "quantity_max": 2,
+      "probability": 1
+    },
+    {
+      "id": "bonus_boundary_warden",
+      "kind": "monster_bonus",
+      "item_id": "trophy_boundary_warden",
+      "monster_id": "boundary_warden",
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "probability": 0.25
+    },
+    {
+      "id": "spoil",
+      "kind": "decay",
+      "item_id": "spoiled_food",
+      "input_categories": [
+        "perishable_food"
+      ],
+      "quantity_min": 1,
+      "quantity_max": 1,
+      "rule": "최종 보관 수명 만료 시 원재료 단위당 최대 1; 완성품 무제한 증식 금지"
+    },
+    {
+      "id": "salvage",
+      "kind": "salvage",
+      "item_id": "scrap_iron",
+      "rule": "장비에 사용된 철괴 환산량 E에 대해 고철 floor(E*0.6); 고철 3개가 철괴 1개; 특수 재료 회수 없음"
+    },
+    {
+      "id": "egg_livestock",
+      "kind": "livestock",
+      "item_id": "egg",
+      "requires": "작은 축사·사료·해당 동물",
+      "quantity_min": 1,
+      "quantity_max": 2
+    },
+    {
+      "id": "milk_livestock",
+      "kind": "livestock",
+      "item_id": "milk",
+      "requires": "작은 축사·사료·해당 동물·도기 용기",
+      "quantity_min": 1,
+      "quantity_max": 2
+    }
+  ]
+}

@@ -1,0 +1,2521 @@
+{
+  "schema_version": 1,
+  "content_version": "0.3.0-draft",
+  "status": "design_draft",
+  "records": [
+    {
+      "id": "stone_spear",
+      "item_id": "stone_spear",
+      "name": "돌창",
+      "kind": "spear",
+      "slot": "weapon",
+      "tier": 1,
+      "base_stats": {
+        "attack": 16,
+        "defense": 0,
+        "max_durability": 70,
+        "attack_interval_seconds": 1.2,
+        "attack_stamina": 9,
+        "reach_m": 2.6,
+        "crit_chance_pct": 5,
+        "crit_multiplier": 1.5,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [],
+      "source_monster_id": null,
+      "repair_limit": 3,
+      "quality_multiplier_allowed": true,
+      "hands_required": 2,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "horn_spear",
+      "item_id": "horn_spear",
+      "name": "뿔창",
+      "kind": "spear",
+      "slot": "weapon",
+      "tier": 1,
+      "base_stats": {
+        "attack": 25,
+        "defense": 0,
+        "max_durability": 110,
+        "attack_interval_seconds": 1.2,
+        "attack_stamina": 10,
+        "reach_m": 2.7,
+        "crit_chance_pct": 5,
+        "crit_multiplier": 1.5,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [],
+      "source_monster_id": null,
+      "repair_limit": 3,
+      "quality_multiplier_allowed": true,
+      "hands_required": 2,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "iron_spear",
+      "item_id": "iron_spear",
+      "name": "철창",
+      "kind": "spear",
+      "slot": "weapon",
+      "tier": 2,
+      "base_stats": {
+        "attack": 38,
+        "defense": 0,
+        "max_durability": 140,
+        "attack_interval_seconds": 1.2,
+        "attack_stamina": 11,
+        "reach_m": 2.8,
+        "crit_chance_pct": 5,
+        "crit_multiplier": 1.5,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [],
+      "source_monster_id": null,
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "hands_required": 2,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "stone_knife",
+      "item_id": "stone_knife",
+      "name": "돌칼",
+      "kind": "knife",
+      "slot": "tool",
+      "tier": 1,
+      "base_stats": {
+        "attack": 8,
+        "defense": 0,
+        "max_durability": 55,
+        "attack_interval_seconds": 0.8,
+        "attack_stamina": 5,
+        "reach_m": 1.2,
+        "crit_chance_pct": 5,
+        "crit_multiplier": 1.5,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [],
+      "source_monster_id": null,
+      "repair_limit": 3,
+      "quality_multiplier_allowed": true,
+      "hands_required": 1,
+      "tool_tags": [
+        "knife"
+      ],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "stone_hammer",
+      "item_id": "stone_hammer",
+      "name": "돌망치",
+      "kind": "hammer",
+      "slot": "tool",
+      "tier": 1,
+      "base_stats": {
+        "attack": 7,
+        "defense": 0,
+        "max_durability": 65,
+        "attack_interval_seconds": 1.2,
+        "attack_stamina": 7,
+        "reach_m": 1.2,
+        "crit_chance_pct": 5,
+        "crit_multiplier": 1.5,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [],
+      "source_monster_id": null,
+      "repair_limit": 3,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "tool_tags": [
+        "hammer"
+      ],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "stone_axe",
+      "item_id": "stone_axe",
+      "name": "돌도끼",
+      "kind": "axe",
+      "slot": "tool",
+      "tier": 1,
+      "base_stats": {
+        "attack": 10,
+        "defense": 0,
+        "max_durability": 70,
+        "attack_interval_seconds": 1.2,
+        "attack_stamina": 8,
+        "reach_m": 1.5,
+        "crit_chance_pct": 5,
+        "crit_multiplier": 1.5,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [],
+      "source_monster_id": null,
+      "repair_limit": 3,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "stone_pick",
+      "item_id": "stone_pick",
+      "name": "돌곡괭이",
+      "kind": "pickaxe",
+      "slot": "tool",
+      "tier": 1,
+      "base_stats": {
+        "attack": 9,
+        "defense": 0,
+        "max_durability": 70,
+        "attack_interval_seconds": 1.3,
+        "attack_stamina": 8,
+        "reach_m": 1.5,
+        "crit_chance_pct": 5,
+        "crit_multiplier": 1.5,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [],
+      "source_monster_id": null,
+      "repair_limit": 3,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "iron_axe",
+      "item_id": "iron_axe",
+      "name": "철도끼",
+      "kind": "axe",
+      "slot": "tool",
+      "tier": 2,
+      "base_stats": {
+        "attack": 28,
+        "defense": 0,
+        "max_durability": 150,
+        "attack_interval_seconds": 1.2,
+        "attack_stamina": 10,
+        "reach_m": 1.6,
+        "crit_chance_pct": 5,
+        "crit_multiplier": 1.5,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [],
+      "source_monster_id": null,
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "iron_pick",
+      "item_id": "iron_pick",
+      "name": "철곡괭이",
+      "kind": "pickaxe",
+      "slot": "tool",
+      "tier": 2,
+      "base_stats": {
+        "attack": 26,
+        "defense": 0,
+        "max_durability": 150,
+        "attack_interval_seconds": 1.3,
+        "attack_stamina": 10,
+        "reach_m": 1.6,
+        "crit_chance_pct": 5,
+        "crit_multiplier": 1.5,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [],
+      "source_monster_id": null,
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "iron_knife",
+      "item_id": "iron_knife",
+      "name": "철칼",
+      "kind": "knife",
+      "slot": "tool",
+      "tier": 2,
+      "base_stats": {
+        "attack": 22,
+        "defense": 0,
+        "max_durability": 120,
+        "attack_interval_seconds": 0.8,
+        "attack_stamina": 7,
+        "reach_m": 1.3,
+        "crit_chance_pct": 5,
+        "crit_multiplier": 1.5,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [],
+      "source_monster_id": null,
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "hands_required": 1,
+      "tool_tags": [
+        "knife"
+      ],
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "wood_shield",
+      "item_id": "wood_shield",
+      "name": "목제 방패",
+      "kind": "shield",
+      "slot": "offhand",
+      "tier": 1,
+      "base_stats": {
+        "attack": 0,
+        "defense": 5,
+        "max_durability": 90,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [],
+      "source_monster_id": null,
+      "repair_limit": 3,
+      "quality_multiplier_allowed": true,
+      "hands_required": 1,
+      "block_reduction_pct": 45,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "shell_shield",
+      "item_id": "shell_shield",
+      "name": "갑각 방패",
+      "kind": "shield",
+      "slot": "offhand",
+      "tier": 2,
+      "base_stats": {
+        "attack": 0,
+        "defense": 10,
+        "max_durability": 130,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "block"
+      ],
+      "source_monster_id": null,
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "hands_required": 1,
+      "block_reduction_pct": 45,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "leather_chest",
+      "item_id": "leather_chest",
+      "name": "가죽 상의",
+      "kind": "armor",
+      "slot": "chest",
+      "tier": 1,
+      "base_stats": {
+        "attack": 0,
+        "defense": 8,
+        "max_durability": 100,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [],
+      "source_monster_id": null,
+      "repair_limit": 3,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "leather_legs",
+      "item_id": "leather_legs",
+      "name": "가죽 하의",
+      "kind": "armor",
+      "slot": "legs",
+      "tier": 1,
+      "base_stats": {
+        "attack": 0,
+        "defense": 5,
+        "max_durability": 90,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [],
+      "source_monster_id": null,
+      "repair_limit": 3,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "leather_gloves",
+      "item_id": "leather_gloves",
+      "name": "가죽 장갑",
+      "kind": "armor",
+      "slot": "gloves",
+      "tier": 1,
+      "base_stats": {
+        "attack": 0,
+        "defense": 2,
+        "max_durability": 80,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [],
+      "source_monster_id": null,
+      "repair_limit": 3,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "leather_boots",
+      "item_id": "leather_boots",
+      "name": "가죽 장화",
+      "kind": "armor",
+      "slot": "boots",
+      "tier": 1,
+      "base_stats": {
+        "attack": 0,
+        "defense": 3,
+        "max_durability": 90,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [],
+      "source_monster_id": null,
+      "repair_limit": 3,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "cloth_chest",
+      "item_id": "cloth_chest",
+      "name": "천 상의",
+      "kind": "armor",
+      "slot": "chest",
+      "tier": 1,
+      "base_stats": {
+        "attack": 0,
+        "defense": 3,
+        "max_durability": 70,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [],
+      "source_monster_id": null,
+      "repair_limit": 3,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "cloth_legs",
+      "item_id": "cloth_legs",
+      "name": "천 하의",
+      "kind": "armor",
+      "slot": "legs",
+      "tier": 1,
+      "base_stats": {
+        "attack": 0,
+        "defense": 2,
+        "max_durability": 60,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [],
+      "source_monster_id": null,
+      "repair_limit": 3,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "apron",
+      "item_id": "apron",
+      "name": "작업 앞치마",
+      "kind": "armor",
+      "slot": "chest",
+      "tier": 1,
+      "base_stats": {
+        "attack": 0,
+        "defense": 4,
+        "max_durability": 80,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "gather"
+      ],
+      "source_monster_id": null,
+      "repair_limit": 3,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "water_boots",
+      "item_id": "water_boots",
+      "name": "방수 장화",
+      "kind": "armor",
+      "slot": "boots",
+      "tier": 2,
+      "base_stats": {
+        "attack": 0,
+        "defense": 4,
+        "max_durability": 100,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "wetguard"
+      ],
+      "source_monster_id": null,
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "rain_cape",
+      "item_id": "rain_cape",
+      "name": "방수 망토",
+      "kind": "armor",
+      "slot": "cape",
+      "tier": 2,
+      "base_stats": {
+        "attack": 0,
+        "defense": 2,
+        "max_durability": 90,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "wetguard"
+      ],
+      "source_monster_id": null,
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "fur_chest",
+      "item_id": "fur_chest",
+      "name": "방한 상의",
+      "kind": "armor",
+      "slot": "chest",
+      "tier": 2,
+      "base_stats": {
+        "attack": 0,
+        "defense": 10,
+        "max_durability": 120,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "coldguard"
+      ],
+      "source_monster_id": null,
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "fur_gloves",
+      "item_id": "fur_gloves",
+      "name": "방한 장갑",
+      "kind": "armor",
+      "slot": "gloves",
+      "tier": 2,
+      "base_stats": {
+        "attack": 0,
+        "defense": 3,
+        "max_durability": 90,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "coldguard"
+      ],
+      "source_monster_id": null,
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "fur_boots",
+      "item_id": "fur_boots",
+      "name": "방한 장화",
+      "kind": "armor",
+      "slot": "boots",
+      "tier": 2,
+      "base_stats": {
+        "attack": 0,
+        "defense": 4,
+        "max_durability": 100,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "coldguard"
+      ],
+      "source_monster_id": null,
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "shell_chest",
+      "item_id": "shell_chest",
+      "name": "갑각 보강 상의",
+      "kind": "armor",
+      "slot": "chest",
+      "tier": 2,
+      "base_stats": {
+        "attack": 0,
+        "defense": 15,
+        "max_durability": 150,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "hard"
+      ],
+      "source_monster_id": null,
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "heat_cape",
+      "item_id": "heat_cape",
+      "name": "내열 망토",
+      "kind": "armor",
+      "slot": "cape",
+      "tier": 3,
+      "base_stats": {
+        "attack": 0,
+        "defense": 5,
+        "max_durability": 140,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "heatguard"
+      ],
+      "source_monster_id": null,
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "alpine_chest",
+      "item_id": "alpine_chest",
+      "name": "설산 방한 상의",
+      "kind": "armor",
+      "slot": "chest",
+      "tier": 3,
+      "base_stats": {
+        "attack": 0,
+        "defense": 18,
+        "max_durability": 160,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "coldguard"
+      ],
+      "source_monster_id": null,
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "small_bag",
+      "item_id": "small_bag",
+      "name": "작은 가죽 가방",
+      "kind": "bag",
+      "slot": "bag",
+      "tier": 1,
+      "base_stats": {
+        "attack": 0,
+        "defense": 0,
+        "max_durability": 80,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [],
+      "source_monster_id": null,
+      "repair_limit": 3,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "inventory_slots_bonus": 4,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "large_bag",
+      "item_id": "large_bag",
+      "name": "대형 운반 가방",
+      "kind": "bag",
+      "slot": "bag",
+      "tier": 1,
+      "base_stats": {
+        "attack": 0,
+        "defense": 0,
+        "max_durability": 130,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [],
+      "source_monster_id": null,
+      "repair_limit": 3,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "inventory_slots_bonus": 8,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "waterskin",
+      "item_id": "waterskin",
+      "name": "가죽 물통",
+      "kind": "utility",
+      "slot": "utility",
+      "tier": 2,
+      "base_stats": {
+        "attack": 0,
+        "defense": 0,
+        "max_durability": 80,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [],
+      "source_monster_id": null,
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "water_service_capacity": 6,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "hoe",
+      "item_id": "hoe",
+      "name": "기초 괭이",
+      "kind": "utility",
+      "slot": "utility",
+      "tier": 1,
+      "base_stats": {
+        "attack": 0,
+        "defense": 0,
+        "max_durability": 80,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [],
+      "source_monster_id": null,
+      "repair_limit": 3,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "fishing_rod",
+      "item_id": "fishing_rod",
+      "name": "초급 낚싯대",
+      "kind": "utility",
+      "slot": "utility",
+      "tier": 1,
+      "base_stats": {
+        "attack": 0,
+        "defense": 0,
+        "max_durability": 80,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [],
+      "source_monster_id": null,
+      "repair_limit": 3,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "better_rod",
+      "item_id": "better_rod",
+      "name": "고급 낚싯대",
+      "kind": "utility",
+      "slot": "utility",
+      "tier": 1,
+      "base_stats": {
+        "attack": 0,
+        "defense": 0,
+        "max_durability": 80,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [],
+      "source_monster_id": null,
+      "repair_limit": 3,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_shore_grazer_spear",
+      "item_id": "gear_shore_grazer_spear",
+      "name": "해변풀등수 창",
+      "kind": "spear",
+      "slot": "weapon",
+      "tier": 0,
+      "base_stats": {
+        "attack": 14,
+        "defense": 0,
+        "max_durability": 65,
+        "attack_interval_seconds": 1.2,
+        "attack_stamina": 9,
+        "reach_m": 2.7,
+        "crit_chance_pct": 5,
+        "crit_multiplier": 1.5,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "steady"
+      ],
+      "source_monster_id": "shore_grazer",
+      "repair_limit": 3,
+      "quality_multiplier_allowed": true,
+      "block_reduction_pct": 0,
+      "hands_required": 2,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_shore_grazer_chest",
+      "item_id": "gear_shore_grazer_chest",
+      "name": "해변풀등수 상의",
+      "kind": "armor",
+      "slot": "chest",
+      "tier": 0,
+      "base_stats": {
+        "attack": 0,
+        "defense": 3,
+        "max_durability": 65,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "durable"
+      ],
+      "source_monster_id": "shore_grazer",
+      "repair_limit": 3,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_shell_crab_shield",
+      "item_id": "gear_shell_crab_shield",
+      "name": "조개등게 방패",
+      "kind": "shield",
+      "slot": "offhand",
+      "tier": 0,
+      "base_stats": {
+        "attack": 0,
+        "defense": 4,
+        "max_durability": 65,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "block"
+      ],
+      "source_monster_id": "shell_crab",
+      "repair_limit": 3,
+      "quality_multiplier_allowed": true,
+      "block_reduction_pct": 45,
+      "hands_required": 1,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_shell_crab_gloves",
+      "item_id": "gear_shell_crab_gloves",
+      "name": "조개등게 장갑",
+      "kind": "armor",
+      "slot": "gloves",
+      "tier": 0,
+      "base_stats": {
+        "attack": 0,
+        "defense": 1,
+        "max_durability": 65,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "hard"
+      ],
+      "source_monster_id": "shell_crab",
+      "repair_limit": 3,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_tide_boar_spear",
+      "item_id": "gear_tide_boar_spear",
+      "name": "모래엄니수 창",
+      "kind": "spear",
+      "slot": "weapon",
+      "tier": 0,
+      "base_stats": {
+        "attack": 14,
+        "defense": 0,
+        "max_durability": 65,
+        "attack_interval_seconds": 1.2,
+        "attack_stamina": 9,
+        "reach_m": 2.7,
+        "crit_chance_pct": 5,
+        "crit_multiplier": 1.5,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "pierce"
+      ],
+      "source_monster_id": "tide_boar",
+      "repair_limit": 3,
+      "quality_multiplier_allowed": true,
+      "block_reduction_pct": 0,
+      "hands_required": 2,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_tide_boar_boots",
+      "item_id": "gear_tide_boar_boots",
+      "name": "모래엄니수 장화",
+      "kind": "armor",
+      "slot": "boots",
+      "tier": 0,
+      "base_stats": {
+        "attack": 0,
+        "defense": 1,
+        "max_durability": 65,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "light"
+      ],
+      "source_monster_id": "tide_boar",
+      "repair_limit": 3,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_grass_grazer_bow",
+      "item_id": "gear_grass_grazer_bow",
+      "name": "풀등소수 활",
+      "kind": "bow",
+      "slot": "weapon",
+      "tier": 1,
+      "base_stats": {
+        "attack": 22,
+        "defense": 0,
+        "max_durability": 105,
+        "attack_interval_seconds": 1.3,
+        "attack_stamina": 10,
+        "reach_m": 10,
+        "crit_chance_pct": 5,
+        "crit_multiplier": 1.5,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "steady"
+      ],
+      "source_monster_id": "grass_grazer",
+      "repair_limit": 3,
+      "quality_multiplier_allowed": true,
+      "block_reduction_pct": 0,
+      "hands_required": 2,
+      "ammo_item_id": "bone_arrow",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_grass_grazer_chest",
+      "item_id": "gear_grass_grazer_chest",
+      "name": "풀등소수 상의",
+      "kind": "armor",
+      "slot": "chest",
+      "tier": 1,
+      "base_stats": {
+        "attack": 0,
+        "defense": 7,
+        "max_durability": 105,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "durable"
+      ],
+      "source_monster_id": "grass_grazer",
+      "repair_limit": 3,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_reed_raptor_sword",
+      "item_id": "gear_reed_raptor_sword",
+      "name": "갈기추격수 도검",
+      "kind": "sword",
+      "slot": "weapon",
+      "tier": 1,
+      "base_stats": {
+        "attack": 20,
+        "defense": 0,
+        "max_durability": 105,
+        "attack_interval_seconds": 1.0,
+        "attack_stamina": 10,
+        "reach_m": 1.7,
+        "crit_chance_pct": 5,
+        "crit_multiplier": 1.5,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "light"
+      ],
+      "source_monster_id": "reed_raptor",
+      "repair_limit": 3,
+      "quality_multiplier_allowed": true,
+      "block_reduction_pct": 0,
+      "hands_required": 1,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_reed_raptor_boots",
+      "item_id": "gear_reed_raptor_boots",
+      "name": "갈기추격수 장화",
+      "kind": "armor",
+      "slot": "boots",
+      "tier": 1,
+      "base_stats": {
+        "attack": 0,
+        "defense": 3,
+        "max_durability": 105,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "light"
+      ],
+      "source_monster_id": "reed_raptor",
+      "repair_limit": 3,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_meadow_horn_spear",
+      "item_id": "gear_meadow_horn_spear",
+      "name": "초원뿔대장 창",
+      "kind": "spear",
+      "slot": "weapon",
+      "tier": 1,
+      "base_stats": {
+        "attack": 24,
+        "defense": 0,
+        "max_durability": 105,
+        "attack_interval_seconds": 1.2,
+        "attack_stamina": 10,
+        "reach_m": 2.7,
+        "crit_chance_pct": 5,
+        "crit_multiplier": 1.5,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "pierce"
+      ],
+      "source_monster_id": "meadow_horn",
+      "repair_limit": 3,
+      "quality_multiplier_allowed": true,
+      "block_reduction_pct": 0,
+      "hands_required": 2,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_meadow_horn_chest",
+      "item_id": "gear_meadow_horn_chest",
+      "name": "초원뿔대장 상의",
+      "kind": "armor",
+      "slot": "chest",
+      "tier": 1,
+      "base_stats": {
+        "attack": 0,
+        "defense": 7,
+        "max_durability": 105,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "hard"
+      ],
+      "source_monster_id": "meadow_horn",
+      "repair_limit": 3,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_stonejaw_spear",
+      "item_id": "gear_stonejaw_spear",
+      "name": "돌턱멧수 창",
+      "kind": "spear",
+      "slot": "weapon",
+      "tier": 1,
+      "base_stats": {
+        "attack": 24,
+        "defense": 0,
+        "max_durability": 105,
+        "attack_interval_seconds": 1.2,
+        "attack_stamina": 10,
+        "reach_m": 2.7,
+        "crit_chance_pct": 5,
+        "crit_multiplier": 1.5,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "durable"
+      ],
+      "source_monster_id": "stonejaw",
+      "repair_limit": 3,
+      "quality_multiplier_allowed": true,
+      "block_reduction_pct": 0,
+      "hands_required": 2,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_stonejaw_chest",
+      "item_id": "gear_stonejaw_chest",
+      "name": "돌턱멧수 상의",
+      "kind": "armor",
+      "slot": "chest",
+      "tier": 1,
+      "base_stats": {
+        "attack": 0,
+        "defense": 7,
+        "max_durability": 105,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "durable"
+      ],
+      "source_monster_id": "stonejaw",
+      "repair_limit": 3,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_moss_turtle_shield",
+      "item_id": "gear_moss_turtle_shield",
+      "name": "이끼등거북 방패",
+      "kind": "shield",
+      "slot": "offhand",
+      "tier": 1,
+      "base_stats": {
+        "attack": 0,
+        "defense": 7,
+        "max_durability": 105,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "block"
+      ],
+      "source_monster_id": "moss_turtle",
+      "repair_limit": 3,
+      "quality_multiplier_allowed": true,
+      "block_reduction_pct": 45,
+      "hands_required": 1,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_moss_turtle_gloves",
+      "item_id": "gear_moss_turtle_gloves",
+      "name": "이끼등거북 장갑",
+      "kind": "armor",
+      "slot": "gloves",
+      "tier": 1,
+      "base_stats": {
+        "attack": 0,
+        "defense": 3,
+        "max_durability": 105,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "hard"
+      ],
+      "source_monster_id": "moss_turtle",
+      "repair_limit": 3,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_forest_fang_sword",
+      "item_id": "gear_forest_fang_sword",
+      "name": "숲갈기 도검",
+      "kind": "sword",
+      "slot": "weapon",
+      "tier": 1,
+      "base_stats": {
+        "attack": 20,
+        "defense": 0,
+        "max_durability": 105,
+        "attack_interval_seconds": 1.0,
+        "attack_stamina": 10,
+        "reach_m": 1.7,
+        "crit_chance_pct": 5,
+        "crit_multiplier": 1.5,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "bleed"
+      ],
+      "source_monster_id": "forest_fang",
+      "repair_limit": 3,
+      "quality_multiplier_allowed": true,
+      "block_reduction_pct": 0,
+      "hands_required": 1,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_forest_fang_boots",
+      "item_id": "gear_forest_fang_boots",
+      "name": "숲갈기 장화",
+      "kind": "armor",
+      "slot": "boots",
+      "tier": 1,
+      "base_stats": {
+        "attack": 0,
+        "defense": 3,
+        "max_durability": 105,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "light"
+      ],
+      "source_monster_id": "forest_fang",
+      "repair_limit": 3,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_poison_sac_spear",
+      "item_id": "gear_poison_sac_spear",
+      "name": "갈대독낭수 창",
+      "kind": "spear",
+      "slot": "weapon",
+      "tier": 2,
+      "base_stats": {
+        "attack": 38,
+        "defense": 0,
+        "max_durability": 140,
+        "attack_interval_seconds": 1.2,
+        "attack_stamina": 11,
+        "reach_m": 2.7,
+        "crit_chance_pct": 5,
+        "crit_multiplier": 1.5,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "toxic"
+      ],
+      "source_monster_id": "poison_sac",
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "block_reduction_pct": 0,
+      "hands_required": 2,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_poison_sac_gloves",
+      "item_id": "gear_poison_sac_gloves",
+      "name": "갈대독낭수 장갑",
+      "kind": "armor",
+      "slot": "gloves",
+      "tier": 2,
+      "base_stats": {
+        "attack": 0,
+        "defense": 5,
+        "max_durability": 140,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "poison_guard"
+      ],
+      "source_monster_id": "poison_sac",
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_mudscale_bow",
+      "item_id": "gear_mudscale_bow",
+      "name": "진흙비늘수 활",
+      "kind": "bow",
+      "slot": "weapon",
+      "tier": 2,
+      "base_stats": {
+        "attack": 34,
+        "defense": 0,
+        "max_durability": 140,
+        "attack_interval_seconds": 1.3,
+        "attack_stamina": 11,
+        "reach_m": 10,
+        "crit_chance_pct": 5,
+        "crit_multiplier": 1.5,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "steady"
+      ],
+      "source_monster_id": "mudscale",
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "block_reduction_pct": 0,
+      "hands_required": 2,
+      "ammo_item_id": "bone_arrow",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_mudscale_boots",
+      "item_id": "gear_mudscale_boots",
+      "name": "진흙비늘수 장화",
+      "kind": "armor",
+      "slot": "boots",
+      "tier": 2,
+      "base_stats": {
+        "attack": 0,
+        "defense": 5,
+        "max_durability": 140,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "wetguard"
+      ],
+      "source_monster_id": "mudscale",
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_marsh_carapace_shield",
+      "item_id": "gear_marsh_carapace_shield",
+      "name": "늪갑각수 방패",
+      "kind": "shield",
+      "slot": "offhand",
+      "tier": 2,
+      "base_stats": {
+        "attack": 0,
+        "defense": 11,
+        "max_durability": 140,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "block"
+      ],
+      "source_monster_id": "marsh_carapace",
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "block_reduction_pct": 45,
+      "hands_required": 1,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_marsh_carapace_chest",
+      "item_id": "gear_marsh_carapace_chest",
+      "name": "늪갑각수 상의",
+      "kind": "armor",
+      "slot": "chest",
+      "tier": 2,
+      "base_stats": {
+        "attack": 0,
+        "defense": 12,
+        "max_durability": 140,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "poison_guard"
+      ],
+      "source_monster_id": "marsh_carapace",
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_sand_jaw_sword",
+      "item_id": "gear_sand_jaw_sword",
+      "name": "모래턱수 도검",
+      "kind": "sword",
+      "slot": "weapon",
+      "tier": 2,
+      "base_stats": {
+        "attack": 32,
+        "defense": 0,
+        "max_durability": 140,
+        "attack_interval_seconds": 1.0,
+        "attack_stamina": 11,
+        "reach_m": 1.7,
+        "crit_chance_pct": 5,
+        "crit_multiplier": 1.5,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "pierce"
+      ],
+      "source_monster_id": "sand_jaw",
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "block_reduction_pct": 0,
+      "hands_required": 1,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_sand_jaw_boots",
+      "item_id": "gear_sand_jaw_boots",
+      "name": "모래턱수 장화",
+      "kind": "armor",
+      "slot": "boots",
+      "tier": 2,
+      "base_stats": {
+        "attack": 0,
+        "defense": 5,
+        "max_durability": 140,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "heatguard"
+      ],
+      "source_monster_id": "sand_jaw",
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_cliff_runner_bow",
+      "item_id": "gear_cliff_runner_bow",
+      "name": "절벽달림수 활",
+      "kind": "bow",
+      "slot": "weapon",
+      "tier": 2,
+      "base_stats": {
+        "attack": 34,
+        "defense": 0,
+        "max_durability": 140,
+        "attack_interval_seconds": 1.3,
+        "attack_stamina": 11,
+        "reach_m": 10,
+        "crit_chance_pct": 5,
+        "crit_multiplier": 1.5,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "light"
+      ],
+      "source_monster_id": "cliff_runner",
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "block_reduction_pct": 0,
+      "hands_required": 2,
+      "ammo_item_id": "bone_arrow",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_cliff_runner_gloves",
+      "item_id": "gear_cliff_runner_gloves",
+      "name": "절벽달림수 장갑",
+      "kind": "armor",
+      "slot": "gloves",
+      "tier": 2,
+      "base_stats": {
+        "attack": 0,
+        "defense": 5,
+        "max_durability": 140,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "gather"
+      ],
+      "source_monster_id": "cliff_runner",
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_ironhorn_spear",
+      "item_id": "gear_ironhorn_spear",
+      "name": "철각수 창",
+      "kind": "spear",
+      "slot": "weapon",
+      "tier": 2,
+      "base_stats": {
+        "attack": 38,
+        "defense": 0,
+        "max_durability": 140,
+        "attack_interval_seconds": 1.2,
+        "attack_stamina": 11,
+        "reach_m": 2.7,
+        "crit_chance_pct": 5,
+        "crit_multiplier": 1.5,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "hard"
+      ],
+      "source_monster_id": "ironhorn",
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "block_reduction_pct": 0,
+      "hands_required": 2,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_ironhorn_chest",
+      "item_id": "gear_ironhorn_chest",
+      "name": "철각수 상의",
+      "kind": "armor",
+      "slot": "chest",
+      "tier": 2,
+      "base_stats": {
+        "attack": 0,
+        "defense": 12,
+        "max_durability": 140,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "hard"
+      ],
+      "source_monster_id": "ironhorn",
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_snow_deer_bow",
+      "item_id": "gear_snow_deer_bow",
+      "name": "서리뿔사슴 활",
+      "kind": "bow",
+      "slot": "weapon",
+      "tier": 2,
+      "base_stats": {
+        "attack": 34,
+        "defense": 0,
+        "max_durability": 140,
+        "attack_interval_seconds": 1.3,
+        "attack_stamina": 11,
+        "reach_m": 10,
+        "crit_chance_pct": 5,
+        "crit_multiplier": 1.5,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "steady"
+      ],
+      "source_monster_id": "snow_deer",
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "block_reduction_pct": 0,
+      "hands_required": 2,
+      "ammo_item_id": "bone_arrow",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_snow_deer_chest",
+      "item_id": "gear_snow_deer_chest",
+      "name": "서리뿔사슴 상의",
+      "kind": "armor",
+      "slot": "chest",
+      "tier": 2,
+      "base_stats": {
+        "attack": 0,
+        "defense": 12,
+        "max_durability": 140,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "coldguard"
+      ],
+      "source_monster_id": "snow_deer",
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_white_wolf_sword",
+      "item_id": "gear_white_wolf_sword",
+      "name": "흰갈기늑수 도검",
+      "kind": "sword",
+      "slot": "weapon",
+      "tier": 2,
+      "base_stats": {
+        "attack": 32,
+        "defense": 0,
+        "max_durability": 140,
+        "attack_interval_seconds": 1.0,
+        "attack_stamina": 11,
+        "reach_m": 1.7,
+        "crit_chance_pct": 5,
+        "crit_multiplier": 1.5,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "light"
+      ],
+      "source_monster_id": "white_wolf",
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "block_reduction_pct": 0,
+      "hands_required": 1,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_white_wolf_gloves",
+      "item_id": "gear_white_wolf_gloves",
+      "name": "흰갈기늑수 장갑",
+      "kind": "armor",
+      "slot": "gloves",
+      "tier": 2,
+      "base_stats": {
+        "attack": 0,
+        "defense": 5,
+        "max_durability": 140,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "coldguard"
+      ],
+      "source_monster_id": "white_wolf",
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_frost_bear_shield",
+      "item_id": "gear_frost_bear_shield",
+      "name": "서리등곰수 방패",
+      "kind": "shield",
+      "slot": "offhand",
+      "tier": 2,
+      "base_stats": {
+        "attack": 0,
+        "defense": 11,
+        "max_durability": 140,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "block"
+      ],
+      "source_monster_id": "frost_bear",
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "block_reduction_pct": 45,
+      "hands_required": 1,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_frost_bear_boots",
+      "item_id": "gear_frost_bear_boots",
+      "name": "서리등곰수 장화",
+      "kind": "armor",
+      "slot": "boots",
+      "tier": 2,
+      "base_stats": {
+        "attack": 0,
+        "defense": 5,
+        "max_durability": 140,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "coldguard"
+      ],
+      "source_monster_id": "frost_bear",
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_vine_leaper_bow",
+      "item_id": "gear_vine_leaper_bow",
+      "name": "덩굴도약수 활",
+      "kind": "bow",
+      "slot": "weapon",
+      "tier": 2,
+      "base_stats": {
+        "attack": 34,
+        "defense": 0,
+        "max_durability": 140,
+        "attack_interval_seconds": 1.3,
+        "attack_stamina": 11,
+        "reach_m": 10,
+        "crit_chance_pct": 5,
+        "crit_multiplier": 1.5,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "light"
+      ],
+      "source_monster_id": "vine_leaper",
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "block_reduction_pct": 0,
+      "hands_required": 2,
+      "ammo_item_id": "bone_arrow",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_vine_leaper_boots",
+      "item_id": "gear_vine_leaper_boots",
+      "name": "덩굴도약수 장화",
+      "kind": "armor",
+      "slot": "boots",
+      "tier": 2,
+      "base_stats": {
+        "attack": 0,
+        "defense": 5,
+        "max_durability": 140,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "wetguard"
+      ],
+      "source_monster_id": "vine_leaper",
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_jade_scale_sword",
+      "item_id": "gear_jade_scale_sword",
+      "name": "비취비늘수 도검",
+      "kind": "sword",
+      "slot": "weapon",
+      "tier": 2,
+      "base_stats": {
+        "attack": 32,
+        "defense": 0,
+        "max_durability": 140,
+        "attack_interval_seconds": 1.0,
+        "attack_stamina": 11,
+        "reach_m": 1.7,
+        "crit_chance_pct": 5,
+        "crit_multiplier": 1.5,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "durable"
+      ],
+      "source_monster_id": "jade_scale",
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "block_reduction_pct": 0,
+      "hands_required": 1,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_jade_scale_chest",
+      "item_id": "gear_jade_scale_chest",
+      "name": "비취비늘수 상의",
+      "kind": "armor",
+      "slot": "chest",
+      "tier": 2,
+      "base_stats": {
+        "attack": 0,
+        "defense": 12,
+        "max_durability": 140,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "poison_guard"
+      ],
+      "source_monster_id": "jade_scale",
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_green_colossus_shield",
+      "item_id": "gear_green_colossus_shield",
+      "name": "녹음거수 방패",
+      "kind": "shield",
+      "slot": "offhand",
+      "tier": 2,
+      "base_stats": {
+        "attack": 0,
+        "defense": 11,
+        "max_durability": 140,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "block"
+      ],
+      "source_monster_id": "green_colossus",
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "block_reduction_pct": 45,
+      "hands_required": 1,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_green_colossus_chest",
+      "item_id": "gear_green_colossus_chest",
+      "name": "녹음거수 상의",
+      "kind": "armor",
+      "slot": "chest",
+      "tier": 2,
+      "base_stats": {
+        "attack": 0,
+        "defense": 12,
+        "max_durability": 140,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "regen"
+      ],
+      "source_monster_id": "green_colossus",
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_ice_shell_shield",
+      "item_id": "gear_ice_shell_shield",
+      "name": "빙갑각수 방패",
+      "kind": "shield",
+      "slot": "offhand",
+      "tier": 3,
+      "base_stats": {
+        "attack": 0,
+        "defense": 15,
+        "max_durability": 175,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "block"
+      ],
+      "source_monster_id": "ice_shell",
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "block_reduction_pct": 45,
+      "hands_required": 1,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_ice_shell_chest",
+      "item_id": "gear_ice_shell_chest",
+      "name": "빙갑각수 상의",
+      "kind": "armor",
+      "slot": "chest",
+      "tier": 3,
+      "base_stats": {
+        "attack": 0,
+        "defense": 18,
+        "max_durability": 175,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "coldguard"
+      ],
+      "source_monster_id": "ice_shell",
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_crystal_antler_spear",
+      "item_id": "gear_crystal_antler_spear",
+      "name": "결정뿔수 창",
+      "kind": "spear",
+      "slot": "weapon",
+      "tier": 3,
+      "base_stats": {
+        "attack": 56,
+        "defense": 0,
+        "max_durability": 175,
+        "attack_interval_seconds": 1.2,
+        "attack_stamina": 12,
+        "reach_m": 2.7,
+        "crit_chance_pct": 5,
+        "crit_multiplier": 1.5,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "frost"
+      ],
+      "source_monster_id": "crystal_antler",
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "block_reduction_pct": 0,
+      "hands_required": 2,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_crystal_antler_gloves",
+      "item_id": "gear_crystal_antler_gloves",
+      "name": "결정뿔수 장갑",
+      "kind": "armor",
+      "slot": "gloves",
+      "tier": 3,
+      "base_stats": {
+        "attack": 0,
+        "defense": 7,
+        "max_durability": 175,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "coldguard"
+      ],
+      "source_monster_id": "crystal_antler",
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_glacial_giant_spear",
+      "item_id": "gear_glacial_giant_spear",
+      "name": "빙갑거수 창",
+      "kind": "spear",
+      "slot": "weapon",
+      "tier": 3,
+      "base_stats": {
+        "attack": 56,
+        "defense": 0,
+        "max_durability": 175,
+        "attack_interval_seconds": 1.2,
+        "attack_stamina": 12,
+        "reach_m": 2.7,
+        "crit_chance_pct": 5,
+        "crit_multiplier": 1.5,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "frost"
+      ],
+      "source_monster_id": "glacial_giant",
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "block_reduction_pct": 0,
+      "hands_required": 2,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_glacial_giant_chest",
+      "item_id": "gear_glacial_giant_chest",
+      "name": "빙갑거수 상의",
+      "kind": "armor",
+      "slot": "chest",
+      "tier": 3,
+      "base_stats": {
+        "attack": 0,
+        "defense": 18,
+        "max_durability": 175,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "coldguard"
+      ],
+      "source_monster_id": "glacial_giant",
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_ember_hide_sword",
+      "item_id": "gear_ember_hide_sword",
+      "name": "잿빛내열수 도검",
+      "kind": "sword",
+      "slot": "weapon",
+      "tier": 3,
+      "base_stats": {
+        "attack": 48,
+        "defense": 0,
+        "max_durability": 175,
+        "attack_interval_seconds": 1.0,
+        "attack_stamina": 12,
+        "reach_m": 1.7,
+        "crit_chance_pct": 5,
+        "crit_multiplier": 1.5,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "heatguard"
+      ],
+      "source_monster_id": "ember_hide",
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "block_reduction_pct": 0,
+      "hands_required": 1,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_ember_hide_boots",
+      "item_id": "gear_ember_hide_boots",
+      "name": "잿빛내열수 장화",
+      "kind": "armor",
+      "slot": "boots",
+      "tier": 3,
+      "base_stats": {
+        "attack": 0,
+        "defense": 7,
+        "max_durability": 175,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "heatguard"
+      ],
+      "source_monster_id": "ember_hide",
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_lava_shell_shield",
+      "item_id": "gear_lava_shell_shield",
+      "name": "용암갑각수 방패",
+      "kind": "shield",
+      "slot": "offhand",
+      "tier": 3,
+      "base_stats": {
+        "attack": 0,
+        "defense": 15,
+        "max_durability": 175,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "block"
+      ],
+      "source_monster_id": "lava_shell",
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "block_reduction_pct": 45,
+      "hands_required": 1,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_lava_shell_chest",
+      "item_id": "gear_lava_shell_chest",
+      "name": "용암갑각수 상의",
+      "kind": "armor",
+      "slot": "chest",
+      "tier": 3,
+      "base_stats": {
+        "attack": 0,
+        "defense": 18,
+        "max_durability": 175,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "heatguard"
+      ],
+      "source_monster_id": "lava_shell",
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_volcanic_predator_spear",
+      "item_id": "gear_volcanic_predator_spear",
+      "name": "화산포식자 창",
+      "kind": "spear",
+      "slot": "weapon",
+      "tier": 3,
+      "base_stats": {
+        "attack": 56,
+        "defense": 0,
+        "max_durability": 175,
+        "attack_interval_seconds": 1.2,
+        "attack_stamina": 12,
+        "reach_m": 2.7,
+        "crit_chance_pct": 5,
+        "crit_multiplier": 1.5,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "heat_hit"
+      ],
+      "source_monster_id": "volcanic_predator",
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "block_reduction_pct": 0,
+      "hands_required": 2,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_volcanic_predator_gloves",
+      "item_id": "gear_volcanic_predator_gloves",
+      "name": "화산포식자 장갑",
+      "kind": "armor",
+      "slot": "gloves",
+      "tier": 3,
+      "base_stats": {
+        "attack": 0,
+        "defense": 7,
+        "max_durability": 175,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "heatguard"
+      ],
+      "source_monster_id": "volcanic_predator",
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_thunderwolf_sword",
+      "item_id": "gear_thunderwolf_sword",
+      "name": "뇌광늑수 도검",
+      "kind": "sword",
+      "slot": "weapon",
+      "tier": 3,
+      "base_stats": {
+        "attack": 48,
+        "defense": 0,
+        "max_durability": 175,
+        "attack_interval_seconds": 1.0,
+        "attack_stamina": 12,
+        "reach_m": 1.7,
+        "crit_chance_pct": 5,
+        "crit_multiplier": 1.5,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "shock"
+      ],
+      "source_monster_id": "thunderwolf",
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "block_reduction_pct": 0,
+      "hands_required": 1,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_thunderwolf_boots",
+      "item_id": "gear_thunderwolf_boots",
+      "name": "뇌광늑수 장화",
+      "kind": "armor",
+      "slot": "boots",
+      "tier": 3,
+      "base_stats": {
+        "attack": 0,
+        "defense": 7,
+        "max_durability": 175,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "shock_guard"
+      ],
+      "source_monster_id": "thunderwolf",
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_ruin_shell_shield",
+      "item_id": "gear_ruin_shell_shield",
+      "name": "유적갑각수 방패",
+      "kind": "shield",
+      "slot": "offhand",
+      "tier": 3,
+      "base_stats": {
+        "attack": 0,
+        "defense": 15,
+        "max_durability": 175,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "block"
+      ],
+      "source_monster_id": "ruin_shell",
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "block_reduction_pct": 45,
+      "hands_required": 1,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_ruin_shell_chest",
+      "item_id": "gear_ruin_shell_chest",
+      "name": "유적갑각수 상의",
+      "kind": "armor",
+      "slot": "chest",
+      "tier": 3,
+      "base_stats": {
+        "attack": 0,
+        "defense": 18,
+        "max_durability": 175,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "shock_guard"
+      ],
+      "source_monster_id": "ruin_shell",
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_boundary_warden_spear",
+      "item_id": "gear_boundary_warden_spear",
+      "name": "경계 수호체 창",
+      "kind": "spear",
+      "slot": "weapon",
+      "tier": 3,
+      "base_stats": {
+        "attack": 56,
+        "defense": 0,
+        "max_durability": 175,
+        "attack_interval_seconds": 1.2,
+        "attack_stamina": 12,
+        "reach_m": 2.7,
+        "crit_chance_pct": 5,
+        "crit_multiplier": 1.5,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "shock"
+      ],
+      "source_monster_id": "boundary_warden",
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "block_reduction_pct": 0,
+      "hands_required": 2,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "gear_boundary_warden_chest",
+      "item_id": "gear_boundary_warden_chest",
+      "name": "경계 수호체 상의",
+      "kind": "armor",
+      "slot": "chest",
+      "tier": 3,
+      "base_stats": {
+        "attack": 0,
+        "defense": 18,
+        "max_durability": 175,
+        "attack_interval_seconds": 0,
+        "attack_stamina": 0,
+        "reach_m": 0,
+        "crit_chance_pct": 0,
+        "crit_multiplier": 1,
+        "move_speed_penalty_pct": 0
+      },
+      "fixed_trait_ids": [
+        "shock_guard"
+      ],
+      "source_monster_id": "boundary_warden",
+      "repair_limit": 5,
+      "quality_multiplier_allowed": true,
+      "hands_required": 0,
+      "implementation_status": "not_implemented"
+    }
+  ]
+}
