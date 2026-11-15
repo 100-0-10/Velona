@@ -1,6 +1,9 @@
 import * as THREE from 'three';
 import type { WorldSnapshot } from '../types';
-import { boar, camp, explorer, label, material, palette, resource, rock, tree } from './models';
+import { boar, camp, explorer, label, resource, rock, tree } from './models';
+import { animateBoar } from './creature';
+import { updateExplorerVisual, disposeExplorerVisual } from './character';
+import { createTerrain, createGroundCover, instanceScenery, random } from './environment';
 
 export class WorldScene {
   private renderer: THREE.WebGLRenderer;
@@ -18,19 +21,22 @@ export class WorldScene {
   private cameraTarget = new THREE.Vector3(2, 0, 2);
   private flame: THREE.Object3D | undefined;
   private attackAt = -10;
+  private targetVector = new THREE.Vector3();
+  private cameraOffset = new THREE.Vector3(20, 25, 20);
 
   constructor(private container: HTMLElement) {
     this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
-    this.renderer.outputColorSpace = THREE.SRGBColorSpace; this.renderer.toneMapping = THREE.ACESFilmicToneMapping; this.renderer.toneMappingExposure = 1.18;
-    this.renderer.shadowMap.enabled = true; this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    this.renderer.outputColorSpace = THREE.SRGBColorSpace; this.renderer.toneMapping = THREE.ACESFilmicToneMapping; this.renderer.toneMappingExposure = 1.05;
+    this.renderer.shadowMap.enabled = true; this.renderer.shadowMap.type = THREE.PCFShadowMap;
     this.renderer.domElement.setAttribute('aria-label', '새벽 야영지 3D 게임 화면'); this.renderer.domElement.dataset.testid = 'world-canvas'; container.append(this.renderer.domElement);
-    this.scene.background = new THREE.Color(0xb9cbb0); this.scene.fog = new THREE.Fog(0xb9cbb0, 38, 75);
-    this.scene.add(new THREE.HemisphereLight(0xfff2d5, 0x516348, 2.3));
-    const sun = new THREE.DirectionalLight(0xffe1b0, 3); sun.position.set(-12, 25, 10); sun.castShadow = true; sun.shadow.mapSize.set(1024, 1024); sun.shadow.camera.left = -28; sun.shadow.camera.right = 28; sun.shadow.camera.top = 28; sun.shadow.camera.bottom = -28; sun.shadow.bias = -.0008; this.scene.add(sun);
-    const ground = new THREE.Mesh(new THREE.PlaneGeometry(58, 58), material(palette.grass)); ground.rotation.x = -Math.PI / 2; ground.receiveShadow = true; this.scene.add(ground);
-    const clearing = new THREE.Mesh(new THREE.CircleGeometry(6.8, 64), material(palette.earth)); clearing.rotation.x = -Math.PI / 2; clearing.position.y = .015; clearing.receiveShadow = true; this.scene.add(clearing);
-    const path = new THREE.Mesh(new THREE.PlaneGeometry(3, 24), material(0xb0a67d)); path.rotation.x = -Math.PI / 2; path.rotation.z = -.7; path.position.set(7, .012, 5); path.receiveShadow = true; this.scene.add(path);
+    this.scene.background = new THREE.Color(0xa7b9ab); this.scene.fog = new THREE.Fog(0xa7b9ab, 43, 78);
+    this.scene.add(new THREE.HemisphereLight(0xe5eddc, 0x484733, 1.65));
+    const sun = new THREE.DirectionalLight(0xffe0ae, 2.5); sun.position.set(-14, 24, 8); sun.castShadow = true;
+    const shadowSize = window.innerWidth < 700 ? 1024 : 2048; sun.shadow.mapSize.set(shadowSize, shadowSize);
+    sun.shadow.camera.left = -28; sun.shadow.camera.right = 28; sun.shadow.camera.top = 28; sun.shadow.camera.bottom = -28; sun.shadow.normalBias = .035; sun.shadow.bias = -.00015; this.scene.add(sun);
+    const rim = new THREE.DirectionalLight(0xc8dfda, .5); rim.position.set(10, 10, -15); this.scene.add(rim);
+    this.scene.add(createTerrain());
     const base = camp(); this.flame = base.getObjectByName('flame'); this.scene.add(base);
     this.addScenery();
     this.danger.rotation.x = -Math.PI / 2; this.danger.position.y = .05; this.danger.visible = false; this.scene.add(this.danger);
@@ -39,25 +45,32 @@ export class WorldScene {
   }
 
   private addScenery() {
-    // Fixed seed-like arithmetic keeps scenery identical across clients.
-    for (let n = 0; n < 28; n++) {
-      const a = n * 2.39996; const radius = 19 + n % 4 * 2.7;
-      const t = tree(3.4 + n % 4 * .5); t.position.set(Math.cos(a) * radius, 0, Math.sin(a) * radius); t.rotation.y = a; this.scene.add(t);
+    const forest = new THREE.Group();
+    // Authored silhouettes are repeated as template instances, rather than
+    // multiplying draw calls for each tree's branches and foliage.
+    for (let n = 0; n < 52; n++) {
+      const a = n * 2.39996, foreground = Math.cos(a) + Math.sin(a) > .4;
+      const radius = (foreground ? 26 : 19) + random(n + 1) * 9;
+      const t = tree((foreground ? 2.8 : 3.8) + random(n + 7) * 1.8, n % 3); t.position.set(Math.cos(a) * radius, 0, Math.sin(a) * radius); t.rotation.y = a; forest.add(t);
     }
-    for (let n = 0; n < 15; n++) { const r = rock(.35 + n % 3 * .18); r.position.set(Math.sin(n * 4.3) * 22, .15, Math.cos(n * 2.7) * 22); if (r.position.length() > 8) this.scene.add(r); }
-    const grassGeometry = new THREE.ConeGeometry(.08, .35, 3); const grass = new THREE.InstancedMesh(grassGeometry, material(0x99ac6d), 380); const dummy = new THREE.Object3D();
-    for (let n = 0; n < 380; n++) { const x = Math.sin(n * 2.39) * (8 + n % 19); const z = Math.cos(n * 3.71) * (8 + n % 17); dummy.position.set(x, Math.hypot(x, z) < 7 ? -.6 : .15, z); dummy.rotation.y = n; dummy.updateMatrix(); grass.setMatrixAt(n, dummy.matrix); } this.scene.add(grass);
+    for (let n = 0; n < 34; n++) { const r = rock(.3 + n % 4 * .2); r.position.set(Math.sin(n * 4.3) * 24, 0, Math.cos(n * 2.7) * 24); r.rotation.y = n; if (r.position.length() > 9) forest.add(r); }
+    this.scene.add(instanceScenery(forest), createGroundCover());
     const border = new THREE.LineLoop(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(-24,.03,-24),new THREE.Vector3(24,.03,-24),new THREE.Vector3(24,.03,24),new THREE.Vector3(-24,.03,24)]), new THREE.LineBasicMaterial({ color: 0x667c52, transparent: true, opacity: .6 })); this.scene.add(border);
   }
 
   setSnapshot(snapshot: WorldSnapshot) {
     this.snapshot = snapshot;
     const activePlayers = new Set(snapshot.players.map(p => p.id));
-    for (const [id, group] of this.players) if (!activePlayers.has(id)) { this.disposeObject(group); this.players.delete(id); }
+    for (const [id, group] of this.players) if (!activePlayers.has(id)) { disposeExplorerVisual(group.getObjectByName('body') as THREE.Group); this.disposeObject(group); this.players.delete(id); }
     for (const p of snapshot.players) if (!this.players.has(p.id)) { const g = explorer(p.color, p.name, p.id === snapshot.selfPlayerId); g.position.set(p.x, 0, p.z); this.players.set(p.id, g); this.scene.add(g); }
     for (const n of snapshot.nodes) {
-      if (!this.nodes.has(n.id)) { const g = resource(n.itemId); g.position.set(n.x, 0, n.z); const tag = label(n.name); tag.name = 'nodeLabel'; tag.position.y = n.itemId === 'log' || n.itemId === 'bark' ? 4.3 : 1.8; g.add(tag); this.nodes.set(n.id, g); this.scene.add(g); }
-      const group = this.nodes.get(n.id)!; group.scale.setScalar(n.available ? 1 : .2);
+      if (!this.nodes.has(n.id)) {
+        const g = resource(n.itemId); g.position.set(n.x, 0, n.z);
+        const crown = g.getObjectByName('canopy');
+        if (crown instanceof THREE.Mesh) { crown.material = (crown.material as THREE.MeshStandardMaterial).clone(); (crown.material as THREE.MeshStandardMaterial).transparent = true; }
+        const tag = label(n.name); tag.name = 'nodeLabel'; tag.position.y = n.itemId === 'log' || n.itemId === 'bark' ? 4 : 1.6; g.add(tag); this.nodes.set(n.id, g); this.scene.add(g);
+      }
+      const group = this.nodes.get(n.id)!; group.scale.setScalar(n.available || n.itemId === 'bark' || n.itemId === 'log' ? 1 : .35);
     }
     for (const m of snapshot.monsters) if (!this.monsters.has(m.id)) { const g = boar(); g.position.set(m.x, 0, m.z); this.monsters.set(m.id, g); this.scene.add(g); }
   }
@@ -66,7 +79,7 @@ export class WorldScene {
 
   private resize() {
     const width = Math.max(1, this.container.clientWidth), height = Math.max(1, this.container.clientHeight); const aspect = width / height;
-    const vertical = width < 700 ? 11 : 13; this.camera.left = -vertical * aspect; this.camera.right = vertical * aspect; this.camera.top = vertical; this.camera.bottom = -vertical; this.camera.updateProjectionMatrix(); this.renderer.setSize(width, height, false);
+    const vertical = width < 700 ? 9.5 : 10.5; this.camera.left = -vertical * aspect; this.camera.right = vertical * aspect; this.camera.top = vertical; this.camera.bottom = -vertical; this.camera.updateProjectionMatrix(); this.renderer.setSize(width, height, false);
   }
 
   private animate = () => {
@@ -76,28 +89,48 @@ export class WorldScene {
       for (const p of s.players) {
         const g = this.players.get(p.id)!; const dx = p.x - g.position.x, dz = p.z - g.position.z; const moving = Math.hypot(dx, dz) > .02;
         g.position.x += dx * alpha; g.position.z += dz * alpha;
-        const body = g.getObjectByName('body')!; if (moving) body.rotation.y = Math.atan2(dx, dz); body.rotation.z = p.isDowned ? Math.PI / 2 : 0; body.rotation.x = p.gatheringItemId && !moving ? .12 + Math.sin(this.elapsed * 7) * .06 : 0;
-        const left = g.getObjectByName('leftLeg')!, right = g.getObjectByName('rightLeg')!; left.rotation.x = moving ? Math.sin(this.elapsed * 12) * .45 : 0; right.rotation.x = -left.rotation.x;
-        if (p.id === s.selfPlayerId) { const weapon = g.getObjectByName('weapon')!; const age = this.elapsed - this.attackAt; weapon.rotation.x = age < .35 ? -Math.sin(age / .35 * Math.PI) * 1.1 : 0; }
+        const body = g.getObjectByName('body') as THREE.Group; if (moving) body.rotation.y = Math.atan2(dx, dz);
+        if (p.gatheringItemId && !moving) {
+          const job = p.id === s.selfPlayerId ? s.gathering : null;
+          const target = job?.sourceKind === 'node' ? s.nodes.find(n => n.id === job.sourceId) : job?.sourceKind === 'corpse' ? s.monsters.find(m => m.id === job.sourceId) : undefined;
+          if (target) body.rotation.y = Math.atan2(target.x - p.x, target.z - p.z);
+        }
+        updateExplorerVisual(body, { dt, elapsed: this.elapsed, moving, gathering: !!p.gatheringItemId, attackAge: p.id === s.selfPlayerId ? this.elapsed - this.attackAt : 10, downed: p.isDowned });
       }
       const self = s.players.find(p => p.id === s.selfPlayerId);
-      if (self) this.cameraTarget.lerp(new THREE.Vector3(self.x + 1, 0, self.z + 1), 1 - Math.exp(-dt * 3));
-      for (const n of s.nodes) { const g = this.nodes.get(n.id)!; const tag = g.getObjectByName('nodeLabel'); if (tag) tag.visible = n.available && !!self && Math.hypot(self.x - n.x, self.z - n.z) < 6; }
+      if (self) this.cameraTarget.lerp(this.targetVector.set(self.x + 1, 0, self.z + 1), 1 - Math.exp(-dt * 3));
+      for (const n of s.nodes) {
+        const g = this.nodes.get(n.id)!; const distance = self ? Math.hypot(self.x - n.x, self.z - n.z) : 100;
+        const tag = g.getObjectByName('nodeLabel'); if (tag) tag.visible = n.available && distance < 5;
+        const crown = g.getObjectByName('canopy');
+        if (crown instanceof THREE.Mesh) {
+          const mat = crown.material as THREE.MeshStandardMaterial;
+          const obscuresPlayer = !!self && distance < 3.2 && n.x + n.z > self.x + self.z - 1;
+          mat.opacity = THREE.MathUtils.lerp(mat.opacity, obscuresPlayer ? .26 : n.available ? 1 : .5, alpha);
+          mat.depthWrite = mat.opacity > .95;
+        }
+      }
       this.danger.visible = false;
       for (const m of s.monsters) {
         const g = this.monsters.get(m.id)!; const dx = m.x - g.position.x, dz = m.z - g.position.z; g.position.x += dx * alpha; g.position.z += dz * alpha;
         if (Math.hypot(dx, dz) > .02) g.rotation.y = Math.atan2(dx, dz); g.rotation.z = m.state === 'dead' ? Math.PI / 2 : 0; g.position.y = m.state === 'dead' ? .15 : 0;
+        animateBoar(g, this.elapsed, Math.hypot(dx, dz) > .025, m.state);
         if (m.state === 'telegraph') { this.danger.visible = true; this.danger.position.set(m.telegraphX ?? m.x, .05, m.telegraphZ ?? m.z); (this.danger.material as THREE.MeshBasicMaterial).opacity = .28 + Math.sin(this.elapsed * 13) * .1; }
       }
     }
     if (this.flame) { this.flame.scale.y = 1 + Math.sin(this.elapsed * 8) * .1; this.flame.rotation.y += dt; }
-    this.camera.position.copy(this.cameraTarget).add(new THREE.Vector3(20, 25, 20)); this.camera.lookAt(this.cameraTarget); this.renderer.render(this.scene, this.camera);
+    this.camera.position.copy(this.cameraTarget).add(this.cameraOffset); this.camera.lookAt(this.cameraTarget); this.renderer.render(this.scene, this.camera);
   };
 
-  getDiagnostics() { return { calls: this.renderer.info.render.calls, triangles: this.renderer.info.render.triangles, geometries: this.renderer.info.memory.geometries, textures: this.renderer.info.memory.textures, width: this.renderer.domElement.width, height: this.renderer.domElement.height, dpr: this.renderer.getPixelRatio(), players: this.players.size }; }
+  getDiagnostics() {
+    let charactersReady = 0, characterErrors = 0, characterTriangles = 0; const materials = new Set<THREE.Material>();
+    for (const p of this.players.values()) { const data = p.getObjectByName('body')!.userData; if (data.assetState === 'ready') charactersReady++; if (data.assetState === 'failed') characterErrors++; characterTriangles += data.assetTriangles ?? 0; }
+    this.scene.traverse(object => { if (object instanceof THREE.Mesh || object instanceof THREE.Sprite) for (const mat of Array.isArray(object.material) ? object.material : [object.material]) materials.add(mat); });
+    return { calls: this.renderer.info.render.calls, triangles: this.renderer.info.render.triangles, geometries: this.renderer.info.memory.geometries, textures: this.renderer.info.memory.textures, materials: materials.size, width: this.renderer.domElement.width, height: this.renderer.domElement.height, dpr: this.renderer.getPixelRatio(), players: this.players.size, charactersReady, characterErrors, characterTriangles, postPasses: 0, shadowLights: 1 };
+  }
 
   private disposeObject(object: THREE.Object3D) {
     object.removeFromParent(); object.traverse(child => { if (child instanceof THREE.Mesh || child instanceof THREE.Sprite || child instanceof THREE.Line) { if (child instanceof THREE.Mesh || child instanceof THREE.Line) child.geometry.dispose(); for (const mat of Array.isArray(child.material) ? child.material : [child.material]) { if ('map' in mat && mat.map instanceof THREE.Texture) mat.map.dispose(); mat.dispose(); } } });
   }
-  dispose() { cancelAnimationFrame(this.frame); this.observer.disconnect(); this.disposeObject(this.scene); this.renderer.dispose(); this.renderer.domElement.remove(); }
+  dispose() { cancelAnimationFrame(this.frame); this.observer.disconnect(); for (const p of this.players.values()) disposeExplorerVisual(p.getObjectByName('body') as THREE.Group); this.disposeObject(this.scene); this.renderer.dispose(); this.renderer.domElement.remove(); }
 }

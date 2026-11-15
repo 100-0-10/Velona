@@ -23,3 +23,6 @@
 .is-gathering .job-progress{bottom:240px}
 .skill-list{margin-top:20px;border-top:1px solid #b9c3a433;padding-top:14px}.skill-list h3{font-size:12px;margin:0 0 12px}.skill-list>div{display:grid;gap:4px;margin-bottom:13px}.skill-list strong{font-size:12px}.skill-list strong b{float:right;color:#d6c58d}.skill-list span{font-size:10px;color:#b5c1a6}
 @media(max-width:700px){.gather-panel{top:144px;right:16px;width:calc(100vw - 32px);max-height:calc(100dvh - 340px);padding:16px}.gather-progress{bottom:156px;width:calc(100vw - 32px);max-width:340px}.is-gathering .gather-panel{max-height:calc(100dvh - 440px)}.is-gathering .job-progress{bottom:280px}}
+
+/* Keep mobile goals compact so monster state never overlaps the objective. */
+@media(max-width:700px){.objective p,.objective-steps{display:none}.objective h2{margin-bottom:2px}.monster-status{top:218px}.side-panel~.monster-status{top:218px}}

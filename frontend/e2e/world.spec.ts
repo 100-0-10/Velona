@@ -14,6 +14,8 @@ async function joined(page: Page, name: string) {
   await page.getByTestId('join-world').click();
   await expect.poll(async () => (await state(page))?.status, { timeout: 20_000 }).toBe('connected');
   await expect(page.getByTestId('world-canvas')).toBeVisible();
+  await expect.poll(async () => (await state(page)).diagnostics?.charactersReady ?? 0, { timeout: 20_000 }).toBeGreaterThan(0);
+  expect((await state(page)).diagnostics?.characterErrors).toBe(0);
 }
 
 async function position(page: Page) {
@@ -39,7 +41,14 @@ async function walkTo(page: Page, target: { x: number; z: number }, radius = .5)
       const p = await position(page);
       if (p.isDowned) throw new Error('Explorer was downed while walking.');
       const dx = target.x - p.x; const dz = target.z - p.z;
-      if (Math.hypot(dx, dz) <= radius) return;
+      if (Math.hypot(dx, dz) <= radius) {
+        // Release actual keys and let the final input/snapshot roundtrip settle
+        // before interacting. Software-rendered frames can delay key handling.
+        await release(page); held.clear(); await page.waitForTimeout(180);
+        const settled = await position(page);
+        if (Math.hypot(target.x - settled.x, target.z - settled.z) <= radius + .18) return;
+        continue;
+      }
       // Inverse of the client quarter-view movement basis.
       const h = dx - dz; const v = dx + dz;
       const next = new Set<string>();
@@ -148,7 +157,7 @@ test('real UI hunt, harvest, tanning, drying and binding produces the first bag'
   while (Date.now() < fiberDeadline && (await inventory(page, 'fiber')) < 8) {
     await gatherOption(page, 'fiber');
   }
-  await walkTo(page, { x: 4.5, z: 2 }, .15);
+  await walkTo(page, { x: 5, z: 2 }, .2);
   await page.keyboard.press('e');
   const barkDeadline = Date.now() + 22_000;
   while (Date.now() < barkDeadline && (await inventory(page, 'bark')) < 6) {

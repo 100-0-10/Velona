@@ -1,0 +1,30 @@
+{
+  "asset": "explorer.glb",
+  "title": "Velona explorer adaptation of KayKit Rogue",
+  "author": "Kay Lousberg / KayKit",
+  "license": "CC0-1.0",
+  "licenseFile": "LICENSE-KayKit.txt",
+  "officialRepository": "https://github.com/KayKit-Game-Assets/KayKit-Character-Pack-Adventures-1.0",
+  "sourceCommit": "672074b73ba276876a19e8816ecdc5241817ab47",
+  "sourcePath": "addons/kaykit_character_pack_adventures/Characters/gltf/Rogue.glb",
+  "sourceUrl": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Adventures-1.0/672074b73ba276876a19e8816ecdc5241817ab47/addons/kaykit_character_pack_adventures/Characters/gltf/Rogue.glb",
+  "retrievedOn": "2026-11-15",
+  "sourceBytes": 3616284,
+  "sourceSha256": "e825437cd4d2ee9c1960b517a74a69101e33eb409ae7fa8cedc7134a998fbb7d",
+  "runtimeBytes": 556944,
+  "runtimeSha256": "874fdc1459406ceb629509cb523e69faa818dad9f441c59e170bc7479cb4e80d",
+  "modifications": [
+    "Removed unused knife, crossbow, throwable and cape meshes.",
+    "Retained eight animations and compacted unused glTF meshes, accessors and buffer views.",
+    "Runtime merges the six body submeshes into one shared skinned mesh.",
+    "Runtime adds authored stone spear, trail backpack, bedroll and player-color scarf."
+  ],
+  "retainedAnimations": ["2H_Melee_Attack_Stab", "Death_A", "Death_A_Pose", "Hit_A", "Idle", "Interact", "Running_A", "Walking_A"],
+  "triangles": { "body": 4263, "backpack": 208, "scarf": 92, "spear": 92 },
+  "runtimeMeshesPerPlayer": 4,
+  "textureCount": 1,
+  "rigBones": 41,
+  "forwardAxis": "+Z",
+  "units": "metres; runtime scale 1.08",
+  "collisions": "Visual only. Existing authoritative server collider remains unchanged."
+}
