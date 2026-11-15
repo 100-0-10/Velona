@@ -46,7 +46,11 @@ export function instanceScenery(source: THREE.Group) {
   const batches = new Map<string, { mesh: THREE.Mesh; transforms: THREE.Matrix4[] }>();
   source.traverse(object => {
     if (!(object instanceof THREE.Mesh) || Array.isArray(object.material)) return;
-    const key = object.geometry.uuid + object.material.uuid;
+    // Separate spatial cells keep an offscreen tree from making the entire
+    // forest batch visible to the camera and shadow pass.
+    const position = new THREE.Vector3().setFromMatrixPosition(object.matrixWorld);
+    const cell = `${Math.floor(position.x / 10)},${Math.floor(position.z / 10)}:`;
+    const key = cell + object.geometry.uuid + object.material.uuid;
     if (!batches.has(key)) batches.set(key, { mesh: object, transforms: [] });
     batches.get(key)!.transforms.push(object.matrixWorld.clone());
   });

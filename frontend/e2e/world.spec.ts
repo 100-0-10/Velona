@@ -98,8 +98,8 @@ async function screenshotAndPixels(page: Page, info: TestInfo, name: string) {
 test('two browser identities share movement and chat without typing moving the explorer', async ({ browser }, info) => {
   // CI renders both WebGL views in software; include screenshot readback and context shutdown.
   test.setTimeout(90_000);
-  const first = await browser.newContext({ viewport: { width: 1440, height: 900 } });
-  const second = await browser.newContext({ viewport: { width: 1280, height: 800 } });
+  const first = await browser.newContext({ viewport: { width: 1280, height: 720 } });
+  const second = await browser.newContext({ viewport: { width: 960, height: 640 } });
   const a = await first.newPage(); const b = await second.newPage();
   const errors: string[] = [];
   a.on('pageerror', e => errors.push(e.message)); b.on('pageerror', e => errors.push(e.message));
@@ -142,12 +142,14 @@ test('real UI hunt, harvest, tanning, drying and binding produces the first bag'
   await walkTo(page, corpse, 2.1);
   await page.keyboard.press('e');
   await expect(page.getByTestId('gather-panel')).toBeVisible();
-  await page.screenshot({ path: info.outputPath('gathering-material-list.png') });
   await expect(page.getByTestId('gather-option-signature')).toBeDisabled();
   await page.getByTestId('gather-option-hide').click();
   await expect(page.getByTestId('gathering-progress')).toBeVisible();
   expect(await inventory(page, 'raw_hide')).toBe(0);
   await expect.poll(() => inventory(page, 'raw_hide')).toBeGreaterThanOrEqual(3);
+  // A software GPU can spend seconds reading pixels; secure the time-limited
+  // corpse reward before collecting the UI evidence.
+  await page.screenshot({ path: info.outputPath('gathering-material-list.png') });
 
   // Visit each resource explicitly; an arrival tolerance must not put bark out of range.
   await walkTo(page, { x: 4.5, z: 4.5 });

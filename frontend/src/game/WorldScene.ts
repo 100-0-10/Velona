@@ -33,7 +33,7 @@ export class WorldScene {
     this.scene.background = new THREE.Color(0xa7b9ab); this.scene.fog = new THREE.Fog(0xa7b9ab, 43, 78);
     this.scene.add(new THREE.HemisphereLight(0xe5eddc, 0x484733, 1.65));
     const sun = new THREE.DirectionalLight(0xffe0ae, 2.5); sun.position.set(-14, 24, 8); sun.castShadow = true;
-    const shadowSize = window.innerWidth < 700 ? 1024 : 2048; sun.shadow.mapSize.set(shadowSize, shadowSize);
+    sun.shadow.mapSize.set(1024, 1024);
     sun.shadow.camera.left = -28; sun.shadow.camera.right = 28; sun.shadow.camera.top = 28; sun.shadow.camera.bottom = -28; sun.shadow.normalBias = .035; sun.shadow.bias = -.00015; this.scene.add(sun);
     const rim = new THREE.DirectionalLight(0xc8dfda, .5); rim.position.set(10, 10, -15); this.scene.add(rim);
     this.scene.add(createTerrain());
