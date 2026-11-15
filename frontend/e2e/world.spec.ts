@@ -185,12 +185,17 @@ test('real UI hunt, harvest, tanning, drying and binding produces the first bag'
   await clickCard(page, 'hide', 3);
   await expect(page.getByTestId('gathering-progress')).toBeVisible();
   await expect.poll(() => inventory(page, 'raw_hide'), { timeout: 15_000 }).toBe(3);
-  // A software GPU can spend seconds reading pixels; secure the time-limited
-  // corpse reward before collecting the UI evidence.
-  await page.screenshot({ path: info.outputPath('gathering-material-list.png') });
-
+  // Retreat before any GPU readback: the boar can respawn while a software
+  // screenshot is being captured. Use the real recovery flow if it downs us.
+  await page.keyboard.press('Escape');
+  try { await walkTo(page, { x: 4.5, z: 4.5 }); }
+  catch (error) {
+    if (!(await position(page)).isDowned) throw error;
+    await page.getByTestId('respawn').click();
+    await expect.poll(async () => (await position(page)).isDowned).toBe(false);
+  }
+  expect(await inventory(page, 'raw_hide')).toBe(3);
   // Visit each resource explicitly; an arrival tolerance must not put bark out of range.
-  await walkTo(page, { x: 4.5, z: 4.5 });
   await walkTo(page, { x: 4.4, z: -2 }, .25);
   await page.keyboard.press('e');
   await gatherUnits(page, 'fiber', 'fiber', 8);
