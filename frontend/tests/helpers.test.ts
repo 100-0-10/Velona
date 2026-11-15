@@ -25,6 +25,17 @@ describe('nearby interaction targeting', () => {
     expect(nearbyTarget(s)?.kind).toBe('corpse'); s.monsters[0].canHarvest = false; expect(nearbyTarget(s)?.kind).toBe('node');
   });
   it('does not offer actions to downed players', () => { const s = snapshot(); s.players[0].isDowned = true; expect(nearbyTarget(s)).toBeNull(); });
+  it('offers a nearby physical workstation after resource targets are out of range', () => {
+    const s = snapshot(); s.nodes[0].x = 10;
+    s.stations = [{ id: 'bench-1', kind: 'bench', name: '간이 작업대', x: 1, z: 0, interactionRadius: 2.4, recipeIds: ['bark_powder'] }];
+    expect(nearbyTarget(s)?.kind).toBe('station');
+    s.stations[0].x = 3; expect(nearbyTarget(s)).toBeNull();
+  });
+  it('keeps the resource interaction available when a workstation is also nearby', () => {
+    const s = snapshot();
+    s.stations = [{ id: 'dry-1', kind: 'dry', name: '건조대', x: .5, z: 0, interactionRadius: 2.4, recipeIds: ['dry_leather'] }];
+    expect(nearbyTarget(s)?.kind).toBe('node');
+  });
 });
 describe('production and objective presentation', () => {
   it('clamps production progress before and after completion', () => {

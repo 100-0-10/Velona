@@ -73,8 +73,13 @@ public sealed class WorldTests
         Assert.Equal("dead", f.Snapshot("a").Monsters[0].State);
         Assert.True(f.World.Harvest("a", "boar-1", "material", "harvest-a").Success);
         Assert.True(f.World.Harvest("b", "boar-1", "material", "harvest-b").Success);
+        for (var unit = 1; unit < 3; unit++)
+        {
+            Assert.True(f.World.EnqueueGather("a", "corpse", "boar-1", "hide", "harvest-a-" + unit).Success);
+            Assert.True(f.World.EnqueueGather("b", "corpse", "boar-1", "hide", "harvest-b-" + unit).Success);
+        }
         Assert.Equal(0, f.Count("a", "raw_hide"));
-        f.Advance(4);
+        f.Advance(11);
         Assert.False(f.World.Harvest("a", "boar-1", "material", "harvest-a-again").Success);
         Assert.False(f.World.Harvest("c", "boar-1", "material", "harvest-c").Success);
         Assert.Equal(3, f.Count("a", "raw_hide"));
@@ -220,10 +225,10 @@ public sealed class WorldTests
         Assert.Empty(f.Snapshot("a").Inventory);
         Assert.Equal(0, f.Snapshot("a").Skills!.Single(s => s.Id == "foraging").Experience);
         f.Advance(.2);
-        Assert.Equal(3, f.Count("a", "fiber"));
+        Assert.Equal(1, f.Count("a", "fiber"));
         Assert.Equal(2, f.Snapshot("a").Skills!.Single(s => s.Id == "foraging").Experience);
         f.Advance(3);
-        Assert.Equal(3, f.Count("a", "fiber"));
+        Assert.Equal(1, f.Count("a", "fiber"));
     }
 
     [Fact]
@@ -233,12 +238,14 @@ public sealed class WorldTests
         f.World.Join("a", "A", "a", "meadow-1"); f.World.Join("b", "B", "b", "meadow-1");
         f.MoveTo("a", 4, -2); f.MoveTo("b", 4, -2);
         Assert.True(f.World.StartGather("a", "node", "fiber-1", "fiber", "a-start").Success);
+        Assert.True(f.World.EnqueueGather("a", "node", "fiber-1", "fiber", "a-next").Success);
+        Assert.True(f.World.EnqueueGather("a", "node", "fiber-1", "fiber", "a-last").Success);
         Assert.False(f.World.StartGather("b", "node", "fiber-1", "fiber", "b-busy").Success);
         f.World.Move("a", new(-1, 0, 9999));
         Assert.Equal("cancelled", f.Snapshot("a").Gathering!.State);
         Assert.True(f.World.StartGather("b", "node", "fiber-1", "fiber", "b-start").Success);
         f.Advance(2.1);
-        Assert.Equal(0, f.Count("a", "fiber")); Assert.Equal(3, f.Count("b", "fiber"));
+        Assert.Equal(0, f.Count("a", "fiber")); Assert.Equal(1, f.Count("b", "fiber"));
     }
 
     [Fact]
@@ -250,9 +257,9 @@ public sealed class WorldTests
         Assert.True(f.World.StartGather("a", "node", "bark-1", "bark", "bark").Success);
         Assert.True(f.World.StartGather("b", "node", "bark-1", "log", "log").Success);
         f.Advance(3.1);
-        Assert.Equal(3, f.Count("a", "bark")); Assert.Equal(0, f.Count("b", "log"));
+        Assert.Equal(1, f.Count("a", "bark")); Assert.Equal(0, f.Count("b", "log"));
         f.Advance(2);
-        Assert.Equal(2, f.Count("b", "log"));
+        Assert.Equal(1, f.Count("b", "log"));
     }
 
     [Fact]
@@ -289,7 +296,7 @@ public sealed class WorldTests
         f.Clock.Now += TimeSpan.FromSeconds(2.4); world.Step(TimeSpan.FromMilliseconds(50));
         Assert.Empty(world.Snapshots().Single().Snapshot.Inventory);
         f.Clock.Now += TimeSpan.FromSeconds(.1); world.Step(TimeSpan.FromMilliseconds(50));
-        Assert.Equal(3, world.Snapshots().Single().Snapshot.Inventory.Single(i => i.ItemId == "bark").Quantity);
+        Assert.Equal(1, world.Snapshots().Single().Snapshot.Inventory.Single(i => i.ItemId == "bark").Quantity);
     }
 
     [Fact]
@@ -302,7 +309,7 @@ public sealed class WorldTests
         var restored = new GameWorld(f.Catalog, f.Clock); restored.RestoreCheckpoint(checkpoint);
         restored.Join("a", "A", "new", "meadow-1");
         var snapshot = restored.Snapshots().Single().Snapshot;
-        Assert.Equal(2, snapshot.Skills!.Single(s => s.Id == "foraging").Experience);
+        Assert.Equal(6, snapshot.Skills!.Single(s => s.Id == "foraging").Experience);
         Assert.False(snapshot.Nodes.Single(n => n.Id == "fiber-1").Options!.Single(o => o.Id == "fiber").Available);
         f.Advance(10);
         Assert.True(f.World.StartGather("a", "node", "fiber-1", "fiber", "unfinished").Success);
@@ -325,8 +332,14 @@ public sealed class WorldTests
         public ActionResult Gather(string connection, string node, string request)
         {
             var option = node.StartsWith("fiber") ? "fiber" : node.StartsWith("bark") ? "bark" : node.StartsWith("log") ? "log" : "stone";
+            var before = World.Snapshots().FirstOrDefault(s => s.ConnectionId == connection).Snapshot?.Gathering?.Id;
             var result = World.StartGather(connection, "node", node, option, request);
-            if (result.Success) Advance(5.1);
+            if (result.Success && Snapshot(connection).Gathering?.Id != before)
+            {
+                var definition = Catalog.Gathering.Profiles.Values.SelectMany(p => p).First(d => d.Id == option);
+                for (var unit = 1; unit < definition.Quantity; unit++) Assert.True(World.EnqueueGather(connection, "node", node, option, request + "-unit-" + unit).Success);
+                Advance(definition.BaseSeconds * definition.Quantity + .1);
+            }
             return result;
         }
         public void Advance(double seconds)

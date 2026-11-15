@@ -46,4 +46,6 @@ PostgreSQL 접속은 .NET User Secrets의 ConnectionStrings:Velona 또는 환경
 
 ## 선택형 시간 채집
 
-E 조사만으로 물건을 지급하지 않는다. 목록의 재료를 StartGather로 선택하고 실제 시간이 지나야 그 재료와 분야별 경험치를 얻는다. 기본 시간·최소 숙련·수량은 gathering.json에서 읽는다. 이동·공격·피격·취소·단절·대상 소멸 시 중단한다. 숙련은 PostgreSQL에 저장하며 직접 채집은 오프라인 진행하지 않는다. 기존 Harvest 호출도 단일 재료 시간 작업으로 연결한다. 자세한 규칙은 docs/development/05-timed-gathering.md를 따른다.
+E 조사만으로 물건을 지급하지 않는다. 중앙 카드를 누를 때마다 EnqueueGather로 재료1개를 예약하고 실제 시간이 지나야 그 재료와 분야별 경험치를 얻는다. 활성+대기 한도20개이며 잔량·가방 공간을 함께 예약한다. 기본 시간·최소 숙련·생성 수량은 gathering.json에서 읽는다. 이동·공격·피격·취소·단절·대상 소멸 시 미완료 예약까지 중단·반환한다. 숙련과 소비량은 PostgreSQL에 저장하며 직접 채집·대기열은 오프라인 진행하지 않는다. 기존 StartGather와 Harvest 호출도1개 작업으로 연결한다.
+
+가공은 실제 제작대2.4미터 내에서 시작해야 한다. InspectStation·CraftAtStation은 설비 ID·제작법 종류·실제 거리를 서버에서 검사한다. 기존 Craft도 손 제작을 제외하면 같은 거리를 검사한다. 손 제작의 끈은 어디서나 만들 수 있다. 가공은 시작 후 자리를 떠나거나 접속을 종료해도 유지한다. 자세한 규칙은 docs/development/07-gather-queue-and-stations.md를 따른다.

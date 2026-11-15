@@ -76,15 +76,15 @@ test('server owns identity, clamps movement, enforces range and prevents duplica
     const inspected = await a.connection.invoke<ActionResult>('Interact', node.id, crypto.randomUUID());
     expect(inspected.success).toBe(true);
     expect(a.latest.inventory.find(i => i.itemId === 'fiber')?.quantity ?? 0).toBe(before);
-    const gathered = await a.connection.invoke<ActionResult>('StartGather', 'node', node.id, 'fiber', requestId);
+    const gathered = await a.connection.invoke<ActionResult>('EnqueueGather', 'node', node.id, 'fiber', requestId);
     expect(gathered.success).toBe(true);
     await new Promise(resolve => setTimeout(resolve, 250));
     expect(a.latest.inventory.find(i => i.itemId === 'fiber')?.quantity ?? 0).toBe(before);
-    await expect.poll(() => a.latest.inventory.find(i => i.itemId === 'fiber')?.quantity ?? 0).toBe(before + 3);
-    const repeated = await a.connection.invoke<ActionResult>('StartGather', 'node', node.id, 'fiber', requestId);
+    await expect.poll(() => a.latest.inventory.find(i => i.itemId === 'fiber')?.quantity ?? 0).toBe(before + 1);
+    const repeated = await a.connection.invoke<ActionResult>('EnqueueGather', 'node', node.id, 'fiber', requestId);
     expect(repeated).toEqual(gathered);
-    expect(a.latest.inventory.find(i => i.itemId === 'fiber')?.quantity).toBe(before + 3);
-    const badReuse = await a.connection.invoke<ActionResult>('StartGather', 'node', 'bark-1', 'bark', requestId);
+    expect(a.latest.inventory.find(i => i.itemId === 'fiber')?.quantity).toBe(before + 1);
+    const badReuse = await a.connection.invoke<ActionResult>('EnqueueGather', 'node', 'bark-1', 'bark', requestId);
     expect(badReuse.success).toBe(false);
 
     // A single movement intent expires automatically without client keep-alive input.
@@ -94,6 +94,22 @@ test('server owns identity, clamps movement, enforces range and prevents duplica
     const afterExpiry = { x: self(a).x, z: self(a).z };
     await new Promise(resolve => setTimeout(resolve, 500));
     expect(Math.hypot(self(a).x - afterExpiry.x, self(a).z - afterExpiry.z)).toBeLessThan(.3);
+
+    // Matching station and real proximity are checked before spending a unit.
+    await approach(a, { x: 4.7, z: 2 }, .2);
+    const barkBefore = a.latest.inventory.find(i => i.itemId === 'bark')?.quantity ?? 0;
+    for (let i = 0; i < 2; i++) expect((await a.connection.invoke<ActionResult>('EnqueueGather', 'node', 'bark-1', 'bark', crypto.randomUUID())).success).toBe(true);
+    await expect.poll(() => a.latest.inventory.find(i => i.itemId === 'bark')?.quantity ?? 0, { timeout: 10_000 }).toBe(barkBefore + 2);
+    expect((await a.connection.invoke<ActionResult>('CraftAtStation', 'tan-1', 'bark_powder', crypto.randomUUID())).success).toBe(false);
+    expect((await a.connection.invoke<ActionResult>('Craft', 'bark_powder', crypto.randomUUID())).success).toBe(false);
+    expect(a.latest.inventory.find(i => i.itemId === 'bark')?.quantity).toBe(barkBefore + 2);
+    await approach(a, { x: -2.8, z: -2 }, .5);
+    const stationRequest = crypto.randomUUID();
+    const crafted = await a.connection.invoke<ActionResult>('CraftAtStation', 'bench-1', 'bark_powder', stationRequest);
+    expect(crafted.success).toBe(true);
+    await expect.poll(() => a.latest.inventory.find(i => i.itemId === 'bark_powder')?.quantity ?? 0).toBe(2);
+    expect(await a.connection.invoke<ActionResult>('CraftAtStation', 'bench-1', 'bark_powder', stationRequest)).toEqual(crafted);
+    expect(a.latest.inventory.find(i => i.itemId === 'bark')?.quantity ?? 0).toBe(barkBefore);
   } finally {
     await a.connection.stop(); await b.connection.stop();
   }

@@ -1,4 +1,4 @@
-import type { InventoryStack, MonsterState, PlayerState, ResourceNode, WorldSnapshot } from '../types';
+import type { InventoryStack, MonsterState, PlayerState, ResourceNode, Workstation, WorldSnapshot } from '../types';
 export function distance(a: { x: number; z: number }, b: { x: number; z: number }) { return Math.hypot(a.x - b.x, a.z - b.z); }
 export function movementAxes(keys: ReadonlySet<string>): { x: number; z: number } {
   const h = Number(keys.has('d') || keys.has('arrowright')) - Number(keys.has('a') || keys.has('arrowleft'));
@@ -7,13 +7,15 @@ export function movementAxes(keys: ReadonlySet<string>): { x: number; z: number 
   const n = Math.hypot(x, z); if (n > 1) { x /= n; z /= n; } return { x, z };
 }
 export function isEditing(target: EventTarget | null) { return target instanceof HTMLElement && (['INPUT', 'TEXTAREA', 'SELECT'].includes(target.tagName) || target.isContentEditable); }
-export type NearbyTarget = { kind: 'node'; value: ResourceNode } | { kind: 'corpse'; value: MonsterState };
+export type NearbyTarget = { kind: 'node'; value: ResourceNode } | { kind: 'corpse'; value: MonsterState } | { kind: 'station'; value: Workstation };
 export function nearbyTarget(snapshot: WorldSnapshot | null): NearbyTarget | null {
   const self = snapshot?.players.find(p => p.id === snapshot.selfPlayerId); if (!snapshot || !self || self.isDowned) return null;
   const corpses = snapshot.monsters.filter(m => m.state === 'dead' && m.canHarvest && distance(self, m) <= 3);
   if (corpses.length) return { kind: 'corpse', value: corpses.sort((a, b) => distance(self, a) - distance(self, b))[0] };
   const nodes = snapshot.nodes.filter(n => distance(self, n) <= 2.8);
-  return nodes.length ? { kind: 'node', value: nodes.sort((a, b) => distance(self, a) - distance(self, b))[0] } : null;
+  if (nodes.length) return { kind: 'node', value: nodes.sort((a, b) => distance(self, a) - distance(self, b))[0] };
+  const stations = (snapshot.stations ?? []).filter(s => distance(self, s) <= s.interactionRadius);
+  return stations.length ? { kind: 'station', value: stations.sort((a, b) => distance(self, a) - distance(self, b))[0] } : null;
 }
 export function nearestMonster(snapshot: WorldSnapshot | null) {
   const self = snapshot?.players.find(p => p.id === snapshot.selfPlayerId); if (!snapshot || !self || self.isDowned) return null;

@@ -1,5 +1,7 @@
 # Velona initial playable contract
 
+The current gathering and workstation revision is documented in [07-gather-queue-and-stations.md](07-gather-queue-and-stations.md). Its one-unit FIFO, finite stock, queue snapshot, and station-specific distance rules supersede older bundle/camp-wide crafting descriptions below.
+
 This is a PC-first prototype, not the full planned game. Language in player-facing UI is Korean. Use repository name Velona. Target monorepo folders: frontend, backend, docs; static design JSON goes in docs/design/data. No secrets or production deployment in this change.
 
 ## Player promise and loop

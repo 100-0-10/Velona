@@ -48,6 +48,26 @@ export function createCamp() {
   beam(v(2.7, .35, 1.8), v(4.5, .35, 1.8), .045);
   const hide = new THREE.Shape(); hide.moveTo(-.31, .78); hide.lineTo(.28, .8); hide.lineTo(.52, .6); hide.lineTo(.67, .38); hide.lineTo(.47, .14); hide.lineTo(.45, -.46); hide.lineTo(.58, -.72); hide.lineTo(.24, -.67); hide.lineTo(0, -.55); hide.lineTo(-.25, -.72); hide.lineTo(-.57, -.67); hide.lineTo(-.43, -.4); hide.lineTo(-.48, .1); hide.lineTo(-.65, .36); hide.lineTo(-.48, .6); hide.closePath();
   part(new THREE.ShapeGeometry(hide), mats.hide, 3.6, 1.35, 1.82);
+  // Separate preparation and leatherwork stations match the authoritative map.
+  function smallTable(x: number, z: number, width: number, depth: number, height: number) {
+    for (let i = 0; i < 4; i++) plank(width, .1, depth / 4 - .015, i % 2 ? mats.cut : mats.wood, x, height, z - depth * .375 + i * depth / 4);
+    for (const side of [-1, 1]) for (const front of [-1, 1]) beam(v(x + side * width * .38, .02, z + front * depth * .32), v(x + side * width * .38, height, z + front * depth * .32), .055);
+    plank(width * .84, .07, .06, mats.dark, x, height * .3, z);
+  }
+  smallTable(-2.8, 0, 1.65, 1.15, .82);
+  const preparationHide = part(new THREE.ShapeGeometry(hide), mats.hide, -2.8, .885, 0);
+  preparationHide.rotation.x = -Math.PI / 2; preparationHide.scale.setScalar(.65);
+  beam(v(-3.3, .92, .25), v(-2.92, .92, .12), .022, mats.cut);
+  const knife = part(new THREE.ConeGeometry(.065, .3, 3), mats.iron, -2.8, .92, .08); knife.rotation.set(Math.PI / 2, 0, -1.15);
+  smallTable(.3, -3.8, 1.8, .9, .94);
+  plank(.8, .035, .5, mats.hide, .12, 1.015, -3.8);
+  for (let i = 0; i < 7; i++) beam(v(-.2 + i * .09, 1.038, -3.58), v(-.18 + i * .09, 1.038, -3.65), .007, mats.rope);
+  part(new THREE.CylinderGeometry(.11, .11, .2, 10), mats.rope, .85, 1.1, -3.92);
+  beam(v(.44, 1.035, -3.82), v(.66, 1.05, -4.02), .008, mats.iron);
+  // Mortar and pestle identify the bench's bark-powder recipe.
+  const mortar = part(new THREE.TorusGeometry(.14, .045, 5, 12), mats.stone, -2.48, 1.16, -1.92); mortar.rotation.x = Math.PI / 2;
+  part(new THREE.CylinderGeometry(.13, .09, .11, 10), mats.stone, -2.48, 1.1, -1.92);
+  beam(v(-2.48, 1.15, -1.92), v(-2.28, 1.36, -1.94), .03, mats.cut);
   for (let i = 0; i < 5; i++) for (const side of [-1, 1]) {
     const y = .78 + i * .28, x = 3.6 + side * .47;
     beam(v(x, y, 1.84), v(3.6 + side * .9, y + .1, 1.8), .009, mats.rope);

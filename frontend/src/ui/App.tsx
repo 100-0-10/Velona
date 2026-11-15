@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { WorldScene } from '../game/WorldScene';
 import { GatheringPanel, GatheringProgress } from './GatheringPanel';
+import { WorkshopPanel } from './WorkshopPanel';
 import { distance, isEditing, jobProgress, movementAxes, nearbyTarget, nearestMonster, objective, quantity, selfPlayer } from '../game/helpers';
 import { WorldClient } from '../network/WorldClient';
-import type { Catalog, ChatMessage, ConnectionStatus, GatherOption, GuestSession, WorldSnapshot } from '../types';
+import type { Catalog, ChatMessage, ConnectionStatus, GatherOption, GuestSession, RecipeDefinition, WorldSnapshot } from '../types';
 
 declare global { interface Window { readonly __VELONA_TEST_STATE__?: unknown; readonly __THREE_GAME_DIAGNOSTICS__?: unknown } }
 const SESSION_KEY = 'velona-guest';
@@ -19,7 +20,8 @@ export function App() {
   const [session, setSession] = useState<GuestSession | null>(restoredSession);
   const [snapshot, setSnapshot] = useState<WorldSnapshot | null>(null); const [status, setStatus] = useState<ConnectionStatus>('disconnected');
   const [catalog, setCatalog] = useState<Catalog | null>(null); const [name, setName] = useState(''); const [joining, setJoining] = useState(false);
-  const [notice, setNotice] = useState(''); const [fatal, setFatal] = useState(''); const [panel, setPanel] = useState<'craft' | 'bag' | null>(() => window.innerWidth > 700 ? 'craft' : null);
+  const [notice, setNotice] = useState(''); const [fatal, setFatal] = useState(''); const [panel, setPanel] = useState<'craft' | 'bag' | null>(null);
+  const [workshopStation, setWorkshopStation] = useState<string | null>(null);
   const [gatherSource, setGatherSource] = useState<{kind: 'node' | 'corpse'; id: string} | null>(null);
   const [messages, setMessages] = useState<ChatMessage[]>([]); const [chat, setChat] = useState(''); const [now, setNow] = useState(Date.now());
   const lastGatherNotice = useRef('');
@@ -64,8 +66,8 @@ export function App() {
       if (key === 'escape') { setGatherSource(null); setPanel(null); clear(); return; }
       if (key === 'e' && !event.repeat) interactRef.current();
       if (key === ' ' && !event.repeat) attackRef.current();
-      if (key === 'i' && !event.repeat) setPanel(p => p === 'bag' ? null : 'bag');
-      if (key === 'c' && !event.repeat) setPanel(p => p === 'craft' ? null : 'craft');
+      if (key === 'i' && !event.repeat) { setGatherSource(null); setPanel(p => p === 'bag' ? null : 'bag'); }
+      if (key === 'c' && !event.repeat) { setGatherSource(null); setWorkshopStation(null); setPanel(p => p === 'craft' ? null : 'craft'); }
       keys.current.add(key);
     };
     const onKeyUp = (event: KeyboardEvent) => keys.current.delete(event.key.toLowerCase());
@@ -92,12 +94,17 @@ export function App() {
     return () => { Reflect.deleteProperty(window, '__VELONA_TEST_STATE__'); Reflect.deleteProperty(window, '__THREE_GAME_DIAGNOSTICS__'); };
   }, []);
 
-  async function action(method: string, ...args: unknown[]) { const result = await client.current?.action(method, ...args); if (result?.message && !(method === 'StartGather' && result.success)) setNotice(result.message); if (method === 'Attack' && result?.success) scene.current?.playAttack(); }
+  async function action(method: string, ...args: unknown[]) { const result = await client.current?.action(method, ...args); if (result?.message && !(result.success && ['StartGather', 'EnqueueGather', 'CancelQueuedGather', 'InspectStation'].includes(method))) setNotice(result.message); if (method === 'Attack' && result?.success) scene.current?.playAttack(); }
   actRef.current = action;
   async function interact() {
     const target = nearbyTarget(snapshotRef.current);
     if (!target) { setNotice('채집물이나 사냥한 멧수 가까이 이동해 주세요.'); return; }
     keys.current.clear(); client.current?.move(0, 0);
+    if (target.kind === 'station') {
+      const result = await client.current?.action('InspectStation', target.value.id, crypto.randomUUID());
+      if (!result?.success) { setNotice(result?.message ?? '제작대를 살펴보지 못했어요.'); return; }
+      setGatherSource(null); setWorkshopStation(target.value.id); setPanel('craft'); return;
+    }
     if (target.kind === 'node') {
       const result = await client.current?.action('Interact', target.value.id, crypto.randomUUID());
       if (!result?.success) { setNotice(result?.message ?? '대상을 조사하지 못했어요.'); return; }
@@ -108,7 +115,12 @@ export function App() {
     if (!gatherSource) return;
     setNotice('');
     keys.current.clear(); client.current?.move(0, 0);
-    void action('StartGather', gatherSource.kind, gatherSource.id, option.id, crypto.randomUUID());
+    void action('EnqueueGather', gatherSource.kind, gatherSource.id, option.id, crypto.randomUUID());
+  }
+  function openWorkshop() { keys.current.clear(); client.current?.move(0, 0); setGatherSource(null); setWorkshopStation(null); setPanel('craft'); }
+  function craft(recipe: RecipeDefinition) {
+    if (recipe.stationId === 'hand') void action('Craft', recipe.id, crypto.randomUUID());
+    else if (workshopStation) void action('CraftAtStation', workshopStation, recipe.id, crypto.randomUUID());
   }
   interactRef.current = interact;
   function attack() { const target = nearestMonster(snapshotRef.current); if (!target) { setNotice('공격할 생물이 없어요. 동쪽 숲을 둘러보세요.'); return; } void action('Attack', target.id, crypto.randomUUID()); }
@@ -125,8 +137,9 @@ export function App() {
 
   const self = selfPlayer(snapshot); const inventory = snapshot?.inventory ?? []; const target = nearbyTarget(snapshot); const task = objective(inventory);
   const monster = nearestMonster(snapshot); const connected = status === 'connected'; const running = snapshot?.jobs.find(j => j.state === 'running');
-  const capacity = 16 + (quantity(inventory, 'small_bag') > 0 ? 4 : 0); const atCamp = !!self && Math.hypot(self.x, self.z) <= 6;
+  const capacity = 16 + (quantity(inventory, 'small_bag') > 0 ? 4 : 0);
   const gathering = snapshot?.gathering?.state === 'running' ? snapshot.gathering : null;
+  const gatherQueue = snapshot?.gatheringQueue ?? [];
   const inspected = gatherSource?.kind === 'node' ? snapshot?.nodes.find(n => n.id === gatherSource.id) : snapshot?.monsters.find(m => m.id === gatherSource?.id);
   const gatherNearby = !!self && !!inspected && distance(self, inspected) <= (gatherSource?.kind === 'corpse' ? 3.5 : 2.8);
 
@@ -137,23 +150,17 @@ export function App() {
     {session && <>
       <section className="survival" aria-label="캐릭터 상태"><div className="portrait">⌁</div><div className="survival-body"><strong>{self?.name ?? session.name}<span>개척자 · 돌창</span></strong><div className="meter hp" role="meter" aria-label="체력" aria-valuenow={self?.hp ?? 0} aria-valuemin={0} aria-valuemax={self?.maxHp ?? 120}><span style={{ width: `${(self?.hp ?? 0) / (self?.maxHp ?? 120) * 100}%` }} /><b>{Math.ceil(self?.hp ?? 0)} / {self?.maxHp ?? 120}</b></div><div className="meter stamina" role="meter" aria-label="스태미나" aria-valuenow={self?.stamina ?? 0} aria-valuemin={0} aria-valuemax={self?.maxStamina ?? 100}><span style={{ width: `${(self?.stamina ?? 0) / (self?.maxStamina ?? 100) * 100}%` }} /></div></div></section>
       <section className="objective"><small>개척 목표 <span>{task.step + 1} / 6</span></small><h2>{task.title}</h2><p>{task.detail}</p><div className="objective-steps">{['사냥','손질','무두질','건조','제작','완성'].map((s, i) => <span className={i <= task.step ? 'done' : ''} key={s}>{s}</span>)}</div></section>
-      <nav className="tool-tabs" aria-label="생활 메뉴"><button data-testid="open-craft" aria-pressed={panel === 'craft'} onClick={() => { setGatherSource(null); setPanel(p => p === 'craft' ? null : 'craft'); }}>⚒ 제작 <kbd>C</kbd></button><button aria-pressed={panel === 'bag'} onClick={() => setPanel(p => p === 'bag' ? null : 'bag')}>▣ 소지품 <kbd>I</kbd></button></nav>
-      {panel && <aside className="side-panel"><div className="panel-title"><div><small>{panel === 'craft' ? 'CAMP WORKSHOP' : 'EXPLORER’S BAG'}</small><h2>{panel === 'craft' ? '야영지 작업장' : '소지품'}</h2></div><button className="icon-button" aria-label="생활 메뉴 닫기" onClick={() => setPanel(null)}>×</button></div>
-        {panel === 'craft' ? <>
-          <p className={'camp-hint ' + (!atCamp ? 'away' : '')}>{atCamp ? '● 야영지의 제작대를 사용할 수 있어요' : '⌖ 제작하려면 야영지로 돌아오세요'}</p>
-          <div className="recipe-list">{catalog?.recipes.map(recipe => {
-            const enough = recipe.inputs.every(i => quantity(inventory, i.itemId) >= i.quantity);
-            return <article className="recipe" key={recipe.id}><div className="recipe-heading"><span className="item-icon">{icons[recipe.outputs[0]?.itemId] ?? '◇'}</span><div><h3>{recipe.name}</h3><small>{recipe.stationName} · {Math.max(.1, recipe.durationSeconds).toFixed(1)}초</small></div></div><div className="ingredients">{recipe.inputs.map(i => <span className={quantity(inventory, i.itemId) < i.quantity ? 'missing' : ''} key={i.itemId}>{i.name} <b>{quantity(inventory, i.itemId)}/{i.quantity}</b></span>)}</div><button className="craft-button" data-testid={'craft-' + recipe.id} disabled={!connected || !atCamp || !enough || !!running || !!self?.isDowned} onClick={() => void action('Craft', recipe.id, crypto.randomUUID())}>{running?.recipeId === recipe.id ? '작업 중…' : '제작 시작'}<span>→</span></button></article>;
-          }) ?? <p className="empty">제작 목록을 불러오는 중이에요.</p>}</div>
-          <p className="prototype-note">개발 기본값: 가공 시간 0.05배 · 완료품 자동 수령</p>
-        </> : <><p className="bag-capacity" data-testid="bag-capacity">사용 중 {inventory.length} / {capacity}칸 {capacity > 16 && <span>가죽 가방 +4</span>}</p><div className="inventory-list">{inventory.length ? inventory.map(i => <div className="inventory-item" key={i.itemId} data-testid={'inventory-' + i.itemId}><span className="item-icon">{icons[i.itemId] ?? '◇'}</span><span>{i.name}</span><b>{i.quantity}</b></div>) : <p className="empty">아직 비어 있어요.<br />숲에서 첫 재료를 모아보세요.</p>}</div><section className="skill-list" data-testid="gathering-skills"><h3>생활 숙련도</h3>{snapshot?.skills?.map(skill => <div key={skill.id}><strong>{skill.name} <b>Lv.{skill.level}</b></strong><span>{skill.nextLevelExperience === null ? '최고 레벨' : `${skill.experience} / ${skill.nextLevelExperience} XP`} · 시간 −{skill.speedReductionPercent}%</span></div>)}</section><p className="prototype-note">돌창과 돌칼은 기본 장비로 제공돼요.</p></>}
+      <nav className="tool-tabs" aria-label="생활 메뉴"><button data-testid="open-craft" aria-pressed={panel === 'craft'} onClick={openWorkshop}>⚒ 제작 <kbd>C</kbd></button><button aria-pressed={panel === 'bag'} onClick={() => { setGatherSource(null); setPanel(p => p === 'bag' ? null : 'bag'); }}>▣ 소지품 <kbd>I</kbd></button></nav>
+      {panel === 'craft' && <WorkshopPanel stations={snapshot?.stations ?? []} selectedId={workshopStation} recipes={catalog?.recipes ?? []} inventory={inventory} self={self} connected={connected} running={running} now={now} onSelect={setWorkshopStation} onBack={() => setWorkshopStation(null)} onClose={() => setPanel(null)} onCraft={craft} />}
+      {panel === 'bag' && <aside className="side-panel"><div className="panel-title"><div><small>개척자의 기록</small><h2>소지품</h2></div><button className="icon-button" aria-label="생활 메뉴 닫기" onClick={() => setPanel(null)}>×</button></div>
+        <p className="bag-capacity" data-testid="bag-capacity">사용 중 {inventory.length} / {capacity}칸 {capacity > 16 && <span>가죽 가방 +4</span>}</p><div className="inventory-list">{inventory.length ? inventory.map(i => <div className="inventory-item" key={i.itemId} data-testid={'inventory-' + i.itemId}><span className="item-icon">{icons[i.itemId] ?? '◇'}</span><span>{i.name}</span><b>{i.quantity}</b></div>) : <p className="empty">아직 비어 있어요.<br />숲에서 첫 재료를 모아보세요.</p>}</div><section className="skill-list" data-testid="gathering-skills"><h3>생활 숙련도</h3>{snapshot?.skills?.map(skill => <div key={skill.id}><strong>{skill.name} <b>Lv.{skill.level}</b></strong><span>{skill.nextLevelExperience === null ? '최고 레벨' : `${skill.experience} / ${skill.nextLevelExperience} XP`} · 시간 −{skill.speedReductionPercent}%</span></div>)}</section><p className="prototype-note">돌창과 돌칼은 기본 장비로 제공돼요.</p>
       </aside>}
-      {running && <section className="job-progress" data-testid="production-job"><div><span>⚒ {running.name}</span><b>{Math.max(0, Math.ceil((Date.parse(running.completesAtUtc) - now) / 1000))}초</b></div><progress max={1} value={jobProgress(running.startedAtUtc, running.completesAtUtc, now)} /><small>작업하는 동안 채집과 탐험을 계속할 수 있어요</small></section>}
+      {running && panel !== 'craft' && !gatherSource && <section className={'job-progress' + (gathering ? ' has-gather-queue' : '')} data-testid="production-job"><div><span>⚒ {running.name}</span><b>{Math.max(0, Math.ceil((Date.parse(running.completesAtUtc) - now) / 1000))}초</b></div><progress max={1} value={jobProgress(running.startedAtUtc, running.completesAtUtc, now)} /><small>작업하는 동안 채집과 탐험을 계속할 수 있어요</small></section>}
       {monster && self && distance(self, monster) < 12 && <div className={'monster-status ' + (monster.state === 'telegraph' ? 'danger' : '')}><strong>{monster.name}</strong><span>{monster.state === 'telegraph' ? '공격 예고 · 붉은 범위에서 벗어나세요!' : 'Space로 돌창 공격'}</span><progress max={monster.maxHp} value={monster.hp} /></div>}
       <section className="chat-panel" aria-label="지역 채팅"><div className="chat-log" aria-live="polite">{messages.length ? messages.slice(-5).map((m, i) => <p key={m.sentAtUtc + i}><b>{m.name}</b> <span>{m.message}</span></p>) : <p className="chat-welcome">같은 야영지의 개척자들과 인사를 나눠보세요.</p>}</div><form onSubmit={event => { event.preventDefault(); const text = chat.trim(); if (text) { void action('Chat', text); setChat(''); } }}><span>지역</span><input data-testid="chat-input" aria-label="지역 채팅 입력" placeholder="메시지 입력" value={chat} onChange={e => setChat(e.target.value)} maxLength={140} disabled={!connected} /><button data-testid="chat-send" aria-label="채팅 보내기" disabled={!connected || !chat.trim()}>↵</button></form></section>
-      <footer className="action-bar"><div className="movement-help"><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd><span>이동</span></div><button data-testid="interact" onClick={interact} disabled={!connected || self?.isDowned}><kbd>E</kbd>{target ? target.kind === 'corpse' ? '멧수 해체' : target.value.name + ' 채집' : '가까운 대상 조사'}</button><button data-testid="attack" onClick={attack} disabled={!connected || self?.isDowned}><kbd>Space</kbd>돌창 공격</button><div className="touch-pad" aria-label="터치 이동">{[['w','↑'],['a','←'],['s','↓'],['d','→']].map(([key, arrow]) => <button key={key} aria-label={'이동 ' + arrow} onPointerDown={e => { e.currentTarget.setPointerCapture(e.pointerId); keys.current.add(key); }} onPointerUp={() => keys.current.delete(key)} onPointerCancel={() => keys.current.delete(key)} onLostPointerCapture={() => keys.current.delete(key)}>{arrow}</button>)}</div></footer>
-      {gatherSource && inspected && <GatheringPanel name={inspected.name} options={inspected.options ?? []} active={!!gathering} nearby={gatherNearby} connected={connected && !self?.isDowned} now={now} onSelect={startGather} onClose={() => setGatherSource(null)} />}
-      {gathering && <GatheringProgress job={gathering} now={now} onCancel={() => void action('CancelGather', crypto.randomUUID())} />}
+      <footer className="action-bar"><div className="movement-help"><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd><span>이동</span></div><button data-testid="interact" onClick={interact} disabled={!connected || self?.isDowned}><kbd>E</kbd>{target ? target.kind === 'corpse' ? '멧수 도축' : target.value.name + (target.kind === 'station' ? ' 이용' : ' 채집') : '가까운 대상 조사'}</button><button data-testid="attack" onClick={attack} disabled={!connected || self?.isDowned}><kbd>Space</kbd>돌창 공격</button><div className="touch-pad" aria-label="터치 이동">{[['w','↑'],['a','←'],['s','↓'],['d','→']].map(([key, arrow]) => <button key={key} aria-label={'이동 ' + arrow} onPointerDown={e => { e.currentTarget.setPointerCapture(e.pointerId); keys.current.add(key); }} onPointerUp={() => keys.current.delete(key)} onPointerCancel={() => keys.current.delete(key)} onLostPointerCapture={() => keys.current.delete(key)}>{arrow}</button>)}</div></footer>
+      {gatherSource && inspected && <GatheringPanel name={inspected.name} sourceKind={gatherSource.kind} options={inspected.options ?? []} job={gathering} queue={gatherQueue} queueLimit={snapshot?.gatherQueueLimit ?? 20} nearby={gatherNearby} connected={connected && !self?.isDowned} now={now} onSelect={startGather} onClose={() => setGatherSource(null)} onCancel={() => void action('CancelGather', crypto.randomUUID())} onRemove={id => void action('CancelQueuedGather', id, crypto.randomUUID())} />}
+      {gathering && !(gatherSource && inspected) && <GatheringProgress job={gathering} queue={gatherQueue} now={now} onCancel={() => void action('CancelGather', crypto.randomUUID())} onRemove={id => void action('CancelQueuedGather', id, crypto.randomUUID())} />}
       {status === 'disconnected' && <div className="connection-overlay"><h2>야영지 연결이 끊겼어요</h2><p>서버가 다시 시작되었다면 새로 입장해 주세요.</p><button className="primary" onClick={() => setRetry(n => n + 1)}>다시 연결</button><button onClick={() => { sessionStorage.removeItem(SESSION_KEY); setSession(null); setMessages([]); }}>새 개척자로 입장</button></div>}
       {self?.isDowned && <div className="downed-overlay"><small>잠시 숨을 고르세요</small><h2>야영지로 돌아갈 시간</h2><p>모은 재료는 그대로 가지고 돌아가요.</p><button className="primary" data-testid="respawn" onClick={() => void action('Respawn')}>야영지에서 다시 일어나기</button></div>}
     </>}

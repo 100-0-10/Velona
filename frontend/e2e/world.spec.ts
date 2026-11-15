@@ -31,11 +31,17 @@ async function release(page: Page) {
   for (const key of ['w', 'a', 's', 'd']) await page.keyboard.up(key);
 }
 
+async function settledGatheringPanel(page: Page) {
+  const panel = page.getByTestId('gather-panel');
+  await expect(panel).toBeVisible();
+  await expect.poll(() => panel.evaluate(element => element.getAnimations().some(animation => animation.playState === 'running'))).toBe(false);
+  return panel;
+}
+
 // Drive only actual keyboard input; test diagnostics are read-only observations.
 async function walkTo(page: Page, target: { x: number; z: number }, radius = .5) {
   await page.getByTestId('world-canvas').click({ position: { x: 40, y: 40 } });
-  const deadline = Date.now() + 18_000;
-  let held = new Set<string>();
+  const deadline = Date.now() + 35_000;
   try {
     while (Date.now() < deadline) {
       const p = await position(page);
@@ -44,7 +50,7 @@ async function walkTo(page: Page, target: { x: number; z: number }, radius = .5)
       if (Math.hypot(dx, dz) <= radius) {
         // Release actual keys and let the final input/snapshot roundtrip settle
         // before interacting. Software-rendered frames can delay key handling.
-        await release(page); held.clear(); await page.waitForTimeout(180);
+        await release(page); await page.waitForTimeout(180);
         const settled = await position(page);
         if (Math.hypot(target.x - settled.x, target.z - settled.z) <= radius + .18) return;
         continue;
@@ -54,10 +60,12 @@ async function walkTo(page: Page, target: { x: number; z: number }, radius = .5)
       const next = new Set<string>();
       if (Math.abs(h) > .15) next.add(h > 0 ? 'd' : 'a');
       if (Math.abs(v) > .15) next.add(v > 0 ? 's' : 'w');
-      for (const key of held) if (!next.has(key)) await page.keyboard.up(key);
-      for (const key of next) if (!held.has(key)) await page.keyboard.down(key);
-      held = next;
+      // Bounded real key pulses let the zero-input/snapshot roundtrip finish
+      // even when a software-rendered frame delays browser event processing.
+      for (const key of next) await page.keyboard.down(key);
       await page.waitForTimeout(90);
+      await release(page);
+      await page.waitForTimeout(180);
     }
     throw new Error(`Could not walk to (${target.x}, ${target.z}); got ${JSON.stringify(await position(page))}`);
   } finally { await release(page); }
@@ -69,11 +77,31 @@ async function craft(page: Page, recipeId: string, outputId: string, maxSeconds 
   await expect.poll(() => inventory(page, outputId), { timeout: maxSeconds * 1000 }).toBeGreaterThan(before);
 }
 
-async function gatherOption(page: Page, optionId: string) {
-  const previous = (await state(page)).snapshot?.gathering?.id;
-  await page.getByTestId('gather-option-' + optionId).click();
-  await expect.poll(async () => (await state(page)).snapshot?.gathering?.id).not.toBe(previous);
-  await expect.poll(async () => (await state(page)).snapshot?.gathering?.state, { timeout: 12000 }).toBe('completed');
+async function gatherUnits(page: Page, optionId: string, itemId: string, targetQuantity: number) {
+  const deadline = Date.now() + 90_000;
+  while ((await inventory(page, itemId)) < targetQuantity && Date.now() < deadline) {
+    const button = page.getByTestId('gather-option-' + optionId);
+    await expect(button).toBeEnabled({ timeout: 15_000 });
+    const before = await inventory(page, itemId);
+    const snapshot = (await state(page)).snapshot!;
+    const self = snapshot.players.find(p => p.id === snapshot.selfPlayerId)!;
+    const inspectedOptions = snapshot.nodes.filter(n => n.options?.some(o => o.id === optionId))
+      .sort((a, b) => Math.hypot(a.x - self.x, a.z - self.z) - Math.hypot(b.x - self.x, b.z - self.z))[0]?.options;
+    // Cards reserve one unit each. Queue only a currently available batch;
+    // depletion/refill is a server rule, not a test-only resource grant.
+    const available = inspectedOptions?.find(o => o.id === optionId)?.remainingQuantity ?? 1;
+    const batch = Math.max(1, Math.min(targetQuantity - before, available));
+    for (let i = 0; i < batch; i++) await button.click();
+    await expect.poll(() => inventory(page, itemId), { timeout: 30_000 }).toBe(before + batch);
+    await expect.poll(async () => (await state(page)).snapshot?.gatheringQueue?.length ?? 0).toBe(0);
+  }
+  expect(await inventory(page, itemId)).toBe(targetQuantity);
+}
+
+async function selectStation(page: Page, stationId: string) {
+  await page.keyboard.press('Escape');
+  await page.getByTestId('open-craft').click();
+  await page.getByTestId('station-open-' + stationId).click();
 }
 
 async function screenshotAndPixels(page: Page, info: TestInfo, name: string) {
@@ -124,7 +152,7 @@ test('two browser identities share movement and chat without typing moving the e
 });
 
 test('real UI hunt, harvest, tanning, drying and binding produces the first bag', async ({ page }, info) => {
-  test.setTimeout(210_000);
+  test.setTimeout(330_000);
   const errors: string[] = []; page.on('pageerror', e => errors.push(e.message));
   await joined(page, '가방 만드는 개척자');
   // Take the open path around the bark tree's authoritative collision proxy.
@@ -141,12 +169,12 @@ test('real UI hunt, harvest, tanning, drying and binding produces the first bag'
   const corpse = (await state(page)).snapshot!.monsters[0];
   await walkTo(page, corpse, 2.1);
   await page.keyboard.press('e');
-  await expect(page.getByTestId('gather-panel')).toBeVisible();
+  await settledGatheringPanel(page);
   await expect(page.getByTestId('gather-option-signature')).toBeDisabled();
-  await page.getByTestId('gather-option-hide').click();
+  for (let i = 0; i < 3; i++) await page.getByTestId('gather-option-hide').click();
   await expect(page.getByTestId('gathering-progress')).toBeVisible();
   expect(await inventory(page, 'raw_hide')).toBe(0);
-  await expect.poll(() => inventory(page, 'raw_hide')).toBeGreaterThanOrEqual(3);
+  await expect.poll(() => inventory(page, 'raw_hide'), { timeout: 15_000 }).toBe(3);
   // A software GPU can spend seconds reading pixels; secure the time-limited
   // corpse reward before collecting the UI evidence.
   await page.screenshot({ path: info.outputPath('gathering-material-list.png') });
@@ -155,25 +183,29 @@ test('real UI hunt, harvest, tanning, drying and binding produces the first bag'
   await walkTo(page, { x: 4.5, z: 4.5 });
   await walkTo(page, { x: 4.4, z: -2 }, .25);
   await page.keyboard.press('e');
-  const fiberDeadline = Date.now() + 30_000;
-  while (Date.now() < fiberDeadline && (await inventory(page, 'fiber')) < 8) {
-    await gatherOption(page, 'fiber');
-  }
-  await walkTo(page, { x: 5, z: 2 }, .2);
+  await gatherUnits(page, 'fiber', 'fiber', 8);
+  await walkTo(page, { x: 4.6, z: 2 }, .16);
   await page.keyboard.press('e');
-  const barkDeadline = Date.now() + 22_000;
-  while (Date.now() < barkDeadline && (await inventory(page, 'bark')) < 6) {
-    await gatherOption(page, 'bark');
-  }
+  await gatherUnits(page, 'bark', 'bark', 6);
   expect(await inventory(page, 'fiber')).toBeGreaterThanOrEqual(8);
   expect(await inventory(page, 'bark')).toBeGreaterThanOrEqual(6);
   await walkTo(page, { x: 0, z: 0 });
-  await page.getByTestId('open-craft').click();
+  await selectStation(page, 'hand');
   for (let i = 0; i < 4; i++) await craft(page, 'cord_hand', 'cord');
+  await walkTo(page, { x: -2.8, z: -2 });
+  await selectStation(page, 'bench-1');
   for (let i = 0; i < 3; i++) await craft(page, 'bark_powder', 'bark_powder');
+  await walkTo(page, { x: -2.8, z: 0 });
+  await selectStation(page, 'prep-1');
   for (let i = 0; i < 3; i++) await craft(page, 'trim_hide', 'trim_hide');
+  await walkTo(page, { x: 2.4, z: -2 });
+  await selectStation(page, 'tan-1');
   for (let i = 0; i < 3; i++) await craft(page, 'tan', 'wet_leather');
+  await walkTo(page, { x: 3.6, z: 1.8 });
+  await selectStation(page, 'dry-1');
   for (let i = 0; i < 3; i++) await craft(page, 'dry_leather', 'leather');
+  await walkTo(page, { x: .3, z: -3.8 });
+  await selectStation(page, 'leatherwork-1');
   await craft(page, 'bag', 'small_bag');
   expect(await inventory(page, 'small_bag')).toBe(1);
   expect(await inventory(page, 'leather')).toBe(0);
@@ -189,20 +221,69 @@ test('selection waits for work and movement or cancel never grants materials', a
   await joined(page, '채집 확인 개척자');
   await walkTo(page, { x: 4.4, z: -2 }, .25);
   await page.keyboard.press('e');
-  await expect(page.getByTestId('gather-panel')).toBeVisible();
+  await settledGatheringPanel(page);
   expect(await inventory(page, 'fiber')).toBe(0);
   await expect(page.getByTestId('gather-option-herb')).toBeDisabled();
   await page.getByTestId('gather-option-fiber').click();
   await expect(page.getByTestId('gathering-progress')).toBeVisible();
   expect(await inventory(page, 'fiber')).toBe(0);
+  await page.getByTestId('gather-option-fiber').click();
+  await expect.poll(async () => (await state(page)).snapshot?.gatheringQueue?.length ?? 0).toBe(1);
   await page.keyboard.down('a'); await page.waitForTimeout(180); await page.keyboard.up('a');
   await expect.poll(async () => (await state(page)).snapshot?.gathering?.state).toBe('cancelled');
+  expect((await state(page)).snapshot?.gatheringQueue ?? []).toEqual([]);
   expect(await inventory(page, 'fiber')).toBe(0);
   await page.getByTestId('gather-option-fiber').click();
   await page.getByTestId('cancel-gather').click();
   await expect.poll(async () => (await state(page)).snapshot?.gathering?.state).toBe('cancelled');
   expect(await inventory(page, 'fiber')).toBe(0);
   await screenshotAndPixels(page, info, 'gathering-selection');
+});
+
+test('centered cards reserve individual units and the mixed FIFO survives closing its tray', async ({ page }, info) => {
+  test.setTimeout(65_000);
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await joined(page, '예약 채집 개척자');
+  await walkTo(page, { x: -4.3, z: 1 }, .2);
+  await page.keyboard.press('e');
+  const panel = await settledGatheringPanel(page);
+  const bounds = await panel.boundingBox();
+  expect(bounds).not.toBeNull();
+  expect(Math.abs(bounds!.x + bounds!.width / 2 - page.viewportSize()!.width / 2)).toBeLessThan(3);
+  const option = async (id: string) => (await state(page)).snapshot?.nodes.find(n => n.id === 'log-1')?.options?.find(o => o.id === id);
+  const logCard = page.getByTestId('gather-option-log');
+  await expect(logCard).toBeEnabled({ timeout: 15_000 });
+  const beforeWork = await logCard.boundingBox();
+  expect(beforeWork).not.toBeNull();
+  await logCard.click();
+  await expect(page.getByTestId('gathering-progress')).toBeVisible();
+  // Repeated clicks must hit a stable card. Reserve the work/queue rows before
+  // they are populated instead of recentering the tray on every accepted click.
+  await expect.poll(async () => Math.abs((await logCard.boundingBox())!.y - beforeWork!.y)).toBeLessThanOrEqual(3);
+  for (let i = 0; i < 3; i++) await page.getByTestId('gather-option-bark').click();
+  await expect.poll(async () => (await state(page)).snapshot?.gatheringQueue?.length).toBe(3);
+  expect(await inventory(page, 'log')).toBe(0); expect(await inventory(page, 'bark')).toBe(0);
+  const reserved = (await state(page)).snapshot!.gatheringQueue!;
+  expect(reserved.map(j => j.itemId)).toEqual(['bark', 'bark', 'bark']);
+  expect(new Set(reserved.map(j => j.id)).size).toBe(3);
+  expect((await option('bark'))?.remainingQuantity).toBe(0);
+  await expect.poll(async () => Math.abs((await logCard.boundingBox())!.y - beforeWork!.y)).toBeLessThanOrEqual(3);
+  await page.getByTestId('remove-gather-' + reserved[1].id).click();
+  await expect.poll(async () => (await option('bark'))?.remainingQuantity).toBe(1);
+  await page.getByTestId('gather-option-log').click();
+  await expect.poll(async () => (await state(page)).snapshot?.gatheringQueue?.map(j => j.itemId)).toEqual(['bark', 'bark', 'log']);
+  await page.getByRole('button', { name: '채집 목록 닫기' }).click();
+  await expect(panel).toBeHidden();
+  await expect(page.getByTestId('gathering-progress')).toBeVisible();
+  await expect.poll(() => inventory(page, 'log'), { timeout: 9_000 }).toBe(1);
+  expect(await inventory(page, 'bark')).toBe(0);
+  await expect.poll(() => inventory(page, 'bark'), { timeout: 10_000 }).toBe(2);
+  expect(await inventory(page, 'log')).toBe(1);
+  await expect.poll(() => inventory(page, 'log'), { timeout: 9_000 }).toBe(2);
+  expect((await state(page)).snapshot?.gatheringQueue ?? []).toEqual([]);
+  await page.keyboard.press('e');
+  await settledGatheringPanel(page);
+  await screenshotAndPixels(page, info, 'centered-gather-cards');
 });
 
 test('narrow screen keeps a visible nonblank world and usable entry', async ({ page }, info) => {
@@ -213,7 +294,12 @@ test('narrow screen keeps a visible nonblank world and usable entry', async ({ p
   await screenshotAndPixels(page, info, 'mobile-layout');
   await walkTo(page, { x: 4.4, z: -2 }, .25);
   await page.keyboard.press('e');
-  await expect(page.getByTestId('gather-panel')).toBeVisible();
+  await settledGatheringPanel(page);
+  const tray = await page.getByTestId('gather-panel').boundingBox();
+  expect(tray!.x).toBeGreaterThanOrEqual(0);
+  expect(tray!.x + tray!.width).toBeLessThanOrEqual(391);
+  expect(Math.abs(tray!.x + tray!.width / 2 - 195)).toBeLessThan(3);
+  await expect(page.getByTestId('gather-option-fiber')).toBeEnabled({ timeout: 15_000 });
   await page.getByTestId('gather-option-fiber').click();
   await expect(page.getByTestId('gathering-progress')).toBeVisible();
   await screenshotAndPixels(page, info, 'mobile-gathering');

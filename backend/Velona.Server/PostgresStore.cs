@@ -177,5 +177,5 @@ public sealed record SavedExplorer(string Id, string Name, string Color, double 
     DateTimeOffset LastAttack, DateTimeOffset LastGather, DateTimeOffset LastDamage, Dictionary<string, int>? SkillExperience = null);
 public sealed record SavedJob(string Id, RecipeDefinition Recipe, DateTimeOffset StartedAtUtc, DateTimeOffset CompletesAtUtc, bool Completed);
 public sealed record SavedRequest(string Id, string Fingerprint, ActionResult Result);
-public sealed record SavedNode(string Id, DateTimeOffset RespawnAtUtc, Dictionary<string, DateTimeOffset>? OptionRespawnAtUtc = null);
-public sealed record SavedBoar(double X, double Z, double Hp, string State, DateTimeOffset RespawnAtUtc, string[] Participants, string[] Harvested, int Generation = 1);
+public sealed record SavedNode(string Id, DateTimeOffset RespawnAtUtc, Dictionary<string, DateTimeOffset>? OptionRespawnAtUtc = null, Dictionary<string, int>? RemainingQuantities = null);
+public sealed record SavedBoar(double X, double Z, double Hp, string State, DateTimeOffset RespawnAtUtc, string[] Participants, string[] Harvested, int Generation = 1, Dictionary<string, int>? HarvestCounts = null);

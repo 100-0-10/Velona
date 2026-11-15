@@ -17,6 +17,7 @@ export class WorldScene {
   private players = new Map<string, THREE.Group>();
   private nodes = new Map<string, THREE.Group>();
   private monsters = new Map<string, THREE.Group>();
+  private stations = new Map<string, THREE.Group>();
   private danger = new THREE.Mesh(new THREE.CircleGeometry(2.6, 48), new THREE.MeshBasicMaterial({ color: 0xc85437, transparent: true, opacity: .38, depthWrite: false }));
   private cameraTarget = new THREE.Vector3(2, 0, 2);
   private flame: THREE.Object3D | undefined;
@@ -73,6 +74,12 @@ export class WorldScene {
       const group = this.nodes.get(n.id)!; group.scale.setScalar(n.available || n.itemId === 'bark' || n.itemId === 'log' ? 1 : .35);
     }
     for (const m of snapshot.monsters) if (!this.monsters.has(m.id)) { const g = boar(); g.position.set(m.x, 0, m.z); this.monsters.set(m.id, g); this.scene.add(g); }
+    for (const station of snapshot.stations ?? []) if (!this.stations.has(station.id)) {
+      const g = new THREE.Group(); g.position.set(station.x, 0, station.z);
+      const tag = label(station.name, '#e4cfa4'); tag.name = 'stationLabel'; tag.position.y = station.kind === 'dry' ? 2.9 : 1.8; tag.scale.multiplyScalar(.83); g.add(tag);
+      const ring = new THREE.Mesh(new THREE.RingGeometry(.63, .66, 32), new THREE.MeshBasicMaterial({ color: 0xe2c489, transparent: true, opacity: .45, depthWrite: false, side: THREE.DoubleSide })); ring.rotation.x = -Math.PI / 2; ring.position.y = .03; g.add(ring);
+      g.visible = false; this.stations.set(station.id, g); this.scene.add(g);
+    }
   }
 
   playAttack() { this.attackAt = this.elapsed; }
@@ -98,6 +105,9 @@ export class WorldScene {
         updateExplorerVisual(body, { dt, elapsed: this.elapsed, moving, gathering: !!p.gatheringItemId, attackAge: p.id === s.selfPlayerId ? this.elapsed - this.attackAt : 10, downed: p.isDowned });
       }
       const self = s.players.find(p => p.id === s.selfPlayerId);
+      for (const station of s.stations ?? []) {
+        const group = this.stations.get(station.id); if (group) group.visible = !!self && Math.hypot(self.x - station.x, self.z - station.z) <= station.interactionRadius + .8;
+      }
       if (self) this.cameraTarget.lerp(this.targetVector.set(self.x + 1, 0, self.z + 1), 1 - Math.exp(-dt * 3));
       for (const n of s.nodes) {
         const g = this.nodes.get(n.id)!; const distance = self ? Math.hypot(self.x - n.x, self.z - n.z) : 100;

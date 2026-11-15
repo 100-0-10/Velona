@@ -102,22 +102,8 @@ public sealed partial class GameWorld(ContentCatalog catalog, TimeProvider clock
     public ActionResult Harvest(string connectionId, string monsterId, string focus, string requestId) =>
         StartGather(connectionId, "corpse", monsterId, focus switch { "food" => "meat", "material" => "hide", "signature" => "signature", _ => "" }, requestId);
 
-    public ActionResult Craft(string connectionId, string recipeId, string requestId) => Execute(connectionId, requestId, "craft:" + recipeId, p =>
-    {
-        if (!catalog.TryRecipe(recipeId, out var recipe)) return ActionResult.Fail("이 시제품에서 지원하지 않는 제작법입니다.");
-        if (Distance(p.X, p.Z, 0, 0) > 7) return ActionResult.Fail("야영지의 제작대 가까이 이동해 주세요.");
-        if (p.Job is { Completed: false }) return ActionResult.Fail("진행 중인 작업이 있습니다.");
-        if (recipe.Inputs.Any(i => p.Inventory.GetValueOrDefault(i.ItemId) < i.Quantity)) return ActionResult.Fail("필요한 재료가 부족합니다.");
-        if (!CanFit(p, recipe.Inputs, recipe.Outputs)) return ActionResult.Fail("완성품을 보관할 가방 공간이 부족합니다.");
-        foreach (var input in recipe.Inputs)
-        {
-            p.Inventory[input.ItemId] -= input.Quantity;
-            if (p.Inventory[input.ItemId] == 0) p.Inventory.Remove(input.ItemId);
-        }
-        var now = clock.GetUtcNow();
-        p.Job = new(Guid.NewGuid().ToString("N"), recipe, now, now.AddSeconds(recipe.DurationSeconds));
-        return ActionResult.Ok($"{recipe.Name} 작업을 시작했습니다.");
-    });
+    public ActionResult Craft(string connectionId, string recipeId, string requestId) =>
+        Execute(connectionId, requestId, "craft:" + recipeId, p => StartProduction(p, recipeId, null));
 
     public ActionResult Respawn(string connectionId)
     {
@@ -241,8 +227,8 @@ public sealed partial class GameWorld(ContentCatalog catalog, TimeProvider clock
                 p.Job is null ? null : new(p.Job.Id, p.Job.Recipe, p.Job.StartedAt, p.Job.CompletesAt, p.Job.Completed),
                 p.Requests.Select(r => new SavedRequest(r.Key, r.Value.Fingerprint, r.Value.Result)).ToArray(),
                 p.SeenRequests.ToArray(), p.LastAttack, p.LastGather, p.LastDamage, new(p.SkillExperience))).ToArray(),
-                nodes.Select(n => new SavedNode(n.Id, n.RespawnAt, n.Stocks.ToDictionary(s => s.Key, s => s.Value.AvailableAt))).ToArray(),
-                new(boar.X, boar.Z, boar.Hp, boar.State, boar.RespawnAt, boar.Participants.ToArray(), boar.Harvested.ToArray(), boar.Generation));
+                nodes.Select(n => new SavedNode(n.Id, n.RespawnAt, n.Stocks.ToDictionary(s => s.Key, s => s.Value.AvailableAt), n.Stocks.ToDictionary(s => s.Key, s => s.Value.Remaining))).ToArray(),
+                new(boar.X, boar.Z, boar.Hp, boar.State, boar.RespawnAt, boar.Participants.ToArray(), boar.Harvested.ToArray(), boar.Generation, new(boar.HarvestCounts)));
         }
     }
 
@@ -276,7 +262,14 @@ public sealed partial class GameWorld(ContentCatalog catalog, TimeProvider clock
                 if (node is not null)
                 {
                     node.RespawnAt = saved.RespawnAtUtc;
-                    foreach (var stock in saved.OptionRespawnAtUtc ?? []) node.Stocks[stock.Key] = new() { AvailableAt = stock.Value };
+                    foreach (var definition in NodeDefinitions(node))
+                    {
+                        var availableAt = saved.OptionRespawnAtUtc?.GetValueOrDefault(definition.Id) ?? saved.RespawnAtUtc;
+                        var remaining = saved.RemainingQuantities?.GetValueOrDefault(definition.Id)
+                            ?? (availableAt > clock.GetUtcNow() ? 0 : definition.Quantity);
+                        if (remaining < 0 || remaining > definition.Quantity) throw new InvalidDataException("Invalid saved gathering stock.");
+                        node.Stocks[definition.Id] = new() { AvailableAt = availableAt, Remaining = remaining };
+                    }
                 }
             }
             boar.X = checkpoint.Boar.X; boar.Z = checkpoint.Boar.Z; boar.Hp = checkpoint.Boar.Hp;
@@ -285,6 +278,11 @@ public sealed partial class GameWorld(ContentCatalog catalog, TimeProvider clock
             boar.Generation = Math.Max(1, checkpoint.Boar.Generation);
             boar.Participants.UnionWith(checkpoint.Boar.Participants);
             boar.Harvested.UnionWith(checkpoint.Boar.Harvested);
+            foreach (var harvested in checkpoint.Boar.HarvestCounts ?? [])
+            {
+                if (harvested.Value < 0 || harvested.Value > 99) throw new InvalidDataException("Invalid saved harvest count.");
+                boar.HarvestCounts.Add(harvested.Key, harvested.Value);
+            }
         }
     }
 
@@ -295,7 +293,7 @@ public sealed partial class GameWorld(ContentCatalog catalog, TimeProvider clock
             boar.State == "dead" && boar.Participants.Contains(self.Id) && catalog.Gathering.Profiles["boar"].Any(d => !CorpseTaken(self.Id, d.Id)), boar.TelegraphX, boar.TelegraphZ, CorpseOptions(self, now))],
         self.Inventory.OrderBy(x => x.Key).Select(x => new InventoryStack(x.Key, catalog.Name(x.Key), x.Value)).ToArray(),
         self.Job is null ? [] : [new(self.Job.Id, self.Job.Recipe.Id, self.Job.Recipe.Name, self.Job.StartedAt, self.Job.CompletesAt, self.Job.Completed ? "completed" : "running")],
-        GatheringSnapshot(self), SkillSnapshot(self));
+        GatheringSnapshot(self), SkillSnapshot(self), GatheringQueueSnapshot(self), GatherQueueCapacity, Stations: StationSnapshot());
 
     private bool TryPlayer(string connectionId, out Explorer player)
     {
@@ -329,7 +327,8 @@ public sealed partial class GameWorld(ContentCatalog catalog, TimeProvider clock
         var projected = new Dictionary<string, int>(p.Inventory);
         foreach (var input in consumed) projected[input.ItemId] = projected.GetValueOrDefault(input.ItemId) - input.Quantity;
         if (p.Job is { Completed: false }) foreach (var pending in p.Job.Recipe.Outputs) projected[pending.ItemId] = projected.GetValueOrDefault(pending.ItemId) + pending.Quantity;
-        if (p.Gathering is { State: "running" } g) projected[g.Definition.ItemId] = projected.GetValueOrDefault(g.Definition.ItemId) + g.Definition.Quantity;
+        if (p.Gathering is { State: "running" } g) projected[g.Definition.ItemId] = projected.GetValueOrDefault(g.Definition.ItemId) + 1;
+        foreach (var queued in p.GatherQueue) projected[queued.Definition.ItemId] = projected.GetValueOrDefault(queued.Definition.ItemId) + 1;
         foreach (var output in outputs) projected[output.ItemId] = projected.GetValueOrDefault(output.ItemId) + output.Quantity;
         return projected.Values.Count(x => x > 0) <= InventoryCapacity(p) && projected.Values.All(x => x <= 99);
     }
@@ -351,6 +350,7 @@ public sealed partial class GameWorld(ContentCatalog catalog, TimeProvider clock
         public HashSet<Guid> SeenRequests { get; init; } = [];
         public Dictionary<string, int> SkillExperience { get; init; } = [];
         public GatherTask? Gathering;
+        public List<GatherTask> GatherQueue { get; } = [];
         public Job? Job;
     }
     private sealed class Job(string id, RecipeDefinition recipe, DateTimeOffset start, DateTimeOffset end)
@@ -380,6 +380,7 @@ public sealed partial class GameWorld(ContentCatalog catalog, TimeProvider clock
         public DateTimeOffset RecoveryEnds, RespawnAt;
         public HashSet<string> Participants { get; } = [];
         public HashSet<string> Harvested { get; } = [];
-        public void Reset() { Generation++; X = 12; Z = 6; Hp = 120; State = "idle"; TargetId = null; TelegraphEnds = null; Participants.Clear(); Harvested.Clear(); }
+        public Dictionary<string, int> HarvestCounts { get; } = [];
+        public void Reset() { Generation++; X = 12; Z = 6; Hp = 120; State = "idle"; TargetId = null; TelegraphEnds = null; Participants.Clear(); Harvested.Clear(); HarvestCounts.Clear(); }
     }
 }

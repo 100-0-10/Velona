@@ -66,7 +66,7 @@ try {
     return length;
   }, n => n < .4, 'walk to fiber');
   await peer.connection.invoke('Move', { x: 0, z: 0, sequence: ++sequence });
-  assert.equal((await peer.connection.invoke('StartGather', 'node', 'fiber-1', 'fiber', 'proof-gather')).success, true);
+  for (let i = 1; i <= 3; i++) assert.equal((await peer.connection.invoke('EnqueueGather', 'node', 'fiber-1', 'fiber', `proof-gather-${i}`)).success, true);
   await until(() => peer.read().inventory.find(i => i.itemId === 'fiber')?.quantity, n => n === 3, 'timed gather completed');
   const crafted = await peer.connection.invoke('Craft', 'cord_hand', 'proof-craft');
   assert.equal(crafted.success, true);
@@ -79,7 +79,7 @@ try {
   peer = await connect(session);
   await until(() => peer.read().inventory.find(i => i.itemId === 'cord')?.quantity, n => n === 1, 'offline job restored once');
   assert.equal(peer.read().inventory.find(i => i.itemId === 'fiber')?.quantity, 1);
-  assert.equal(peer.read().skills.find(s => s.id === 'foraging')?.experience, 2);
+  assert.equal(peer.read().skills.find(s => s.id === 'foraging')?.experience, 6);
   assert.equal((await peer.connection.invoke('Craft', 'cord_hand', 'proof-craft')).success, true);
   const restoredAt = Date.now();
   await until(async () => (await fetch(`${url}/health`)).json(), h => Date.parse(h.lastSavedAtUtc) >= restoredAt, 'completed delivery persisted');
@@ -91,7 +91,31 @@ try {
   assert.equal(peer.read().inventory.find(i => i.itemId === 'cord')?.quantity, 1);
   assert.equal(peer.read().inventory.find(i => i.itemId === 'fiber')?.quantity, 1);
   assert.equal(peer.read().players.length, 1);
-  console.log('PostgreSQL proof passed: guest restored, inventory retained, pending offline job delivered once, replay protected, second restart did not duplicate output.');
+
+  // Crash with an active five-second log task and a second reserved unit. The
+  // checkpoint must retain consumed stock only, never offline-gather promises.
+  await until(async () => {
+    const p = peer.read().players.find(p => p.id === session.playerId);
+    const dx = 4.7 - p.x, dz = 2 - p.z, length = Math.hypot(dx, dz);
+    await peer.connection.invoke('Move', { x: length > .2 ? dx / length : 0, z: length > .2 ? dz / length : 0, sequence: ++sequence });
+    return length;
+  }, n => n < .25, 'walk to tree');
+  await peer.connection.invoke('Move', { x: 0, z: 0, sequence: ++sequence });
+  for (let i = 1; i <= 2; i++) assert.equal((await peer.connection.invoke('EnqueueGather', 'node', 'bark-1', 'log', `proof-pending-${i}`)).success, true);
+  const pending = await until(() => peer.read(), s => s.gathering?.state === 'running' && s.gatheringQueue?.length === 1, 'active and reserved gather');
+  await until(async () => (await fetch(`${url}/health`)).json(), h => Date.parse(h.lastSavedAtUtc) >= Date.parse(pending.gathering.startedAtUtc), 'checkpoint with gather queue');
+  const interrupted = peer.connection;
+  await crash(); peer = undefined;
+  await interrupted.stop();
+  await delay(Math.max(0, Date.parse(pending.gathering.completesAtUtc) - Date.now()) + 300);
+  await start(); peer = await connect(session);
+  await delay(300);
+  assert.equal(peer.read().gathering, null);
+  assert.equal(peer.read().gatheringQueue?.length, 0);
+  assert.equal(peer.read().inventory.find(i => i.itemId === 'log')?.quantity ?? 0, 0);
+  assert.equal(peer.read().nodes.find(n => n.id === 'bark-1')?.options.find(o => o.id === 'log')?.remainingQuantity, 2);
+  assert.equal(peer.read().inventory.find(i => i.itemId === 'cord')?.quantity, 1);
+  console.log('PostgreSQL proof passed: individual rewards/mastery retained, offline production delivered once, replay protected, and interrupted gathering queue restored neither rewards nor reservations.');
 } finally {
   if (peer) await Promise.race([peer.connection.stop(), delay(3000)]);
   await crash();

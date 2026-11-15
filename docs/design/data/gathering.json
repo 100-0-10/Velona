@@ -1,8 +1,16 @@
 {
   "schema_version": 1,
-  "content_version": "0.4.0-draft",
+  "content_version": "0.5.0-draft",
   "status": "design_draft",
   "records": {
+    "runtime_semantics": {
+      "quantity": "재료별 한 번 생성되는 유한 수량; 사체는 참여자별 수량",
+      "click_output_quantity": 1,
+      "base_seconds": "재료 1개를 채집하거나 도축하는 기본 시간",
+      "experience": "재료 1개의 작업을 완료했을 때 지급",
+      "queue": "같은 대상에서 클릭한 순서, 현재 작업 포함 최대 20개",
+      "node_refill": "재료별 잔량을 모두 소비한 뒤 8초 후 원래 수량으로 재생"
+    },
     "max_level": 30,
     "experience_factor": 10,
     "reduction_per_level": 0.02,

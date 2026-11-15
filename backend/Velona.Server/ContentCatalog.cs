@@ -27,7 +27,7 @@ public sealed class ContentCatalog
             if (!RuntimeRecipeIds.Contains(id)) continue;
             var outputs = Stacks(r.GetProperty("outputs"));
             recipes.Add(id, new(id, outputs[0].Name, stationNames[r.GetProperty("station_id").GetString()!], Stacks(r.GetProperty("inputs")), outputs,
-                Math.Max(0.1, r.GetProperty("duration_seconds").GetDouble() * productionTimeScale)));
+                Math.Max(0.1, r.GetProperty("duration_seconds").GetDouble() * productionTimeScale), r.GetProperty("station_id").GetString()!));
         }
         if (recipes.Count != RuntimeRecipeIds.Length) throw new InvalidDataException("Initial runtime recipe subset is incomplete.");
     }
