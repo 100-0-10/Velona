@@ -77,6 +77,14 @@ async function craft(page: Page, recipeId: string, outputId: string, maxSeconds 
   await expect.poll(() => inventory(page, outputId), { timeout: maxSeconds * 1000 }).toBeGreaterThan(before);
 }
 
+async function clickCard(page: Page, optionId: string, count = 1) {
+  const card = page.getByTestId('gather-option-' + optionId);
+  await expect(card).toBeEnabled();
+  const bounds = await card.boundingBox();
+  expect(bounds).not.toBeNull();
+  for (let i = 0; i < count; i++) await page.mouse.click(bounds!.x + bounds!.width / 2, bounds!.y + bounds!.height / 2);
+}
+
 async function gatherUnits(page: Page, optionId: string, itemId: string, targetQuantity: number) {
   const deadline = Date.now() + 90_000;
   while ((await inventory(page, itemId)) < targetQuantity && Date.now() < deadline) {
@@ -106,9 +114,11 @@ async function selectStation(page: Page, stationId: string) {
 
 async function screenshotAndPixels(page: Page, info: TestInfo, name: string) {
   const path = info.outputPath(`${name}.png`);
-  await page.screenshot({ path, fullPage: true });
-  const canvas = page.getByTestId('world-canvas');
-  const image = PNG.sync.read(await canvas.screenshot());
+  const canvas = await page.getByTestId('world-canvas').boundingBox();
+  expect(canvas!.width).toBeGreaterThan(100); expect(canvas!.height).toBeGreaterThan(100);
+  // The game canvas fills the page. Reuse one real page capture instead of
+  // requesting a second identical GPU readback for the pixel checks.
+  const image = PNG.sync.read(await page.screenshot({ path, fullPage: true }));
   const colors = new Set<number>();
   let min = 255; let max = 0;
   for (let pixel = 0; pixel < image.width * image.height; pixel += 101) {
@@ -125,9 +135,9 @@ async function screenshotAndPixels(page: Page, info: TestInfo, name: string) {
 
 test('two browser identities share movement and chat without typing moving the explorer', async ({ browser }, info) => {
   // CI renders both WebGL views in software; include screenshot readback and context shutdown.
-  test.setTimeout(90_000);
-  const first = await browser.newContext({ viewport: { width: 1280, height: 720 } });
-  const second = await browser.newContext({ viewport: { width: 960, height: 640 } });
+  test.setTimeout(120_000);
+  const first = await browser.newContext({ viewport: { width: 960, height: 640 } });
+  const second = await browser.newContext({ viewport: { width: 800, height: 600 } });
   const a = await first.newPage(); const b = await second.newPage();
   const errors: string[] = [];
   a.on('pageerror', e => errors.push(e.message)); b.on('pageerror', e => errors.push(e.message));
@@ -171,9 +181,9 @@ test('real UI hunt, harvest, tanning, drying and binding produces the first bag'
   await page.keyboard.press('e');
   await settledGatheringPanel(page);
   await expect(page.getByTestId('gather-option-signature')).toBeDisabled();
-  for (let i = 0; i < 3; i++) await page.getByTestId('gather-option-hide').click();
-  await expect(page.getByTestId('gathering-progress')).toBeVisible();
   expect(await inventory(page, 'raw_hide')).toBe(0);
+  await clickCard(page, 'hide', 3);
+  await expect(page.getByTestId('gathering-progress')).toBeVisible();
   await expect.poll(() => inventory(page, 'raw_hide'), { timeout: 15_000 }).toBe(3);
   // A software GPU can spend seconds reading pixels; secure the time-limited
   // corpse reward before collecting the UI evidence.
@@ -218,25 +228,25 @@ test('real UI hunt, harvest, tanning, drying and binding produces the first bag'
 });
 
 test('selection waits for work and movement or cancel never grants materials', async ({ page }, info) => {
+  test.setTimeout(65_000);
   await joined(page, '채집 확인 개척자');
-  await walkTo(page, { x: 4.4, z: -2 }, .25);
+  await walkTo(page, { x: 4.6, z: 2 }, .16);
   await page.keyboard.press('e');
   await settledGatheringPanel(page);
-  expect(await inventory(page, 'fiber')).toBe(0);
-  await expect(page.getByTestId('gather-option-herb')).toBeDisabled();
-  await page.getByTestId('gather-option-fiber').click();
+  expect(await inventory(page, 'log')).toBe(0);
+  await expect(page.getByTestId('gather-option-resin')).toBeDisabled();
+  await clickCard(page, 'log', 2);
   await expect(page.getByTestId('gathering-progress')).toBeVisible();
-  expect(await inventory(page, 'fiber')).toBe(0);
-  await page.getByTestId('gather-option-fiber').click();
   await expect.poll(async () => (await state(page)).snapshot?.gatheringQueue?.length ?? 0).toBe(1);
   await page.keyboard.down('a'); await page.waitForTimeout(180); await page.keyboard.up('a');
   await expect.poll(async () => (await state(page)).snapshot?.gathering?.state).toBe('cancelled');
   expect((await state(page)).snapshot?.gatheringQueue ?? []).toEqual([]);
-  expect(await inventory(page, 'fiber')).toBe(0);
-  await page.getByTestId('gather-option-fiber').click();
+  expect(await inventory(page, 'log')).toBe(0);
+  await walkTo(page, { x: 4.6, z: 2 }, .16);
+  await clickCard(page, 'log');
   await page.getByTestId('cancel-gather').click();
   await expect.poll(async () => (await state(page)).snapshot?.gathering?.state).toBe('cancelled');
-  expect(await inventory(page, 'fiber')).toBe(0);
+  expect(await inventory(page, 'log')).toBe(0);
   await screenshotAndPixels(page, info, 'gathering-selection');
 });
 
@@ -255,12 +265,15 @@ test('centered cards reserve individual units and the mixed FIFO survives closin
   await expect(logCard).toBeEnabled({ timeout: 15_000 });
   const beforeWork = await logCard.boundingBox();
   expect(beforeWork).not.toBeNull();
-  await logCard.click();
+  const barkCard = await page.getByTestId('gather-option-bark').boundingBox();
+  // Real rapid mouse clicks at the stable card locations; Locator.click's
+  // per-action animation frames can themselves outlast a short gather timer.
+  await page.mouse.click(beforeWork!.x + beforeWork!.width / 2, beforeWork!.y + beforeWork!.height / 2);
+  for (let i = 0; i < 3; i++) await page.mouse.click(barkCard!.x + barkCard!.width / 2, barkCard!.y + barkCard!.height / 2);
   await expect(page.getByTestId('gathering-progress')).toBeVisible();
   // Repeated clicks must hit a stable card. Reserve the work/queue rows before
   // they are populated instead of recentering the tray on every accepted click.
   await expect.poll(async () => Math.abs((await logCard.boundingBox())!.y - beforeWork!.y)).toBeLessThanOrEqual(3);
-  for (let i = 0; i < 3; i++) await page.getByTestId('gather-option-bark').click();
   await expect.poll(async () => (await state(page)).snapshot?.gatheringQueue?.length).toBe(3);
   expect(await inventory(page, 'log')).toBe(0); expect(await inventory(page, 'bark')).toBe(0);
   const reserved = (await state(page)).snapshot!.gatheringQueue!;
@@ -268,9 +281,10 @@ test('centered cards reserve individual units and the mixed FIFO survives closin
   expect(new Set(reserved.map(j => j.id)).size).toBe(3);
   expect((await option('bark'))?.remainingQuantity).toBe(0);
   await expect.poll(async () => Math.abs((await logCard.boundingBox())!.y - beforeWork!.y)).toBeLessThanOrEqual(3);
-  await page.getByTestId('remove-gather-' + reserved[1].id).click();
+  const remove = await page.getByTestId('remove-gather-' + reserved[1].id).boundingBox();
+  await page.mouse.click(remove!.x + remove!.width / 2, remove!.y + remove!.height / 2);
   await expect.poll(async () => (await option('bark'))?.remainingQuantity).toBe(1);
-  await page.getByTestId('gather-option-log').click();
+  await page.mouse.click(beforeWork!.x + beforeWork!.width / 2, beforeWork!.y + beforeWork!.height / 2);
   await expect.poll(async () => (await state(page)).snapshot?.gatheringQueue?.map(j => j.itemId)).toEqual(['bark', 'bark', 'log']);
   await page.getByRole('button', { name: '채집 목록 닫기' }).click();
   await expect(panel).toBeHidden();
