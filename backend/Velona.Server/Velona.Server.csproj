@@ -13,6 +13,6 @@
     <Content Include="../../docs/design/data/gathering.json" Link="Content/Design/gathering.json" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Npgsql" Version="10.0.3" />
+    <PackageReference Include="Npgsql" Version="11.0.0" />
   </ItemGroup>
 </Project>
